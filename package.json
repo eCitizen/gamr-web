@@ -1,0 +1,28 @@
+{
+  "name": "GAMR",
+  "version": "1.0.0",
+  "description": "pending...",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test",
+    "build": "mkdir -p dist && watchify index.js -o 'uglifyjs -cm > dist/bundle.min.js'",
+    "dev": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skiano/GAMR.git"
+  },
+  "author": "Greg Skiano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skiano/GAMR/issues"
+  },
+  "homepage": "https://github.com/skiano/GAMR",
+  "devDependencies": {
+    "browserify": "^10.2.1",
+    "ejs": "^2.3.1",
+    "express": "^4.12.4",
+    "uglify-js": "^2.4.23",
+    "watchify": "^3.2.1"
+  }
+}
