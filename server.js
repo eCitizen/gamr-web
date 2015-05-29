@@ -9,8 +9,10 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/dist'));
 
 app.get('/', function (req, res) {
+  var env = process.env.NODE_ENV;
   res.render('index', {
-    script: process.env.NODE_ENV === 'prod' ? 'bundle.min.js' : 'bundle.js'
+    script: env === 'prod' ? 'gamr.min.js' : 'gamr.js',
+    style: env === 'prod' ? 'gamr.min.css' : 'gamr.css'
   });
 });
 
