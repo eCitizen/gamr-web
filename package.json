@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test",
-    "build": "mkdir -p dist && watchify index.js -o 'uglifyjs -cm > dist/bundle.min.js'",
-    "dev": "npm run build"
+    "buildjs:dev": "mkdir -p dist && watchify index.js -o dist/bundle.js",
+    "buildjs:prod": "mkdir -p dist && watchify index.js -o 'uglifyjs -cm > dist/bundle.min.js'",
+    "dev": "npm run buildjs:dev & nodemon server"
   },
   "repository": {
     "type": "git",

@@ -6,9 +6,11 @@ var express = require('express'),
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
+app.use(express.static(__dirname + '/dist'));
+
 app.get('/', function (req, res) {
   res.render('index', {
-    env: process.env.NODE_ENV || 'dev'
+    script: process.env.NODE_ENV === 'prod' ? 'bundle.min.js' : 'bundle.js'
   });
 });
 
