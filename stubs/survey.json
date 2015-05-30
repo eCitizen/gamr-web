@@ -1,0 +1,13 @@
+{
+  "id": "testId",
+  "sections": [
+    {
+      "title": "Brain Type",
+      "instructions": "Here are Some instructions",
+      "scale": 5,
+      "questions": [
+        "Are you satisfied yet?"
+      ]
+    }
+  ]
+}
