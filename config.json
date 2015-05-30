@@ -1,0 +1,12 @@
+{
+  "prod": {
+    "script": "gamr.min.js",
+    "style": "gamr.min.css",
+    "api": null
+  },
+  "dev": {
+    "script": "gamr.js",
+    "style": "gamr.css",
+    "api": "http://localhost:8000/api"
+  }
+}
