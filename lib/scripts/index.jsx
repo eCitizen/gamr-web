@@ -1,14 +1,6 @@
 /** @jsx React.DOM */
 
-var React = require('react/addons');
+var React = require('react/addons'),
+  Survey = require('./components/Survey.jsx');
 
-console.log(require('d3'));
-
-React.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('gamr')
-);
-
-(function (){
-  console.log('hello there working 2!');
-}());
+React.render(<Survey/>,document.getElementById('gamr'));
