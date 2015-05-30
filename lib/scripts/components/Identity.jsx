@@ -13,7 +13,7 @@ module.exports = Identity = React.createClass({
         <p>
           What are your profiles?
         </p>
-        <Link to="survey" params={{sectionName:'brain-type'}}>Continue</Link>
+        <Link to="brain">Continue</Link>
       </div>
     );
   }

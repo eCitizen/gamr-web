@@ -17,19 +17,22 @@ var Home = require('./Home.jsx'),
   ProfileWrap = require('./ProfileWrap.jsx'),
   Profile = require('./Profile.jsx'),
   Intro = require('./Intro.jsx'),
-  NotFound = require('./NotFound.jsx');
+  NotFound = require('./NotFound.jsx'),
+  BrainType = Section.BrainType,
+  Personality = Section.Personality,
+  GamerType = Section.GamerType;
 
 var routes = (
   <Route name="home" path="/" handler={Home}>
     <Route name="survey" handler={Survey}>
       <Route name="identity" path="identity" handler={Identity}/>
-      <Route name="brain" path="brain-type" handler={Section}/>
-      <Route name="personality" path="personality" handler={Section}/>
-      <Route name="gamer" path="gamer-type" handler={Section}/>
+      <Route name="brain" path="brain-type" handler={BrainType}/>
+      <Route name="personality" path="personality" handler={Personality}/>
+      <Route name="gamer-type" path="gamer-type" handler={GamerType}/>
       <DefaultRoute handler={Consent}/>
     </Route>
     <Route name="profile" handler={ProfileWrap}>
-      <Route name="id" path=":id" handler={Profile}/>
+      <Route name="reward" path=":data" handler={Profile}/>
       <DefaultRoute handler={NotFound}/>
     </Route>
     <DefaultRoute handler={Intro}/>
