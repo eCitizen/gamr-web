@@ -3,9 +3,7 @@ var express = require('express'),
   router = express.Router();
 
 router.get('/user', function(req, res, next) {
-  res.json({
-    hello: false
-  });
+  res.json(require('./stubs/user.json')[req.query.name]);
 });
 
 router.get('/questions', function(req, res, next) {
