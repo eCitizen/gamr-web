@@ -8,6 +8,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/dist'));
 
+app.use('/api', require('./dummyApi'));
+
 app.get('/', function (req, res) {
   var env = process.env.NODE_ENV;
   res.render('index', {

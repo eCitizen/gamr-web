@@ -5,8 +5,15 @@ var react = require('react/addons'),
   Survey;
 
 module.exports = Survey = React.createClass({
+  componentWillMount: function () {
+    api.config(this.props);
+  },
+
+  componentDidMount: function () {
+    api.getQuestions();
+  },
+
   render: function () {
-    console.log('hello', this.props);
     return <div>A Survey!</div>
   }
 });
