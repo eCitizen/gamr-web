@@ -9,7 +9,7 @@ module.exports = Footer = React.createClass({
   render: function () {
     return (
       <div id='footer'>
-        <Link to='home'>home</Link> MIT Media Lab
+        MIT Media Lab <Link to='home'>home</Link> About
       </div>
     );
   }
