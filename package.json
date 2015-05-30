@@ -16,7 +16,8 @@
     "start": "npm run watch & nodemon server"
   },
   "browserify-shim": {
-    "react/addons": "global:React"
+    "react/addons": "global:React",
+    "d3": "global:d3"
   },
   "browserify": {
     "transform": [
