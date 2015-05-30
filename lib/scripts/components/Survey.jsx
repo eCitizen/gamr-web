@@ -6,7 +6,7 @@ var react = require('react/addons'),
 
 module.exports = Survey = React.createClass({
   render: function () {
-    console.log('hello')
+    console.log('hello', this.props);
     return <div>A Survey!</div>
   }
 });
