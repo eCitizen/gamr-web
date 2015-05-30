@@ -4,15 +4,25 @@
   "description": "pending...",
   "main": "index.js",
   "scripts": {
-    "build-js": "mkdir -p dist && browserify lib/scripts/index.js -o dist/gamr.js",
+    "build-js": "mkdir -p dist && browserify -t reactify lib/scripts/index.jsx -o dist/gamr.js",
+    "build-min-js": "mkdir -p dist && browserify lib/scripts/index.jsx | uglifyjs -o dist/gamr.min.js",
     "build-sass": "mkdir -p dist && node-sass lib/styles/index.scss dist/gamr.css --include-path lib/styles",
-    "build-min-js": "mkdir -p dist && browserify lib/scripts/index.js | uglifyjs -o dist/gamr.min.js",
     "build-min-sass": "mkdir -p dist && node-sass lib/styles/index.scss --include-path lib/styles | cleancss -o dist/gamr.min.css",
-    "watch-js": "mkdir -p dist && nodemon -e js -w lib/scripts -x 'npm run build-js'",
+    "watch-js": "mkdir -p dist && nodemon -e jsx -w lib/scripts -x 'npm run build-js'",
     "watch-sass": "mkdir -p dist && nodemon -e scss -w lib/styles -x 'npm run build-sass'",
     "build": "npm run build-js & npm run build-sass",
     "watch": "npm run watch-js & npm run watch-sass",
-    "dev": "npm run watch & nodemon server"
+    "clean": "rm -rf dist",
+    "start": "npm run watch & nodemon server"
+  },
+  "browserify-shim": {
+    "react/addons": "global:React"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "browserify-shim"
+    ]
   },
   "repository": {
     "type": "git",
@@ -26,10 +36,13 @@
   "homepage": "https://github.com/skiano/GAMR",
   "devDependencies": {
     "browserify": "^10.2.1",
+    "browserify-shim": "^3.8.7",
     "clean-css": "^3.2.10",
     "ejs": "^2.3.1",
     "express": "^4.12.4",
     "node-sass": "^3.1.2",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1",
     "uglify-js": "^2.4.23",
     "watchify": "^3.2.1"
   }
