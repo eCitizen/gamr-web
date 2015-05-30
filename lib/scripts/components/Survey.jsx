@@ -5,15 +5,31 @@ var react = require('react/addons'),
   Survey;
 
 module.exports = Survey = React.createClass({
+  getInitialState: function () {
+    return {
+      data: null
+    };
+  },
+
+  _setData: function (data) {
+    this.setState({
+      data: data
+    });
+  },
+
   componentWillMount: function () {
     api.config(this.props);
   },
 
   componentDidMount: function () {
-    api.getQuestions();
+    api.getQuestions(this._setData);
   },
 
   render: function () {
-    return <div>A Survey!</div>
+    if (this.state.data) {
+      return <div>{this.state.data}</div>;
+    } else {
+      return null;
+    }
   }
 });
