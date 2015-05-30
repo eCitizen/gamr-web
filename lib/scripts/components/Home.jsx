@@ -1,16 +1,17 @@
-
 /** @jsx React.DOM */
 
 var React = require('react/addons'),
   Router = require('react-router'),
   RouteHandler = Router.RouteHandler,
-  Survey;
+  Footer = require('./Footer.jsx'),
+  Home;
 
-module.exports = Survey = React.createClass({
+module.exports = Home = React.createClass({
   render: function () {
     return (
-      <div>
+      <div id='home'>
         <RouteHandler {... this.props}/>
+        <Footer/>
       </div>
     );
   }

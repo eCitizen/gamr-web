@@ -3,14 +3,13 @@
 
 var React = require('react/addons'),
   Router = require('react-router'),
-  RouteHandler = Router.RouteHandler,
-  Survey;
+  Section;
 
-module.exports = Survey = React.createClass({
+module.exports = Section = React.createClass({
   render: function () {
     return (
       <div>
-        <RouteHandler {... this.props}/>
+        Section
       </div>
     );
   }

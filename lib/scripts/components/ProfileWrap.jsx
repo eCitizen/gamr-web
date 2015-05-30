@@ -4,14 +4,10 @@
 var React = require('react/addons'),
   Router = require('react-router'),
   RouteHandler = Router.RouteHandler,
-  Survey;
+  ProfileWrap;
 
-module.exports = Survey = React.createClass({
+module.exports = ProfileWrap = React.createClass({
   render: function () {
-    return (
-      <div>
-        <RouteHandler {... this.props}/>
-      </div>
-    );
+    return <RouteHandler {... this.props}/>;
   }
 });

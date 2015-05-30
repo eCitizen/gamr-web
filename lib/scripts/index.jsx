@@ -1,10 +1,10 @@
 /** @jsx React.DOM */
 
 var React = require('react/addons'),
-  Survey = require('./components/Survey.jsx');
+  App = require('./components/App.jsx');
 
 if (typeof gamrConfig !== 'undefined') {
-  React.render(<Survey {... gamrConfig}/>,document.getElementById('gamr'));
+  App(gamrConfig);
 } else {
   console.error('[gamr]','You must setup `gamrConfig`');
 }
