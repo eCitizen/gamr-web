@@ -1,8 +1,4 @@
-html {
-  background: tomato;
-  color: white;
-}
 
-html {
-  border: 10px solid slateblue;
-}
+@import "./reset.scss";
+@import "./variables.scss";
+@import "./question.scss";
