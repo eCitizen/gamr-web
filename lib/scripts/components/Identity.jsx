@@ -15,7 +15,7 @@ module.exports = Identity = React.createClass({
     return {
       failed: false,
       user: 'greg',
-      fruit: 'A'
+      fruit: null
     };
   },
 
@@ -41,13 +41,12 @@ module.exports = Identity = React.createClass({
   },
 
   render: function () {
-
-    console.log(guide.identity.WOW.fields[2].options);
-
     var realms = guide.identity.WOW.fields[2].options;
     var options = Object.keys(realms).map(function (key) {
       return <option value={key}>{realms[key]}</option>;
     });
+
+    console.log(this.state.fruit);
 
     return (
       <div id='home'>
@@ -58,10 +57,10 @@ module.exports = Identity = React.createClass({
         
         <input onChange={this.handleInput} value={this.state.user}/>
 
-        <select value={this.state.fruit} onChange={this.updateFruit}>
-          <option value="A">Apple</option>
-          <option value="B">Banana</option>
-          <option value="C">Cranberry</option>
+        <select 
+          value={this.state.fruit} 
+          onChange={this.updateFruit}>
+          <option value="">{guide.identity.WOW.fields[2].label}</option>
           {options}
         </select>
 
