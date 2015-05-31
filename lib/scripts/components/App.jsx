@@ -5,7 +5,8 @@ var React = require('react/addons'),
   DefaultRoute = Router.DefaultRoute,
   NotFoundRoute = Router.NotFoundRoute,
   Route = Router.Route,
-  api = require('../services/api');
+  api = require('../services/api'),
+  guide = require('../services/guide');
 
 var Home = require('./Home.jsx'),
   Identity = require('./Identity.jsx'),
@@ -40,6 +41,7 @@ var routes = (
 
 module.exports = function (config) {
   api.config(config);
+  guide.config(config);
   var cb = function (Handler, state) {
     React.render(<Handler params={state.params}/>, document.body);
   };
