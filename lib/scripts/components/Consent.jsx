@@ -13,7 +13,7 @@ module.exports = Consent = React.createClass({
         <p>
           Do you consent?
         </p>
-        <Link to="identity">Begin</Link>
+        <Link to="identity">Yes</Link>
       </div>
     );
   }

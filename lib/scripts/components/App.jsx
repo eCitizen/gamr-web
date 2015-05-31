@@ -5,8 +5,6 @@ var React = require('react/addons'),
   DefaultRoute = Router.DefaultRoute,
   NotFoundRoute = Router.NotFoundRoute,
   Route = Router.Route,
-  Link = Router.Link,
-  RouteHandler = Router.RouteHandler,
   api = require('../services/api');
 
 var Home = require('./Home.jsx'),
@@ -14,7 +12,6 @@ var Home = require('./Home.jsx'),
   Survey = React.createClass({render: function () { return <Router.RouteHandler {... this.props}/>; }}),
   Section = require('./Section.jsx'),
   Consent = require('./Consent.jsx'),
-  BadUser = require('./BadUser.jsx'),
   ProfileWrap = require('./ProfileWrap.jsx'),
   Profile = require('./Profile.jsx'),
   Intro = require('./Intro.jsx'),
@@ -43,7 +40,12 @@ var routes = (
 
 module.exports = function (config) {
   api.config(config);
-  Router.run(routes, function (Handler, state) {
+  var cb = function (Handler, state) {
     React.render(<Handler params={state.params}/>, document.body);
-  });
-}
+  };
+  if (config.usePushState) {
+    Router.run(routes, Router.HistoryLocation, cb);
+  } else {
+    Router.run(routes, cb);
+  }
+};

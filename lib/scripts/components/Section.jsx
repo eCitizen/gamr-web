@@ -3,6 +3,7 @@
 
 var React = require('react/addons'),
   Router = require('react-router'),
+  QuestionSet = require('./QuestionSet.jsx'),
   Link = Router.Link;
 
 module.exports.BrainType = React.createClass({
@@ -11,6 +12,7 @@ module.exports.BrainType = React.createClass({
     return (
       <div>
         <h1>Brain Type</h1>
+        <QuestionSet/>
         <Link to='personality'>Next</Link>
       </div>
     );
@@ -23,6 +25,7 @@ module.exports.Personality = React.createClass({
     return (
       <div>
         <h1>Personality</h1>
+        <QuestionSet/>
         <Link to='gamer-type'>Next</Link>
       </div>
     );
@@ -35,6 +38,7 @@ module.exports.GamerType = React.createClass({
     return (
       <div>
         <h1>Gamer Type</h1>
+        <QuestionSet/>
         <Link to='reward' params={{data: "123"}}>Next</Link>
       </div>
     );

@@ -10,7 +10,9 @@ module.exports = Home = React.createClass({
   render: function () {
     return (
       <div id='home'>
-        <RouteHandler {... this.props}/>
+        <div id='screen'>
+          <RouteHandler {... this.props}/>
+        </div>
         <Footer/>
       </div>
     );

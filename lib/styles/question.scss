@@ -1,5 +1,19 @@
 
-html {
-  padding: $space-large;
-  color: $color-b;
+.choices {
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.choices > li {
+	text-align: center;
+	float: left;
+	margin: 0 10px 0 0;
+	padding: 8px 15px;
+	background: #444;
+	color: white;
+	cursor: pointer;
+
+	&:hover {
+		background: tomato;
+	}
 }

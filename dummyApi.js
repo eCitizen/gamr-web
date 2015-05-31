@@ -1,13 +1,22 @@
 
 var express = require('express'),
+	assign = require('lodash').assign,
   router = express.Router();
-
+  
 router.get('/user', function(req, res, next) {
-  res.json(require('./stubs/user.json')[req.query.name] || {});
+	setTimeout(function () {
+		res.json(assign(
+			{}, 
+			require('./stubs/survey.json'), 
+			require('./stubs/user.json')[req.query.name]
+		));
+	}, 500);
 });
 
 router.get('/questions', function(req, res, next) {
-  res.json(require('./stubs/survey.json'));
+	setTimeout(function () {
+  	res.json(require('./stubs/survey.json'));
+  }, 500);
 });
 
 module.exports = router;

@@ -1,0 +1,26 @@
+
+html, 
+body,
+#home {
+	height: 100%;
+	width: 100%;
+}
+
+#home {
+	-webkit-transform-style: preserve-3d;
+ 	-moz-transform-style: preserve-3d;
+ 	transform-style: preserve-3d;
+}
+
+#screen {
+	width: 500px;
+	padding-bottom: 200px;
+	
+	// http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: 0 auto;
+}
