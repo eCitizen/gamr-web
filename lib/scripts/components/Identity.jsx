@@ -6,8 +6,8 @@ var React = require('react/addons'),
   Link = Router.Link,
   api = require('../services/api'),
   guide = require('../services/guide'),
+  Form = require('./Form.jsx'),
   FormSelect = require('./FormSelect.jsx'),
-  FormField = require('./FormField.jsx'),
   InputActions = require('../input/actions'),
   InputStore = require('../input/store'),
   Identity;
@@ -20,7 +20,9 @@ module.exports = Identity = React.createClass({
   },
 
   componentDidMount: function () {
-    
+    setTimeout(function () {
+      InputActions.test('testing');
+    }, 500);
   },
 
   handleSelect: function(event, id) {
@@ -28,14 +30,18 @@ module.exports = Identity = React.createClass({
   },
 
   render: function () {
-    console.log(this.state);
-
-    InputActions.test('testing');
-
     var wow = guide.identity.WOW,
       lol = guide.identity.LOL;
 
-    return <div/>;
+    return (
+      <Form id='identity'>
+        hi
+        <div>
+          <span isField={true}>Hello</span>
+          <FormSelect {... wow.fields.realm}/>
+        </div>
+      </Form>
+    );
 
     // return (
     //   <div id='home'>
