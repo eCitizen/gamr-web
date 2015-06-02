@@ -2,15 +2,8 @@ var React = require('react/addons'),
   Select;
 
 module.exports = Select = React.createClass({
-	_update: function (event) {
-		var newState = {};
-		newState[this.props.id] = event.target.value;
-		this.props.form.setState(newState);
-	},
-
 	render: function () {
-		var formState = this.props.form.state,
-			self = this,
+		var self = this,
 			options;
 
 		if (Array.isArray(this.props.options)) {
@@ -24,7 +17,7 @@ module.exports = Select = React.createClass({
 		return (
 	    <select 
 	      value={formState[this.props.id]} 
-	      onChange={this._update}>
+	      onChange={this.props.onchange.bind(this,this.props.id)}>
 	      <option value="">{this.props.label}</option>
 	      {options}
 	    </select>

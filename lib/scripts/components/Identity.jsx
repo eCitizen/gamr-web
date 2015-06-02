@@ -6,7 +6,10 @@ var React = require('react/addons'),
   Link = Router.Link,
   api = require('../services/api'),
   guide = require('../services/guide'),
+  FormSelect = require('./FormSelect.jsx'),
   FormField = require('./FormField.jsx'),
+  InputActions = require('../input/actions'),
+  InputStore = require('../input/store'),
   Identity;
 
 module.exports = Identity = React.createClass({
@@ -16,31 +19,36 @@ module.exports = Identity = React.createClass({
     return {};
   },
 
-  toggleUser: function () {
-    this.setState({
-      user: this.state.user === 'greg' ? 'kevin' : 'greg'
-    });
+  componentDidMount: function () {
+    
+  },
+
+  handleSelect: function(event, id) {
+    console.log(id);
   },
 
   render: function () {
     console.log(this.state);
 
+    InputActions.test('testing');
+
     var wow = guide.identity.WOW,
       lol = guide.identity.LOL;
 
-    return (
-      <div id='home'>
-        <h1>Identity</h1>
-        <p>
-          What are your profiles?
-        </p>
+    return <div/>;
 
-        <FormField {... wow.fields.realm} form={this}/>
-        <FormField {... lol.fields.sommonerName} form={this}/>
+    // return (
+    //   <div id='home'>
+    //     <h1>Identity</h1>
+    //     <p>
+    //       What are your profiles?
+    //     </p>
+        
+    //     <FormSelect {... wow.fields.realm} onChange={this.handleSelect}/>
+    //     <FormField {... lol.fields.sommonerName}/>
 
-        <Link to="brain">Continue</Link>
-        {this.state.failed ? <div>Sorry... Bad User!</div> : null}
-      </div>
-    );
+    //     <Link to="brain">Continue</Link>
+    //   </div>
+    // );
   }
 });
