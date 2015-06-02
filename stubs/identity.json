@@ -2,15 +2,14 @@
 {
 	"LOL": {
 		"Title": "League of Legends",
-		"fields": [
-			{
+		"fields": {
+			"sommonerName": {
 				"label": "Sommoner Name",
 				"id": "ta_LOL_id",
 				"type": "input"
 			},
-			{
+			"region": {
 				"label": "Select Region",
-				"id": "sl_LOL_region",
 				"type": "select",
 				"options": {
 					"na":"North Ameria",
@@ -24,7 +23,7 @@
 					"oec":"Oceania"
 				}
 			},
-			{
+			"preferredLane": {
 				"label": "Select Preferred Lane",
 				"id": "sl_LOL_lane",
 				"type": "select",
@@ -35,7 +34,7 @@
 					"jungle":"Jungle"
 				}
 			},
-			{
+			"preferredRole": {
 				"label": "Select Preferred Role",
 				"id": "sl_LOL_lane",
 				"type": "select",
@@ -45,17 +44,17 @@
 					"support":"Support"
 				}
 			}
-		]
+		}
 	},
 	"WOW": {
 		"Title": "World of Warcraft",
-		"fields": [
-			{
+		"fields": {
+			"characterName": {
 				"label": "Character Name",
 				"id": "ta_WOW_id",
 				"type": "input"
 			},
-			{
+			"region": {
 				"label": "Select Region",
 				"id": "sl_WOW_region",
 				"type": "select",
@@ -64,7 +63,7 @@
 					"eu":"Europe"
 				}
 			},
-			{
+			"realm": {
 				"label": "Select Realm",
 				"id": "sl_WOW_realm",
 				"type": "select",
@@ -317,16 +316,91 @@
 					"zuluhed":"Zuluhed (PvP)"					
 				}
 			}
-		]
+		}
 	},
 	"BFHD": {
 		"Title": "Battlefield: Hardline",
-		"fields": [
-			{
+		"fields": {
+			"playerName": {
 				"label": "Player Name",
 				"type": "input",
 				"id": "ta_BFHD_id"
 			}
-		]
+		}
+	},
+	"AGE": {
+		"Title": "Gender & Birth Date",
+		"fields": {
+			"gender": {
+				"label": "Select Gender",
+				"id": "sl_gender",
+				"type:": "select",
+				"options": {
+					"male": "Male",
+					"female": "Female",
+					"others": "Other"
+				}
+			},
+			"month": {
+				"label": "Month",
+				"id": "sl_birth_month",
+				"type": "select",
+				"options": [
+					{
+						"value": 1,
+						"label": "January"
+					},
+					{
+						"value": 2,
+						"label": "February"
+					},
+					{
+						"value": 3,
+						"label": "March"
+					},
+					{
+						"value": 4,
+						"label": "April"
+					},
+					{
+						"value": 5,
+						"label": "May"
+					},
+					{
+						"value": 6,
+						"label": "June"
+					},
+					{
+						"value": 7,
+						"label": "July"
+					},
+					{
+						"value": 8,
+						"label": "August"
+					},
+					{
+						"value": 9,
+						"label": "September"
+					},
+					{
+						"value": 10,
+						"label": "October"
+					},
+					{
+						"value": 11,
+						"label": "November"
+					},
+					{
+						"value": 12,
+						"label": "December"
+					}
+				]
+			},
+			"year": {
+				"label": "Year",
+				"type": "selectRange",
+				"range": [2014,1900]
+			}
+		}
 	}
 }

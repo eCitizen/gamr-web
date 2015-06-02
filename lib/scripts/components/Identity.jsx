@@ -6,17 +6,14 @@ var React = require('react/addons'),
   Link = Router.Link,
   api = require('../services/api'),
   guide = require('../services/guide'),
+  FormField = require('./FormField.jsx'),
   Identity;
 
 module.exports = Identity = React.createClass({
   mixins: [Navigation],
 
   getInitialState: function () {
-    return {
-      failed: false,
-      user: 'greg',
-      fruit: null
-    };
+    return {};
   },
 
   toggleUser: function () {
@@ -25,28 +22,11 @@ module.exports = Identity = React.createClass({
     });
   },
 
-  // componentDidMount: function () {
-  //   setTimeout(function () {
-  //     this.transitionTo('home');
-  //   }.bind(this), 1200);
-  // },
-
-  handleInput: function (event) {
-    // console.log('hi there', arguments);
-    this.setState({user: event.target.value});
-  },
-
-  updateFruit: function (event) {
-    this.setState({fruit: event.target.value});
-  },
-
   render: function () {
-    var realms = guide.identity.WOW.fields[2].options;
-    var options = Object.keys(realms).map(function (key) {
-      return <option value={key}>{realms[key]}</option>;
-    });
+    console.log(this.state);
 
-    console.log(this.state.fruit);
+    var wow = guide.identity.WOW,
+      lol = guide.identity.LOL;
 
     return (
       <div id='home'>
@@ -54,19 +34,10 @@ module.exports = Identity = React.createClass({
         <p>
           What are your profiles?
         </p>
-        
-        <input onChange={this.handleInput} value={this.state.user}/>
 
-        <select 
-          value={this.state.fruit} 
-          onChange={this.updateFruit}>
-          <option value="">{guide.identity.WOW.fields[2].label}</option>
-          {options}
-        </select>
+        <FormField {... wow.fields.realm} form={this}/>
+        <FormField {... lol.fields.sommonerName} form={this}/>
 
-        <p>
-          <span onClick={this.toggleUser} style={{textDecoration:'underline', cursor: 'pointer'}}>Toggle User:</span> {this.state.user}
-        </p>
         <Link to="brain">Continue</Link>
         {this.state.failed ? <div>Sorry... Bad User!</div> : null}
       </div>
