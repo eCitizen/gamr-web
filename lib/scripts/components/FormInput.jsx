@@ -1,18 +1,33 @@
 var React = require('react/addons'),
-  Input;
+	classnames = require('classnames'),
+	FormField = require('./FormField.jsx'),
+  Select;
 
-module.exports = Input = React.createClass({
-	_update: function (event) {
-		var newState = {};
-		newState[this.props.id] = event.target.value;
-		this.props.form.setState(newState);
+module.exports = Select = React.createClass({
+	mixins: [FormField],
+
+	propTypes: {
+		formId: React.PropTypes.string,
+		vallidate: React.PropTypes.func
+	},
+
+	getDefaultProps: function () {
+		return {
+			required: true,
+			defaultValue: ''
+		};
 	},
 
 	render: function () {
-		var formState = this.props.form.state;
-		return <input
-							onChange={this._update}
-							value={formState[this.props.id]}
-							placeholder={this.props.label}/>;
+		return (
+			<div className={classnames('gamr-field gamr-input',{
+				invalid: !this.state.valid
+			})}>
+		    <input 
+		      value={this.state.value}
+		      placeholder={this.props.label}
+		      onChange={this._update}/>
+	    </div>
+   	);
 	}
 });

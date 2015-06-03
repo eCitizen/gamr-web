@@ -1,22 +1,50 @@
-var React = require('react/addons'),
-  FormField;
 
-var fields = {
-	select: require('./FormSelect.jsx'),
-	input: require('./FormInput.jsx')
-};
+/*
+ * Mixin for form fields
+ */
 
-module.exports = FormField = React.createClass({
-	propTypes: {
-		id: React.PropTypes.string.isRequired,
+var InputActions = require('../input/actions'),
+	InputStore = require('../input/store');
+
+module.exports = {
+	getInitialState: function () {
+		InputActions.setField(this.props.formId, this.props.id, this.props.defaultValue);
+		return this._getState();
 	},
 
-	render: function () {
-		if (fields.hasOwnProperty(this.props.type)) {
-			return React.createElement(fields[this.props.type], this.props);
+	componentDidMount: function () {
+		InputStore.on(this.props.formId, this._handleChange);
+	},
+
+	componentWillUnmount: function () {
+		InputStore.removeListener(this.props.formId, this._handleChange);
+	},
+
+	_update: function (event) {
+		InputActions.updateField(this.props.formId, this.props.id, event.target.value);
+	},
+
+	_handleChange: function () {
+		this.setState(this._getState());
+	},
+
+	_vallidate: function (value) {
+		if (!this.props.required) {
+			return true;
+		} else if (typeof value === 'string') {
+			return value.trim() ? true : false;
 		} else {
-			console.error('[form] invalid field type:',this.props.type);
-			return null;
+			return value ? true : false;
 		}
-	}
-});
+	},
+
+	_getState: function () {
+		var value = InputStore.getField(this.props.formId, this.props.id),
+			valid = (typeof this.props.vallidate === 'function') ?
+					this.props.vallidate(value) : this._vallidate(value);
+		return {
+			value: value,
+			valid: valid
+		};
+	},
+};

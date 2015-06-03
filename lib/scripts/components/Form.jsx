@@ -20,7 +20,7 @@ module.exports = Form = React.createClass({
 	_handleChange: function () {
 		console.log('form change', InputStore.getForm(this.props.id));
 		this.setState({
-			new: true
+			new: true 
 		});
 	},
 
@@ -32,7 +32,7 @@ module.exports = Form = React.createClass({
 			return React.Children.map(children, function (child) {
 				if (!React.isValidElement(child)) {
 					return child;
-				} else {
+				} else {	
 					return React.cloneElement(child, {
 						formId: formId,
 						children: replace(child.props.children)

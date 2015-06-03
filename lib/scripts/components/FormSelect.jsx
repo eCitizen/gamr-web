@@ -1,55 +1,34 @@
 var React = require('react/addons'),
-	InputActions = require('../input/actions'),
-	InputStore = require('../input/store'),
 	classnames = require('classnames'),
+	FormField = require('./FormField.jsx'),
   Select;
 
 module.exports = Select = React.createClass({
+	mixins: [FormField],
+
+	propTypes: {
+		formId: React.PropTypes.string,
+		options: React.PropTypes.oneOfType([
+			React.PropTypes.object,
+			React.PropTypes.array
+		]).isRequired,
+		vallidate: React.PropTypes.func
+	},
+
 	getDefaultProps: function () {
 		return {
 			required: true,
-			defaultValue: '',
-			vallidate: function (value) {
-				if (!this.props.required) return true;
-				return value.trim() ? true : false;
-			}
+			defaultValue: ''
 		};
 	},
 
-	getInitialState: function () {
-		InputActions.setField(this.props.formId, this.props.id, this.props.defaultValue);
-		return this._getState();
-	},
-
-	componentDidMount: function () {
-		InputStore.on(this.props.formId, this._handleChange);
-	},
-
-	componentWillUnmount: function () {
-		InputStore.removeListener(this.props.formId, this._handleChange);
-	},
-
-	_update: function (event) {
-		var value = event.target.value,
-			valid = this.props.vallidate.call(this, value);
-		InputActions.updateField(this.props.formId, this.props.id, value, valid);
-	},
-
-	_handleChange: function () {
-		this.setState(this._getState());
-	},
-
-	_getState: function () {
-		var value = InputStore.getField(this.props.formId, this.props.id);
-		return {
-			value: value,
-			valid: this.props.vallidate.call(this, value)
-		}
-	},
-
 	render: function () {
+		var options;
 		if (Array.isArray(this.props.options)) {
-			console.log('deal with array options');
+			// this was put in to support months
+			options = this.props.options.map(function (v, idx) {
+				return <option value={v.value} key={idx}>{v.label}</option>;
+			});
 		} else {
 			options = Object.keys(this.props.options).map(function (key, idx) {
       	return <option value={key} key={idx}>{this.props.options[key]}</option>;
@@ -57,11 +36,11 @@ module.exports = Select = React.createClass({
 		}
 
 		return (
-			<div className={classnames('gamr-select',{
+			<div className={classnames('gamr-field gamr-select',{
 				invalid: !this.state.valid
 			})}>
 		    <select 
-		      value={this.state.value} 
+		      value={this.state.value}
 		      onChange={this._update}>
 		      <option value=''>{this.props.label}</option>
 		      {options}
