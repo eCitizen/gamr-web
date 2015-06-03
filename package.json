@@ -39,6 +39,7 @@
   "devDependencies": {
     "browserify": "^10.2.1",
     "browserify-shim": "^3.8.7",
+    "classnames": "^2.1.2",
     "clean-css": "^3.2.10",
     "ejs": "^2.3.1",
     "express": "^4.12.4",

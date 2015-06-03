@@ -1,9 +1,11 @@
 var React = require('react/addons'),
 	InputStore = require('../input/store'),
+	InputActions = require('../input/actions'),
   Form;
 
 module.exports = Form = React.createClass({
 	getInitialState: function () {
+		InputActions.createForm(this.props.id);
 		return {};
 	},
 

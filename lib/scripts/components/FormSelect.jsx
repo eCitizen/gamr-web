@@ -1,13 +1,24 @@
 var React = require('react/addons'),
 	InputActions = require('../input/actions'),
 	InputStore = require('../input/store'),
+	classnames = require('classnames'),
   Select;
 
 module.exports = Select = React.createClass({
-	getInitialState: function () {
+	getDefaultProps: function () {
 		return {
-			value: InputStore.getField(this.props.formId, this.props.id)
-		}
+			required: true,
+			defaultValue: '',
+			vallidate: function (value) {
+				if (!this.props.required) return true;
+				return value.trim() ? true : false;
+			}
+		};
+	},
+
+	getInitialState: function () {
+		InputActions.setField(this.props.formId, this.props.id, this.props.defaultValue);
+		return this._getState();
 	},
 
 	componentDidMount: function () {
@@ -19,19 +30,24 @@ module.exports = Select = React.createClass({
 	},
 
 	_update: function (event) {
-		InputActions.updateField(this.props.formId, this.props.id, event.target.value);
+		var value = event.target.value,
+			valid = this.props.vallidate.call(this, value);
+		InputActions.updateField(this.props.formId, this.props.id, value, valid);
 	},
 
 	_handleChange: function () {
-		console.log(";what", this.props.formId);
-		this.setState({
-			value: InputStore.getField(this.props.formId, this.props.id)
-		})
+		this.setState(this._getState());
+	},
+
+	_getState: function () {
+		var value = InputStore.getField(this.props.formId, this.props.id);
+		return {
+			value: value,
+			valid: this.props.vallidate.call(this, value)
+		}
 	},
 
 	render: function () {
-		console.log(this.state.value);
-
 		if (Array.isArray(this.props.options)) {
 			console.log('deal with array options');
 		} else {
@@ -41,12 +57,16 @@ module.exports = Select = React.createClass({
 		}
 
 		return (
-	    <select 
-	      value={this.state.value} 
-	      onChange={this._update}>
-	      <option value="">{this.props.label}</option>
-	      {options}
-	    </select>
+			<div className={classnames('gamr-select',{
+				invalid: !this.state.valid
+			})}>
+		    <select 
+		      value={this.state.value} 
+		      onChange={this._update}>
+		      <option value=''>{this.props.label}</option>
+		      {options}
+		    </select>
+	    </div>
    	);
 	}
 });

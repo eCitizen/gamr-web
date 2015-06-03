@@ -20,9 +20,7 @@ module.exports = Identity = React.createClass({
   },
 
   componentDidMount: function () {
-    setTimeout(function () {
-      InputActions.test('testing');
-    }, 500);
+    
   },
 
   handleSelect: function(event, id) {
