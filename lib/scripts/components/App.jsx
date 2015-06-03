@@ -23,14 +23,14 @@ var Home = require('./Home.jsx'),
 
 var routes = (
   <Route name="home" path="/" handler={Home}>
-    <Route name="survey" handler={Survey}>
+    <Route name="survey/?" handler={Survey}>
       <Route name="identity" path="identity" handler={Identity}/>
       <Route name="brain" path="brain-type" handler={BrainType}/>
       <Route name="personality" path="personality" handler={Personality}/>
       <Route name="gamer-type" path="gamer-type" handler={GamerType}/>
       <DefaultRoute handler={Consent}/>
     </Route>
-    <Route name="profile" handler={ProfileWrap}>
+    <Route name="profile/?" handler={ProfileWrap}>
       <Route name="reward" path=":data" handler={Profile}/>
       <DefaultRoute handler={NotFound}/>
     </Route>

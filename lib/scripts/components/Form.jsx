@@ -6,7 +6,9 @@ var React = require('react/addons'),
 module.exports = Form = React.createClass({
 	getInitialState: function () {
 		InputActions.createForm(this.props.id);
-		return {};
+		return {
+			formData: InputStore.getForm(this.props.id)
+		};
 	},
 
 	componentDidMount: function () {
@@ -18,9 +20,8 @@ module.exports = Form = React.createClass({
 	},
 
 	_handleChange: function () {
-		console.log('form change', InputStore.getForm(this.props.id));
 		this.setState({
-			new: true 
+			formData: InputStore.getForm(this.props.id)
 		});
 	},
 

@@ -42,6 +42,7 @@ module.exports = {
 		var value = InputStore.getField(this.props.formId, this.props.id),
 			valid = (typeof this.props.vallidate === 'function') ?
 					this.props.vallidate(value) : this._vallidate(value);
+
 		return {
 			value: value,
 			valid: valid

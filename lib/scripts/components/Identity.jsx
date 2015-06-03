@@ -1,8 +1,6 @@
 var React = require('react/addons'),
   Router = require('react-router'),
   Navigation = Router.Navigation,
-  Link = Router.Link,
-  api = require('../services/api'),
   guide = require('../services/guide'),
   Form = require('./Form.jsx'),
   FormSelect = require('./FormSelect.jsx'),
@@ -11,14 +9,6 @@ var React = require('react/addons'),
 
 module.exports = Identity = React.createClass({
   mixins: [Navigation],
-
-  getInitialState: function () {
-    return {};
-  },
-
-  handleSelect: function(event, id) {
-    console.log(id);
-  },
 
   render: function () {
     var wow = guide.identity.WOW,
@@ -37,8 +27,6 @@ module.exports = Identity = React.createClass({
         value: y
       });
     }
-
-    console.log(lang.fields.level);
 
     return (
       <Form id='identity'>
@@ -70,21 +58,8 @@ module.exports = Identity = React.createClass({
           <FormSelect required={false} {... lang.fields.country}/>
           <FormSelect required={false} {... lang.fields.level}/>
         </div>
+        <span>Submit</span>
       </Form>
     );
-
-    // return (
-    //   <div id='home'>
-    //     <h1>Identity</h1>
-    //     <p>
-    //       What are your profiles?
-    //     </p>
-        
-    //     <FormSelect {... wow.fields.realm} onChange={this.handleSelect}/>
-    //     <FormField {... lol.fields.sommonerName}/>
-
-    //     <Link to="brain">Continue</Link>
-    //   </div>
-    // );
   }
 });
