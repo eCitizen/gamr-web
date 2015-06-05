@@ -10,7 +10,7 @@ var React = require('react/addons'),
 
 var Home = require('./Home.jsx'),
   Identity = require('./Identity.jsx'),
-  Survey = React.createClass({render: function () { return <Router.RouteHandler {... this.props}/>; }}),
+  Survey = require('./Survey.jsx'),
   Section = require('./Section.jsx'),
   Consent = require('./Consent.jsx'),
   ProfileWrap = require('./ProfileWrap.jsx'),
@@ -23,7 +23,7 @@ var Home = require('./Home.jsx'),
 
 var routes = (
   <Route name="home" path="/" handler={Home}>
-    <Route name="survey/?" handler={Survey}>
+    <Route name="survey" handler={Survey}>
       <Route name="identity" path="identity" handler={Identity}/>
       <Route name="brain" path="brain-type" handler={BrainType}/>
       <Route name="personality" path="personality" handler={Personality}/>
@@ -31,7 +31,7 @@ var routes = (
       <DefaultRoute handler={Consent}/>
     </Route>
     <Route name="profile/?" handler={ProfileWrap}>
-      <Route name="reward" path=":data" handler={Profile}/>
+      <Route name="reward" path=":data?" handler={Profile}/>
       <DefaultRoute handler={NotFound}/>
     </Route>
     <DefaultRoute handler={Intro}/>

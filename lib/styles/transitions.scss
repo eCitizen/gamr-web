@@ -1,0 +1,44 @@
+
+.survey-change-enter {
+	position: absolute;
+	top:0;
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.survey-change-enter.survey-change-enter-active {
+  opacity: 1;
+}
+
+.survey-change-leave {
+	position: absolute;
+	top:0;
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.survey-change-leave.survey-change-leave-active {
+  opacity: 0.01;
+}
+
+// question
+
+.question-change-enter {
+	top:0;
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.question-change-enter.question-change-enter-active {
+  opacity: 1;
+}
+
+.question-change-leave {
+	top:0;
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.question-change-leave.question-change-leave-active {
+  opacity: 0.01;
+}

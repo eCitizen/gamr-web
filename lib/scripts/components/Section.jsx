@@ -12,8 +12,7 @@ module.exports.BrainType = React.createClass({
     return (
       <div>
         <h1>Brain Type</h1>
-        <QuestionSet/>
-        <Link to='personality'>Next</Link>
+        <QuestionSet survey='personality' nextRoute='personality'/>
       </div>
     );
   }
@@ -25,8 +24,7 @@ module.exports.Personality = React.createClass({
     return (
       <div>
         <h1>Personality</h1>
-        <QuestionSet/>
-        <Link to='gamer-type'>Next</Link>
+        <QuestionSet survey='personality' nextRoute='gamer-type'/>
       </div>
     );
   }
@@ -38,8 +36,7 @@ module.exports.GamerType = React.createClass({
     return (
       <div>
         <h1>Gamer Type</h1>
-        <QuestionSet/>
-        <Link to='reward' params={{data: "123"}}>Next</Link>
+        <QuestionSet survey='personality' nextRoute='reward'/>
       </div>
     );
   }

@@ -7,9 +7,9 @@ body,
 }
 
 #home {
-	-webkit-transform-style: preserve-3d;
- 	-moz-transform-style: preserve-3d;
- 	transform-style: preserve-3d;
+	// -webkit-transform-style: preserve-3d;
+ // 	-moz-transform-style: preserve-3d;
+ // 	transform-style: preserve-3d;
 }
 
 #screen {
@@ -24,4 +24,10 @@ body,
  	//  -ms-transform: translateY(-50%);
  	//  transform: translateY(-50%);
  	//  margin: 0 auto;
+}
+
+.consent-form {
+	font-family: lucida, helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 20px;
 }

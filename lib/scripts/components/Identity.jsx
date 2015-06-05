@@ -5,10 +5,18 @@ var React = require('react/addons'),
   Form = require('./Form.jsx'),
   FormSelect = require('./FormSelect.jsx'),
   FormInput = require('./FormInput.jsx'),
+  FormSubmit = require('./FormSubmit.jsx'),
   Identity;
 
 module.exports = Identity = React.createClass({
   mixins: [Navigation],
+
+  submit: function (form) {
+    console.log('submit', form);
+    setTimeout(function () {
+      this.transitionTo('brain');
+    }.bind(this), 500);
+  },
 
   render: function () {
     var wow = guide.identity.WOW,
@@ -58,7 +66,7 @@ module.exports = Identity = React.createClass({
           <FormSelect required={false} {... lang.fields.country}/>
           <FormSelect required={false} {... lang.fields.level}/>
         </div>
-        <span>Submit</span>
+        <FormSubmit action={this.submit}/>
       </Form>
     );
   }

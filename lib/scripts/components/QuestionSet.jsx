@@ -2,31 +2,43 @@
 /** @jsx React.DOM */
 
 var React = require('react/addons'),
+	Router = require('react-router'),
+	assign = require('object-assign'),
+	Question = require('./Question.jsx'),
+	guide = require('../services/guide'),
+	InputActions = require('../input/actions'),
+	TransitionGroup = React.addons.CSSTransitionGroup,
+	Link = Router.Link,
   QuestionSet;
 
 module.exports = QuestionSet = React.createClass({
 	getInitialState: function () {
-		return {
-			idx: 0
-		};
+		var survey = guide.survey[this.props.survey];
+		InputActions.createForm(survey.id);
+		return assign({
+			current: 0
+		}, survey);
 	},
 
-	submitQuestion: function (answer) {
-		console.log('Question', this.state.idx, 'is', answer);
+	submitQuestion: function (idx, answer) {
+		// submit answer
+		InputActions.updateField(this.state.id, this.state.id+idx, answer);
 		this.setState({
-			idx: this.state.idx + 1
+			current: this.state.current + 1
 		});
 	},
 
 	render: function () {
 		return (
 			<div>
-				<p>Question {this.state.idx}</p>
-				<ul className='choices'>
-					<li onClick={this.submitQuestion.bind(this,'A')}>A</li>
-					<li onClick={this.submitQuestion.bind(this,'B')}>B</li>
-					<li onClick={this.submitQuestion.bind(this,'C')}>C</li>
-				</ul>
+				<TransitionGroup component='div' transitionName='question-change'>
+					<Question 
+						text={this.state.questions[this.state.current]}
+						key={this.state.current} 
+						idx={this.state.current}
+						onSubmit={this.submitQuestion}/>
+				</TransitionGroup>
+				<Link to={this.props.nextRoute}>Next</Link>
 			</div>
 		);
 	}
