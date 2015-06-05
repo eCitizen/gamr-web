@@ -12,10 +12,34 @@ html, body {
 	font-family: courier;
 	font-size: 16px;
 	line-height: 23px;
-	background: #111;
 	color: #eee;
 }
 
 a {
 	color: tomato;
+}
+
+html {
+	background: #111;
+
+	// $colorA: rgba(0,0,0,.9);
+	// $colorB: rgba(0,0,0,1);
+	// background: -moz-radial-gradient(center, ellipse cover, $colorA 0%, $colorB 100%); /* FF3.6+ */
+	// background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$colorA), color-stop(100%,$colorB)); /* Chrome,Safari4+ */
+	// background: -webkit-radial-gradient(center, ellipse cover, $colorA 0%,$colorB 100%); /* Chrome10+,Safari5.1+ */
+	// background: -o-radial-gradient(center, ellipse cover, $colorA 0%,$colorB 100%); /* Opera 12+ */
+	// background: -ms-radial-gradient(center, ellipse cover, $colorA 0%,$colorB 100%); /* IE10+ */
+	// background: radial-gradient(ellipse at center, $colorA 0%,$colorB); /* W3C */
+
+	// $unit: 20px;
+	// $in: 6%;
+	// $out: 7%;
+	// http://lea.verou.me/css3patterns/#carbon-fibre
+	// background:
+	// 	radial-gradient(black $in, transparent $out) 0 0,
+	// 	radial-gradient(black $in, transparent $out) $unit $unit,
+	// 	radial-gradient(rgba(255,255,255,.1) $in, transparent $out) 0 1px,
+	// 	radial-gradient(rgba(255,255,255,.1) $in, transparent $out) $unit ($unit + 1);
+	// 	background-color:#222;
+	// 	background-size:($unit*2) ($unit*2);
 }
