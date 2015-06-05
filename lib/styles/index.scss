@@ -8,8 +8,10 @@
 @import "./question.scss";
 @import "./transitions.scss";
 
-html {
+html, body {
 	font-family: courier;
+	font-size: 16px;
+	line-height: 23px;
 	background: #111;
 	color: #eee;
 }

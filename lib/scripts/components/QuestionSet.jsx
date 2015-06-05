@@ -8,38 +8,64 @@ var React = require('react/addons'),
 	guide = require('../services/guide'),
 	InputActions = require('../input/actions'),
 	TransitionGroup = React.addons.CSSTransitionGroup,
-	Link = Router.Link,
+	Navigation = Router.Navigation,
   QuestionSet;
 
 module.exports = QuestionSet = React.createClass({
+	mixins: [Navigation],
+
 	getInitialState: function () {
 		var survey = guide.survey[this.props.survey];
 		InputActions.createForm(survey.id);
 		return assign({
-			current: 0
+			current: 0,
+			finished: false,
+			started: false
 		}, survey);
 	},
 
 	submitQuestion: function (idx, answer) {
 		// submit answer
 		InputActions.updateField(this.state.id, this.state.id+idx, answer);
+		if (this.state.current < this.state.questions.length - 1) {
+			this.setState({
+				current: this.state.current + 1
+			});
+		} else {
+			this.transitionTo(this.props.nextRoute);
+		}
+	},
+
+	begin: function () {
 		this.setState({
-			current: this.state.current + 1
+			started: true
 		});
 	},
 
 	render: function () {
-		return (
-			<div>
-				<TransitionGroup component='div' transitionName='question-change'>
-					<Question 
-						text={this.state.questions[this.state.current]}
-						key={this.state.current} 
-						idx={this.state.current}
-						onSubmit={this.submitQuestion}/>
-				</TransitionGroup>
-				<Link to={this.props.nextRoute}>Next</Link>
-			</div>
-		);
+		if (!this.state.started) {
+			return (
+				<div>
+					<h1>{this.state.title}</h1>
+					<p>{this.state.instructions}</p>
+					<div onClick={this.begin}>Begin</div>
+				</div>
+			);
+		} else {
+			return (
+				<div className='question-set'>
+					<h3>{this.state.title}</h3>
+					<div className='question-wrap'>
+						<TransitionGroup component='div' transitionName='question-change'>
+							<Question 
+								text={this.state.questions[this.state.current]}
+								key={this.state.current} 
+								idx={this.state.current}
+								onSubmit={this.submitQuestion}/>
+						</TransitionGroup>
+					</div>
+				</div>
+			);
+		}
 	}
 });

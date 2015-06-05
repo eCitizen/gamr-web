@@ -11,8 +11,8 @@ module.exports = Question = React.createClass({
 
 	render: function () {
 		return (
-			<div>
-				<p>{this.props.text}</p>
+			<div className='question'>
+				<p className='question-text'>{this.props.text}</p>
 				<ul className='choices'>
 					<li onClick={this.submitQuestion.bind(this,'A')}>A</li>
 					<li onClick={this.submitQuestion.bind(this,'B')}>B</li>

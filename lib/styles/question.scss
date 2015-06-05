@@ -1,5 +1,21 @@
 
+.question-wrap {
+	position: relative;
+}
+
+.question {
+	position: absolute;
+	top: 0;
+	height: 200px;
+}
+
+.question-text {
+	margin-top: 20px;
+}
+
 .choices {
+	position: absolute;
+	bottom: 0;
 	overflow: hidden;
 	margin-bottom: 10px;
 }
