@@ -23,7 +23,7 @@ a {
 	// border-left: 1px solid $color-main;
 	// border-right: 1px solid $color-main;
 	text-align: center;
-	padding: 70px 0 60px;
+	padding: 100px 0 60px;
 	position: relative;
 
 	// &:after {
@@ -79,12 +79,13 @@ a {
 	font-weight: 900;
 	font-style: normal;
 	color: $color-main;
-	text-align: left;
+	// text-align: left;
 	position: relative;
 	z-index: 20;
+	font-size: 17px;
 	letter-spacing: 10px;
-	margin-left: 72px;
-	margin-bottom: 12px;
+	margin-left: -120px;
+	margin-bottom: 25px;
 }
 
 .title {
@@ -100,7 +101,7 @@ a {
 	font-style: normal;
 	 
 	// font-size-adjust: 0.42;
-	font-size: 140px;
+	font-size: 160px;
 	line-height: 100px;
 	
 	letter-spacing: 5px;
@@ -128,20 +129,25 @@ a {
 	position: relative;
 	z-index: 30;
   text-shadow: 0 0 2px #eeffee;
-  left: -300px;
+  left: -100px;
   letter-spacing: 2px;
-  margin-top: 20px;
+  margin-top: 40px;
+  display: none;
 }
 
 .button {
 	letter-spacing: 4px;
 	$button-height: 40px;
 	$button-width: 170px;
-	position: absolute;
-	left: 50%;
+	// position: absolute;
+	// left: 50%;
 	z-index: 100;
-	bottom: 10px;
-	margin-left: -$button-width/2;
+	// bottom: 10px;
+	// margin-left: -$button-width/2;
+	// margin-left: 200px;
+	margin-top: 125px;
+
+	position: relative;
 	height: $button-height;
 	width: $button-width;
 	line-height: $button-height;

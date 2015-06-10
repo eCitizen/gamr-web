@@ -21,6 +21,7 @@ module.exports = Intro = React.createClass({
             <span>M</span>
             <span>R</span>
           </Title>
+          <Link to="survey" className='button'>Start</Link>
           <h4 className='marquee'>What Does Your Play Style Say About You?</h4>
           <span className='what'>What</span>
           <span className='does'>Does</span>
@@ -29,7 +30,7 @@ module.exports = Intro = React.createClass({
           <span className='say'>Say</span>
           <span className='about'>About</span>
           <span className='you'>You?</span>
-          <Link to="survey" className='button'>Start</Link>
+          
         </div>
         
       </div>
