@@ -3,6 +3,14 @@
 	position: fixed;
 	z-index: 10000;
 	background: $color-black;
+	overflow: hidden;
+
+	&.base {
+		// TODO: vendor-prefixes!!!
+		box-shadow: 
+			0px 1px 16px 10px $color-black,
+			0px 0px 100px 16px rgba(0,0,0,0.7);
+	}
 }
 
 .curtain-top    { left: 0; right: 0; top: 0;  }
@@ -13,6 +21,7 @@
 .screen-scroll {
 	position: relative;
 	z-index: 100;
+	padding: 40px;
 }
 
 .screen-fixed {
@@ -25,13 +34,13 @@
 	content: '';
 	position: absolute;
 	width: 100px;
+	// TODO: vendor-prefixes!!!
 	box-shadow: 
 		0px 0px 150px -10px rgba(80,20,255, .4),
 		0px 0px 30px -3px rgba(255,0,160, .6);
 }
 
 .curtain-left {
-	overflow: hidden;
 	border-right: 1px solid $color-main;
 	&:after {
 		right: -100px;
@@ -39,33 +48,26 @@
 }
 
 .curtain-right {
-	overflow: hidden;
 	border-left: 1px solid $color-main;
 	&:after {
 		left: -100px;
 	}
 }
 
-@mixin curtain-dimensions($width, $height) {
+@mixin curtain-height($height) {
 	.curtain-top,
 	.curtain-bottom {
 		height: $height;
 	}
 
-	.curtain-left,
-	.curtain-right {
-		width: $width;
-	}
-
 	.screen-scroll {
-		margin: $height $width;
+		margin-top: $height;
+		margin-bottom: $height;
 	}
 
 	.screen-fixed {
 		top: $height;
 		bottom: $height;
-		left: $width;
-		right: $width;
 	}
 
 	.curtain-left:after,
@@ -75,17 +77,49 @@
 	}
 }
 
+@mixin curtain-width($width) {
+	.curtain-left,
+	.curtain-right {
+		width: $width;
+	}
+
+	.screen-scroll {
+		margin-left: $width;
+		margin-right: $width;
+	}
+
+	.screen-fixed {
+		left: $width;
+		right: $width;
+	}
+}
+
 @media (max-width:500px) {
-	@include curtain-dimensions(0px, 20px);
 	.curtain-left { border-right: none; }
 	.curtain-right { border-left: none; }
 }
 
+@media (min-width:500px) and (max-width:720px) {
+	@include curtain-height(40px);
+	@include curtain-width(7%);
+}
+
 @media (min-width:720px) and (max-width:1400px) {
-	@include curtain-dimensions(10%, 10%);	
+	@include curtain-height(80px);
+	@include curtain-width(13%);
 }
 
 @media (min-width:1400px) {
-	@include curtain-dimensions(20%, 13%);	
+	@include curtain-height(150px);
+	@include curtain-width(20%);
 }
+
+@media (max-height: 600px) {
+	@include curtain-height(40px);
+}
+
+@media (max-height: 400px) {
+	@include curtain-height(10px);
+}
+
 

@@ -8,7 +8,7 @@ var React = require('react/addons'),
 module.exports = Consent = React.createClass({
   render: function () {
     return (
-      <div className='consent-form'>
+      <div className='screen-scroll consent-form'>
         <h1>Informed Consent</h1>
         <p className='intro'>
           Thank you for checking out our research! Below you will find an explanation of what data we want to use in this research and how we will process the data. 
