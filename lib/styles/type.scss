@@ -129,10 +129,19 @@ a {
 	position: relative;
 	z-index: 30;
   text-shadow: 0 0 2px #eeffee;
-  left: -100px;
+  left: 120px;
   letter-spacing: 2px;
   margin-top: 40px;
-  display: none;
+  // display: none;
+  font-family: lucida, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 14px;
+
+  &.b {
+  	margin-top: 6px;
+  	color: $color-main;
+  	left: 120px;
+  }
 }
 
 .button {
@@ -144,8 +153,8 @@ a {
 	z-index: 100;
 	// bottom: 10px;
 	// margin-left: -$button-width/2;
-	// margin-left: 200px;
-	margin-top: 125px;
+	margin-left: -80px;
+	margin-top: 45px;
 
 	position: relative;
 	height: $button-height;

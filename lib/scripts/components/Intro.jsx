@@ -21,8 +21,9 @@ module.exports = Intro = React.createClass({
             <span>M</span>
             <span>R</span>
           </Title>
+          <h4 className='marquee'>What does your play style say about you?</h4>
+          <h4 className='marquee b'>Join us and find out.</h4>
           <Link to="survey" className='button'>Start</Link>
-          <h4 className='marquee'>What Does Your Play Style Say About You?</h4>
           <span className='what'>What</span>
           <span className='does'>Does</span>
           <span className='your'>Your</span>
