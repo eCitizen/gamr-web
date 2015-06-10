@@ -13,11 +13,13 @@ module.exports = Question = React.createClass({
 		return (
 			<div className='question'>
 				<p className='question-text'>{this.props.text}</p>
-				<ul className='choices'>
-					<li onClick={this.submitQuestion.bind(this,'A')}>A</li>
-					<li onClick={this.submitQuestion.bind(this,'B')}>B</li>
-					<li onClick={this.submitQuestion.bind(this,'C')}>C</li>
-				</ul>
+				<div className='screen-fixed'>
+					<ul className='choices'>
+						<li onClick={this.submitQuestion.bind(this,'A')}>A</li>
+						<li onClick={this.submitQuestion.bind(this,'B')}>B</li>
+						<li onClick={this.submitQuestion.bind(this,'C')}>C</li>
+					</ul>
+				</div>
 			</div>
 		);
 	}

@@ -17,9 +17,7 @@ module.exports = Survey = React.createClass({
 
     return (
       <div>
-        <TransitionGroup component="div" transitionName="survey-change">
-          <RouteHandler {... this.props} key={name}/>
-        </TransitionGroup>
+        <RouteHandler {... this.props} key={name}/>
       </div>
     );
   }

@@ -9,7 +9,7 @@ var React = require('react/addons'),
 module.exports = Intro = React.createClass({
   render: function () {
     return (
-      <div id='home'>
+      <div id='home' className='screen-fixed'>
         <div className='title-wrap'>
           <div className='extra'></div>
           <h3 className='small-title'>

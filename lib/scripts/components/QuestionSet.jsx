@@ -45,7 +45,7 @@ module.exports = QuestionSet = React.createClass({
 	render: function () {
 		if (!this.state.started) {
 			return (
-				<div>
+				<div className='screen-scroll'>
 					<h1>{this.state.title}</h1>
 					<p>{this.state.instructions}</p>
 					<div onClick={this.begin}>Begin</div>
@@ -53,7 +53,7 @@ module.exports = QuestionSet = React.createClass({
 			);
 		} else {
 			return (
-				<div className='question-set'>
+				<div className='question-set screen-scroll'>
 					<h3>{this.state.title}</h3>
 					<div className='question-wrap'>
 						<TransitionGroup component='div' transitionName='question-change'>

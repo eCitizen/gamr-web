@@ -37,7 +37,7 @@ module.exports = Identity = React.createClass({
     }
 
     return (
-      <Form id='identity'>
+      <Form id='identity' className='screen-scroll'>
         <div className='form-block'>
           <h2>{lol.title}</h2>
           <FormInput {... lol.fields.sommonerName}/>

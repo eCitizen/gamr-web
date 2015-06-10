@@ -43,7 +43,7 @@ module.exports = Form = React.createClass({
 		}(this.props.children));
 
 		return (
-			<form>
+			<form className={this.props.className}>
 				{fields}
 			</form>
 		);
