@@ -4,6 +4,7 @@
   "description": "pending...",
   "main": "index.js",
   "scripts": {
+    "scratch": "cd scratch && python -m SimpleHTTPServer 8080",
     "build-js": "mkdir -p dist && browserify -t reactify lib/scripts/index.jsx -o dist/gamr.js",
     "build-min-js": "mkdir -p dist && browserify lib/scripts/index.jsx | uglifyjs -o dist/gamr.min.js",
     "build-sass": "mkdir -p dist && node-sass lib/styles/index.scss dist/gamr.css --include-path lib/styles",
