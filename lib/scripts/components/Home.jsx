@@ -13,6 +13,10 @@ module.exports = Home = React.createClass({
         <div id='screen'>
           <RouteHandler {... this.props}/>
         </div>
+        <div className="curtain curtain-left"></div>
+        <div className="curtain curtain-right"></div>
+        <div className="curtain curtain-top"></div>
+        <div className="curtain curtain-bottom"></div>
         <Footer/>
       </div>
     );

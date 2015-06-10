@@ -9,7 +9,7 @@
     "build-min-js": "mkdir -p dist && browserify lib/scripts/index.jsx | uglifyjs -o dist/gamr.min.js",
     "build-sass": "mkdir -p dist && node-sass lib/styles/index.scss dist/gamr.css --include-path lib/styles",
     "build-min-sass": "mkdir -p dist && node-sass lib/styles/index.scss --include-path lib/styles | cleancss -o dist/gamr.min.css",
-    "watch-js": "mkdir -p dist && nodemon -e js* -w lib/scripts -w stubs -x 'npm run build-js'",
+    "watch-js": "mkdir -p dist && watchify -t reactify lib/scripts/index.jsx -o dist/gamr.js",
     "watch-sass": "mkdir -p dist && nodemon -e scss -w lib/styles -x 'npm run build-sass'",
     "build": "npm run build-js & npm run build-sass",
     "watch": "npm run watch-js & npm run watch-sass",

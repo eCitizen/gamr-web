@@ -20,36 +20,36 @@ a {
 
 .title-wrap {
 	
-	border-left: 1px solid $color-main;
-	border-right: 1px solid $color-main;
+	// border-left: 1px solid $color-main;
+	// border-right: 1px solid $color-main;
 	text-align: center;
 	padding: 70px 0 60px;
 	position: relative;
 
-	&:after {
+	// &:after {
 
-		background: $color-black;
-		content: '';
-		position: absolute;
-		top: 60px;
-		left: 0px;
-		right: 0px;
-		bottom: 60px;
-		z-index: -10;
-		box-shadow: 
-			0px 0px 150px -10px rgba(80,20,255, .4),
-			0px 0px 30px -3px rgba(255,0,160, .6);
-	}
+	// 	background: $color-black;
+	// 	content: '';
+	// 	position: absolute;
+	// 	top: 60px;
+	// 	left: 0px;
+	// 	right: 0px;
+	// 	bottom: 60px;
+	// 	z-index: -10;
+	// 	box-shadow: 
+	// 		0px 0px 150px -10px rgba(80,20,255, .4),
+	// 		0px 0px 30px -3px rgba(255,0,160, .6);
+	// }
 
-	& > .extra {
-		background: $color-black;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 1;
-	}
+	// & > .extra {
+	// 	background: $color-black;
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	right: 0;
+	// 	bottom: 0;
+	// 	z-index: 1;
+	// }
 
 	& > span {
 		position: absolute;

@@ -1,23 +1,91 @@
 
-html, 
-body,
-#home {
+.curtain {
+	position: fixed;
+	z-index: 10000;
+	background: $color-black;
 }
 
-#home {
-	// -webkit-transform-style: preserve-3d;
- // 	-moz-transform-style: preserve-3d;
- // 	transform-style: preserve-3d;
+.curtain-top    { left: 0; right: 0; top: 0;  }
+.curtain-bottom { left: 0; right: 0; bottom: 0; }
+.curtain-left   { top: 0; bottom: 0; left: 0; }
+.curtain-right  { top: 0; bottom: 0; right: 0; }
+
+.screen-scroll {
+	position: relative;
+	z-index: 100;
 }
 
-#screen {
-	width: 600px;
-	margin: 50px auto;
-	// padding-bottom: 200px;
+.screen-fixed {
+	position: fixed;
+	z-index: 500;
 }
 
-.consent-form {
-	font-family: lucida, helvetica, sans-serif;
-	font-size: 13px;
-	line-height: 20px;
+.curtain-left:after,
+.curtain-right:after {
+	content: '';
+	position: absolute;
+	width: 100px;
+	box-shadow: 
+		0px 0px 150px -10px rgba(80,20,255, .4),
+		0px 0px 30px -3px rgba(255,0,160, .6);
 }
+
+.curtain-left {
+	overflow: hidden;
+	border-right: 1px solid $color-main;
+	&:after {
+		right: -100px;
+	}
+}
+
+.curtain-right {
+	overflow: hidden;
+	border-left: 1px solid $color-main;
+	&:after {
+		left: -100px;
+	}
+}
+
+@mixin curtain-dimensions($width, $height) {
+	.curtain-top,
+	.curtain-bottom {
+		height: $height;
+	}
+
+	.curtain-left,
+	.curtain-right {
+		width: $width;
+	}
+
+	.screen-scroll {
+		margin: $height $width;
+	}
+
+	.screen-fixed {
+		top: $height;
+		bottom: $height;
+		left: $width;
+		right: $width;
+	}
+
+	.curtain-left:after,
+	.curtain-right:after {
+		top: $height + ($height * 0.2);
+		bottom: $height + ($height * 0.2);
+	}
+}
+
+@media (max-width:500px) {
+	@include curtain-dimensions(0px, 20px);
+	.curtain-left { border-right: none; }
+	.curtain-right { border-left: none; }
+}
+
+@media (min-width:720px) and (max-width:1400px) {
+	@include curtain-dimensions(10%, 10%);	
+}
+
+@media (min-width:1400px) {
+	@include curtain-dimensions(20%, 13%);	
+}
+

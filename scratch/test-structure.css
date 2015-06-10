@@ -1,4 +1,15 @@
 
+html {
+	font-size: 62.5%;
+}
+
+@media (max-width:500px) {
+	html {
+		font-size: 40%;
+	}
+}
+
+
 .screen-scroll {
 	margin: 110px;
 	padding-bottom: 100px;
@@ -29,7 +40,7 @@
 
 .screen-scroll p {
 	margin: 20px;
-	font-size: 30px;
+	font-size: 3rem;
 	line-height: 60px;	
 }
 
@@ -37,7 +48,7 @@ h1 {
 	width: 150px;
 	height: 60px;
 	line-height: 60px;
-	font-size: 30px;
+	font-size: 3rem;
 	background: yellow;
 	text-align: center;
 	position: absolute;
