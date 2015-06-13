@@ -14,19 +14,18 @@ module.exports = Intro = React.createClass({
         <div id='home' className='screen-fixed'>
           <div className='title-wrap'>
             <div className='extra'></div>
-            <h3 className='small-title'>
-              PROJECT
-            </h3>
-            <Title>
-              <span>G</span>
-              <span>A</span>
-              <span>M</span>
-              <span>R</span>
-            </Title>
+
+            <div className='main-title-wrap'>
+              <Title className='main-sub' separator='.'>PROJECT</Title>
+              <Title className='main'>GAMR</Title>
+            </div>
+
             <h4 className='marquee'>What does your play style say about you?</h4>
             <h4 className='marquee b'>Join us and find out.</h4>
-            <Link to="survey" className=''>Start</Link>
-            <Button>Start</Button>
+            <Link to="survey" className=''><Button>Start</Button></Link>
+            <p className='footnote'>
+              To participate, you must have an account with one or more of the folllowing:<br/> League of Legends, Battlefield: Hardline, or World of Warcraft.
+            </p>
           </div>
         </div>
         <div className="curtain curtain-top base"></div>

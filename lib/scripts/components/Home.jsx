@@ -3,13 +3,14 @@
 var React = require('react/addons'),
   Router = require('react-router'),
   RouteHandler = Router.RouteHandler,
-  Footer = require('./Footer.jsx'),
+  Nav = require('./Nav.jsx'),
   Home;
 
 module.exports = Home = React.createClass({
   render: function () {
     return (
       <div>
+        <Nav/>
         <div className='screen'>
           <RouteHandler {... this.props}/>
         </div>
