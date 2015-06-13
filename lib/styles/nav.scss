@@ -2,7 +2,10 @@
 $nav-height: 50px;
 
 .navigation {
-	position: relative;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
 	height: $nav-height;
 	z-index: 40000;
 	border-top: 1px solid $color-secondary;

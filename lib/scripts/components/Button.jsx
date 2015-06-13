@@ -21,6 +21,12 @@ module.exports = Button = React.createClass({
     process.nextTick(this.setMount);
   },
 
+  _handleClick: function () {
+    if (this.props.action) {
+      this.props.action();
+    }
+  },
+
   render: function () {
     var className = classnames(
           'button', 
@@ -31,7 +37,7 @@ module.exports = Button = React.createClass({
         );
     
     return (
-      <div className={className}>
+      <div className={className} onClick={this._handleClick}>
         {this.props.children}
       </div>
     );

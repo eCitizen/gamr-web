@@ -1,0 +1,50 @@
+
+.splitter > span { 
+	position: relative;
+}
+
+.title {
+	font-family: "Bourgeois Ultra", Verdana, Arial, Helvetica, sans-serif;
+	font-weight: 900;
+	font-style: normal;
+	color: $color-main;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	 
+	&.main {
+		font-size: 160px;
+		line-height: 100px;
+		letter-spacing: 5px;
+		text-indent: -8px;
+
+		.t-1 { left: -1px; } // A
+		.t-3 { left: -4px; } // R
+	}
+
+	&.main-sub {
+		font-size: 20px;
+		letter-spacing: 8px;
+		text-indent: 74px;
+		margin-bottom: 20px;
+	}
+
+	&.section {
+		font-size: 30px;
+		margin-bottom: 25px;
+	}
+
+	&.nav-title,
+	&.nav-title-sub {
+		letter-spacing: 2px;
+		line-height: 18px;
+	}
+
+	&.nav-title {
+		font-size: 30px;
+		text-indent: -2px;
+	}
+
+	&.nav-title-sub {
+		font-size: 13px;
+	}
+}

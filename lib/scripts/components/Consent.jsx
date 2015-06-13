@@ -3,16 +3,37 @@
 var React = require('react/addons'),
   Router = require('react-router'),
   Link = Router.Link,
+  Button =  require('./Button.jsx'),
+  Title = require('./Title.jsx'),
+  classnames = require('classnames'),
   Consent;
 
 module.exports = Consent = React.createClass({
+  getInitialState: function () {
+    return {
+      consent: false
+    };
+  },
+
+  _toggleConsent: function () {
+    this.setState({
+      consent: !this.state.consent
+    });
+  },
+
   render: function () {
     return (
       <div className='screen-scroll consent-form'>
-        <h1>Informed Consent</h1>
-        <p className='intro'>
-          Thank you for checking out our research! Below you will find an explanation of what data we want to use in this research and how we will process the data. 
-        </p>
+        <Title className='section'>Informed Consent</Title>
+        <div className='intro'>
+          <p className='flashy'>
+            Thank you for checking out our research!
+          </p>
+          <p>
+            Below you will find an explanation of what data we want to use in this research and how we will process the data. 
+          </p>
+        </div>
+        <div className='terms'>
         <p>
           For the purpose of our research we will ask you for your age, gender, nationality and level of English comprehension. We will also ask for your player name in one or more of the participating games: League of Legends, Battlefield: Hardline, and World of Warcraft. Your player name will be used to extract data on your game behavior for the relevant game. The game behavior data consists of information on when you play and for how long, and what actions you perform in the game. We will not process any other data from the games or ask you for any sensitive data (such as, without limitation, financial data, chat logs and transcriptions, etc.). By accepting to participate in this research study, you understand and agree that the relevant game company (Riot Games, DICE / Electronic Arts) will share your behavioral data listed above with the research project only for the purpose of the study described above. Data for World of Warcraft will be drawn from the publicly accessible Armory website and will not be shared. If you indicate in the survey that you are a minor (below 18 years of age), then your data will also not be shared.
         </p>
@@ -25,8 +46,19 @@ module.exports = Consent = React.createClass({
         <p>
           We want to remind you that participation in this study is voluntary. You may decline to answer any or all questions. There are no negative consequences to you if you decide not to participate in this study.
         </p>
-        <Link to="identity">Yes</Link>
-        <p>I declare that I understand the conditions of the research listed above.</p>
+        </div>
+        <div className='consent-footer'>
+          <div className='consent-ok'>
+            <div className={classnames('checkbox', {'checked': this.state.consent})} 
+              onClick={this._toggleConsent}/>
+            <label onClick={this._toggleConsent}>I declare that I understand the conditions of the research listed above.</label>
+          </div>
+          <Link to="identity" className='continue'>
+            <Button className={classnames({inactive: !this.state.consent})}>
+              Continue
+            </Button>
+          </Link>
+        </div>
       </div>
     );
   }

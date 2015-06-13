@@ -24,7 +24,8 @@
 .screen-scroll {
 	position: relative;
 	z-index: 100;
-	padding: 40px;
+	padding: 0 40px;
+	margin-top: 120px !important; // TEMP
 }
 
 .screen-fixed {
