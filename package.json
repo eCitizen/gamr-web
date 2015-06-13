@@ -7,8 +7,8 @@
     "scratch": "cd scratch && python -m SimpleHTTPServer 8080",
     "build-js": "mkdir -p dist && browserify -t reactify lib/scripts/index.jsx -o dist/gamr.js",
     "build-min-js": "mkdir -p dist && browserify lib/scripts/index.jsx | uglifyjs -o dist/gamr.min.js",
-    "build-sass": "mkdir -p dist && node-sass lib/styles/index.scss dist/gamr.css --include-path lib/styles",
-    "build-min-sass": "mkdir -p dist && node-sass lib/styles/index.scss --include-path lib/styles | cleancss -o dist/gamr.min.css",
+    "build-sass": "mkdir -p dist && node-sass lib/styles/index.scss dist/gamr.css --include-path lib/styles --include-path node_modules",
+    "build-min-sass": "mkdir -p dist && node-sass lib/styles/index.scss --include-path lib/styles --include-path node_modules | cleancss -o dist/gamr.min.css",
     "watch-js": "mkdir -p dist && watchify -t reactify lib/scripts/index.jsx -o dist/gamr.js",
     "watch-sass": "mkdir -p dist && nodemon -e scss -w lib/styles -x 'npm run build-sass'",
     "build": "npm run build-js & npm run build-sass",
@@ -38,6 +38,7 @@
   },
   "homepage": "https://github.com/skiano/GAMR",
   "devDependencies": {
+    "bourbon": "^4.2.3",
     "browserify": "^10.2.1",
     "browserify-shim": "^3.8.7",
     "classnames": "^2.1.2",
@@ -47,6 +48,7 @@
     "flux": "^2.0.3",
     "keymirror": "^0.1.1",
     "lodash": "^3.9.3",
+    "node-bourbon": "^4.2.3",
     "node-sass": "^3.1.2",
     "object-assign": "^2.0.0",
     "react": "^0.13.3",
@@ -55,5 +57,8 @@
     "superagent": "^1.2.0",
     "uglify-js": "^2.4.23",
     "watchify": "^3.2.1"
+  },
+  "dependencies": {
+    "classnames": "^2.1.2"
   }
 }
