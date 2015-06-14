@@ -16,8 +16,8 @@ module.exports = Intro = React.createClass({
             <div className='extra'></div>
 
             <div className='main-title-wrap'>
-              <Title className='main-sub' separator='.'>PROJECT</Title>
-              <Title className='main'>GAMR</Title>
+              <Title className='main-sub' separator='.' split>PRO.JECT</Title>
+              <Title className='main' split>GAMR</Title>
             </div>
 
             <h4 className='marquee'>What does your play style say about you?</h4>

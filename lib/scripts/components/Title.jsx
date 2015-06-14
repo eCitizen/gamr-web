@@ -7,9 +7,11 @@ module.exports = Title = React.createClass({
   render: function () {
     return (
       <h2 className={classnames('title', this.props.className)}>
-      	<Splitter classPrefix='t' {... this.props}>
-      		{this.props.children}
-      	</Splitter>
+        {this.props.split ?
+          <Splitter classPrefix='t' {... this.props}>
+            {this.props.children}
+          </Splitter> 
+        : this.props.children }
       </h2>
     );
   }
