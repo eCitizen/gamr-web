@@ -9,6 +9,8 @@ var React = require('react/addons'),
 	InputActions = require('../input/actions'),
 	TransitionGroup = React.addons.CSSTransitionGroup,
 	Navigation = Router.Navigation,
+	Title = require('./Title.jsx'),
+	Button = require('./Button.jsx'),
   QuestionSet;
 
 module.exports = QuestionSet = React.createClass({
@@ -46,22 +48,24 @@ module.exports = QuestionSet = React.createClass({
 		if (!this.state.started) {
 			return (
 				<div className='screen-scroll'>
-					<h1>{this.state.title}</h1>
+					<Title className='section'>{this.state.title}</Title>
 					<p>{this.state.instructions}</p>
-					<div onClick={this.begin}>Begin</div>
+					<Button action={this.begin}>GOT IT</Button>
 				</div>
 			);
 		} else {
 			return (
 				<div className='question-set screen-scroll'>
-					<h3>{this.state.title}</h3>
+					<Title className='section'>{this.state.title}</Title>
 					<div className='question-wrap'>
 						<TransitionGroup component='div' transitionName='question-change'>
 							<Question 
-								text={this.state.questions[this.state.current]}
 								key={this.state.current} 
 								idx={this.state.current}
-								onSubmit={this.submitQuestion}/>
+								answers={[1,2,3,4,5]}
+								action={this.submitQuestion}>
+								{this.state.questions[this.state.current]}
+							</Question>
 						</TransitionGroup>
 					</div>
 				</div>

@@ -3,6 +3,7 @@
 
 var React = require('react/addons'),
 	Button = require('./Button.jsx'),
+	classnames = require('classnames'),
   Question;
 
 module.exports = Question = React.createClass({
@@ -12,17 +13,19 @@ module.exports = Question = React.createClass({
 
 	render: function () {
 		return (
-			<div className='question'>
-				<p className='question-text'>{this.props.text}</p>
-				<div className='screen-fixed'>
-					<ul className='choices'>
-						<li onClick={this.submitQuestion.bind(this,'A')}><Button>1</Button></li>
-						<li onClick={this.submitQuestion.bind(this,'B')}><Button>2</Button></li>
-						<li onClick={this.submitQuestion.bind(this,'C')}><Button>3</Button></li>
-						<li onClick={this.submitQuestion.bind(this,'C')}><Button>4</Button></li>
-						<li onClick={this.submitQuestion.bind(this,'C')}><Button>5</Button></li>
-					</ul>
-				</div>
+			<div className={classnames('question', this.props.className)}>
+				<p className='question-text'>
+					{this.props.children}
+				</p>
+				<ul className='choices'>
+					{this.props.answers.map(function (answer, idx) {
+						return (
+							<li key={idx}>
+								<Button action={this.props.action.bind(this,answer)}>{answer}</Button>
+							</li>
+						);
+					}.bind(this))}
+				</ul>
 			</div>
 		);
 	}

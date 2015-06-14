@@ -9,7 +9,7 @@
 	height: 200px;
 }
 
-.question-body {
+.question-text {
 	font-family: Helvetica, sans-serif;
   letter-spacing: 2px;
   font-size: 16px;
@@ -17,16 +17,8 @@
   margin-top: 80px;
 }
 
-.question-text {
-	margin-top: 20px;
-}
-
 .choices {
-	position: absolute;
-	bottom: 200px;
-	left: 40px;
-	overflow: hidden;
-	margin-bottom: 20px;
+
 }
 
 .choices > li {

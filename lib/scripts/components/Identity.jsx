@@ -33,14 +33,24 @@ module.exports = Identity = React.createClass({
     });
   },
 
-  render: function () {
-    var wow = guide.identity.WOW,
-      lol = guide.identity.LOL,
-      bhfd = guide.identity.BFHD,
-      bio = guide.identity.BIO,
-      lang = guide.identity.LANG;
+  forkView: function (yesView, noView) {
+    return function (answer) {
+      if (answer === 'yes') {
+        this.goToView(yesView);
+      } else {
+        this.goToView(noView);
+      }
+    }.bind(this);
+  },
 
-    var range = bio.fields.year.range,
+  render: function () {
+    var WOW = guide.identity.WOW,
+      LOL = guide.identity.LOL,
+      BHFD = guide.identity.BFHD,
+      BIO = guide.identity.BIO,
+      LANG = guide.identity.LANG;
+
+    var range = BIO.fields.year.range,
       years = [], 
       y;
 
@@ -54,49 +64,98 @@ module.exports = Identity = React.createClass({
     var view;
     switch (this.state.view) {
       case 'DO_U_LOL':
-
-        // view = (
-        //   <Question
-        //     answers={['no','yes']}
-        //     action={this.forkView('LOL','DO_U_WOW')}>
-        //     Do you play {lol.title}?
-        //   </Question>
-        // );
-        // break;
-
         view = (
-          <div>
-            <p className='question-body'>
-              Do you play {lol.title}?
-            </p>
-            <Button
-              className='yes-no'
-              action={this.goToView.bind(this,'DO_U_WOW')}>
-              No
-            </Button>
-            <Button 
-              className='yes-no'
-              action={this.goToView.bind(this,'LOL')}>
-              Yes
-            </Button>
-          </div>
+          <Question
+            className='yes-no'
+            answers={['no','yes']}
+            action={this.forkView('LOL','DO_U_WOW')}>
+            Do you play {LOL.title}?
+          </Question>
         );
         break;
 
       case 'LOL':
         view = (
           <div className='form-block'>
-            <h2>{lol.title}</h2>
-            <FormInput {... lol.fields.sommonerName}/>
-            <FormSelect {... lol.fields.region}/>
-            <FormSelect {... lol.fields.preferredLane}/>
-            <FormSelect {... lol.fields.preferredRole}/>
+            <h2>{LOL.title}</h2>
+            <FormInput {... LOL.fields.sommonerName}/>
+            <FormSelect {... LOL.fields.region}/>
+            <FormSelect {... LOL.fields.preferredLane}/>
+            <FormSelect {... LOL.fields.preferredRole}/>
+            <Button action={this.goToView.bind(this,'DO_U_WOW')}>Continue</Button>
+          </div>
+        );
+        break;
+
+      case 'DO_U_WOW':
+        view = (
+          <Question
+            className='yes-no'
+            answers={['no','yes']}
+            action={this.forkView('WOW','DO_U_BFHD')}>
+            Do you play {WOW.title}?
+          </Question>
+        );
+        break;
+
+      case 'WOW':
+        view = (
+          <div className='form-block'>
+            <h2>{WOW.title}</h2>
+            <FormInput {... WOW.fields.characterName}/>
+            <FormSelect {... WOW.fields.region}/>
+            <FormSelect {... WOW.fields.realm}/>
+            <Button action={this.goToView.bind(this,'DO_U_BFHD')}>Continue</Button>
+          </div>
+        );
+        break;
+
+      case 'DO_U_BFHD':
+        view = (
+          <Question
+            className='yes-no'
+            answers={['no','yes']}
+            action={this.forkView('BFHD','BIO')}>
+            Do you play {BHFD.title}?
+          </Question>
+        );
+        break;
+
+      case 'BFHD':
+        view = (
+          <div className='form-block'>
+            <h2>{BHFD.title}</h2>
+            <FormInput {... BHFD.fields.playerName}/>
+            <Button action={this.goToView.bind(this,'BIO')}>Continue</Button>
+          </div>
+        );
+        break;
+
+      case 'BIO':
+        view = (
+          <div className='form-block'>
+            <h2>{BIO.title}</h2>
+            <FormSelect required={false} {... BIO.fields.gender}/>
+            <FormSelect required={false} {... BIO.fields.month}/>
+            <FormSelect required={false} {... BIO.fields.year} options={years}/>
+            <Button action={this.goToView.bind(this,'LANG')}>Continue</Button>
+          </div>
+        );
+        break;
+
+      case 'LANG':
+        view = (
+          <div className='form-block'>
+            <h2>{LANG.title}</h2>
+            <FormSelect required={false} {... LANG.fields.country}/>
+            <FormSelect required={false} {... LANG.fields.level}/>
+            <Button action={this.goToView.bind(this,'END')}>Continue</Button>
           </div>
         );
         break;
 
       default:
-        view = <div/>;
+        view = <FormSubmit action={this.submit}/>;
     }
 
     return (
@@ -108,26 +167,3 @@ module.exports = Identity = React.createClass({
   }
 });
 
-
-// <div className='form-block'>
-//   <h2>{wow.title}</h2>
-//   <FormInput {... wow.fields.characterName}/>
-//   <FormSelect {... wow.fields.region}/>
-//   <FormSelect {... wow.fields.realm}/>
-// </div>
-// <div className='form-block'>
-//   <h2>{bhfd.title}</h2>
-//   <FormInput {... bhfd.fields.playerName}/>
-// </div>
-// <div className='form-block'>
-//   <h2>{bio.title}</h2>
-//   <FormSelect required={false} {... bio.fields.gender}/>
-//   <FormSelect required={false} {... bio.fields.month}/>
-//   <FormSelect required={false} {... bio.fields.year} options={years}/>
-// </div>
-// <div className='form-block'>
-//   <h2>{lang.title}</h2>
-//   <FormSelect required={false} {... lang.fields.country}/>
-//   <FormSelect required={false} {... lang.fields.level}/>
-// </div>
-// <FormSubmit action={this.submit}/>

@@ -58,9 +58,8 @@
 		text-shadow: none;
 		border-color: $color-secondary;
 	}
+}
 
-	&.yes-no {
-		width: 60px;
-		margin-right: 10px;
-	}
+.yes-no .button {
+	width: 60px;
 }
