@@ -16,7 +16,7 @@ p {
   letter-spacing: 2px;
   margin-top: 40px;
   // display: none;
-  font-family: lucida, Helvetica, sans-serif;
+  font-family: $font-text;
   font-style: italic;
   font-size: 14px;
 }
@@ -30,7 +30,7 @@ p {
   letter-spacing: 2px;
   margin-top: 40px;
   // display: none;
-  font-family: lucida, Helvetica, sans-serif;
+  font-family: $font-text;
   font-style: italic;
   font-size: 14px;
 
@@ -61,7 +61,7 @@ p {
 
 .footnote {
   color: $color-secondary;
-  font-family: Helvetica;
+  font-family: $font-text;
   font-size: 13px;
   line-height: 18px;
   text-align: left;

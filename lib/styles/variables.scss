@@ -1,4 +1,8 @@
 
+$font-title: "Bourgeois Ultra", Verdana, Arial, Helvetica, sans-serif;
+$font-text: Helvetica, Arial, sans-serif;
+$font-special: "Inconsolata", 'Lucida Console', Monaco, monospace;
+
 $space-large: 40px;
 
 $color-main: #00ff66;
@@ -16,6 +20,7 @@ $field-radius: $button-radius/1.5;
 $field-font-size: 14px;
 $field-padding: 10px;
 $select-button-width: $button-height;
+$form-indent: 40px;
 
 
 @mixin border-box() {

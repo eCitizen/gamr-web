@@ -1,11 +1,12 @@
 
 .gamr-field {
-  font-family: helvetica;
+  font-family: $font-text;
   width: $field-width;
   color: $color-main;
   margin-bottom: 20px;
   font-size: $field-font-size;
   letter-spacing: 1px;
+  margin-left: $form-indent;
 }
 
 ::-webkit-input-placeholder { color: $color-secondary; opacity: 1; }
@@ -96,6 +97,10 @@
   }
 }
 
+.check-group {
+  margin-bottom: 40px;
+}
+
 .checkbox-wrap {
   display: block;
   
@@ -107,7 +112,7 @@
     padding-left: 15px;
     letter-spacing: 1px;
     font-size: $field-font-size;
-    font-family: helvetica;
+    font-family: $font-text;
   }
 }
 
@@ -146,8 +151,16 @@
   }
 }
 
+.form-block {
+  margin-bottom: 40px;
+
+  & > h2 {
+    margin-bottom: 15px;
+  }
+}
+
 .consent-form {
-  font-family: lucida, helvetica, sans-serif;
+  font-family: $font-text;
   font-size: 13px;
   line-height: 20px;
 
@@ -165,7 +178,7 @@
 
   .terms {
     color: $color-secondary;
-    padding: 20px 40px;
+    padding: 20px $form-indent;
     // border-left: 1px solid $color-secondary;
   }
 

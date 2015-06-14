@@ -44,12 +44,20 @@ module.exports = Identity = React.createClass({
     }.bind(this);
   },
 
+  toggleGame: function (gameKey, checked) {
+    var state = {};
+    state[gameKey] = checked;
+    this.setState(state);
+  },
+
   render: function () {
     var WOW = guide.identity.WOW,
       LOL = guide.identity.LOL,
       BFHD = guide.identity.BFHD,
       BIO = guide.identity.BIO,
       LANG = guide.identity.LANG;
+
+    var gameKeys = ['LOL','WOW','BFHD'];
 
     var range = BIO.fields.year.range,
       years = [], 
@@ -70,29 +78,57 @@ module.exports = Identity = React.createClass({
             <p className='question-text'>
               Which of the following do you play?
             </p>
-            <Checkbox>
-              {LOL.title}
-            </Checkbox>
-            <Checkbox>
-              {WOW.title}
-            </Checkbox>
-            <Checkbox>
-              {BFHD.title}
-            </Checkbox>
+            <div className='check-group'>
+              {gameKeys.map(function (gameKey) {
+                return (
+                  <Checkbox
+                    key={gameKey}
+                    action={this.toggleGame.bind(this,gameKey)}>
+                    {guide.identity[gameKey].title}
+                  </Checkbox>
+                );
+              }.bind(this))}
+            </div>
             <Button action={this.goToView.bind(this,'LOL')}>Continue</Button>
           </div>
         );
         break;
 
       case 'LOL':
+        var formBlocks = [];
+        if (this.state.LOL) {
+          formBlocks.push(
+            <div className='form-block' key='a'>
+              <h2>{LOL.title}</h2>
+              <FormInput {... LOL.fields.sommonerName}/>
+              <FormSelect {... LOL.fields.region}/>
+              <FormSelect {... LOL.fields.preferredLane}/>
+              <FormSelect {... LOL.fields.preferredRole}/>
+            </div>
+          );
+        }
+        if (this.state.WOW) {
+          formBlocks.push(
+            <div className='form-block' key='b'>
+              <h2>{WOW.title}</h2>
+              <FormInput {... WOW.fields.characterName}/>
+              <FormSelect {... WOW.fields.region}/>
+              <FormSelect {... WOW.fields.realm}/>
+            </div>
+          );
+        }
+        if (this.state.BFHD) {
+          formBlocks.push(
+            <div className='form-block' key='c'>
+              <h2>{BFHD.title}</h2>
+              <FormInput {... BFHD.fields.playerName}/>
+            </div>
+          );
+        }
         view = (
-          <div className='form-block'>
-            <h2>{LOL.title}</h2>
-            <FormInput {... LOL.fields.sommonerName}/>
-            <FormSelect {... LOL.fields.region}/>
-            <FormSelect {... LOL.fields.preferredLane}/>
-            <FormSelect {... LOL.fields.preferredRole}/>
-            <Button action={this.goToView.bind(this,'DO_U_WOW')}>Continue</Button>
+          <div>
+            {formBlocks}
+            <Button action={this.goToView.bind(this,'BIO')}>Submit</Button>
           </div>
         );
         break;

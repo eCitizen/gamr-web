@@ -20,7 +20,6 @@ module.exports = FormCheckbox = React.createClass({
   },
 
   _handleClick: function () {
-    console.log('click');
     var checked = !this.state.checked;
     var form = this.props.formId ? InputStore.getForm(this.props.formId) : null;
     this.props.action(checked, form);
