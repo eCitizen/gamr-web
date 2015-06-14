@@ -1,80 +1,156 @@
 
 .gamr-field {
-	margin-bottom: 10px;
-	border: 1px solid transparent;
+  margin-bottom: 20px;
 
-	&.invalid {
-		border: 1px solid red;
-	}
+  // &.invalid {
+  //  border: 1px solid red;
+  // }
+  font-family: helvetica;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.gamr-input {
+  & > input {
+    border: 1px solid $color-main;
+    background: $color-black;
+    @include border-top-radius($button-radius);
+    @include border-bottom-radius($button-radius);
+    padding: 10px;
+    color: $color-main;
+    font-size: 14px;
+  }
+}
+
+.gamr-select {
+  position: relative;
+
+  & > select {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 200px;
+    width: 300px;
+
+    background: transparent;
+    width: 268px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    -webkit-appearance: none;
+  }
+
+  & > .select-cover {
+    display: inline-block;
+    border: 1px solid $color-main;
+    background: $color-black;
+    @include border-top-radius($button-radius);
+    @include border-bottom-radius($button-radius);
+    padding: 0px 10px;
+    // background-color: $color-main;
+    color: $color-white;
+    padding-right: 50px;
+    position: relative;
+    line-height: 40px;
+
+    &:after {
+      content: "\f078";
+      font-family: FontAwesome;
+      display: inline-block;
+      line-height: 40px;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      right: 0;
+      width: 40px;
+      text-align: center;
+      border-left: 1px solid $color-main;
+      color: $color-main;
+      font-size: 12px;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      &:after {
+        background: $color-main;
+        color: $color-black;
+      }
+    }
+  }
 }
 
 .checkbox {
-	display: inline-block;
-	position: relative;
-	width: 20px;
-	height: 20px;
-	bottom: -6px;
-	margin-right: 15px;
-	border: 1px solid $color-main;
-	@include border-top-radius($button-radius/2);
-	@include border-bottom-radius($button-radius/2);
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  bottom: -6px;
+  margin-right: 15px;
+  border: 1px solid $color-main;
+  @include border-top-radius($button-radius/2);
+  @include border-bottom-radius($button-radius/2);
 
-	&.checked:after {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 20px;
-		height: 20px;
-		content: "\f00c";
-		font-family: FontAwesome;
-		color: $color-main;
+  &.checked:after {
+    content: "\f00c";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    color: $color-main;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     text-align: center;
     line-height: 20px;
-	}
+  }
 
-	&:hover {
-		cursor: pointer;
-	}
+  &:hover {
+    cursor: pointer;
+  }
 
-	& + label:hover {
-		cursor: pointer;
-	}
+  & + label:hover {
+    cursor: pointer;
+  }
 }
 
-
-
 .consent-form {
-	font-family: lucida, helvetica, sans-serif;
-	font-size: 13px;
-	line-height: 20px;
+  font-family: lucida, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
 
-	.title {
-		
-	}
+  .title {
+    
+  }
 
-	.flashy {
-		margin-bottom: 25px;
-	}
+  .flashy {
+    margin-bottom: 25px;
+  }
 
-	.intro {
-		width: 400px;
-	}
+  .intro {
+    width: 400px;
+  }
 
-	.terms {
-		color: $color-secondary;
-		padding: 20px 40px;
-		// border-left: 1px solid $color-secondary;
-	}
+  .terms {
+    color: $color-secondary;
+    padding: 20px 40px;
+    // border-left: 1px solid $color-secondary;
+  }
 
-	.consent-ok {
-		line-height: $button-height;
-		float: left;
-	}
+  .consent-ok {
+    line-height: $button-height;
+    float: left;
+  }
 
-	.continue {
-		float: right;
-	}
+  .continue {
+    float: right;
+  }
 }

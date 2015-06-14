@@ -2,64 +2,67 @@
 $nav-height: 50px;
 
 .navigation {
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	height: $nav-height;
-	z-index: 40000;
-	border-top: 1px solid $color-secondary;
-	border-bottom: 1px solid $color-main;
-	padding: 0px 14px;
-	background: $color-black;
-	box-shadow: 
-		0px 0px 150px -8px rgba(80,20,255, .5),
-		0px 0px 30px -3px rgba(255,0,160, .8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: $nav-height;
+  z-index: 40000;
+  border-top: 1px solid $color-secondary;
+  border-bottom: 1px solid $color-main;
+  padding: 0px 14px;
+  background: $color-black;
+  box-shadow: 
+    0px 0px 150px -8px rgba(80,20,255, .5),
+    0px 0px 30px -3px rgba(255,0,160, .8);
 }
 
 .nav-title-wrap {
-	margin-top: 4px;
+  margin-top: 4px;
 
-	& > .title {
-		@include transition(color 100ms ease-in-out);
-		color: $color-secondary;
-	}
+  & > .title {
+    @include transition(color 100ms ease-in-out);
+    color: $color-secondary;
+  }
 
-	&:hover > .title {
-		color: $color-main;
-	}
+  &:hover > .title {
+    color: $color-main;
+  }
 }
 
 .social {
-	position: absolute;
-	right: 10px;
-	top: 0px;
-	height: $nav-height;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  height: $nav-height;
 
-	
-	
-	& > i,
-	& > .about-link {
-		color: $color-main;
-		color: $color-secondary;
-		display: inline-block;
-		font-size: 24px;
-		line-height: $nav-height;
-		padding: 0 7px;
+  
+  
+  & > i,
+  & > .about-link {
+    color: $color-main;
+    color: $color-secondary;
+    display: inline-block;
+    font-size: 24px;
+    line-height: $nav-height;
+    padding: 0 7px;
 
-		@include transition(color 100ms ease-in-out);
+    @include transition(color 100ms ease-in-out);
 
-		&:hover {
-			color: $color-main;
-			cursor: pointer;
-		}
-	}
+    &:hover {
+      color: $color-main;
+      cursor: pointer;
+    }
+  }
 
-	& > .about-link {
-		position: relative;
-		top: -3px;
-		text-transform: uppercase;
-		font-size: 15px;
-		letter-spacing: 2px;
-	}
+  & > .about-link {
+    font-family: "Bourgeois Ultra", Verdana, Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    position: relative;
+    top: -3px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
 }

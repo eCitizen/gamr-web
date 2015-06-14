@@ -1,94 +1,94 @@
 
 .splitter > span { 
-	position: relative;
-	overflow: hidden;
-	display: inline-block;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
 
-	& > .in {
-		// http://matthewlein.com/ceaser/
-		$timing: cubic-bezier(0.780, 0.090, 0.495, 0.645);
-		@include transition(
-				color 700ms ease 90ms, 
-				transform 600ms $timing);
+  & > .in {
+    // http://matthewlein.com/ceaser/
+    $timing: cubic-bezier(0.780, 0.090, 0.495, 0.645);
+    @include transition(
+        color 700ms ease 90ms, 
+        transform 600ms $timing);
 
-		display: block;
-	}
+    display: block;
+  }
 
-	&.t:nth-child(2n) > .in {
-		@include transition-delay(130ms);
-	}
-	&.t:nth-child(3n) > .in {
-		@include transition-delay(220ms);
-	}
+  &.t:nth-child(2n) > .in {
+    @include transition-delay(130ms);
+  }
+  &.t:nth-child(3n) > .in {
+    @include transition-delay(220ms);
+  }
 }
 
 .main-title-wrap:hover {
-	.in {
-		// opacity: 0;
-		color: $color-black;
-	}
+  .in {
+    // opacity: 0;
+    color: $color-black;
+  }
 
-	// .main .t:nth-child(2n) > .in {
-	// 	@include transform(translateY(100%));
-	// 	@include transition-delay(90ms);
-	// }
-	// .main .t:nth-child(2n+1) > .in {
-	// 	@include transform(translateY(-150%));
-	// }
-	// .main .t:nth-child(3n+1) > .in {
-	// 	@include transform(translateY(-420%));
-	// }
-	// .main-sub .t > .in {
-	// 	@include transform(translateY(-300%));
-	// }
-	// .main-sub .t-1 > .in {
-	// 	@include transform(translateY(-100%));
-	// }
+  // .main .t:nth-child(2n) > .in {
+  //   @include transform(translateY(100%));
+  //   @include transition-delay(90ms);
+  // }
+  // .main .t:nth-child(2n+1) > .in {
+  //   @include transform(translateY(-150%));
+  // }
+  // .main .t:nth-child(3n+1) > .in {
+  //   @include transform(translateY(-420%));
+  // }
+  // .main-sub .t > .in {
+  //   @include transform(translateY(-300%));
+  // }
+  // .main-sub .t-1 > .in {
+  //   @include transform(translateY(-100%));
+  // }
 }
 
 .title {
-	font-family: "Bourgeois Ultra", Verdana, Arial, Helvetica, sans-serif;
-	font-weight: 900;
-	font-style: normal;
-	color: $color-main;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	 
-	&.main {
-		font-size: 160px;
-		line-height: 105px;
-		letter-spacing: 5px;
-		margin-left: -8px;
-		// text-indent: -8px;
+  font-family: "Bourgeois Ultra", Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: $color-main;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+   
+  &.main {
+    font-size: 160px;
+    line-height: 105px;
+    letter-spacing: 5px;
+    margin-left: -8px;
+    // text-indent: -8px;
 
-		.t-1 { left: -1px; } // A
-		.t-3 { left: -4px; } // R
-	}
+    .t-1 { left: -1px; } // A
+    .t-3 { left: -4px; } // R
+  }
 
-	&.main-sub {
-		font-size: 20px;
-		letter-spacing: 8px;
-		margin-left: 74px;
-		margin-bottom: 20px;
-	}
+  &.main-sub {
+    font-size: 20px;
+    letter-spacing: 8px;
+    margin-left: 74px;
+    margin-bottom: 20px;
+  }
 
-	&.section {
-		font-size: 30px;
-		margin-bottom: 25px;
-	}
+  &.section {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
 
-	&.nav-title,
-	&.nav-title-sub {
-		letter-spacing: 2px;
-		line-height: 18px;
-	}
+  &.nav-title,
+  &.nav-title-sub {
+    letter-spacing: 2px;
+    line-height: 18px;
+  }
 
-	&.nav-title {
-		font-size: 30px;
-		text-indent: -2px;
-	}
+  &.nav-title {
+    font-size: 30px;
+    text-indent: -2px;
+  }
 
-	&.nav-title-sub {
-		font-size: 13px;
-	}
+  &.nav-title-sub {
+    font-size: 13px;
+  }
 }

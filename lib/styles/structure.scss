@@ -1,19 +1,19 @@
 
 .curtain {
-	// TEMP:
-	display: none;
+  // TEMP:
+  display: none;
 
-	position: fixed;
-	z-index: 10000;
-	background: $color-black;
-	overflow: hidden;
+  position: fixed;
+  z-index: 10000;
+  background: $color-black;
+  overflow: hidden;
 
-	&.base {
-		// TODO: vendor-prefixes!!!
-		box-shadow: 
-			0px 1px 16px 10px $color-black,
-			0px 0px 100px 16px rgba(17,17,17,0.7);
-	}
+  &.base {
+    // TODO: vendor-prefixes!!!
+    box-shadow: 
+      0px 1px 16px 10px $color-black,
+      0px 0px 100px 16px rgba(17,17,17,0.7);
+  }
 }
 
 .curtain-top    { left: 0; right: 0; top: 0;  }
@@ -22,108 +22,108 @@
 .curtain-right  { top: 0; bottom: 0; right: 0; }
 
 .screen-scroll {
-	position: relative;
-	z-index: 100;
-	padding: 0 40px;
-	margin-top: 120px !important; // TEMP
+  position: relative;
+  z-index: 100;
+  padding: 0 40px;
+  margin-top: 120px !important; // TEMP
 }
 
 .screen-fixed {
-	position: fixed;
-	z-index: 500;
+  position: fixed;
+  z-index: 500;
 }
 
 .curtain-left:after,
 .curtain-right:after {
-	content: '';
-	position: absolute;
-	width: 100px;
-	// TODO: vendor-prefixes!!!
-	box-shadow: 
-		0px 0px 150px -10px rgba(80,20,255, .4),
-		0px 0px 30px -3px rgba(255,0,160, .6);
+  content: '';
+  position: absolute;
+  width: 100px;
+  // TODO: vendor-prefixes!!!
+  box-shadow: 
+    0px 0px 150px -10px rgba(80,20,255, .4),
+    0px 0px 30px -3px rgba(255,0,160, .6);
 }
 
 .curtain-left {
-	border-right: 1px solid $color-main;
-	&:after {
-		right: -100px;
-	}
+  border-right: 1px solid $color-main;
+  &:after {
+    right: -100px;
+  }
 }
 
 .curtain-right {
-	border-left: 1px solid $color-main;
-	&:after {
-		left: -100px;
-	}
+  border-left: 1px solid $color-main;
+  &:after {
+    left: -100px;
+  }
 }
 
 @mixin curtain-height($height) {
-	.curtain-top,
-	.curtain-bottom {
-		height: $height;
-	}
+  .curtain-top,
+  .curtain-bottom {
+    height: $height;
+  }
 
-	.screen-scroll {
-		margin-top: $height;
-		margin-bottom: $height;
-	}
+  .screen-scroll {
+    margin-top: $height;
+    margin-bottom: $height;
+  }
 
-	.screen-fixed {
-		top: $height;
-		bottom: $height;
-	}
+  .screen-fixed {
+    top: $height;
+    bottom: $height;
+  }
 
-	.curtain-left:after,
-	.curtain-right:after {
-		top: $height + ($height * 0.2);
-		bottom: $height + ($height * 0.2);
-	}
+  .curtain-left:after,
+  .curtain-right:after {
+    top: $height + ($height * 0.2);
+    bottom: $height + ($height * 0.2);
+  }
 }
 
 @mixin curtain-width($width) {
-	.curtain-left,
-	.curtain-right {
-		width: $width;
-	}
+  .curtain-left,
+  .curtain-right {
+    width: $width;
+  }
 
-	.screen-scroll {
-		margin-left: $width;
-		margin-right: $width;
-	}
+  .screen-scroll {
+    margin-left: $width;
+    margin-right: $width;
+  }
 
-	.screen-fixed {
-		left: $width;
-		right: $width;
-	}
+  .screen-fixed {
+    left: $width;
+    right: $width;
+  }
 }
 
 @media (max-width:500px) {
-	.curtain-left { border-right: none; }
-	.curtain-right { border-left: none; }
+  .curtain-left { border-right: none; }
+  .curtain-right { border-left: none; }
 }
 
 @media (min-width:500px) and (max-width:900px) {
-	@include curtain-height(40px);
-	@include curtain-width(7%);
+  @include curtain-height(40px);
+  @include curtain-width(7%);
 }
 
 @media (min-width:900px) and (max-width:1200px) {
-	@include curtain-height(80px);
-	@include curtain-width(13%);
+  @include curtain-height(80px);
+  @include curtain-width(13%);
 }
 
 @media (min-width:1200px) {
-	@include curtain-height(100px);
-	@include curtain-width(18%);
+  @include curtain-height(100px);
+  @include curtain-width(18%);
 }
 
 @media (max-height: 600px) {
-	@include curtain-height(40px);
+  @include curtain-height(40px);
 }
 
 @media (max-height: 400px) {
-	@include curtain-height(10px);
+  @include curtain-height(10px);
 }
 
 

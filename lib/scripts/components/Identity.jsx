@@ -16,7 +16,7 @@ module.exports = Identity = React.createClass({
 
   getInitialState: function () {
     return {
-      view: 'DO_U_LOL'
+      view: 'LOL' // 'DO_U_LOL'
     };
   },
 

@@ -1,51 +1,51 @@
 var React = require('react/addons'),
-	InputStore = require('../input/store'),
-	InputActions = require('../input/actions'),
+  InputStore = require('../input/store'),
+  InputActions = require('../input/actions'),
   Form;
 
 module.exports = Form = React.createClass({
-	getInitialState: function () {
-		InputActions.createForm(this.props.id);
-		return {
-			formData: InputStore.getForm(this.props.id)
-		};
-	},
+  getInitialState: function () {
+    InputActions.createForm(this.props.id);
+    return {
+      formData: InputStore.getForm(this.props.id)
+    };
+  },
 
-	componentDidMount: function () {
-		InputStore.on(this.props.id, this._handleChange);
-	},
+  componentDidMount: function () {
+    InputStore.on(this.props.id, this._handleChange);
+  },
 
-	componentWillUnmount: function () {
-		InputStore.removeListener(this.props.id, this._handleChange);
-	},
+  componentWillUnmount: function () {
+    InputStore.removeListener(this.props.id, this._handleChange);
+  },
 
-	_handleChange: function () {
-		this.setState({
-			formData: InputStore.getForm(this.props.id)
-		});
-	},
+  _handleChange: function () {
+    this.setState({
+      formData: InputStore.getForm(this.props.id)
+    });
+  },
 
-	render: function () {
-		var formId = this.props.id;
+  render: function () {
+    var formId = this.props.id;
 
-		// Aggressivly pas down prop for form id!
-		var fields = (function replace(children) {
-			return React.Children.map(children, function (child) {
-				if (!React.isValidElement(child)) {
-					return child;
-				} else {	
-					return React.cloneElement(child, {
-						formId: formId,
-						children: replace(child.props.children)
-					});
-				}
-			});
-		}(this.props.children));
+    // Aggressivly pas down prop for form id!
+    var fields = (function replace(children) {
+      return React.Children.map(children, function (child) {
+        if (!React.isValidElement(child)) {
+          return child;
+        } else {  
+          return React.cloneElement(child, {
+            formId: formId,
+            children: replace(child.props.children)
+          });
+        }
+      });
+    }(this.props.children));
 
-		return (
-			<form className={this.props.className}>
-				{fields}
-			</form>
-		);
-	}
+    return (
+      <form className={this.props.className}>
+        {fields}
+      </form>
+    );
+  }
 });

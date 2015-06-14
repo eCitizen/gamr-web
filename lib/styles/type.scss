@@ -22,9 +22,9 @@ p {
 }
 
 .marquee {
-	color: $color-white;
-	position: relative;
-	z-index: 30;
+  color: $color-white;
+  position: relative;
+  z-index: 30;
   text-shadow: 0 0 2px #eeffee;
   // left: 120px;
   letter-spacing: 2px;
@@ -35,9 +35,9 @@ p {
   font-size: 14px;
 
   &.b {
-  	margin-top: 6px;
-  	color: $color-main;
-  	// left: 120px;
+    margin-top: 6px;
+    color: $color-main;
+    // left: 120px;
   }
 }
 
@@ -48,23 +48,23 @@ p {
 }
 
 // #home .button {
-// 	z-index: 100;
-// 	margin-left: -80px;
-// 	margin-top: 45px;
+//   z-index: 100;
+//   margin-left: -80px;
+//   margin-top: 45px;
 // }
 
 #home .button {
-	margin-top: 55px;
-	width: 120px;
-	// margin-left: -120px;
+  margin-top: 55px;
+  width: 120px;
+  // margin-left: -120px;
 }
 
 .footnote {
-	color: $color-secondary;
-	font-family: Helvetica;
-	font-size: 13px;
-	line-height: 18px;
-	text-align: left;
-	margin-top: 50px;
+  color: $color-secondary;
+  font-family: Helvetica;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: left;
+  margin-top: 50px;
 }
 

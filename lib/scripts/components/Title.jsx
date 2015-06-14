@@ -1,6 +1,6 @@
 var React = require('react/addons'),
-	Splitter = require('./Splitter.jsx'),
-	classnames = require('classnames'),
+  Splitter = require('./Splitter.jsx'),
+  classnames = require('classnames'),
   Title;
 
 module.exports = Title = React.createClass({

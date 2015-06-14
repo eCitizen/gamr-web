@@ -1,7 +1,7 @@
 
 .survey-change-enter {
-	position: absolute;
-	top:0;
+  position: absolute;
+  top:0;
   opacity: 0.01;
   transition: opacity .5s ease-in;
 }
@@ -11,8 +11,8 @@
 }
 
 .survey-change-leave {
-	position: absolute;
-	top:0;
+  position: absolute;
+  top:0;
   opacity: 1;
   transition: opacity .5s ease-in;
 }
@@ -24,7 +24,7 @@
 // question
 
 .question-change-enter {
-	top:0;
+  top:0;
   opacity: 0.01;
   transition: opacity 200ms ease-in;
 }
@@ -34,7 +34,7 @@
 }
 
 .question-change-leave {
-	top:0;
+  top:0;
   opacity: 1;
   transition: opacity 200ms ease-in;
 }
