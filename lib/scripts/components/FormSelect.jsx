@@ -35,9 +35,12 @@ module.exports = Select = React.createClass({
       }.bind(this));
     }
 
+    // TODO: there is an issue with array options and getting current label
+
     return (
-      <div className={classnames('gamr-field gamr-select',{
-        invalid: !this.state.valid
+      <div className={classnames('gamr-field gamr-select', {
+        invalid: !this.state.valid,
+        'has-value': this.state.value
       })}>
         <span className='select-cover'>{this.props.options[this.state.value] || this.props.label}</span>
         <select 

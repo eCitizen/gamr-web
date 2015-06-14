@@ -399,6 +399,7 @@
 			},
 			"year": {
 				"label": "Year",
+				"id": "sl_birth_year",
 				"type": "selectRange",
 				"range": [2014,1900]
 			}
@@ -662,7 +663,7 @@
 			"level": {
 				"label": "Select English Level",
 				"defaultValue": "United States",
-				"id": "sl_country",
+				"id": "sl_english_lvl",
 				"type:": "select",
 				"options": {
 					"native":"Native",
