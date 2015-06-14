@@ -1,29 +1,11 @@
 
 .gamr-field {
-  margin-bottom: 20px;
-
-  // &.invalid {
-  //  border: 1px solid red;
-  // }
   font-family: helvetica;
-  font-size: 14px;
+  width: $field-width;
+  color: $color-main;
+  margin-bottom: 20px;
+  font-size: $field-font-size;
   letter-spacing: 1px;
-}
-
-.gamr-input {
-  & > input {
-    border: 1px solid $color-main;
-    background: $color-black;
-    @include border-top-radius($button-radius/1.5);
-    @include border-bottom-radius($button-radius/1.5);
-    padding: 10px;
-    color: $color-white;
-    font-size: 14px;
-    width: 300px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
 }
 
 ::-webkit-input-placeholder { color: $color-secondary; opacity: 1; }
@@ -31,10 +13,23 @@
 ::-moz-placeholder { color: $color-secondary; opacity: 1; } /* Firefox 19+ */
 :-ms-input-placeholder { color: $color-secondary; opacity: 1;}
 
+.gamr-input {
+  & > input {
+    width: 100%;
+    background: $color-black;
+    @include border-top-radius($field-radius);
+    @include border-bottom-radius($field-radius);
+    border: 1px solid $color-main;
+    padding: $field-padding;
+    color: $color-white;
+    font-size: 14px;
+    @include border-box();
+  }
+}
+
 .gamr-select {
   display: block;
   position: relative;
-  width: 300px;
   height: 40px;
 
   &:hover {
@@ -46,6 +41,7 @@
   }
 
   & > select {
+    width: 100%;
     vertical-align: middle;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -53,15 +49,11 @@
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
-
     opacity: 0;
-    width: 100%;
-    // padding: 5px;
-    font-size: 16px;
+    font-size: $field-font-size;
     border: 0;
     border-radius: 0;
-    height: 42px;
+    height: $button-height + 2px;
   }
 
   &.has-value > .select-cover {
@@ -69,43 +61,38 @@
   }
 
   & > .select-cover {
+    width: 100%;
     display: inline-block;
     border: 1px solid $color-main;
     background: $color-black;
-    @include border-top-radius($button-radius/1.5);
-    @include border-bottom-radius($button-radius/1.5);
-    padding: 0px 10px;
-    // background-color: $color-main;
+    padding: 0px $field-padding;
     color: $color-secondary;
-    padding-right: 50px;
+    padding-right: $select-button-width + $field-padding;
     position: relative;
-    line-height: 40px;
-    width: 300px;
-
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    line-height: $button-height;
+    @include border-top-radius($field-radius);
+    @include border-bottom-radius($field-radius);
+    @include border-box();
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &:after {
       content: "\f078";
       font-family: FontAwesome;
       display: inline-block;
-      line-height: 40px;
+      line-height: $button-height;
       top: 0;
       bottom: 0;
       position: absolute;
       right: 0;
-      width: 40px;
+      width: $select-button-width;
       text-align: center;
       border-left: 1px solid $color-main;
       color: $color-main;
       font-size: 12px;
       background: $color-black;
     }
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 

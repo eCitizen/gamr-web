@@ -10,3 +10,16 @@ $button-height: 40px;
 $button-padding: 20px;
 $button-radius: 8px;
 $button-width: 170px;
+
+$field-width: 450px;
+$field-radius: $button-radius/1.5;
+$field-font-size: 14px;
+$field-padding: 10px;
+$select-button-width: $button-height;
+
+
+@mixin border-box() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
