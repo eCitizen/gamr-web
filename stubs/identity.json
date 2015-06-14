@@ -662,7 +662,6 @@
 			},
 			"level": {
 				"label": "Select English Level",
-				"defaultValue": "United States",
 				"id": "sl_english_lvl",
 				"type:": "select",
 				"options": {

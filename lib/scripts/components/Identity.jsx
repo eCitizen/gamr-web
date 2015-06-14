@@ -16,7 +16,7 @@ module.exports = Identity = React.createClass({
 
   getInitialState: function () {
     return {
-      view: 'LOL' // 'DO_U_LOL'
+      view: 'DO_U_LOL'
     };
   },
 
@@ -133,22 +133,18 @@ module.exports = Identity = React.createClass({
 
       case 'BIO':
         view = (
-          <div className='form-block'>
-            <h2>{BIO.title}</h2>
-            <FormSelect required={false} {... BIO.fields.gender}/>
-            <FormSelect required={false} {... BIO.fields.month}/>
-            <FormSelect required={false} {... BIO.fields.year} options={years}/>
-            <Button action={this.goToView.bind(this,'LANG')}>Continue</Button>
-          </div>
-        );
-        break;
-
-      case 'LANG':
-        view = (
-          <div className='form-block'>
-            <h2>{LANG.title}</h2>
-            <FormSelect required={false} {... LANG.fields.country}/>
-            <FormSelect required={false} {... LANG.fields.level}/>
+          <div>
+            <div className='form-block'>
+              <h2>{BIO.title}</h2>
+              <FormSelect required={false} {... BIO.fields.gender}/>
+              <FormSelect required={false} {... BIO.fields.month}/>
+              <FormSelect required={false} {... BIO.fields.year} options={years}/>
+            </div>
+            <div className='form-block'>
+              <h2>{LANG.title}</h2>
+              <FormSelect required={false} {... LANG.fields.country}/>
+              <FormSelect required={false} {... LANG.fields.level}/>
+            </div>
             <Button action={this.goToView.bind(this,'END')}>Continue</Button>
           </div>
         );
