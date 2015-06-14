@@ -96,13 +96,27 @@
   }
 }
 
+.checkbox-wrap {
+  display: block;
+  
+  & + .checkbox-wrap {
+    margin-top: 5px;  
+  }
+
+  label {
+    padding-left: 15px;
+    letter-spacing: 1px;
+    font-size: $field-font-size;
+    font-family: helvetica;
+  }
+}
+
 .checkbox {
   display: inline-block;
   position: relative;
   width: 20px;
   height: 20px;
   bottom: -6px;
-  margin-right: 15px;
   border: 1px solid $color-main;
   @include border-top-radius($button-radius/2);
   @include border-bottom-radius($button-radius/2);

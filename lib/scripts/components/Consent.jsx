@@ -6,6 +6,7 @@ var React = require('react/addons'),
   Button =  require('./Button.jsx'),
   Title = require('./Title.jsx'),
   classnames = require('classnames'),
+  Checkbox = require('./FormCheckbox.jsx'),
   Consent;
 
 module.exports = Consent = React.createClass({
@@ -15,9 +16,9 @@ module.exports = Consent = React.createClass({
     };
   },
 
-  _toggleConsent: function () {
+  _toggleConsent: function (checked) {
     this.setState({
-      consent: !this.state.consent
+      consent: checked
     });
   },
 
@@ -49,9 +50,9 @@ module.exports = Consent = React.createClass({
         </div>
         <div className='consent-footer'>
           <div className='consent-ok'>
-            <div className={classnames('checkbox', {'checked': this.state.consent})} 
-              onClick={this._toggleConsent}/>
-            <label onClick={this._toggleConsent}>I declare that I understand the conditions of the research listed above.</label>
+            <Checkbox action={this._toggleConsent}>
+              I declare that I understand the conditions of the research listed above.
+            </Checkbox>
           </div>
           <Link to="identity" className='continue'>
             <Button className={classnames({inactive: !this.state.consent})}>

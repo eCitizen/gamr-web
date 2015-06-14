@@ -9,6 +9,7 @@ var React = require('react/addons'),
   Title = require('./Title.jsx'),
   Button = require('./Button.jsx'),
   Question = require('./Question.jsx'),
+  Checkbox = require('./FormCheckbox.jsx'),
   Identity;
 
 module.exports = Identity = React.createClass({
@@ -46,7 +47,7 @@ module.exports = Identity = React.createClass({
   render: function () {
     var WOW = guide.identity.WOW,
       LOL = guide.identity.LOL,
-      BHFD = guide.identity.BFHD,
+      BFHD = guide.identity.BFHD,
       BIO = guide.identity.BIO,
       LANG = guide.identity.LANG;
 
@@ -65,12 +66,21 @@ module.exports = Identity = React.createClass({
     switch (this.state.view) {
       case 'DO_U_LOL':
         view = (
-          <Question
-            className='yes-no'
-            answers={['no','yes']}
-            action={this.forkView('LOL','DO_U_WOW')}>
-            Do you play {LOL.title}?
-          </Question>
+          <div>
+            <p className='question-text'>
+              Which of the following do you play?
+            </p>
+            <Checkbox>
+              {LOL.title}
+            </Checkbox>
+            <Checkbox>
+              {WOW.title}
+            </Checkbox>
+            <Checkbox>
+              {BFHD.title}
+            </Checkbox>
+            <Button action={this.goToView.bind(this,'LOL')}>Continue</Button>
+          </div>
         );
         break;
 
@@ -116,7 +126,7 @@ module.exports = Identity = React.createClass({
             className='yes-no'
             answers={['no','yes']}
             action={this.forkView('BFHD','BIO')}>
-            Do you play {BHFD.title}?
+            Do you play {BFHD.title}?
           </Question>
         );
         break;
@@ -124,8 +134,8 @@ module.exports = Identity = React.createClass({
       case 'BFHD':
         view = (
           <div className='form-block'>
-            <h2>{BHFD.title}</h2>
-            <FormInput {... BHFD.fields.playerName}/>
+            <h2>{BFHD.title}</h2>
+            <FormInput {... BFHD.fields.playerName}/>
             <Button action={this.goToView.bind(this,'BIO')}>Continue</Button>
           </div>
         );

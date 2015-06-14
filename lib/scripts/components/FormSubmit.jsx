@@ -5,7 +5,7 @@ var React = require('react/addons'),
 
 
 module.exports = FormSubmit = React.createClass({
-  getInitialProps: function () {
+  getDefaultProps: function () {
     return {
       action: function () {}
     };
