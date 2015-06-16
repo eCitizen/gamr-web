@@ -73,7 +73,7 @@
   }
 
   &.section {
-    font-size: 30px;
+    font-size: 32px;
     margin-bottom: 25px;
   }
 
@@ -88,7 +88,14 @@
     text-indent: -2px;
   }
 
-  &.nav-title-sub {
-    font-size: 13px;
+  &.nav-title-sub,
+  &.small {
+    
+  }
+
+  &.small {
+    font-size: 15px;
+    color: $color-white;
+    margin-bottom: 5px;
   }
 }

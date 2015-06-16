@@ -22,7 +22,7 @@ module.exports = Intro = React.createClass({
 
             <h4 className='marquee'>What does your play style say about you?</h4>
             <h4 className='marquee b'>Join us, and find out in just 15 minutes.</h4>
-            <Link to="survey" className=''><Button>Start</Button></Link>
+            <Link to="consent" className=''><Button>Start</Button></Link>
             <p className='footnote'>
               To participate, you must have an account with one or more of the folllowing:<br/> League of Legends, Battlefield: Hardline, or World of Warcraft.
             </p>

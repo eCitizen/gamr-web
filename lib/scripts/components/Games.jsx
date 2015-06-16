@@ -16,13 +16,14 @@ module.exports = Identity = React.createClass({
 
   submitGames: function (form) {
     console.log('submit games', form);
-    this.transitionTo('identity');
+    this.transitionTo('profile');
   },
 
   render: function () {
     return (
       <div className='screen-scroll'>
-        <Title className='section'>Identity</Title>
+        <Title className='small'>Identity</Title>
+        <Title className='section'>GAMEPLAY</Title>
         <Form id={FORM_ID}>
           <p className='question-text'>
             Which of the following do you play?

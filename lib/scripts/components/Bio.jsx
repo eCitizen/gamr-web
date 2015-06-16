@@ -35,7 +35,8 @@ module.exports = BioComponent = React.createClass({
 
     return (
       <div className='screen-scroll'>
-        <Title className='section'>Bio</Title>
+        <Title className='small'>Identity</Title>
+        <Title className='section'>Background</Title>
         <Form id={FORM_ID}>
           <div className='form-block'>
             <h2>{BIO.title}</h2>

@@ -48,14 +48,18 @@ module.exports = QuestionSet = React.createClass({
     if (!this.state.started) {
       return (
         <div className='screen-scroll'>
+          <Title className='small'>Part 1 of 3</Title>
           <Title className='section'>{this.state.title}</Title>
-          <p>{this.state.instructions}</p>
+          <div className='instructions-body'>
+            {this.props.children}
+          </div>
           <Button action={this.begin}>GOT IT</Button>
         </div>
       );
     } else {
       return (
         <div className='question-set screen-scroll'>
+          <Title className='small'>Part 1 of 3</Title>
           <Title className='section'>{this.state.title}</Title>
           <div className='question-wrap'>
             <TransitionGroup component='div' transitionName='question-change'>
