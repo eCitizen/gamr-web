@@ -8,6 +8,7 @@ var React = require('react/addons'),
   guide = require('../services/guide');
 
 var Home = require('./Home.jsx'),
+  Games = require('./Games.jsx'),
   Identity = require('./Identity.jsx'),
   Bio = require('./Bio.jsx'),
   Survey = require('./Survey.jsx'),
@@ -24,6 +25,7 @@ var Home = require('./Home.jsx'),
 var routes = (
   <Route name="home" path="/" handler={Home}>
     <Route name="survey" handler={Survey}>
+      <Route name="games" path="games" handler={Games}/>
       <Route name="identity" path="identity" handler={Identity}/>
       <Route name="bio" path="bio" handler={Bio}/>
       <Route name="brain" path="brain-type" handler={BrainType}/>

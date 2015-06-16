@@ -2,24 +2,43 @@
 
 var React = require('react/addons'),
   Router = require('react-router'),
-  Link = Router.Link,
-  Button =  require('./Button.jsx'),
+  Navigation = Router.Navigation,
+  Form = require('./Form.jsx'),
+  FormSubmit = require('./FormSubmit.jsx'),
   Title = require('./Title.jsx'),
   classnames = require('classnames'),
   Checkbox = require('./FormCheckbox.jsx'),
+  InputStore = require('../input/store'),
+  FORM_ID = 'consent',
   Consent;
 
 module.exports = Consent = React.createClass({
+  mixins: [Navigation],
+
   getInitialState: function () {
     return {
-      consent: false
+      consent: InputStore.getForm(FORM_ID).hasConsented,
+      valid: true
     };
   },
 
   _toggleConsent: function (checked) {
-    this.setState({
-      consent: checked
-    });
+    var newState = {};
+    newState.consent = checked;
+    if (checked) {
+      newState.valid = true;
+    }
+    this.setState(newState);
+  },
+
+  _submitConsent: function (form) {
+    if (form.hasConsented) {
+      this.transitionTo('games');
+    } else {
+      this.setState({
+        valid: false
+      });
+    }
   },
 
   render: function () {
@@ -48,18 +67,25 @@ module.exports = Consent = React.createClass({
           We want to remind you that participation in this study is voluntary. You may decline to answer any or all questions. There are no negative consequences to you if you decide not to participate in this study.
         </p>
         </div>
-        <div className='consent-footer'>
+        <Form id={FORM_ID} className='consent-footer'>
           <div className='consent-ok'>
-            <Checkbox action={this._toggleConsent}>
+            <Checkbox 
+              id='hasConsented'
+              action={this._toggleConsent}>
               I declare that I understand the conditions of the research listed above.
             </Checkbox>
           </div>
-          <Link to="identity" className='continue'>
-            <Button className={classnames({inactive: !this.state.consent})}>
-              Continue
-            </Button>
-          </Link>
-        </div>
+          <FormSubmit 
+            action={this._submitConsent}
+            className={classnames({inactive: !this.state.consent})}>
+            Continue
+          </FormSubmit>
+          {this.state.valid ? null : (
+            <p className='warning'>
+              You must give consent to take the survey
+            </p>
+          )}
+        </Form>
       </div>
     );
   }

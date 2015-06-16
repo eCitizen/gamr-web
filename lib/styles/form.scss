@@ -187,7 +187,13 @@
     float: left;
   }
 
-  .continue {
+  .button {
     float: right;
+  }
+
+  .warning {
+    font-style: italic;
+    color: $color-warn;
+    clear: both;
   }
 }

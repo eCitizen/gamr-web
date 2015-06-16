@@ -2,13 +2,16 @@
 var React = require('react/addons'),
   classnames = require('classnames'),
   InputStore = require('../input/store'),
+  InputActions = require('../input/actions'),
   FormCheckbox;
 
 
 module.exports = FormCheckbox = React.createClass({
   getInitialState: function () {
     return {
-      checked: this.props.checked  
+      checked: this.props.formId ? 
+          InputStore.getForm(this.props.formId)[this.props.id] : 
+          this.props.checked
     };
   },
 
@@ -21,8 +24,10 @@ module.exports = FormCheckbox = React.createClass({
 
   _handleClick: function () {
     var checked = !this.state.checked;
-    var form = this.props.formId ? InputStore.getForm(this.props.formId) : null;
-    this.props.action(checked, form);
+    if (this.props.formId) {
+      InputActions.updateField(this.props.formId, this.props.id, checked);
+    }
+    this.props.action(checked);
     this.setState({
       checked: checked
     });

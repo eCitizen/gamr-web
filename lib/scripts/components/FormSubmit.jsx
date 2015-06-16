@@ -14,7 +14,7 @@ module.exports = FormSubmit = React.createClass({
 
   render: function () {
     return (
-      <Button action={function () {
+      <Button className={this.props.className} action={function () {
         this.props.action(InputStore.getForm(this.props.formId));
       }.bind(this)}>
         {this.props.children}
