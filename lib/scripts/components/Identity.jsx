@@ -7,28 +7,13 @@ var React = require('react/addons'),
   FormInput = require('./FormInput.jsx'),
   FormSubmit = require('./FormSubmit.jsx'),
   Title = require('./Title.jsx'),
-  Button = require('./Button.jsx'),
-  Checkbox = require('./FormCheckbox.jsx'),
   InputStore = require('../input/store'),
+  FORM_ID = 'identity',
   Identity;
-
-var gameKeys = ['LOL','WOW','BFHD'],
-  FORM_ID = 'identity';
+  
 
 module.exports = Identity = React.createClass({
   mixins: [Navigation],
-
-  getInitialState: function () {
-    return {
-      view: 'GAME_CHECK'
-    };
-  },
-
-  goToView: function (view) {
-    this.setState({
-      view: view
-    });
-  },
 
   submitProfiles: function (form) {
     setTimeout(function () {
@@ -44,13 +29,12 @@ module.exports = Identity = React.createClass({
   },
 
   render: function () {
-    var games = InputStore.getForm('games');
-
-    var WOW = guide.identity.WOW,
+    var games = InputStore.getForm('games'),
+      WOW = guide.identity.WOW,
       LOL = guide.identity.LOL,
-      BFHD = guide.identity.BFHD;
+      BFHD = guide.identity.BFHD,
+      formBlocks = [];
 
-    var formBlocks = [];
     if (games.LOL) {
       formBlocks.push(
         <div className='form-block' key='a'>
@@ -62,6 +46,7 @@ module.exports = Identity = React.createClass({
         </div>
       );
     }
+
     if (games.WOW) {
       formBlocks.push(
         <div className='form-block' key='b'>
@@ -72,6 +57,7 @@ module.exports = Identity = React.createClass({
         </div>
       );
     }
+
     if (games.BFHD) {
       formBlocks.push(
         <div className='form-block' key='c'>
