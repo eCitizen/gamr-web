@@ -1,6 +1,7 @@
 
 var React = require('react/addons'),
   InputStore = require('../input/store'),
+  Button = require('./Button.jsx'),
   FormSubmit;
 
 
@@ -12,8 +13,12 @@ module.exports = FormSubmit = React.createClass({
   },
 
   render: function () {
-    return (<div onClick={function () {
-      this.props.action(InputStore.getForm(this.props.formId));
-    }.bind(this)}>Submit!</div>);
+    return (
+      <Button action={function () {
+        this.props.action(InputStore.getForm(this.props.formId));
+      }.bind(this)}>
+        {this.props.children}
+      </Button>
+    );
   }
 });

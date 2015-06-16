@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 
 var React = require('react/addons'),
   Router = require('react-router'),
@@ -10,6 +9,7 @@ var React = require('react/addons'),
 
 var Home = require('./Home.jsx'),
   Identity = require('./Identity.jsx'),
+  Bio = require('./Bio.jsx'),
   Survey = require('./Survey.jsx'),
   Section = require('./Section.jsx'),
   Consent = require('./Consent.jsx'),
@@ -25,6 +25,7 @@ var routes = (
   <Route name="home" path="/" handler={Home}>
     <Route name="survey" handler={Survey}>
       <Route name="identity" path="identity" handler={Identity}/>
+      <Route name="bio" path="bio" handler={Bio}/>
       <Route name="brain" path="brain-type" handler={BrainType}/>
       <Route name="personality" path="personality" handler={Personality}/>
       <Route name="gamer-type" path="gamer-type" handler={GamerType}/>

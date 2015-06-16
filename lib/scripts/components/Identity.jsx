@@ -8,24 +8,19 @@ var React = require('react/addons'),
   FormSubmit = require('./FormSubmit.jsx'),
   Title = require('./Title.jsx'),
   Button = require('./Button.jsx'),
-  Question = require('./Question.jsx'),
   Checkbox = require('./FormCheckbox.jsx'),
   Identity;
+
+var gameKeys = ['LOL','WOW','BFHD'],
+  FORM_ID = 'identity';
 
 module.exports = Identity = React.createClass({
   mixins: [Navigation],
 
   getInitialState: function () {
     return {
-      view: 'DO_U_LOL'
+      view: 'GAME_CHECK'
     };
-  },
-
-  submit: function (form) {
-    console.log('submit', form);
-    setTimeout(function () {
-      this.transitionTo('brain');
-    }.bind(this), 500);
   },
 
   goToView: function (view) {
@@ -34,14 +29,11 @@ module.exports = Identity = React.createClass({
     });
   },
 
-  forkView: function (yesView, noView) {
-    return function (answer) {
-      if (answer === 'yes') {
-        this.goToView(yesView);
-      } else {
-        this.goToView(noView);
-      }
-    }.bind(this);
+  submitProfiles: function (form) {
+    setTimeout(function () {
+      console.log('submit profiles',form);
+      this.transitionTo('bio');
+    }.bind(this),200);
   },
 
   toggleGame: function (gameKey, checked) {
@@ -53,26 +45,11 @@ module.exports = Identity = React.createClass({
   render: function () {
     var WOW = guide.identity.WOW,
       LOL = guide.identity.LOL,
-      BFHD = guide.identity.BFHD,
-      BIO = guide.identity.BIO,
-      LANG = guide.identity.LANG;
-
-    var gameKeys = ['LOL','WOW','BFHD'];
-
-    var range = BIO.fields.year.range,
-      years = [], 
-      y;
-
-    for (y = range[0]; y >= range[1]; y -= 1) {
-      years.push({
-        label: y,
-        value: y
-      });
-    }
+      BFHD = guide.identity.BFHD;
 
     var view;
     switch (this.state.view) {
-      case 'DO_U_LOL':
+      case 'GAME_CHECK':
         view = (
           <div>
             <p className='question-text'>
@@ -89,12 +66,14 @@ module.exports = Identity = React.createClass({
                 );
               }.bind(this))}
             </div>
-            <Button action={this.goToView.bind(this,'LOL')}>Continue</Button>
+            <Button action={this.goToView.bind(this,'PROFILES')}>
+              Continue
+            </Button>
           </div>
         );
         break;
 
-      case 'LOL':
+      case 'PROFILES':
         var formBlocks = [];
         if (this.state.LOL) {
           formBlocks.push(
@@ -128,82 +107,21 @@ module.exports = Identity = React.createClass({
         view = (
           <div>
             {formBlocks}
-            <Button action={this.goToView.bind(this,'BIO')}>Submit</Button>
-          </div>
-        );
-        break;
-
-      case 'DO_U_WOW':
-        view = (
-          <Question
-            className='yes-no'
-            answers={['no','yes']}
-            action={this.forkView('WOW','DO_U_BFHD')}>
-            Do you play {WOW.title}?
-          </Question>
-        );
-        break;
-
-      case 'WOW':
-        view = (
-          <div className='form-block'>
-            <h2>{WOW.title}</h2>
-            <FormInput {... WOW.fields.characterName}/>
-            <FormSelect {... WOW.fields.region}/>
-            <FormSelect {... WOW.fields.realm}/>
-            <Button action={this.goToView.bind(this,'DO_U_BFHD')}>Continue</Button>
-          </div>
-        );
-        break;
-
-      case 'DO_U_BFHD':
-        view = (
-          <Question
-            className='yes-no'
-            answers={['no','yes']}
-            action={this.forkView('BFHD','BIO')}>
-            Do you play {BFHD.title}?
-          </Question>
-        );
-        break;
-
-      case 'BFHD':
-        view = (
-          <div className='form-block'>
-            <h2>{BFHD.title}</h2>
-            <FormInput {... BFHD.fields.playerName}/>
-            <Button action={this.goToView.bind(this,'BIO')}>Continue</Button>
-          </div>
-        );
-        break;
-
-      case 'BIO':
-        view = (
-          <div>
-            <div className='form-block'>
-              <h2>{BIO.title}</h2>
-              <FormSelect required={false} {... BIO.fields.gender}/>
-              <FormSelect required={false} {... BIO.fields.month}/>
-              <FormSelect required={false} {... BIO.fields.year} options={years}/>
-            </div>
-            <div className='form-block'>
-              <h2>{LANG.title}</h2>
-              <FormSelect required={false} {... LANG.fields.country}/>
-              <FormSelect required={false} {... LANG.fields.level}/>
-            </div>
-            <Button action={this.goToView.bind(this,'END')}>Continue</Button>
+            <FormSubmit action={this.submitProfiles}>
+              Submit
+            </FormSubmit>
           </div>
         );
         break;
 
       default:
-        view = <FormSubmit action={this.submit}/>;
+        throw new Error('bad view: ' + this.state.view);
     }
 
     return (
       <div className='screen-scroll'>
         <Title className='section'>Identity</Title>
-        <Form id='identity'>{view}</Form>
+        <Form id={FORM_ID}>{view}</Form>
       </div>
     );
   }

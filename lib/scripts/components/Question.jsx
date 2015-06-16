@@ -21,7 +21,7 @@ module.exports = Question = React.createClass({
           {this.props.answers.map(function (answer, idx) {
             return (
               <li key={idx}>
-                <Button action={this.props.action.bind(this,answer)}>{answer}</Button>
+                <Button action={this.props.action.bind(null,answer)}>{answer}</Button>
               </li>
             );
           }.bind(this))}
