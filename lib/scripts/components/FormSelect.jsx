@@ -23,26 +23,25 @@ module.exports = Select = React.createClass({
   },
 
   render: function () {
-    var options;
+    var optionsData = {};
     if (Array.isArray(this.props.options)) {
-      // this was put in to support months
-      options = this.props.options.map(function (v, idx) {
-        return <option value={v.value} key={idx}>{v.label}</option>;
+      this.props.options.map(function (v) {
+        optionsData[v.value] = v.label;
       });
     } else {
-      options = Object.keys(this.props.options).map(function (key, idx) {
-        return <option value={key} key={idx}>{this.props.options[key]}</option>;
-      }.bind(this));
+      optionsData = this.props.options;
     }
 
-    // TODO: there is an issue with array options and getting current label
+    var options = Object.keys(optionsData).map(function (key, idx) {
+      return <option value={key} key={idx}>{optionsData[key]}</option>;
+    }.bind(this));
 
     return (
       <div className={classnames('gamr-field gamr-select', {
         invalid: !this.state.valid,
         'has-value': this.state.value
       })}>
-        <span className='select-cover'>{this.props.options[this.state.value] || this.props.label}</span>
+        <span className='select-cover'>{optionsData[this.state.value] || this.props.label}</span>
         <select 
           value={this.state.value}
           onChange={this._update}>
