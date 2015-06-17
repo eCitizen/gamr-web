@@ -1,5 +1,6 @@
 
 .splitter > span { 
+  position: relative;
   // http://matthewlein.com/ceaser/
   $timing: cubic-bezier(0.780, 0.090, 0.495, 0.645);
   @include transition(
@@ -38,7 +39,7 @@
     // text-indent: -8px;
 
     .t-1 { left: -1px; } // A
-    .t-3 { left: -4px; } // R
+    .t-3 { left: -5px; } // R
   }
 
   &.main-sub {
