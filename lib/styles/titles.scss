@@ -1,49 +1,24 @@
 
 .splitter > span { 
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
+  // http://matthewlein.com/ceaser/
+  $timing: cubic-bezier(0.780, 0.090, 0.495, 0.645);
+  @include transition(
+      color 700ms ease 90ms, 
+      transform 600ms $timing);
 
-  & > .in {
-    // http://matthewlein.com/ceaser/
-    $timing: cubic-bezier(0.780, 0.090, 0.495, 0.645);
-    @include transition(
-        color 700ms ease 90ms, 
-        transform 600ms $timing);
-
-    display: block;
-  }
-
-  &.t:nth-child(2n) > .in {
+  &.t:nth-child(2n) {
     @include transition-delay(130ms);
   }
-  &.t:nth-child(3n) > .in {
+  &.t:nth-child(3n) {
     @include transition-delay(220ms);
   }
 }
 
 .main-title-wrap:hover {
-  .in {
+  span {
     // opacity: 0;
     color: $color-black;
   }
-
-  // .main .t:nth-child(2n) > .in {
-  //   @include transform(translateY(100%));
-  //   @include transition-delay(90ms);
-  // }
-  // .main .t:nth-child(2n+1) > .in {
-  //   @include transform(translateY(-150%));
-  // }
-  // .main .t:nth-child(3n+1) > .in {
-  //   @include transform(translateY(-420%));
-  // }
-  // .main-sub .t > .in {
-  //   @include transform(translateY(-300%));
-  // }
-  // .main-sub .t-1 > .in {
-  //   @include transform(translateY(-100%));
-  // }
 }
 
 .title {

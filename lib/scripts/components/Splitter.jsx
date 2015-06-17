@@ -29,7 +29,7 @@ module.exports = Splitter = React.createClass({
               style={makeStyle(idx,seg)}
               className={classnames(classPrefix, classPrefix+'-'+idx)}
               key={idx}>
-              <span className='in'>{seg}</span>
+              {seg}
             </span>
           );
         })}
