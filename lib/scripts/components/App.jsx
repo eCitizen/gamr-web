@@ -5,7 +5,8 @@ var React = require('react/addons'),
   NotFoundRoute = Router.NotFoundRoute,
   Route = Router.Route,
   api = require('../services/api'),
-  guide = require('../services/guide');
+  guide = require('../services/guide'),
+  makeTransition = require('./makeTransition.jsx');
 
 var Home = require('./Home.jsx'),
   Games = require('./Games.jsx'),
@@ -39,7 +40,7 @@ var routes = (
       <Route name="reward" path=":data?" handler={Profile}/>
       <DefaultRoute handler={NotFound}/>
     </Route>
-    <DefaultRoute handler={Intro}/>
+    <DefaultRoute handler={makeTransition(Intro)}/>
     <NotFoundRoute handler={NotFound}/>
   </Route>
 );

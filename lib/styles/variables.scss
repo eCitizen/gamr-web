@@ -23,6 +23,8 @@ $field-padding: 10px;
 $select-button-width: $button-height;
 $form-indent: 40px;
 
+$transition-time: 200ms;
+
 
 @mixin border-box() {
   -webkit-box-sizing: border-box;

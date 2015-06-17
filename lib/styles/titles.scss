@@ -14,7 +14,8 @@
   }
 }
 
-.main-title-wrap:hover {
+.example-appear .main-title-wrap,
+.example-leave.example-leave-active {
   span {
     // opacity: 0;
     color: $color-black;
