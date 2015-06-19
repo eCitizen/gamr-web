@@ -1,6 +1,7 @@
 
 .screen {
   @include transition(all 200ms ease);
+  @include transform(translate3d(0, 0, 0)); // acceleration
 }
 
 .about-open .screen {
@@ -20,10 +21,10 @@
 
 .about-close {
   position: fixed;
-  top: ($nav-height + $space-large) - 6px;
-  margin-left: $sceen-width + 20px;
+  top: ($nav-height + $space-large) - 14px;
+  margin-left: $sceen-width + 40px;
   font-size: 14px;
-  color: $color-warn;
+  color: $color-main;
 
   width: 70px;
   height: 40px;
