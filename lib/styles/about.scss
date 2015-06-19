@@ -2,6 +2,7 @@
 .screen {
   @include transition(all 200ms ease);
   @include transform(translate3d(0, 0, 0)); // acceleration
+  @include transform-style(preserve-3d);
 }
 
 .about-open .screen {
