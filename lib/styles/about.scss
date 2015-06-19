@@ -1,16 +1,69 @@
 
 .screen {
-  @include transition(all 700ms ease);
+  @include transition(all 200ms ease);
 }
 
-.screen:hover {
+.about-open .screen {
   @include filter(blur(18px));
-  opacity: .5;
+  opacity: .7;
 }
 
 .about {
+  width: $sceen-width;
   position: absolute;
   top: 0;
-  left: 0;
-  margin: ($nav-height + $space-large) auto;
+  left: 50%;
+  margin-left: -($sceen-width/2);
+  margin-top: ($nav-height + $space-large);
+  margin-bottom: ($nav-height + $space-large);
+}
+
+.about-close {
+  position: fixed;
+  top: ($nav-height + $space-large) - 6px;
+  margin-left: $sceen-width + 20px;
+  font-size: 14px;
+  color: $color-warn;
+
+  width: 70px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+
+  &:hover {
+    cursor: pointer;
+    color: $color-main;
+  }
+
+  & > .arr {
+    position: relative;
+    left: -4px;
+    bottom: 4px;
+  }
+}
+
+.about-body {
+  margin-left: 200px;
+  margin-top: $space-medium;
+}
+
+.about-intro,
+.bio-body {
+  font-family: $font-text;
+  font-size: 13px;
+  line-height: 20px;
+  color: $color-main;
+  margin-bottom: $space-large;
+}
+
+.about-people {
+  text-align: right;
+  margin-left: 100px;
+  margin-bottom: $space-medium;
+}
+
+.about-role {
+  color: $color-secondary;
+  margin-bottom: $space-medium;
+  font-size: 17px;
 }

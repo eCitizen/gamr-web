@@ -70,4 +70,16 @@
     color: $color-white;
     margin-bottom: $space-small;
   }
+
+  &.about-title {
+    font-size: 22px;
+    letter-spacing: 4px;
+    color: $color-white;
+    text-align: right;
+  }
+
+  &.about-name {
+    font-size: 19px;
+    color: $color-white;
+  }
 }
