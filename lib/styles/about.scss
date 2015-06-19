@@ -1,0 +1,16 @@
+
+.screen {
+  @include transition(all 700ms ease);
+}
+
+.screen:hover {
+  @include filter(blur(18px));
+  opacity: .5;
+}
+
+.about {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: ($nav-height + $space-large) auto;
+}
