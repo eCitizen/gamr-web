@@ -75,7 +75,7 @@ module.exports = Identity = React.createClass({
         <Title className='section'>{title}</Title>
         <Form id={FORM_ID}>
           {formBlocks}
-          <FormSubmit action={this.submitProfiles}>
+          <FormSubmit className='right' action={this.submitProfiles}>
             Submit
           </FormSubmit>
         </Form>

@@ -1,9 +1,9 @@
 
 .gamr-field {
   font-family: $font-text;
-  width: $field-width;
+  max-width: $field-width;
   color: $color-main;
-  margin-bottom: 20px;
+  margin-bottom: $space-medium;
   font-size: $field-font-size;
   letter-spacing: 1px;
   margin-left: $form-indent;
@@ -16,15 +16,15 @@
 
 .gamr-input {
   & > input {
-    width: 100%;
-    background: $color-black;
     @include border-top-radius($field-radius);
     @include border-bottom-radius($field-radius);
+    @include border-box();
+    width: 100%;
+    background: $color-black;
     border: 1px solid $color-main;
     padding: $field-padding;
     color: $color-white;
     font-size: 14px;
-    @include border-box();
   }
 }
 
@@ -103,13 +103,14 @@
 
 .checkbox-wrap {
   display: block;
+  position: relative;
+  margin-left: 40px;
   
   & + .checkbox-wrap {
     margin-top: 5px;  
   }
 
   label {
-    padding-left: 15px;
     letter-spacing: 1px;
     font-size: $field-font-size;
     font-family: $font-text;
@@ -118,10 +119,12 @@
 
 .checkbox {
   display: inline-block;
-  position: relative;
+  position: absolute;
   width: 20px;
   height: 20px;
-  bottom: -6px;
+  top: 50%;
+  margin-top: -11px;
+  left: -40px;
   border: 1px solid $color-main;
   @include border-top-radius($button-radius/2);
   @include border-bottom-radius($button-radius/2);
@@ -165,16 +168,20 @@
   line-height: 20px;
 
   .flashy {
-    margin-bottom: 25px;
+    margin-bottom: $space-medium;
   }
 
   .intro {
-    width: 400px;
+    max-width: 400px;
   }
 
   .terms {
     color: $color-secondary;
-    padding: 20px $form-indent;
+    padding: $space-medium $form-indent;
+  }
+
+  .consent-footer {
+    overflow: hidden; // cheap clearfix
   }
 
   .consent-ok {
@@ -190,5 +197,30 @@
     font-style: italic;
     color: $color-warn;
     clear: both;
+  }
+}
+
+@media (max-width: $mobile-break) {
+  .gamr-field {
+    margin-left: 0;
+  }
+
+  .consent-form {
+    .consent-ok {
+      line-height: 21px;
+      margin-bottom: $space-medium;
+    }
+    
+    .terms {
+      padding: $space-medium 0px;
+    }
+
+    .button {
+      float: right;
+    }
+
+    .warning {
+      float: left;
+    }
   }
 }

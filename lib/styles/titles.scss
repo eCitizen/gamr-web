@@ -46,12 +46,12 @@
     font-size: 20px;
     letter-spacing: 8px;
     margin-left: 74px;
-    margin-bottom: 20px;
+    margin-bottom: $space-medium;
   }
 
   &.section {
     font-size: 32px;
-    margin-bottom: 25px;
+    margin-bottom: $space-large;
   }
 
   &.nav-title,
@@ -65,14 +65,9 @@
     text-indent: -2px;
   }
 
-  &.nav-title-sub,
-  &.small {
-    
-  }
-
   &.small {
     font-size: 15px;
     color: $color-white;
-    margin-bottom: 5px;
+    margin-bottom: $space-small;
   }
 }

@@ -58,6 +58,10 @@
     text-shadow: none;
     border-color: $color-secondary;
   }
+
+  &:right {
+    float: right;
+  }
 }
 
 .yes-no .button {

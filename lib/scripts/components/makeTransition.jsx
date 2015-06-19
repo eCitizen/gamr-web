@@ -1,7 +1,6 @@
 
 var React = require('react/addons'),
-  ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
-  ReactCSSTransitionGroupChild = require('react/lib/ReactCSSTransitionGroupChild');
+  ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 module.exports = function (Component) {
   return React.createClass({
