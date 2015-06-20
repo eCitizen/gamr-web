@@ -3,7 +3,6 @@
 
 var React = require('react/addons'),
   Router = require('react-router'),
-  TransitionGroup = React.addons.CSSTransitionGroup,
   RouteHandler = Router.RouteHandler,
   Survey;
 

@@ -1,0 +1,26 @@
+
+- Remove all transition ideas that are not absolutley needed
+- Remove all unused test styles
+- create clearer type palette in css
+- Solidify question screen design
+    - back and forward buttons
+    - buttons must not move
+    - easy to read!
+    - reminder of number meanings
+- vallidators for forms
+- vallidators for routes
+- redirects for invallid routes
+- design loading icon
+- submit forms
+- make social tools real
+- fill in social meta tags
+- share image
+- work back button into identity form flow
+- make it so change in identity invallidates user
+- stub out results computing
+- create helpful transition form one question to the next
+- lock question functionality during question transition
+- notfound view
+- profile results view
+- keyboard enable answering questions
+- make all views work on mobile

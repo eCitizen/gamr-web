@@ -21,7 +21,14 @@ module.exports = Question = React.createClass({
           {this.props.answers.map(function (answer, idx) {
             return (
               <li key={idx}>
-                <Button action={this.props.action.bind(null,answer)}>{answer}</Button>
+                <Button 
+                  className={classnames({
+                    'not-selected': this.props.selected !== undefined && answer !== this.props.selected,
+                    'selected': answer === this.props.selected
+                  })}
+                  action={this.props.action.bind(null,answer)}>
+                  {answer}
+                </Button>
               </li>
             );
           }.bind(this))}

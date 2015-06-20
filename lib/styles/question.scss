@@ -25,3 +25,13 @@
   float: left;
   margin: 0 10px 0 0;
 }
+
+.question-nav {
+  position: absolute;
+  top: 300px;
+
+  & > span {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
