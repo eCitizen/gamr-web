@@ -40,25 +40,3 @@
 .survey-change-leave.survey-change-leave-active {
   opacity: 0.01;
 }
-
-// question
-
-.question-change-enter {
-  top:0;
-  opacity: 0.01;
-  transition: opacity 200ms ease-in;
-}
-
-.question-change-enter.question-change-enter-active {
-  opacity: 1;
-}
-
-.question-change-leave {
-  top:0;
-  opacity: 1;
-  transition: opacity 200ms ease-in;
-}
-
-.question-change-leave.question-change-leave-active {
-  opacity: 0.01;
-}

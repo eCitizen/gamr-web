@@ -25,7 +25,7 @@ module.exports = Identity = React.createClass({
         <Title className='small'>Identity</Title>
         <Title className='section'>GAMEPLAY</Title>
         <Form id={FORM_ID}>
-          <p className='question-text'>
+          <p className='flashy'>
             Which of the following do you play?
           </p>
           <div className='check-group'>

@@ -1,26 +1,21 @@
 
-/** @jsx React.DOM */
-
 var React = require('react/addons'),
   Button = require('./Button.jsx'),
   classnames = require('classnames'),
   Question;
 
 module.exports = Question = React.createClass({
-  submitQuestion: function (answer) {
-    this.props.onSubmit(this.props.idx, answer);
-  },
-
   render: function () {
+    var style = {
+      width: (1/this.props.answers.length * 100) + '%'
+    };
+
     return (
-      <div className={classnames('question', this.props.className)}>
-        <p className='question-text'>
-          {this.props.children}
-        </p>
+      <div className={classnames('answer', this.props.className)}>
         <ul className='choices'>
           {this.props.answers.map(function (answer, idx) {
             return (
-              <li key={idx}>
+              <li key={idx} style={style}>
                 <Button 
                   className={classnames({
                     'not-selected': this.props.selected !== undefined && answer !== this.props.selected,
@@ -33,6 +28,10 @@ module.exports = Question = React.createClass({
             );
           }.bind(this))}
         </ul>
+        <div className='reminder'>
+          <span className='low'>Very<br/>Inaccurate</span>
+          <span className='high'>Very<br/>Accurate</span>
+        </div>
       </div>
     );
   }
