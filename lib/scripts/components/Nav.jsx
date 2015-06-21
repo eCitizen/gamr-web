@@ -47,10 +47,8 @@ module.exports = Nav = React.createClass({
 
         <div className='social'>
           <span className='about-link' onClick={this.toggleAbout}>
-            {this.state.about ? 'close' : 'about'}
+            {this.state.about ? 'close' : '/ about'}
           </span>
-          <i className="fa fa-twitter"></i>
-          <i className="fa fa-facebook-official"></i>
         </div>
       </div>
     );
