@@ -8,6 +8,6 @@
 ## Setup 
 
     npm install
-    npm run-script start
+    npm start
     open http://localhost:8000/
     

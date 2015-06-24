@@ -17,7 +17,7 @@ module.exports = Identity = React.createClass({
 
   submitProfiles: function (form) {
     setTimeout(function () {
-      console.log('submit profiles',form);
+      console.log('submit profiles', form);
       this.transitionTo('bio');
     }.bind(this),200);
   },
