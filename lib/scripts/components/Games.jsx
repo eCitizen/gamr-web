@@ -23,7 +23,7 @@ module.exports = Identity = React.createClass({
     return (
       <div>
         <Form id={FORM_ID}>
-          <p className='flashy'>
+          <p className='preamble'>
             Which of the following do you play?
           </p>
           <div className='check-group'>
