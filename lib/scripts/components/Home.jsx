@@ -3,7 +3,7 @@
 var React = require('react/addons'),
   Router = require('react-router'),
   RouteHandler = Router.RouteHandler,
-  Nav = require('./Nav2.jsx'),
+  Nav = require('./Nav.jsx'),
   About = require('./About.jsx'),
   AboutStore = require('../AboutStore/AboutStore.jsx').Store,
   classnames = require('classnames'),
