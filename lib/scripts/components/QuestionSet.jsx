@@ -104,8 +104,6 @@ module.exports = QuestionSet = React.createClass({
 
     return (
       <div>
-        <Title className='small'>Part 1 of 3</Title>
-        <Title className='section'>{this.state.title}</Title>
         {body}
       </div>
     );

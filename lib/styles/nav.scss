@@ -1,145 +1,75 @@
 
-.navigation {
-  position: absolute;
-  top: 0;
-  right: 300px;
-  left: 280px;
-  height: 50px;
-  // border-bottom: 1px dotted $color-secondary;
-
-  z-index: 40000;
-  // border-bottom: 1px solid $color-main;
-  // padding: 0px $space-page-gutter;
-  // background: $color-black;
-  // box-shadow: 
-  //   0px 0px 150px -8px rgba(80,20,255, .5),
-  //   0px 0px 30px -3px rgba(255,0,160, .8);
-}
-
-.nav-title-wrap {
-  display: none;
-  margin-top: 4px;
-
-  & > .title {
-    @include transition(color 100ms ease-in-out);
-    color: $color-secondary;
-  }
-
-  &:hover > .title {
-    color: $color-main;
-  }
-}
-
-.social {
-  // @include transform(rotate(-90deg));
-  float: right;
-  
-  color: $color-main;
-  border-top: none;
-  // @include border-bottom-radius($button-radius);
-  height: 55px;
-  // box-shadow: 
-  //   0px 0px 150px -8px rgba(80,20,255, .5),
-  //   0px 0px 30px -3px rgba(255,0,160, .8);
-  
-  & > i,
-  & > .about-link {
-    display: inline-block;
-    font-size: 24px;
-    line-height: 75px;
-    // padding: 0 7px;
-
-    @include transition(color 100ms ease-in-out);
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  & > .about-link {
-    font-family: $font-title;
-    font-weight: 900;
-    font-style: normal;
-    position: relative;
-    top: -3px;
-    text-transform: uppercase;
-    font-size: 15px;
-    letter-spacing: 1px;
-  }
-}
-
-
-// new stuff
-
 .nav {
   position: relative;
-  padding: 30px;
-  color: #666;
+  padding-bottom: 30px;
+  color: $color-subtle;
   font-family: $font-text;
   font-size: 13px;
-  line-height: 25px;
+  line-height: 20px;
   letter-spacing: 1px;
-  max-width: 700px;
-  margin: 0 auto;
 }
 
 .nav-list {
   @include clearfix();
   
-  &.level-2 > .active {
-    font-size: 26px;
-    font-family: $font-title;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: $color-main;
-    font-style: normal;
+  &.level-2 > li {
+    &.active {
+      font-size: 26px;
+      font-family: $font-title;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $color-main;
+      font-style: normal;
+    }
+
+    &.finished {
+      &:hover {
+        cursor: normal;
+      }
+
+      &:before {
+        content: '\2713 '; // checkmark
+        display: inline-block;
+        color: $color-secondary;
+        margin-right: 3px;
+      }
+    }
+  }
+
+  &.level-1 > li {
+    &:before {
+      content: '/ ';
+    }
+
+    &.active {
+      color: $color-secondary;
+    }
   }
 
   & > li {
     float: left;
     margin-right: 10px;
 
-    // &:after {
-    //   content: ' \00bb'
-    // }
-
     &.home-link {
       float: right;
+      margin-right: 0px;
       font-family: $font-title;
       font-size: 16px;
       letter-spacing: 2px;
       text-transform: uppercase;
+      &:before {
+        content: '';
+      }
     }
 
     &.about-link {
       float: right;
+      margin-right: 0px;
     }
 
     &:hover {
       color: $color-secondary;
       cursor: pointer;
     }
-
-    &.active {
-      color: $color-main;
-      font-style: italic;
-    }
-
-    &.finished {
-      text-decoration: line-through;
-    }
-
-    &.locked {
-      
-      
-      // &:hover {
-      //   cursor: normal;
-      //   text-decoration: line-through;
-      // }
-      // color: $color-secondary;
-      // text-decoration: line-through;
-    }
   }
 }
-
-

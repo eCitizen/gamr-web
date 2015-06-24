@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 
 var React = require('react/addons'),
   Router = require('react-router'),
@@ -43,10 +42,9 @@ module.exports = Consent = React.createClass({
 
   render: function () {
     return (
-      <div className='screen-scroll consent-form'>
-        <Title className='section'>Informed Consent</Title>
+      <div className='consent-form'>
         <div className='intro'>
-          <p className='flashy'>
+          <p className='preamble'>
             Thank you for checking out our research!
           </p>
           <p>

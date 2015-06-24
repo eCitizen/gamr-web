@@ -32,9 +32,9 @@ module.exports = Home = React.createClass({
 
   render: function () {
     return (
-      <div className={classnames({'about-open': this.state.about})}>
+      <div className={classnames('screen', {'about-open': this.state.about})}>
         <Nav/>
-        <div className='screen'>
+        <div className='content'>
           <RouteHandler {... this.props}/>
         </div>
         <About/>

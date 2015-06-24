@@ -67,12 +67,10 @@ module.exports = Identity = React.createClass({
       );
     }
     
-    var title = formBlocks.length > 1 ? 'PROFILES' : 'PROFILE';
+    // var title = formBlocks.length > 1 ? 'PROFILES' : 'PROFILE';
 
     return (
-      <div className='screen-scroll'>
-        <Title className='small'>Identity</Title>
-        <Title className='section'>{title}</Title>
+      <div>
         <Form id={FORM_ID}>
           {formBlocks}
           <FormSubmit className='right' action={this.submitProfiles}>

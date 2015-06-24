@@ -21,9 +21,7 @@ module.exports = Identity = React.createClass({
 
   render: function () {
     return (
-      <div className='screen-scroll'>
-        <Title className='small'>Identity</Title>
-        <Title className='section'>GAMEPLAY</Title>
+      <div>
         <Form id={FORM_ID}>
           <p className='flashy'>
             Which of the following do you play?

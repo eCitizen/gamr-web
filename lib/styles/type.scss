@@ -21,6 +21,15 @@ p {
   font-size: 14px;
 }
 
+.preamble {
+  letter-spacing: 2px;
+  font-family: $font-text;
+  font-style: italic;
+  font-size: 14px;
+  color: $color-main;
+  margin-bottom: $space-large;
+}
+
 .marquee {
   color: $color-white;
   position: relative;

@@ -5,7 +5,7 @@
   @include transform-style(preserve-3d);
 }
 
-.about-open .screen {
+.about-open .content {
   @include filter(blur(18px));
   opacity: .7;
 }
