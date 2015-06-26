@@ -2,10 +2,6 @@
 $max-question-height: 80px;
 $transition-question-time: 200ms;
 
-.question-set-body {
-  margin-left: $form-indent;
-}
-
 .question-wrap {
   position: relative;
   height: $max-question-height;

@@ -7,6 +7,19 @@
   font-size: 13px;
   line-height: 20px;
   letter-spacing: 1px;
+
+  @include clearfix();
+
+  & > .left {
+    width: 130px;
+    float: left;
+  }
+
+  & > .right {
+    position: absolute;
+    left: 150px;
+    right: 0;
+  }
 }
 
 .nav-list {
@@ -42,7 +55,7 @@
     }
 
     &.active {
-      color: $color-secondary;
+      color: $color-main;
     }
   }
 
@@ -51,6 +64,7 @@
     margin-right: 10px;
 
     &.home-link {
+      white-space: nowrap;
       float: right;
       margin-right: 0px;
       font-family: $font-title;

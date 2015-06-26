@@ -86,18 +86,22 @@ module.exports = Nav2 = React.createClass({
 
     return (
       <div className='nav'>
-        <ul className='nav-list level-1'>
-          {level1}
-          <li className='home-link'>
-            <Link to='home'>PROJECT GAMR</Link>
-          </li>
-        </ul>
-        <ul className='nav-list level-2'>
-          {level2}
-          <li className='about-link' onClick={this.toggleAbout}>
-            [About]
-          </li>
-        </ul>
+        <div className='left'>
+          <ul className='nav-list level-1'>
+            <li className='home-link'>
+              <Link to='home'>PROJECT GAMR</Link>
+            </li>
+          </ul>
+          <ul className='nav-list level-2'>
+            <li className='about-link' onClick={this.toggleAbout}>
+              [About]
+            </li>
+          </ul>
+        </div>
+        <div className='right'>
+          <ul className='nav-list level-1'>{level1}</ul>
+          <ul className='nav-list level-2'>{level2}</ul>
+        </div>
       </div>
     );
   }

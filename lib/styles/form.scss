@@ -6,7 +6,7 @@
   margin-bottom: $space-medium;
   font-size: $field-font-size;
   letter-spacing: 1px;
-  margin-left: $form-indent;
+  margin-left: $push-space;
 }
 
 ::-webkit-input-placeholder { color: $color-secondary; opacity: 1; }
@@ -98,16 +98,18 @@
 }
 
 .check-group {
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
 }
+
+$checkbox-space: 40px;
 
 .checkbox-wrap {
   display: block;
   position: relative;
-  margin-left: 40px;
+  margin-left: $checkbox-space;
   
   & + .checkbox-wrap {
-    margin-top: 5px;  
+    margin-top: 12px;  
   }
 
   label {
@@ -123,8 +125,8 @@
   width: 20px;
   height: 20px;
   top: 50%;
-  margin-top: -11px;
-  left: -40px;
+  margin-top: -12px;
+  left: -$checkbox-space;
   border: 1px solid $color-main;
   @include border-top-radius($button-radius/2);
   @include border-bottom-radius($button-radius/2);
@@ -177,7 +179,6 @@
 
   .terms {
     color: $color-secondary;
-    padding: $space-medium $form-indent;
   }
 
   .consent-footer {

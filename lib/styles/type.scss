@@ -27,7 +27,6 @@ p {
   font-style: italic;
   font-size: 14px;
   color: $color-main;
-  margin-bottom: $space-large;
 }
 
 .marquee {
@@ -56,16 +55,9 @@ p {
   right: 40px;
 }
 
-// #home .button {
-//   z-index: 100;
-//   margin-left: -80px;
-//   margin-top: 45px;
-// }
-
 #home .button {
   margin-top: 55px;
   width: 120px;
-  // margin-left: -120px;
 }
 
 #home .flashy {
@@ -78,7 +70,6 @@ p {
   font-size: 13px;
   line-height: 18px;
   text-align: left;
-  margin-top: 50px;
 }
 
 .instructions-body {
@@ -86,25 +77,16 @@ p {
   font-size: 13px;
   line-height: 20px;
   color: $color-secondary;
-  max-width: 500px;
 
   & > .answerKey {
     color: $color-white;
-    margin-bottom: 20px;
 
-    & > .flashy {
-      margin-top: 20px;  
-    }
+    .value { color: $color-main; }
 
     & > ul {
-      margin-left: $form-indent;
       font-family: $font-special;
       font-size: 16px;
       line-height: 25px;
-    }
-
-    .value {
-      color: $color-main;
     }
   }
 
@@ -114,7 +96,6 @@ p {
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 2px;
-    margin-bottom: 20px;
   }
 }
 

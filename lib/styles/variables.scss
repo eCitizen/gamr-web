@@ -35,6 +35,11 @@ $transition-time: 200ms;
 $sceen-width: 700px;
 $mobile-break: $sceen-width + ($space-page-gutter * 2);
 
+$rail-width: 130px;
+$rail-gutter: 20px;
+$push-space: $rail-width + $rail-gutter;
+$body-width: $sceen-width - $push-space;
+
 @mixin border-box() {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

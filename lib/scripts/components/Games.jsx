@@ -26,7 +26,7 @@ module.exports = Identity = React.createClass({
           <p className='preamble'>
             Which of the following do you play?
           </p>
-          <div className='check-group'>
+          <div className='check-group push-in'>
             {gameKeys.map(function (gameKey) {
               return (
                 <Checkbox
@@ -37,7 +37,7 @@ module.exports = Identity = React.createClass({
               );
             })}
           </div>
-          <FormSubmit action={this.submitGames}>
+          <FormSubmit className='push-in' action={this.submitGames}>
             Continue
           </FormSubmit>
         </Form>

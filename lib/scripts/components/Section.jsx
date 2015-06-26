@@ -8,17 +8,19 @@ module.exports.BrainType = React.createClass({
   render: function () {
     return (
       <QuestionSet survey='brainType' nextRoute='personality'>
-        <p>
-          Describe yourself as you generally are now, not as you wish to be in the future.
-        </p>
-        <p>
-          Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age.
-        </p>
+        <div className='push-in'>
+          <p>
+            Describe yourself as you generally are now, not as you wish to be in the future.
+          </p>
+          <p>
+            Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age.
+          </p>
+        </div>
         <div className='answerKey'>
           <p className='flashy'>
             Indicate for each of the following statements whether it is:
           </p>
-          <ul>
+          <ul className='push-in'>
             <li><span className='value'>1</span> Very Inaccurate</li>
             <li><span className='value'>2</span> Moderately Inaccurate</li>
             <li><span className='value'>3</span> Neither Accurate Nor Inaccurate</li>

@@ -51,7 +51,7 @@ module.exports = Consent = React.createClass({
             Below you will find an explanation of what data we want to use in this research and how we will process the data. 
           </p>
         </div>
-        <div className='terms'>
+        <div className='terms push-in'>
         <p>
           For the purpose of our research we will ask you for your age, gender, nationality and level of English comprehension. We will also ask for your player name in one or more of the participating games: League of Legends, Battlefield: Hardline, and World of Warcraft. Your player name will be used to extract data on your game behavior for the relevant game. The game behavior data consists of information on when you play and for how long, and what actions you perform in the game. We will not process any other data from the games or ask you for any sensitive data (such as, without limitation, financial data, chat logs and transcriptions, etc.). By accepting to participate in this research study, you understand and agree that the relevant game company (Riot Games, DICE / Electronic Arts) will share your behavioral data listed above with the research project only for the purpose of the study described above. Data for World of Warcraft will be drawn from the publicly accessible Armory website and will not be shared. If you indicate in the survey that you are a minor (below 18 years of age), then your data will also not be shared.
         </p>

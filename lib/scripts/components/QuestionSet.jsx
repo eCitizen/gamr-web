@@ -1,6 +1,4 @@
 
-/** @jsx React.DOM */
-
 var React = require('react/addons'),
   Router = require('react-router'),
   assign = require('object-assign'),
@@ -10,7 +8,6 @@ var React = require('react/addons'),
   InputStore = require('../input/store'),
   TransitionGroup = React.addons.CSSTransitionGroup,
   Navigation = Router.Navigation,
-  Title = require('./Title.jsx'),
   Button = require('./Button.jsx'),
   TRACKING_FIELD = 'currentIdx',
   QuestionSet;
@@ -76,7 +73,7 @@ module.exports = QuestionSet = React.createClass({
     var oldAnswer = InputStore.getField(this.props.survey, this._makeId(this.state.current));
 
     var body = this.state.started ? (
-      <div className='question-set-body'>
+      <div className='question-set-body push-in'>
         <div className='question-wrap'>
           <TransitionGroup component='div' transitionName='question-change'>
             <p className='question-text' key={this.state.current}>
@@ -90,22 +87,21 @@ module.exports = QuestionSet = React.createClass({
           action={this.submitQuestion}
           answers={[1,2,3,4,5]}>
         </Answer>
+        <div className='question-index'>
+          {this.state.current + 1}/{this.state.questions.length}
+        </div>
         <div className='question-nav'>
-          { this.state.hasPrev ? <span onClick={this.prev}>prev</span> : null }
-          { this.state.hasNext && oldAnswer ? <span onClick={this.next}>next</span> : null }
+          {this.state.hasPrev ? <span onClick={this.prev}>prev</span> : null}
+          {this.state.hasNext && oldAnswer ? <span onClick={this.next}>next</span> : null}
         </div>
       </div>
     ) : (
       <div>
         <div className='instructions-body'>{this.props.children}</div>
-        <Button action={this.begin}>GOT IT</Button>
+        <Button className='push-in' action={this.begin}>GOT IT</Button>
       </div>
     );
 
-    return (
-      <div>
-        {body}
-      </div>
-    );
+    return <div>{body}</div>;
   }
 });
