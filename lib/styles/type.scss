@@ -11,14 +11,12 @@ p {
 }
 
 .flashy {
-  text-shadow: 0 0 2px #eeffee;
-  // left: 120px;
-  letter-spacing: 2px;
-  
-  // display: none;
   font-family: $font-text;
   font-style: italic;
   font-size: 14px;
+  text-shadow: 0 0 2px #eeffee;
+  letter-spacing: 2px;
+  margin-bottom: $space-large - 5px;
 }
 
 .preamble {
@@ -27,26 +25,7 @@ p {
   font-style: italic;
   font-size: 14px;
   color: $color-main;
-}
-
-.marquee {
-  color: $color-white;
-  position: relative;
-  z-index: 30;
-  text-shadow: 0 0 2px #eeffee;
-  // left: 120px;
-  letter-spacing: 2px;
-  margin-top: 40px;
-  // display: none;
-  font-family: $font-text;
-  font-style: italic;
-  font-size: 14px;
-
-  &.b {
-    margin-top: 6px;
-    color: $color-main;
-    // left: 120px;
-  }
+  margin-bottom: $space-small;
 }
 
 .index {
@@ -70,6 +49,7 @@ p {
   font-size: 13px;
   line-height: 18px;
   text-align: left;
+  margin-top: $space-large;
 }
 
 .instructions-body {
@@ -78,8 +58,14 @@ p {
   line-height: 20px;
   color: $color-secondary;
 
+  & > .directions {
+    margin-bottom: $space-large;
+    margin-left: $push-space;
+  }
+
   & > .answerKey {
     color: $color-white;
+    margin-bottom: $space-large;
 
     .value { color: $color-main; }
 
@@ -96,6 +82,24 @@ p {
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 2px;
+  }
+}
+
+.marquee {
+  color: $color-white;
+  position: relative;
+  z-index: 30;
+  text-shadow: 0 0 2px #eeffee;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  font-family: $font-text;
+  font-style: italic;
+  font-size: 14px;
+  
+  &.b {
+    margin-top: 6px;
+    color: $color-main;
+    // left: 120px;
   }
 }
 

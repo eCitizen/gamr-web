@@ -47,7 +47,7 @@ module.exports = BioComponent = React.createClass({
             <FormSelect required={false} {... LANG.fields.country}/>
             <FormSelect required={false} {... LANG.fields.level}/>
           </div>
-          <FormSubmit action={this.submitBio}>
+          <FormSubmit className='push-in' action={this.submitBio}>
             Submit
           </FormSubmit>
         </Form>

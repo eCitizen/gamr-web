@@ -87,12 +87,16 @@ module.exports = QuestionSet = React.createClass({
           action={this.submitQuestion}
           answers={[1,2,3,4,5]}>
         </Answer>
-        <div className='question-index'>
-          {this.state.current + 1}/{this.state.questions.length}
-        </div>
         <div className='question-nav'>
-          {this.state.hasPrev ? <span onClick={this.prev}>prev</span> : null}
-          {this.state.hasNext && oldAnswer ? <span onClick={this.next}>next</span> : null}
+          <span className='question-index'>
+            {this.state.hasPrev ? (
+              <span className='prev' onClick={this.prev}>{'<<<'}</span>
+            ) : null}
+            {this.state.current + 1}/{this.state.questions.length}
+            {this.state.hasNext && oldAnswer ? (
+              <span className='next' onClick={this.next}>{'>>>'}</span>
+            ) : null}
+          </span>
         </div>
       </div>
     ) : (

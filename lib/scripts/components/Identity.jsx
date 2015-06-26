@@ -73,7 +73,7 @@ module.exports = Identity = React.createClass({
       <div>
         <Form id={FORM_ID}>
           {formBlocks}
-          <FormSubmit className='right' action={this.submitProfiles}>
+          <FormSubmit className='right push-in' action={this.submitProfiles}>
             Submit
           </FormSubmit>
         </Form>

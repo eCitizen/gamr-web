@@ -1,5 +1,5 @@
 
-$max-question-height: 80px;
+$max-question-height: 110px;
 $transition-question-time: 200ms;
 
 .question-wrap {
@@ -20,13 +20,13 @@ $transition-question-time: 200ms;
 }
 
 .answer {
+  position: relative;
   max-width: 300px;
   @include clearfix();
 }
 
 .choices {
   position: relative;
-  overflow: hidden;
   margin-bottom: $space-medium + 5px;
   margin-right: -5px;
   margin-left: -5px;
@@ -50,24 +50,47 @@ $transition-question-time: 200ms;
 .reminder {
   font-family: $font-text;
   font-size: 13px;
-  line-height: 14px;
-  color: $color-secondary;
-  & > .low {
-    float: left;
+  line-height: 15px;
+  color: $color-subtle;
+  float: none;
+  position: absolute;
+  top: 5px;
+  &.low {
+    text-align: right;
+    width: 90px;
+    left: -90px - $rail-gutter;
   }
 
-  & > .high {
-    float: right;
-    text-align: right;
+  &.high {
+    width: 90px;
+    right: -90px - $rail-gutter + 2px;
   }
 }
 
 .question-nav {
-  & > span {
-    display: inline-block;
-    margin-right: 10px;
+  margin-top: $space-large * 1.5;
+  max-width: 300px;
+  text-align: center;
+  color: $color-subtle;
+  font-size: 14px;
+  line-height: 15px;
+  cursor: default;
+
+  & > .question-index {
+    position: relative;
+    & > .prev,
+    & > .next {
+      position: absolute;
+      display: inline-block;
+      &:hover {
+        cursor: pointer;
+        color: $color-secondary;
+      }
+    }
+
+    & > .prev { left: -35px; }
+    & > .next { right: -35px; }  
   }
-  // display: none;
 }
 
 // transition

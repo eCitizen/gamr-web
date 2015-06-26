@@ -1,6 +1,7 @@
 var React = require('react/addons'),
   InputStore = require('../input/store'),
   InputActions = require('../input/actions'),
+  classnames = require('classnames'),
   Form;
 
 module.exports = Form = React.createClass({
@@ -43,7 +44,7 @@ module.exports = Form = React.createClass({
     }(this.props.children));
 
     return (
-      <form className={this.props.className}>
+      <form className={classnames('gamr-form',this.props.className)}>
         {fields}
       </form>
     );

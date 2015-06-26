@@ -26,7 +26,7 @@ module.exports = Identity = React.createClass({
           <p className='preamble'>
             Which of the following do you play?
           </p>
-          <div className='check-group push-in'>
+          <div className='check-group'>
             {gameKeys.map(function (gameKey) {
               return (
                 <Checkbox

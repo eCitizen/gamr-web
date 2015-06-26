@@ -98,7 +98,7 @@
 }
 
 .check-group {
-  // margin-bottom: 40px;
+  margin: $space-large 0 $space-large $push-space;
 }
 
 $checkbox-space: 40px;
@@ -157,10 +157,11 @@ $checkbox-space: 40px;
 }
 
 .form-block {
-  margin-bottom: 40px;
+  margin-bottom: $space-large + 5px;
 
   & > h2 {
-    margin-bottom: 15px;
+    margin-bottom: $space-medium;
+    margin-left: 82px;
   }
 }
 
@@ -179,6 +180,7 @@ $checkbox-space: 40px;
 
   .terms {
     color: $color-secondary;
+    margin: $space-large 0 $space-large $push-space;
   }
 
   .consent-footer {

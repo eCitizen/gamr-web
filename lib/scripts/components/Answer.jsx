@@ -28,10 +28,8 @@ module.exports = Question = React.createClass({
             );
           }.bind(this))}
         </ul>
-        <div className='reminder'>
-          <span className='low'>Very<br/>Inaccurate</span>
-          <span className='high'>Very<br/>Accurate</span>
-        </div>
+        <span className='reminder low'>Very<br/>Inaccurate</span>
+        <span className='reminder high'>Very<br/>Accurate</span>
       </div>
     );
   }

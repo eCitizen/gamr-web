@@ -8,7 +8,7 @@ module.exports.BrainType = React.createClass({
   render: function () {
     return (
       <QuestionSet survey='brainType' nextRoute='personality'>
-        <div className='push-in'>
+        <div className='directions push-in'>
           <p>
             Describe yourself as you generally are now, not as you wish to be in the future.
           </p>
