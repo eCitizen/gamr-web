@@ -15,7 +15,6 @@
     "watch": "npm run watch-js & npm run watch-sass",
     "clean": "rm -rf dist",
     "start": "npm run watch & nodemon server",
-
     "static-css": "node-sass lib/styles/index.scss --include-path lib/styles --include-path node_modules | cleancss -o static/assets/gamr.min.css",
     "static-js": "browserify lib/scripts/index.jsx | uglifyjs -o static/assets/gamr.min.js",
     "static-assets": "mkdir -p static/assets; npm run static-js && npm run static-css",
@@ -50,6 +49,8 @@
     "classnames": "^2.1.2",
     "clean-css": "^3.2.10",
     "ejs": "^2.3.1",
+    "eslint": "^0.24.0",
+    "eslint-plugin-react": "^2.6.1",
     "express": "^4.12.4",
     "flux": "^2.0.3",
     "keymirror": "^0.1.1",

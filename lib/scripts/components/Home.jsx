@@ -7,6 +7,7 @@ var React = require('react/addons'),
   About = require('./About.jsx'),
   AboutStore = require('../AboutStore/AboutStore.jsx').Store,
   classnames = require('classnames'),
+  Progress = require('./Progress.jsx'),
   Home;
 
 module.exports = Home = React.createClass({
@@ -33,6 +34,7 @@ module.exports = Home = React.createClass({
   render: function () {
     return (
       <div className={classnames('screen', {'about-open': this.state.about})}>
+        <Progress/>
         <Nav/>
         <div className='content'>
           <RouteHandler {... this.props}/>
