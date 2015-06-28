@@ -13,6 +13,7 @@ module.exports = React.createClass({
         <li className='progress-dot done'/>
         <li className='progress-dot active'/>
         <li className='progress-dot pending'/>
+        <li className='progress-dot pending'/>
       </ul>
     );
   }

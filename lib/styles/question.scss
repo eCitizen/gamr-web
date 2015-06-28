@@ -9,6 +9,11 @@ $transition-question-time: 200ms;
 }
 
 .question-text {
+  border: 1px solid $color-main;
+  @include border-top-radius(10px);
+  @include border-bottom-radius(10px);
+
+  padding: $space-medium;
   max-width: 480px;
   font-family: $font-text;
   letter-spacing: 1px;

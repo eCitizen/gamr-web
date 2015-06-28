@@ -1,4 +1,6 @@
 
+$dot-size: 19px;
+$dot-space: 20px;
 
 .progress-bar {
   @include clearfix();
@@ -8,9 +10,9 @@
 .progress-dot {
   float: left;
   position: relative;
-  width: 18px;
-  height: 18px;
-  margin-right: 20px;
+  width: $dot-size;
+  height: $dot-size;
+  margin-right: $dot-space;
   @include linear-gradient($color-subtle, $color-black);
   
   &, &:before, &:after {
@@ -25,10 +27,10 @@
   &:before {
     content: '';
     position: absolute;
-    top: 2px;
-    bottom: 2px;
-    left: 2px;
-    right: 2px;
+    top: 1.5px;
+    bottom: 1.5px;
+    left: 1.5px;
+    right: 1.5px;
     @include linear-gradient($color-black, $color-subtle);
   }
 
@@ -45,10 +47,10 @@
   }
 
   &.active:after {
-    top: 5px;
-    bottom: 5px;
-    left: 5px;
-    right: 5px;
-    box-shadow: 0px 0px 13px 5px $color-main;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+    box-shadow: 0px 0px 7px 2px $color-main;
   }
 }

@@ -10,6 +10,7 @@ var React = require('react/addons'),
   Navigation = Router.Navigation,
   Button = require('./Button.jsx'),
   TRACKING_FIELD = 'currentIdx',
+  Title = require('./Title.jsx'),
   QuestionSet;
 
 module.exports = QuestionSet = React.createClass({
@@ -73,7 +74,7 @@ module.exports = QuestionSet = React.createClass({
     var oldAnswer = InputStore.getField(this.props.survey, this._makeId(this.state.current));
 
     var body = this.state.started ? (
-      <div className='question-set-body push-in'>
+      <div className='question-set-body'>
         <div className='question-wrap'>
           <TransitionGroup component='div' transitionName='question-change'>
             <p className='question-text' key={this.state.current}>
@@ -106,6 +107,12 @@ module.exports = QuestionSet = React.createClass({
       </div>
     );
 
-    return <div>{body}</div>;
+    return (
+      <div>
+        <Title>Survey</Title>
+        <Title className='section'>Brain Type</Title>
+        {body}
+      </div>
+    );
   }
 });
