@@ -5,6 +5,37 @@
   margin: 50px auto 60px;
 }
 
-.push-in {
-  margin-left: $push-space;
+.glow-wrap {
+  position: relative;
 }
+
+.glow-box {
+  position: relative;
+  @include border-box();
+  @include border-top-radius(10px);
+  @include border-bottom-radius(10px);
+  border: 1px solid $color-main;
+  background: $color-black;
+  padding: 25px;
+}
+
+.glow-shadow {
+  @include border-top-radius(20px);
+  @include border-bottom-radius(20px);
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 15px;
+  right: 15px;
+  background: $color-black;
+  box-shadow: 
+    0px 0px 60px 10px $color-secondary,
+    0px 0px 25px 8px red;
+}
+
+.title-wrap {
+  text-align: center;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+

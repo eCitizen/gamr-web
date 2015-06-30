@@ -1,6 +1,6 @@
 
-$dot-size: 19px;
-$dot-space: 20px;
+$dot-size: 14px;
+$dot-space: 16px;
 
 .progress-bar {
   @include clearfix();
@@ -27,23 +27,23 @@ $dot-space: 20px;
   &:before {
     content: '';
     position: absolute;
-    top: 1.5px;
-    bottom: 1.5px;
-    left: 1.5px;
-    right: 1.5px;
-    @include linear-gradient($color-black, $color-subtle);
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    @include linear-gradient($color-black, #454545);
   }
 
   &.done:after,
   &.active:after {
     content: '';
     position: absolute;
-    top: 7px;
-    bottom: 7px;
-    left: 7px;
-    right: 7px;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
     background: $color-main;
-    box-shadow: 0px 0px 6px 1px $color-main;
+    box-shadow: 0px 0px 2px 0px $color-main;
   }
 
   &.active:after {
@@ -51,6 +51,6 @@ $dot-space: 20px;
     bottom: 3px;
     left: 3px;
     right: 3px;
-    box-shadow: 0px 0px 7px 2px $color-main;
+    box-shadow: 0px 0px 5px 2px $color-main;
   }
 }

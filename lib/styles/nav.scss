@@ -1,92 +1,14 @@
 
 .nav {
-  // temp
-  display: none;
-
-  position: relative;
-  padding-bottom: 40px;
-  color: $color-subtle;
-  font-family: $font-text;
-  font-size: 13px;
-  line-height: 20px;
-  letter-spacing: 1px;
-
   @include clearfix();
-
-  & > .left {
-    width: 130px;
-    float: left;
-  }
-
-  & > .right {
-    position: absolute;
-    left: 150px;
-    right: 0;
-  }
+  margin-bottom: 50px;
 }
 
-.nav-list {
-  @include clearfix();
-  
-  &.level-2 > li {
-    &.active {
-      font-size: 26px;
-      font-family: $font-title;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: $color-main;
-      font-style: normal;
-    }
+.nav-left {
+  float: left;
+  max-width: 340px;
+}
 
-    &.finished {
-      &:hover {
-        cursor: normal;
-      }
-
-      &:before {
-        content: '\2713 '; // checkmark
-        display: inline-block;
-        color: $color-secondary;
-        margin-right: 3px;
-      }
-    }
-  }
-
-  &.level-1 > li {
-    &:before {
-      content: '/ ';
-    }
-
-    &.active {
-      color: $color-main;
-    }
-  }
-
-  & > li {
-    float: left;
-    margin-right: 10px;
-
-    &.home-link {
-      white-space: nowrap;
-      float: right;
-      margin-right: 0px;
-      font-family: $font-title;
-      font-size: 16px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      &:before {
-        content: '';
-      }
-    }
-
-    &.about-link {
-      float: right;
-      margin-right: 0px;
-    }
-
-    &:hover {
-      color: $color-secondary;
-      cursor: pointer;
-    }
-  }
+.nav-right {
+  float: right;
 }

@@ -25,7 +25,7 @@ var Home = require('./Home.jsx'),
 
 var routes = (
   <Route name="home" path="/" handler={Home}>
-    <Route name="identity">
+    <Route name="identity" handler={Survey}>
       <Route name="consent" path="consent" handler={Consent}/>
       <Route name="games" path="gameplay" handler={Games}/>
       <Route name="profile" path="profile" handler={Identity}/>
@@ -40,7 +40,7 @@ var routes = (
       <Route name="data" path=":data?" handler={Profile}/>
       <DefaultRoute handler={NotFound}/>
     </Route>
-    <DefaultRoute name='intro' handler={makeTransition(Intro)}/>
+    <DefaultRoute name='intro' handler={Intro}/>
     <NotFoundRoute name='not-found' handler={NotFound}/>
   </Route>
 );

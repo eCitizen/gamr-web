@@ -4,18 +4,14 @@
 var React = require('react/addons'),
   Router = require('react-router'),
   RouteHandler = Router.RouteHandler,
+  Nav = require('./Nav.jsx'),
   Survey;
 
 module.exports = Survey = React.createClass({
-  contextTypes: {
-    router: React.PropTypes.func
-  },
-
   render: function () {
-    var name = this.context.router.getCurrentPath();
-
     return (
       <div>
+        <Nav/>
         <RouteHandler {... this.props} key={name}/>
       </div>
     );

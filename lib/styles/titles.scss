@@ -1,28 +1,4 @@
 
-.splitter > span { 
-  position: relative;
-  // http://matthewlein.com/ceaser/
-  $timing: cubic-bezier(0.780, 0.090, 0.495, 0.645);
-  @include transition(
-      color 700ms ease 90ms, 
-      transform 600ms $timing);
-
-  &.t:nth-child(2n) {
-    @include transition-delay(130ms);
-  }
-  &.t:nth-child(3n) {
-    @include transition-delay(220ms);
-  }
-}
-
-.example-appear .main-title-wrap,
-.example-leave.example-leave-active {
-  span {
-    // opacity: 0;
-    color: $color-black;
-  }
-}
-
 .title {
   font-family: $font-title;
   font-weight: 900;
@@ -32,21 +8,23 @@
   letter-spacing: 2px;
    
   &.main {
-    font-size: 160px;
+    text-align: center;
+    font-size: 150px;
     line-height: 105px;
     letter-spacing: 5px;
     margin-left: -8px;
-    // text-indent: -8px;
-
     .t-1 { left: -1px; } // A
     .t-3 { left: -5px; } // R
   }
 
   &.main-sub {
-    font-size: 20px;
-    letter-spacing: 8px;
-    margin-left: 74px;
+    text-align: center;
+    font-size: 17px;
+    letter-spacing: 9px;
+    position: relative;
+    left: -60px;
     margin-bottom: $space-medium;
+    margin-top: $space-medium;
   }
 
   &.section {
@@ -57,12 +35,19 @@
   &.nav-title,
   &.nav-title-sub {
     letter-spacing: 2px;
-    line-height: 18px;
+  }
+
+  &.nav-title-sub {
+    color: $color-white;
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 0px;
   }
 
   &.nav-title {
-    font-size: 30px;
-    text-indent: -2px;
+    font-size: 36px;
+    text-indent: -1px;
+    line-height: 38px;
   }
 
   &.small {

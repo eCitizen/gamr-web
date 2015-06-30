@@ -34,22 +34,18 @@ p {
   right: 40px;
 }
 
-#home .button {
-  margin-top: 55px;
-  width: 120px;
-}
-
 #home .flashy {
   margin-top: 40px;
 }
 
 .footnote {
-  color: $color-secondary;
+  color: $color-subtle;
   font-family: $font-text;
   font-size: 13px;
   line-height: 18px;
   text-align: left;
-  margin-top: $space-large;
+  margin-top: $space-medium;
+  margin-left: 25px;
 }
 
 .instructions-body {
@@ -89,17 +85,17 @@ p {
   color: $color-white;
   position: relative;
   z-index: 30;
-  text-shadow: 0 0 2px #eeffee;
   letter-spacing: 2px;
-  margin-top: 40px;
+  margin-top: 50px;
   font-family: $font-text;
   font-style: italic;
   font-size: 14px;
+  text-align: left;
   
   &.b {
-    margin-top: 6px;
+    margin-top: 8px;
     color: $color-main;
-    // left: 120px;
+    text-align: right;
   }
 }
 
