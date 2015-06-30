@@ -1,10 +1,11 @@
 
 $dot-size: 14px;
 $dot-space: 16px;
+$shade-color: #454555;
+$highlight-color: #75656a;
 
 .progress-bar {
   @include clearfix();
-  margin-bottom: 20px;
 }
 
 .progress-dot {
@@ -13,7 +14,7 @@ $dot-space: 16px;
   width: $dot-size;
   height: $dot-size;
   margin-right: $dot-space;
-  @include linear-gradient($color-subtle, $color-black);
+  @include linear-gradient($highlight-color, $color-black);
   
   &, &:before, &:after {
     @include border-top-radius(50%);
@@ -31,7 +32,7 @@ $dot-space: 16px;
     bottom: 1px;
     left: 1px;
     right: 1px;
-    @include linear-gradient($color-black, #454545);
+    @include linear-gradient($color-black, $shade-color);
   }
 
   &.done:after,

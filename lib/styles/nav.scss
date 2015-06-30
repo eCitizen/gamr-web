@@ -11,4 +11,26 @@
 
 .nav-right {
   float: right;
+  color: $color-subtle;
+  font-family: $font-text;
+  font-size: 13px;
+
+  & > .progress-bar {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    margin-right: 15px;
+  }
+
+  & > span {
+    display: inline-block;
+  }
+
+  & > .pipe {
+    color: #555;
+  }
+
+  & > .about-toggle {
+    margin-left: 12px;
+  }
 }

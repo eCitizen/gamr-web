@@ -44,11 +44,13 @@ module.exports = Nav2 = React.createClass({
     return (
       <div className='nav'>
         <div className='nav-left'>
-          <Title className='nav-title-sub'>Identity</Title>
-          <Title className='nav-title'>Informed consent</Title>
+          <Title className='nav-title-sub'>Survey</Title>
+          <Title className='nav-title'>Personality</Title>
         </div>
         <div className='nav-right'>
           <Progress/>
+          <span className='pipe'>|</span>
+          <span className='about-toggle'>About</span>
         </div>
       </div>
     );
