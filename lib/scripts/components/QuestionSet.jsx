@@ -1,19 +1,16 @@
 
-var React = require('react/addons'),
-  Router = require('react-router'),
-  assign = require('object-assign'),
-  Answer = require('./Answer.jsx'),
-  guide = require('../services/guide'),
-  InputActions = require('../input/actions'),
-  InputStore = require('../input/store'),
-  TransitionGroup = React.addons.CSSTransitionGroup,
-  Navigation = Router.Navigation,
-  Button = require('./Button.jsx'),
-  TRACKING_FIELD = 'currentIdx',
-  Title = require('./Title.jsx'),
-  Box = require('./Box.jsx'),
-  classnames = require('classnames'),
-  QuestionSet;
+var React = require('react/addons');
+var assign = require('object-assign');
+var Answer = require('./Answer.jsx');
+var guide = require('../services/guide');
+var InputActions = require('../input/actions');
+var InputStore = require('../input/store');
+var Navigation = require('react-router').Navigation;
+var Button = require('./Button.jsx');
+var TRACKING_FIELD = 'currentIdx';
+var Box = require('./Box.jsx');
+var classnames = require('classnames');
+var QuestionSet;
 
 module.exports = QuestionSet = React.createClass({
   mixins: [Navigation],

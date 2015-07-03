@@ -35,6 +35,9 @@ module.exports = BioComponent = React.createClass({
 
     return (
       <div>
+        <p className='preamble' style={{marginBottom: 50}}>
+          And now a bit of information about yourself...
+        </p>
         <Form id={FORM_ID}>
           <div className='form-block'>
             <h2>{BIO.title}</h2>
