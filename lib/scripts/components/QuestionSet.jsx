@@ -12,6 +12,7 @@ var React = require('react/addons'),
   TRACKING_FIELD = 'currentIdx',
   Title = require('./Title.jsx'),
   Box = require('./Box.jsx'),
+  classnames = require('classnames'),
   QuestionSet;
 
 module.exports = QuestionSet = React.createClass({
@@ -75,8 +76,16 @@ module.exports = QuestionSet = React.createClass({
     var oldAnswer = InputStore.getField(this.props.survey, this._makeId(this.state.current));
 
     var body = this.state.started ? (
-      <div className='question-set-body'>
+      <div className={classnames('question-set-body', {answered: oldAnswer})}>
         <Box className='question-wrap'>
+          <div className='question-nav'>
+            {this.state.hasPrev ? (
+              <span className='prev' onClick={this.prev}>{'<'}</span>
+            ) : null}
+            {this.state.hasNext && oldAnswer ? (
+              <span className='next' onClick={this.next}>{'>'}</span>
+            ) : null}
+          </div>
           <p className='question-text' key={this.state.current}>
             {this.state.questions[this.state.current]}
           </p>
@@ -87,22 +96,11 @@ module.exports = QuestionSet = React.createClass({
           action={this.submitQuestion}
           answers={[1,2,3,4,5]}>
         </Answer>
-        <div className='question-nav'>
-          <span className='question-index'>
-            {this.state.hasPrev ? (
-              <span className='prev' onClick={this.prev}>{'<<<'}</span>
-            ) : null}
-            {this.state.current + 1}/{this.state.questions.length}
-            {this.state.hasNext && oldAnswer ? (
-              <span className='next' onClick={this.next}>{'>>>'}</span>
-            ) : null}
-          </span>
-        </div>
       </div>
     ) : (
       <div>
         <div className='instructions-body'>{this.props.children}</div>
-        <Button className='push-in' action={this.begin}>GOT IT</Button>
+        <Button action={this.begin}>GOT IT</Button>
       </div>
     );
 

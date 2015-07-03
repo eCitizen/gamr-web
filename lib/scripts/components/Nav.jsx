@@ -1,54 +1,64 @@
 
-var React = require('react/addons'),
-  Router = require('react-router'),
-  State = Router.State,
-  classnames = require('classnames'),
-  AboutStore = require('../AboutStore/AboutStore.jsx').Store,
-  AboutActions = require('../AboutStore/AboutStore.jsx').Actions,
-  Progress = require('./Progress.jsx'),
-  Title = require('./Title.jsx'),
-  Nav2;
+var React = require('react/addons');
+var State = require('react-router').State;
+var classnames = require('classnames');
+var Progress = require('./Progress.jsx');
+var Title = require('./Title.jsx');
 
-module.exports = Nav2 = React.createClass({
+var config = {
+  '/identity/consent': {
+    main: 'Informed Consent',
+    progress: 0
+  },
+  '/identity/gameplay':  {
+    main: 'Gameplay',
+    sub: 'identity',
+    progress: 1
+  },
+  '/identity/profile': {
+    main: 'Profile',
+    sub: 'identity',
+    progress: 1
+  },
+  '/identity/background': {
+    main: 'Background',
+    sub: 'identity',
+    progress: 1
+  },
+  '/survey/brain-type': {
+    main: 'Brain Type',
+    sub: 'survey',
+    progress: 2
+  },
+  '/survey/personality': {
+    main: 'Personality',
+    sub: 'survey',
+    progress: 3
+  },
+  '/survey/gamer-type': {
+    main: 'Gamer Type',
+    sub: 'survey',
+    progress: 4
+  }
+}
+
+module.exports = React.createClass({
+  displayName: 'Nav',
+
   mixins: [State],
 
-  getInitialState: function () {
-    return {
-      about: AboutStore.get()
-    };
-  },
-
-  componentDidMount: function () {
-    AboutStore.addChangeListener(this.handleAbout);
-  },
-
-  componentWillUnount: function () {
-    AboutStore.removeChangeListener(this.handleAbout);
-  },
-
-  handleAbout: function () {
-    this.setState({
-      about: AboutStore.get()
-    });
-  },
-
-  toggleAbout: function () {
-    if (this.state.about) {
-      AboutActions.close();
-    } else {
-      AboutActions.open();
-    }
-  },
-
   render: function () {
+    console.log(this.getPathname());
+    var text = config[this.getPathname()];
+
     return (
       <div className='nav'>
         <div className='nav-left'>
-          <Title className='nav-title-sub'>Survey</Title>
-          <Title className='nav-title'>Personality</Title>
+          {text.sub ? <Title className='nav-title-sub'>{text.sub}</Title> : null}
+          <Title className='nav-title'>{text.main}</Title>
         </div>
         <div className='nav-right'>
-          <Progress/>
+          <Progress current={text.progress} length={5}/>
           <span className='pipe'>|</span>
           <span className='about-toggle'>About</span>
         </div>

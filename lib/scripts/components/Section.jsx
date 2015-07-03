@@ -8,7 +8,7 @@ module.exports.BrainType = React.createClass({
   render: function () {
     return (
       <QuestionSet survey='brainType' nextRoute='personality'>
-        <div className='directions push-in'>
+        <div className='directions'>
           <p>
             Describe yourself as you generally are now, not as you wish to be in the future.
           </p>
@@ -20,7 +20,7 @@ module.exports.BrainType = React.createClass({
           <p className='flashy'>
             Indicate for each of the following statements whether it is:
           </p>
-          <ul className='push-in'>
+          <ul>
             <li><span className='value'>1</span> Very Inaccurate</li>
             <li><span className='value'>2</span> Moderately Inaccurate</li>
             <li><span className='value'>3</span> Neither Accurate Nor Inaccurate</li>
@@ -50,7 +50,7 @@ module.exports.Personality = React.createClass({
           <p className='flashy'>
             Indicate for each of the following statements whether it is:
           </p>
-          <ul className='push-in'>
+          <ul>
             <li><span className='value'>1</span> Very Inaccurate</li>
             <li><span className='value'>2</span> Moderately Inaccurate</li>
             <li><span className='value'>3</span> Neither Accurate Nor Inaccurate</li>
@@ -67,7 +67,7 @@ module.exports.GamerType = React.createClass({
   displayName: 'GamerType',
   render: function () {
     return (
-      <QuestionSet survey='gamerType' nextRoute='reward'>
+      <QuestionSet survey='gamerType' nextRoute='results'>
         <div className='directions push-in'>
           <p>
             Describe yourself as you generally are now, not as you wish to be in the future.
@@ -80,7 +80,7 @@ module.exports.GamerType = React.createClass({
           <p className='flashy'>
             Indicate for each of the following statements whether it is:
           </p>
-          <ul className='push-in'>
+          <ul>
             <li><span className='value'>1</span> Very Inaccurate</li>
             <li><span className='value'>2</span> Moderately Inaccurate</li>
             <li><span className='value'>3</span> Neither Accurate Nor Inaccurate</li>

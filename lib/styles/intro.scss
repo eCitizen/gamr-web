@@ -1,0 +1,36 @@
+
+.intro-social {
+  padding: 0 15px;
+  position: absolute;
+  top: -12px;
+  right: 30px;
+
+  font-family: $font-text;
+  color: $color-main;
+  background: $color-black;
+
+  font-size: 13px;
+  cursor: default;
+
+  & > .fa,
+  & > span {
+    display: inline-block;
+    margin-right: 12px;
+
+    &.intro-about {
+      margin-right: 0;
+    }
+  }
+
+  & > .fa {
+    position: relative;
+    bottom: -2px;
+    font-size: 20px;
+  }
+}
+
+.intro-social > .fa:hover,
+.intro-about:hover {
+  color: $color-white;
+  cursor: pointer;
+}
