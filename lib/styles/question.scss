@@ -17,7 +17,7 @@ $transition-question-time: 100ms;
   bottom: 0px;
   left: 0px;
   z-index: 5;
-  padding: 0 105px;
+  padding: 0 155px; // TODO put in better container
 }
 
 .answered .question-text {
