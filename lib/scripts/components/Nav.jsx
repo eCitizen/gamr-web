@@ -7,37 +7,31 @@ var Title = require('./Title.jsx');
 
 var config = {
   '/identity/consent': {
-    main: 'Informed Consent',
+    main: 'Consent',
     progress: 0
   },
   '/identity/gameplay':  {
-    main: 'Gameplay',
-    sub: 'identity',
+    main: 'Identity',
     progress: 1
   },
   '/identity/profile': {
-    main: 'Profile',
-    sub: 'identity',
+    main: 'Identity',
     progress: 1
   },
   '/identity/background': {
-    main: 'Background',
-    sub: 'identity',
+    main: 'Identity',
     progress: 1
   },
   '/survey/brain-type': {
     main: 'Brain Type',
-    sub: 'survey',
     progress: 2
   },
   '/survey/personality': {
     main: 'Personality',
-    sub: 'survey',
     progress: 3
   },
   '/survey/gamer-type': {
     main: 'Gamer Type',
-    sub: 'survey',
     progress: 4
   }
 }
@@ -51,16 +45,24 @@ module.exports = React.createClass({
     console.log(this.getPathname());
     var text = config[this.getPathname()];
 
+    if (!text) return null;
+
     return (
-      <div className='nav'>
-        <div className='nav-left'>
-          {text.sub ? <Title className='nav-title-sub'>{text.sub}</Title> : null}
-          <Title className='nav-title'>{text.main}</Title>
-        </div>
-        <div className='nav-right'>
-          <Progress current={text.progress} length={5}/>
-          <span className='pipe'>|</span>
-          <span className='about-toggle'>About</span>
+      <div>
+        <div className='nav-shadow'/>
+        <div className='nav-wrap'>
+          <div className='nav'>
+            <div className='nav-left'>
+              <Title className='nav-title-sub a'>PROJECT</Title>
+              <Title className='nav-title-sub b'>GAMR</Title>
+              <Title className='nav-title'>{text.main}</Title>
+            </div>
+            <div className='nav-right'>
+              <Progress current={text.progress} length={5}/>
+              <span className='pipe'>|</span>
+              <span className='about-toggle'>About</span>
+            </div>
+          </div>
         </div>
       </div>
     );

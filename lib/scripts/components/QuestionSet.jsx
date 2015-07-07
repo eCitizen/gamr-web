@@ -74,7 +74,7 @@ module.exports = QuestionSet = React.createClass({
 
     var body = this.state.started ? (
       <div className={classnames('question-set-body', {answered: oldAnswer})}>
-        <Box className='question-wrap'>
+        <div className='question-wrap'>
           <div className='question-nav'>
             {this.state.hasPrev ? (
               <span className='prev' onClick={this.prev}>{'<'}</span>
@@ -86,7 +86,7 @@ module.exports = QuestionSet = React.createClass({
           <p className='question-text' key={this.state.current}>
             {this.state.questions[this.state.current]}
           </p>
-        </Box>
+        </div>
         <Answer 
           idx={this.state.current}
           selected={oldAnswer}
