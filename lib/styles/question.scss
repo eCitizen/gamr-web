@@ -41,7 +41,7 @@ $transition-question-time: 100ms;
     @include border-box();
     float: left;
     position: relative;
-    padding: 0 10px;
+    padding: 0 8px;
 
     & > .button {
       @include border-box();

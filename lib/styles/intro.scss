@@ -1,10 +1,5 @@
 
 .intro-social {
-  padding: 0 15px;
-  position: absolute;
-  top: -12px;
-  right: 30px;
-
   font-family: $font-text;
   color: $color-main;
   background: $color-black;
@@ -33,4 +28,22 @@
 .intro-about:hover {
   color: $color-white;
   cursor: pointer;
+}
+
+.schools {
+  font-family: $font-title;
+  font-size: 15px;
+  letter-spacing: 4px;
+  color: $color-subtle;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.footnote {
+  text-align: center;
+  color: $color-subtle;
+  font-family: $font-text;
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: $space-medium;
 }
