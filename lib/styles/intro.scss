@@ -1,29 +1,80 @@
 
-.intro-social {
+$intro-button-width: 180px;
+
+.intro-actions {
+  width: $intro-button-width;
+  margin-top: $space-large;
+  margin-bottom: $space-large;
+
+  & > .middle > .button {
+    display: block;
+    width: $intro-button-width;
+  }
+}
+
+.intro-social,
+.intro-about {
   color: $color-main;
-  cursor: default;
-
-  & > .fa,
-  & > span {
-    display: inline-block;
-    margin-right: 12px;
-
-    &.intro-about {
-      margin-right: 0;
-    }
-  }
-
-  & > .fa {
-    position: relative;
-    bottom: -2px;
-    font-size: 20px;
-  }
+  width: ($intro-button-width / 2);
 }
 
 .intro-social > .fa:hover,
 .intro-about:hover {
   color: $color-white;
   cursor: pointer;
+
+  & > span {
+    border-bottom: 1px solid $color-white;
+  }
+}
+
+.intro-social {
+  color: $color-main;
+  font-size: 25px;
+  line-height: $button-height;
+  text-align: right;
+
+  & > .fa {
+    display: inline-block;
+    margin-left: 15px;
+    position: relative;
+    bottom: -2px;
+  }
+}
+
+.intro-about {
+  text-align: left;
+  font-family: $font-title;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 21px;
+  letter-spacing: 2px;
+  text-indent: 2px;
+  
+  & > span {
+    position: relative;
+    left: -10px;
+    padding-top: 5px;
+    display: inline-block;
+    border-bottom: 1px solid $color-main;
+  }
+}
+
+@media (min-width: $center-group-break) {
+  .intro-actions > .middle {
+    position: relative;
+    right: -5px;
+  }
+}
+
+@media (max-width: $center-group-break) {
+  .intro-actions > .middle {
+    margin-bottom: 20px;
+  }
+
+  .intro-about > span {
+    left: -4px;
+  }
 }
 
 .schools {

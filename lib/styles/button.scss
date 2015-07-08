@@ -1,5 +1,7 @@
 
 .button {
+  @include border-box();
+  
   position: relative;
   display: inline-block;
   height: $button-height;

@@ -23,17 +23,17 @@
  * Center Group
  */
 
-$center-group-break: 600px;
-
 .center-group {
   position: relative;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .center-group > .middle,
 .center-group > .right,
 .center-group > .left {
-  min-height: 50px;
+  min-height: $button-height;
 }
 
 @media (min-width: $center-group-break) {
@@ -42,12 +42,14 @@ $center-group-break: 600px;
     position: absolute;
     top: 0;
   }
-  .center-group > .right { left: 100%; text-align: left; }
-  .center-group > .left { right: 100%; text-align: right; }
+  .center-group > .right { left: 100%; }
+  .center-group > .left { right: 100%; }
 }
 
 @media (max-width: $center-group-break) {
-  .center-group { overflow: hidden; }
-  .center-group > .left { float: left; text-align: left; }
-  .center-group > .right { float: right; text-align: right; }
+  .center-group { 
+    @include clearfix(); 
+  }
+  .center-group > .left { float: left; }
+  .center-group > .right { float: right; }
 }
