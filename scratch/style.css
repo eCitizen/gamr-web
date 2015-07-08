@@ -1,0 +1,74 @@
+
+/* debug */
+
+.orange { background: tomato; }
+.yellow { background: lightyellow; }
+.green { background: mediumseagreen; }
+
+h3 {
+  margin: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.small {
+  width: 60px;
+}
+
+/* Structure */
+
+.page {
+  margin: 50px 10px 70px;
+}
+
+.outer,
+.inner {
+  margin: 0 auto;
+}
+
+.outer {
+  max-width: 700px;
+}
+
+.inner {
+  max-width: 400px;
+}
+
+.text-middle {
+  line-height: 50px;
+}
+
+.text-middle .buttons {
+  text-align: center;
+}
+
+/* Button Group */
+
+.button-group {
+  position: relative;
+}
+
+.button-group > .buttons,
+.button-group > .right,
+.button-group > .left {
+  min-height: 50px;
+}
+
+@media (min-width: 600px) {
+  .button-group > .right,
+  .button-group > .left {
+    position: absolute;
+    top: 0;
+  }
+  .button-group > .right { left: 100%; text-align: left; }
+  .button-group > .left { right: 100%; text-align: right; }
+}
+
+@media (max-width: 600px) {
+  .button-group { overflow: hidden; }
+  .button-group > .left { float: left; text-align: left; }
+  .button-group > .right { float: right; text-align: right; }
+}
+
+
+
+
