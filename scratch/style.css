@@ -37,36 +37,34 @@ h3 {
   line-height: 50px;
 }
 
-.text-middle .buttons {
-  text-align: center;
-}
 
 /* Button Group */
 
-.button-group {
+.center-group {
   position: relative;
+  text-align: center;
 }
 
-.button-group > .buttons,
-.button-group > .right,
-.button-group > .left {
+.center-group > .middle,
+.center-group > .right,
+.center-group > .left {
   min-height: 50px;
 }
 
 @media (min-width: 600px) {
-  .button-group > .right,
-  .button-group > .left {
+  .center-group > .right,
+  .center-group > .left {
     position: absolute;
     top: 0;
   }
-  .button-group > .right { left: 100%; text-align: left; }
-  .button-group > .left { right: 100%; text-align: right; }
+  .center-group > .right { left: 100%; text-align: left; }
+  .center-group > .left { right: 100%; text-align: right; }
 }
 
 @media (max-width: 600px) {
-  .button-group { overflow: hidden; }
-  .button-group > .left { float: left; text-align: left; }
-  .button-group > .right { float: right; text-align: right; }
+  .center-group { overflow: hidden; }
+  .center-group > .left { float: left; text-align: left; }
+  .center-group > .right { float: right; text-align: right; }
 }
 
 
