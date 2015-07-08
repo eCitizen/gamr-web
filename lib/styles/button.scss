@@ -3,9 +3,13 @@
   position: relative;
   display: inline-block;
   height: $button-height;
-  line-height: $button-height;
   padding: 0 $button-padding;
+
+  font-family: $font-special;
+  font-size: 16px;
+  line-height: $button-height;
   letter-spacing: 4px;
+
   border: 1px solid $color-main;
   @include border-top-radius($button-radius);
   @include border-bottom-radius($button-radius);
@@ -53,26 +57,9 @@
     text-shadow: none;
     border-color: $color-secondary;
   }
-
-  &:right {
-    float: right;
-  }
-
-  // TRANSITION IDEA
-  // opacity: 0;
-  // @include transition(all 300ms ease-in-out);
-
-  // &.mounted {
-  //   opacity: 1;
-  // }
 }
 
 .yes-no .button {
   width: 60px;
 }
 
-.title-wrap .button {
-  margin: 55px 0;
-  width: 120px;
-  display: inline-block;
-}

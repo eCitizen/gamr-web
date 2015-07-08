@@ -10,8 +10,10 @@ module.exports = Home = React.createClass({
     return (
       <div>
         <Nav/>
-        <div className='screen'>
-          <RouteHandler {... this.props}/>
+        <div className='page'>
+          <div className='outer'>
+            <RouteHandler {... this.props}/>
+          </div>
         </div>
       </div>
     );

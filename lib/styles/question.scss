@@ -65,12 +65,12 @@ $transition-question-time: 100ms;
   &.low {
     text-align: right;
     width: 90px;
-    left: -90px - $rail-gutter;
+    left: -90px;
   }
 
   &.high {
     width: 90px;
-    right: -90px - $rail-gutter + 2px;
+    right: -90px + 2px;
   }
 }
 

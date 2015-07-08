@@ -3,18 +3,20 @@ $font-title: "Bourgeois Ultra", Verdana, Arial, Helvetica, sans-serif;
 $font-text: Helvetica, Arial, sans-serif;
 $font-special: "Inconsolata", 'Lucida Console', Monaco, monospace;
 
-$space-page-gutter: 12px;
-$space-xl: 60px;
-$space-large: 40px;
-$space-medium: 20px;
-$space-small: 8px;
-
 $color-main: #00ff66;
 $color-secondary: #7c569f;
 $color-subtle: #666;
 $color-white: #ffeeff;
 $color-black: rgb(17,17,17);
 $color-warn: rgb(200,17,40);
+
+$gutter-width: 10px;
+$outer-width: 700px;
+$inner-width: 400px;
+
+$space-large: 50px;
+$space-medium: 20px;
+$space-small: 8px;
 
 $nav-height: 50px;
 
@@ -27,28 +29,3 @@ $field-width: 350px;
 $field-radius: $button-radius/1.5;
 $field-font-size: 14px;
 $field-padding: 10px;
-$select-button-width: $button-height;
-$form-indent: 40px;
-
-$transition-time: 200ms;
-
-$sceen-width: 700px;
-$mobile-break: $sceen-width + ($space-page-gutter * 2);
-
-$rail-width: 130px;
-$rail-gutter: 20px;
-$push-space: $rail-width + $rail-gutter;
-$body-width: $sceen-width - $push-space;
-
-@mixin border-box() {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-@mixin no-select() {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -ms-user-select: none;
-}

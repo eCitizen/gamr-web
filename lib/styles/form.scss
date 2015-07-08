@@ -1,4 +1,7 @@
 
+$select-button-width: $button-height;
+$checkbox-space: 40px;
+
 .gamr-field {
   font-family: $font-text;
   max-width: $field-width;
@@ -100,8 +103,6 @@
   margin: $space-large 0 $space-large 0;
 }
 
-$checkbox-space: 40px;
-
 .checkbox-wrap {
   display: block;
   position: relative;
@@ -202,27 +203,3 @@ $checkbox-space: 40px;
   }
 }
 
-@media (max-width: $mobile-break) {
-  .gamr-field {
-    margin-left: 0;
-  }
-
-  .consent-form {
-    .consent-ok {
-      line-height: 21px;
-      margin-bottom: $space-medium;
-    }
-    
-    .terms {
-      padding: $space-medium 0px;
-    }
-
-    .button {
-      float: right;
-    }
-
-    .warning {
-      float: left;
-    }
-  }
-}

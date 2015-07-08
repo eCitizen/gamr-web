@@ -11,19 +11,10 @@
 }
 
 .about {
-  width: $sceen-width;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin-left: -($sceen-width/2);
-  margin-top: ($nav-height + $space-large);
-  margin-bottom: ($nav-height + $space-large);
+ 
 }
 
 .about-close {
-  position: fixed;
-  top: ($nav-height + $space-large) - 14px;
-  margin-left: $sceen-width + 40px;
   font-size: 14px;
   color: $color-main;
 
