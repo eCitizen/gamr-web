@@ -38,7 +38,7 @@ module.exports = BioComponent = React.createClass({
         <p className='preamble' style={{marginBottom: 50}}>
           And now a bit of information about yourself...
         </p>
-        <Form id={FORM_ID}>
+        <Form id={FORM_ID} className='inner'>
           <div className='form-block'>
             <h2>{BIO.title}</h2>
             <FormSelect required={false} {... BIO.fields.gender}/>
@@ -50,7 +50,7 @@ module.exports = BioComponent = React.createClass({
             <FormSelect required={false} {... LANG.fields.country}/>
             <FormSelect required={false} {... LANG.fields.level}/>
           </div>
-          <FormSubmit className='push-in' action={this.submitBio}>
+          <FormSubmit className='right' action={this.submitBio}>
             Submit
           </FormSubmit>
         </Form>

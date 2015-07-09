@@ -4,6 +4,7 @@ var State = require('react-router').State;
 var classnames = require('classnames');
 var Progress = require('./Progress.jsx');
 var Title = require('./Title.jsx');
+var Link = require('react-router').Link;
 
 var config = {
   '/identity/consent': {
@@ -53,8 +54,9 @@ module.exports = React.createClass({
         <div className='nav-wrap'>
           <div className='nav'>
             <div className='nav-left'>
-              <Title className='nav-title-sub a'>PROJECT</Title>
-              <Title className='nav-title-sub b'>GAMR</Title>
+              <Link to='home'>
+                <Title className='nav-title-sub a'>PROJECT GAMR</Title>
+              </Link>
               <Title className='nav-title'>{text.main}</Title>
             </div>
             <div className='nav-right'>

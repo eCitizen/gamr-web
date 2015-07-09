@@ -99,8 +99,12 @@ module.exports = QuestionSet = React.createClass({
       </div>
     ) : (
       <div>
-        <div className='instructions-body'>{this.props.children}</div>
-        <Button action={this.begin}>GOT IT</Button>
+        <div className='instructions-body'>
+          {this.props.children}
+        </div>
+        <div className='inner'>
+          <Button action={this.begin}>GOT IT</Button>
+        </div>
       </div>
     );
 

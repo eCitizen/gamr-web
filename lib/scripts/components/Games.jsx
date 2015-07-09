@@ -22,10 +22,10 @@ module.exports = Identity = React.createClass({
   render: function () {
     return (
       <div>
-        <Form id={FORM_ID}>
-          <p className='preamble'>
-            Which of the following do you play?
-          </p>
+        <p className='preamble'>
+          Which of the following do you play?
+        </p>
+        <Form id={FORM_ID} className='inner'>
           <div className='check-group'>
             {gameKeys.map(function (gameKey) {
               return (
@@ -37,7 +37,7 @@ module.exports = Identity = React.createClass({
               );
             })}
           </div>
-          <FormSubmit className='push-in' action={this.submitGames}>
+          <FormSubmit action={this.submitGames}>
             Continue
           </FormSubmit>
         </Form>

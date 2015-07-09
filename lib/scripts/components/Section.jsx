@@ -20,7 +20,7 @@ module.exports.BrainType = React.createClass({
           <p className='flashy'>
             Indicate for each of the following statements whether it is:
           </p>
-          <ul>
+          <ul className='inner'>
             <li><span className='value'>1</span> Very Inaccurate</li>
             <li><span className='value'>2</span> Moderately Inaccurate</li>
             <li><span className='value'>3</span> Neither Accurate Nor Inaccurate</li>
@@ -50,7 +50,7 @@ module.exports.Personality = React.createClass({
           <p className='flashy'>
             Indicate for each of the following statements whether it is:
           </p>
-          <ul>
+          <ul className='inner'>
             <li><span className='value'>1</span> Very Inaccurate</li>
             <li><span className='value'>2</span> Moderately Inaccurate</li>
             <li><span className='value'>3</span> Neither Accurate Nor Inaccurate</li>
@@ -80,7 +80,7 @@ module.exports.GamerType = React.createClass({
           <p className='flashy'>
             Indicate for each of the following statements whether it is:
           </p>
-          <ul>
+          <ul className='inner'>
             <li><span className='value'>1</span> Very Inaccurate</li>
             <li><span className='value'>2</span> Moderately Inaccurate</li>
             <li><span className='value'>3</span> Neither Accurate Nor Inaccurate</li>

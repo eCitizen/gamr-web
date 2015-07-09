@@ -1,10 +1,14 @@
 
 $select-button-width: $button-height;
-$checkbox-space: 40px;
+$checkbox-space: 32px;
+
+.gamr-form {
+  @include clearfix();
+}
 
 .gamr-field {
   font-family: $font-text;
-  max-width: $field-width;
+  // max-width: $field-width;
   color: $color-main;
   margin-bottom: $space-medium;
   font-size: $field-font-size;
@@ -101,6 +105,10 @@ $checkbox-space: 40px;
 
 .check-group {
   margin: $space-large 0 $space-large 0;
+
+  & > .checkbox-wrap {
+    margin-bottom: $space-medium;
+  }
 }
 
 .checkbox-wrap {

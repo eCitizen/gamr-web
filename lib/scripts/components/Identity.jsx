@@ -74,9 +74,9 @@ module.exports = Identity = React.createClass({
         <p className='preamble' style={{marginBottom: 50}}>
           Please fill out some of your gamer details below.
         </p>
-        <Form id={FORM_ID}>
+        <Form id={FORM_ID} className='inner'>
           {formBlocks}
-          <FormSubmit className='right push-in' action={this.submitProfiles}>
+          <FormSubmit className='right' action={this.submitProfiles}>
             Submit
           </FormSubmit>
         </Form>
