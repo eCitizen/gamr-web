@@ -11,8 +11,8 @@ module.exports = Question = React.createClass({
     };
 
     return (
-      <div className={classnames('answer', this.props.className)}>
-        <ul className='choices'>
+      <div className={classnames('answer', 'center-group', this.props.className)}>
+        <ul className='choices middle'>
           {this.props.answers.map(function (answer, idx) {
             return (
               <li key={idx} style={style}>
@@ -28,8 +28,12 @@ module.exports = Question = React.createClass({
             );
           }.bind(this))}
         </ul>
-        <span className='reminder low'>Very<br/>Inaccurate</span>
-        <span className='reminder high'>Very<br/>Accurate</span>
+        <span className='left'>
+          <span className='reminder low'>Very<br/>Inaccurate</span>
+        </span>
+        <span className='right'>
+          <span className='reminder high'>Very<br/>Accurate</span>
+        </span>
       </div>
     );
   }

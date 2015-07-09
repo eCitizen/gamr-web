@@ -54,7 +54,7 @@ $intro-button-width: 180px;
   & > span {
     position: relative;
     left: -10px;
-    padding-top: 5px;
+    padding-top: 9px;
     display: inline-block;
     border-bottom: 1px solid $color-main;
   }
@@ -63,7 +63,7 @@ $intro-button-width: 180px;
 @media (min-width: $center-group-break) {
   .intro-actions > .middle {
     position: relative;
-    right: -5px;
+    right: -4px;
   }
 }
 

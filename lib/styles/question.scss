@@ -17,23 +17,18 @@ $transition-question-time: 100ms;
   bottom: 0px;
   left: 0px;
   z-index: 5;
-  padding: 0 155px; // TODO put in better container
 }
 
 .answered .question-text {
-  color: $color-subtle;
+  color: $color-main;
 }
 
 .answer {
-  margin: 0 auto;
-  position: relative;
-  max-width: 400px;
-  @include clearfix();
+  margin-bottom: $space-medium + 5px;
 }
 
 .choices {
   position: relative;
-  margin-bottom: $space-medium + 5px;
   margin-right: -5px;
   margin-left: -5px;
   
@@ -55,24 +50,37 @@ $transition-question-time: 100ms;
 }
 
 .reminder {
+  display: inline-block;
   font-family: $font-text;
   font-size: 13px;
   line-height: 15px;
   color: $color-secondary;
-  float: none;
-  position: absolute;
-  top: 5px;
+  margin-top: 5px;
+
   &.low {
+    margin-right: 12px;
+    margin-left: 5px;
     text-align: right;
     width: 90px;
-    left: -90px;
   }
 
   &.high {
+    margin-left: 12px;
+    margin-right: 5px;
+    text-align: left;
     width: 90px;
-    right: -90px + 2px;
   }
 }
+
+@media (max-width: $center-group-break) {
+  .reminder {
+    &.low { text-align: left; }
+    &.high { text-align: right; }
+  }
+  
+  .choices { margin-bottom: 10px; }
+}
+
 
 .question-nav {
   display: none;

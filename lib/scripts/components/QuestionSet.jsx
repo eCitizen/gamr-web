@@ -73,7 +73,10 @@ module.exports = QuestionSet = React.createClass({
     var oldAnswer = InputStore.getField(this.props.survey, this._makeId(this.state.current));
 
     var body = this.state.started ? (
-      <div className={classnames('question-set-body', {answered: oldAnswer})}>
+      <div className={classnames(
+        'question-set-body',
+        'inner',
+        {answered: oldAnswer})}>
         <div className='question-wrap'>
           <div className='question-nav'>
             {this.state.hasPrev ? (
