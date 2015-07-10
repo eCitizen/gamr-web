@@ -11,7 +11,6 @@ var React = require('react/addons'),
 var Home = require('./Home.jsx'),
   Games = require('./Games.jsx'),
   Identity = require('./Identity.jsx'),
-  Bio = require('./Bio.jsx'),
   Survey = require('./Survey.jsx'),
   Section = require('./Section.jsx'),
   Consent = require('./Consent.jsx'),
@@ -29,7 +28,6 @@ var routes = (
       <Route name="consent" path="consent" handler={Consent}/>
       <Route name="games" path="gameplay" handler={Games}/>
       <Route name="profile" path="profile" handler={Identity}/>
-      <Route name="bio" path="background" handler={Bio}/>
     </Route>
     <Route name="survey" handler={Survey}>
       <Route name="brain" path="brain-type" handler={BrainType}/>

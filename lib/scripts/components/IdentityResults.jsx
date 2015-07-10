@@ -28,7 +28,7 @@ module.exports = React.createClass({
               <h6>Player Name</h6>
             </li>
           </ul>
-          <Link className='results-confirm' to="bio">
+          <Link className='results-confirm' to="brain">
             <Button>Looks Good</Button>
           </Link>
           <p className='small-text'>

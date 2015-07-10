@@ -33,8 +33,8 @@ module.exports = React.createClass({
   submitProfiles: function (form) {
     setTimeout(function () {
       console.log('submit profiles', form);
-      // this.transitionTo('bio');
 
+      // TODO this is a real call
       this.setState({
         profileResults: {
           WOW: {
@@ -49,11 +49,45 @@ module.exports = React.createClass({
   render: function () {
     if (this.state.profileResults) return <IdentityResults results={this.state.profileResults}/>;
 
-    var games = InputStore.getForm('games'),
-      WOW = guide.identity.WOW,
-      LOL = guide.identity.LOL,
-      BFHD = guide.identity.BFHD,
-      formBlocks = [];
+    var games = InputStore.getForm('games');
+    var WOW = guide.identity.WOW;
+    var LOL = guide.identity.LOL;
+    var BFHD = guide.identity.BFHD;
+    var BIO = guide.identity.BIO;
+    var LANG = guide.identity.LANG;
+    var formBlocks = [];
+
+    var range = BIO.fields.year.range,
+      years = [], 
+      y;
+
+    for (y = range[0]; y >= range[1]; y -= 1) {
+      years.push({
+        label: y,
+        value: y
+      });
+    }
+
+    var background = (
+      <div>
+        <div className='preamble'>
+          <p className='speaking'>Who are you IRL?</p>
+        </div>
+        <div className='inner'>
+          <div className='form-block'>
+            <h2>{BIO.title}</h2>
+            <FormSelect required={false} {... BIO.fields.gender}/>
+            <FormSelect required={false} {... BIO.fields.year} options={years}/>
+            <FormSelect required={false} {... BIO.fields.month}/>
+          </div>
+          <div className='form-block'>
+            <h2>{LANG.title}</h2>
+            <FormSelect required={false} {... LANG.fields.country}/>
+            <FormSelect required={false} {... LANG.fields.level}/>
+          </div>
+        </div>
+      </div>
+    );
 
     if (games.LOL) {
       formBlocks.push(
@@ -91,14 +125,22 @@ module.exports = React.createClass({
 
     return (
       <div>
-        <div className='preamble'>
-          <p className='speaking'>Who are you when you play?</p>
-        </div>
-        <Form id={FORM_ID} className='inner'>
-          {formBlocks}
-          <FormSubmit className='right' action={this.submitProfiles}>
-            Submit
-          </FormSubmit>
+        <Form id={FORM_ID}>
+          <div className='preamble'>
+            <p className='speaking'>Who are you when you play?</p>
+          </div>
+          
+          <div className='inner'>
+            {formBlocks}
+          </div>
+
+          {background}
+
+          <div className='inner'>
+            <FormSubmit className='right' action={this.submitProfiles}>
+              Submit
+            </FormSubmit>
+          </div>
         </Form>
       </div>
     );
