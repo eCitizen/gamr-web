@@ -1,6 +1,7 @@
 
 $max-question-height: 200px;
 $transition-question-time: 100ms;
+$choice-space: 8px;
 
 .question-wrap {
   position: relative;
@@ -24,19 +25,19 @@ $transition-question-time: 100ms;
 }
 
 .answer {
-  margin-bottom: $space-medium + 5px;
+  margin-bottom: $space-medium;
 }
 
 .choices {
   position: relative;
-  margin-right: -5px;
-  margin-left: -5px;
+  margin-right: -$choice-space;
+  margin-left: -$choice-space;
   
   & > li {
     @include border-box();
     float: left;
     position: relative;
-    padding: 0 8px;
+    padding: 0 $choice-space;
 
     & > .button {
       @include border-box();
@@ -58,15 +59,13 @@ $transition-question-time: 100ms;
   margin-top: 5px;
 
   &.low {
-    margin-right: 12px;
-    margin-left: 5px;
+    margin-right: $choice-space * 2;
     text-align: right;
     width: 90px;
   }
 
   &.high {
-    margin-left: 12px;
-    margin-right: 5px;
+    margin-left: $choice-space * 2;
     text-align: left;
     width: 90px;
   }

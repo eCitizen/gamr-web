@@ -14,6 +14,7 @@ $highlight-color: #75656a;
   width: $dot-size;
   height: $dot-size;
   margin-right: $dot-space;
+  background-image: -moz-linear-gradient($highlight-color, $color-black);
   @include linear-gradient($highlight-color, $color-black);
   
   &, &:before, &:after {
@@ -32,6 +33,7 @@ $highlight-color: #75656a;
     bottom: 1px;
     left: 1px;
     right: 1px;
+    background-image: -moz-linear-gradient($color-black, $shade-color);
     @include linear-gradient($color-black, $shade-color);
   }
 

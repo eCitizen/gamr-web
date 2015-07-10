@@ -13,10 +13,11 @@
 @import "./intro.scss";
 @import "./about.scss";
 
-@import url("http://fonts.googleapis.com/css?family=Inconsolata");
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:700);
 
 html, body {
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: $color-black;
   color: $color-white;
   font-family: $font-text;
