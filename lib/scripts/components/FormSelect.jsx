@@ -23,18 +23,20 @@ module.exports = Select = React.createClass({
   },
 
   render: function () {
+    var options;
     var optionsData = {};
+
     if (Array.isArray(this.props.options)) {
-      this.props.options.map(function (v) {
+      options = this.props.options.map(function (v, idx) {
         optionsData[v.value] = v.label;
+        return <option value={v.value} key={idx}>{v.label}</option>;
       });
     } else {
       optionsData = this.props.options;
+      options = Object.keys(optionsData).map(function (key, idx) {
+        return <option value={key} key={idx}>{optionsData[key]}</option>;
+      });
     }
-
-    var options = Object.keys(optionsData).map(function (key, idx) {
-      return <option value={key} key={idx}>{optionsData[key]}</option>;
-    }.bind(this));
 
     return (
       <div className={classnames('gamr-field gamr-select', {

@@ -401,7 +401,7 @@
 				"label": "Year",
 				"id": "sl_birth_year",
 				"type": "selectRange",
-				"range": [2014,1900]
+				"range": [2014,1950]
 			}
 		}
 	},

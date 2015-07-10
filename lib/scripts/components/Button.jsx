@@ -37,7 +37,7 @@ module.exports = Button = React.createClass({
         );
     
     return (
-      <div className={className} onClick={this._handleClick}>
+      <div className={className} onMouseDown={this._handleClick}>
         {this.props.children}
       </div>
     );

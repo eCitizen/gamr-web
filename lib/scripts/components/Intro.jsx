@@ -32,7 +32,7 @@ module.exports = React.createClass({
 
         <p className='schools'>MIT Media Lab <span className='plus'>+</span> Tilburg University</p>
         <p className='footnote'>
-          To participate, you must have an account with one or more of the folllowing:<br/> League of Legends, Battlefield: Hardline, or World of Warcraft.
+          To participate, you must play one or more of the folllowing:<br/> League of Legends, Battlefield: Hardline, Battlefield 4, or World of Warcraft.
         </p>
       </div>
     );

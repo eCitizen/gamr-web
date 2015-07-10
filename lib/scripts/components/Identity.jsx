@@ -1,34 +1,54 @@
-var React = require('react/addons'),
-  Router = require('react-router'),
-  Navigation = Router.Navigation,
-  guide = require('../services/guide'),
-  Form = require('./Form.jsx'),
-  FormSelect = require('./FormSelect.jsx'),
-  FormInput = require('./FormInput.jsx'),
-  FormSubmit = require('./FormSubmit.jsx'),
-  Title = require('./Title.jsx'),
-  InputStore = require('../input/store'),
-  FORM_ID = 'identity',
-  Identity;
-  
+var React = require('react/addons');
+var Router = require('react-router');
+var guide = require('../services/guide');
+var Form = require('./Form.jsx');
+var FormSelect = require('./FormSelect.jsx');
+var FormInput = require('./FormInput.jsx');
+var FormSubmit = require('./FormSubmit.jsx');
+var Title = require('./Title.jsx');
+var InputStore = require('../input/store');
+var FORM_ID = 'identity';
+var IdentityResults = require('./IdentityResults.jsx');
 
-module.exports = Identity = React.createClass({
-  mixins: [Navigation],
+module.exports = React.createClass({
+  displayName: 'Identity',
+
+  statics: {
+    willTransitionTo: function (transition, params, query, callback) {
+      var i = 0, k;
+      for (k in InputStore.getForm('games')) { 
+        i += 1; 
+      }
+      if (i === 0) transition.redirect('games');
+      callback();
+    }
+  },
+
+  getInitialState: function () {
+    return  {
+      profileResults: null
+    }
+  },
 
   submitProfiles: function (form) {
     setTimeout(function () {
       console.log('submit profiles', form);
-      this.transitionTo('bio');
+      // this.transitionTo('bio');
+
+      this.setState({
+        profileResults: {
+          WOW: {
+            name: 'Player' 
+          }
+        }
+      })
+
     }.bind(this),200);
   },
 
-  toggleGame: function (gameKey, checked) {
-    var state = {};
-    state[gameKey] = checked;
-    this.setState(state);
-  },
-
   render: function () {
+    if (this.state.profileResults) return <IdentityResults results={this.state.profileResults}/>;
+
     var games = InputStore.getForm('games'),
       WOW = guide.identity.WOW,
       LOL = guide.identity.LOL,
@@ -67,12 +87,12 @@ module.exports = Identity = React.createClass({
       );
     }
     
-    // var title = formBlocks.length > 1 ? 'PROFILES' : 'PROFILE';
+    var profileText = formBlocks.length > 1 ? 'profiles' : 'profile';
 
     return (
       <div>
         <p className='preamble' style={{marginBottom: 50}}>
-          Please fill out some of your gamer details below.
+          Please fill out your {profileText} below
         </p>
         <Form id={FORM_ID} className='inner'>
           {formBlocks}
@@ -84,4 +104,3 @@ module.exports = Identity = React.createClass({
     );
   }
 });
-
