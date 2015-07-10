@@ -6,6 +6,31 @@ a {
 
 p {
   margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.speaking {
+  font-family: $font-text;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: $color-white;
+
+  & > em {
+    color: $color-main;    
+  }
 }
 
 .flashy {
@@ -18,12 +43,7 @@ p {
 }
 
 .preamble {
-  letter-spacing: 2px;
-  font-family: $font-text;
-  font-style: italic;
-  font-size: 16px;
-  color: $color-white;
-  margin-bottom: $space-small;
+  margin-bottom: $space-large;
 }
 
 .index {

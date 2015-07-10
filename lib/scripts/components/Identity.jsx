@@ -91,9 +91,9 @@ module.exports = React.createClass({
 
     return (
       <div>
-        <p className='preamble' style={{marginBottom: 50}}>
-          Please fill out your {profileText} below
-        </p>
+        <div className='preamble'>
+          <p className='speaking'>Who are you when you play?</p>
+        </div>
         <Form id={FORM_ID} className='inner'>
           {formBlocks}
           <FormSubmit className='right' action={this.submitProfiles}>

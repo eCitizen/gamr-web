@@ -17,7 +17,7 @@ module.exports.BrainType = React.createClass({
           </p>
         </div>
         <div className='answerKey'>
-          <p className='flashy'>
+          <p className='speaking'>
             Indicate for each of the following statements whether it is:
           </p>
           <ul className='inner'>
@@ -47,7 +47,7 @@ module.exports.Personality = React.createClass({
           </p>
         </div>
         <div className='answerKey'>
-          <p className='flashy'>
+          <p className='speaking'>
             Indicate for each of the following statements whether it is:
           </p>
           <ul className='inner'>
@@ -77,7 +77,7 @@ module.exports.GamerType = React.createClass({
           </p>
         </div>
         <div className='answerKey'>
-          <p className='flashy'>
+          <p className='speaking'>
             Indicate for each of the following statements whether it is:
           </p>
           <ul className='inner'>

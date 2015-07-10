@@ -33,6 +33,7 @@
 .center-group > .middle,
 .center-group > .right,
 .center-group > .left {
+  display: block;
   min-height: $button-height;
 }
 

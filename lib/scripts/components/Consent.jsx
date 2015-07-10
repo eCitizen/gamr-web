@@ -43,9 +43,9 @@ module.exports = Consent = React.createClass({
   render: function () {
     return (
       <div className='consent-form'>
-        <div className='intro'>
-          <p className='preamble'>
-            Thank you for checking out our research!
+        <div className='preamble intro'>
+          <p className='speaking'>
+            <em>Thank you for checking out our research!</em>
           </p>
           <p>
             Below you will find an explanation of what data we want to use in this research and how we will process the data. 

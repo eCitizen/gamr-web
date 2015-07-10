@@ -1,6 +1,14 @@
 
 $intro-button-width: 180px;
 
+.intro-question {
+  margin: $space-large $space-large * 1.3;
+
+  & > .speaking:first-child {
+    margin-bottom: 8px;
+  }
+}
+
 .intro-actions {
   width: $intro-button-width;
   margin-top: $space-large;
@@ -60,26 +68,10 @@ $intro-button-width: 180px;
   }
 }
 
-@media (min-width: $center-group-break) {
-  .intro-actions > .middle {
-    position: relative;
-    right: -4px;
-  }
-}
-
-@media (max-width: $center-group-break) {
-  .intro-actions > .middle {
-    margin-bottom: 20px;
-  }
-
-  .intro-about > span {
-    left: -4px;
-  }
-}
-
 .schools {
   font-family: $font-title;
   font-size: 15px;
+  line-height: 19px;
   letter-spacing: 4px;
   color: $color-subtle;
   text-transform: uppercase;
@@ -93,4 +85,32 @@ $intro-button-width: 180px;
   font-size: 13px;
   line-height: 18px;
   margin-top: $space-medium;
+}
+
+
+@media (min-width: $center-group-break) {
+  .intro-actions > .middle {
+    position: relative;
+    right: -4px;
+  }
+}
+
+@media (max-width: $center-group-break) {
+  .intro-actions > .middle {
+    margin-bottom: 15px;
+  }
+
+  .intro-about > span {
+    left: -4px;
+  }
+
+  .intro-question {
+    text-align: center;
+    & > .speaking {
+      display: inline;
+      &:after {
+        content: ' ';
+      }
+    }
+  }
 }

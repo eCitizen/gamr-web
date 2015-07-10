@@ -9,10 +9,13 @@ module.exports = React.createClass({
   render: function () {
     return (
       <div>
-        <p className='preamble'>
-          Thanks! Here is what we found<br/>
-          Please confirm that these are your profiles
-        </p>
+        <div className='preamble'>
+          <p className='speaking'>
+            Thank you! <em>Here is what we found...</em><br/>
+            Please confirm that these are your profiles
+          </p>
+        </div>
+
         <div className='inner'>
           <ul className='profile-results'>
             <li>

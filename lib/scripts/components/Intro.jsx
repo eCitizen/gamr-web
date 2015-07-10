@@ -14,8 +14,11 @@ module.exports = React.createClass({
           <Title className='main-sub'>PROJECT</Title>
           <Title className='main' split>GAMR</Title>
         </div>
-        <h4 className='marquee'>What does your play style say about you?</h4>
-        <h4 className='marquee b'>Join us, and find out in just 15 minutes.</h4>
+
+        <div className='intro-question'>
+          <h4 className='speaking align-left'>What does your play style say about you?</h4>
+          <h4 className='speaking align-right'><em>Join us, and find out in just 15 minutes.</em></h4>
+        </div>
 
         <div className='center-group intro-actions'>
           <Link className='middle' to="consent">

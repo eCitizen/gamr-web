@@ -22,9 +22,9 @@ module.exports = Identity = React.createClass({
   render: function () {
     return (
       <div>
-        <p className='preamble'>
-          Which of the following do you play?
-        </p>
+        <div className='preamble'>
+          <p className='speaking'>Which of the following do you play?</p>
+        </div>
         <Form id={FORM_ID} className='inner'>
           <div className='check-group'>
             {gameKeys.map(function (gameKey) {

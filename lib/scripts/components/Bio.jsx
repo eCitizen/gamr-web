@@ -35,15 +35,15 @@ module.exports = BioComponent = React.createClass({
 
     return (
       <div>
-        <p className='preamble' style={{marginBottom: 50}}>
-          And now a bit of information about yourself...
-        </p>
+        <div className='preamble'>
+          <p className='speaking'>What is your personal background?</p>
+        </div>
         <Form id={FORM_ID} className='inner'>
           <div className='form-block'>
             <h2>{BIO.title}</h2>
             <FormSelect required={false} {... BIO.fields.gender}/>
-            <FormSelect required={false} {... BIO.fields.month}/>
             <FormSelect required={false} {... BIO.fields.year} options={years}/>
+            <FormSelect required={false} {... BIO.fields.month}/>
           </div>
           <div className='form-block'>
             <h2>{LANG.title}</h2>
