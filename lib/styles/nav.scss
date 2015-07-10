@@ -7,10 +7,10 @@
   border-bottom: 1px solid $color-main;
   background: $color-black;
   z-index: 400;
+  height: $nav-height;
 }
 
 .nav {
-  height: $nav-height;
   @include clearfix();
   width: 700px;
   margin: 0 auto;

@@ -20,6 +20,12 @@ p {
   text-align: right;
 }
 
+.small-text {
+  font-size: 13px;
+  line-height: 17px;
+  color: $color-subtle;
+}
+
 .speaking {
   font-family: $font-text;
   font-style: italic;
@@ -33,15 +39,6 @@ p {
   }
 }
 
-.flashy {
-  font-family: $font-text;
-  font-style: italic;
-  font-size: 14px;
-  text-shadow: 0 0 2px #eeffee;
-  letter-spacing: 2px;
-  margin-bottom: $space-large - 5px;
-}
-
 .preamble {
   margin-bottom: $space-large;
 }
@@ -50,10 +47,6 @@ p {
   top: 0;
   position: absolute;
   right: 40px;
-}
-
-#home .flashy {
-  margin-top: 40px;
 }
 
 .instructions-body {
@@ -73,6 +66,7 @@ p {
     .value { color: $color-main; }
 
     & > ul {
+      margin-top: $space-large - 10px;
       font-family: $font-special;
       font-size: 16px;
       line-height: 25px;
@@ -146,6 +140,7 @@ p {
   }
 
   &.nav-title,
+  &.result-title,
   &.nav-title-sub {
     font-size: 18px;
     letter-spacing: 3px;
