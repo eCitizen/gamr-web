@@ -18,7 +18,7 @@ module.exports = QuestionSet = React.createClass({
   getInitialState: function () {
     InputActions.createForm(this.props.survey);
     var survey = guide.survey[this.props.survey];
-    var currentIdx = InputStore.getField(this.props.survey, TRACKING_FIELD) || 0;
+    var currentIdx = 0;
 
     return assign({
       current: currentIdx,
