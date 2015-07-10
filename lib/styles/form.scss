@@ -168,6 +168,8 @@ $checkbox-space: 32px;
   margin-bottom: $space-large + 5px;
 
   & > h2 {
+    font-size: 16px;
+    font-family: $font-special;
     margin-bottom: $space-medium;
   }
 }
