@@ -1,10 +1,11 @@
 
 .background {
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  top: 10px;
+  right: 10px;
+  left: 10px;
+  bottom: 10px;
+  border: 1px dashed $color-main;
   background: 
     url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMEAAAFj0BA5jORCoAAAAASUVORK5CYII='),
     url('images/backgrounds-3.jpg'); // http://www.patternify.com/
