@@ -1,12 +1,15 @@
 
 $intro-button-width: 180px;
 
+.title-wrap {
+  text-align: center;
+}
+
 .start-button {
   display: inline-block;
   width: $intro-button-width;
   margin-top: $space-large;
   margin-bottom: $space-large;
-  margin-right: 40px;
   box-shadow: 
     2px 4px 30px 0px rgba(0,0,0,.7);
 
@@ -15,31 +18,37 @@ $intro-button-width: 180px;
   }
 }
 
+.intro-buttons {
+  margin-top: -8px;
+  margin-bottom: $space-large;
+}
+
 .intro-social {
+  display: inline-block;
   color: $color-main;
   width: ($intro-button-width / 2);
 }
 
-.intro-social > .fa:hover {
-  color: $color-white;
-  cursor: pointer;
-
-  & > span {
-    border-bottom: 1px solid $color-white;
-  }
-}
-
 .intro-social {
   color: $color-white;
-  font-size: 25px;
-  line-height: $button-height;
-  text-align: right;
+  font-size: 28px;
+  line-height: 27px;
+  text-align: center;
+  margin: 0 20px;
 
   & > .fa {
     display: inline-block;
-    margin-left: 15px;
     position: relative;
-    bottom: -2px;
+    bottom: -6px;
+
+    &:hover {
+      color: $color-main;
+      cursor: pointer;
+    }
+  }
+
+  & > .fa:first-child {
+    margin-right: 15px;
   }
 }
 
@@ -50,8 +59,9 @@ $intro-button-width: 180px;
   display: inline-block;
 
   white-space: nowrap;
-  min-height: 30px;
+  min-height: 27px;
   padding: 1px 10px 0;
+  width: 110px;
   color: $color-black;
   background: $color-white;
   @include border-top-radius($button-radius * .8);
@@ -61,7 +71,7 @@ $intro-button-width: 180px;
   font-family: $font-title;
   text-transform: uppercase;
   font-size: 13px;
-  line-height: 30px;
+  line-height: 27px;
   letter-spacing: 2px;
 
   &:hover {

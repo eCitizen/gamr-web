@@ -20,15 +20,14 @@ module.exports = React.createClass({
           <Button>Start</Button>
         </Link>
 
-        <div className='intro-about'>About Us</div>
-
-
-        <div className='intro-social'>
-          <i className='fa fa-twitter'/>
-          <i className='fa fa-facebook-official'/>
+        <div className='intro-buttons'>
+          <div className='intro-about'>About Us</div>
+          <div className='intro-social'>
+            <i className='fa fa-twitter'/>
+            <i className='fa fa-facebook-official'/>
+          </div>
+          <div className='intro-about'>Play Video</div>
         </div>
-
-        <div className='intro-about'>Play Video</div>
 
         <p className='schools'>MIT Media Lab <span className='plus'>+</span> Tilburg University</p>
         <p className='footnote'>
