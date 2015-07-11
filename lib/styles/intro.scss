@@ -31,15 +31,16 @@ $intro-button-width: 180px;
 
 .intro-social {
   color: $color-white;
-  font-size: 28px;
+  font-size: 31px;
   line-height: 27px;
   text-align: center;
   margin: 0 20px;
+  text-shadow: 0px 1px 0px $color-black;
 
   & > .fa {
     display: inline-block;
     position: relative;
-    bottom: -6px;
+    bottom: -7px;
 
     &:hover {
       color: $color-main;
