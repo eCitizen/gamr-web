@@ -1,33 +1,26 @@
 
 $intro-button-width: 180px;
 
-.intro-question {
-  margin: $space-large $space-large * 1.3;
-
-  & > .speaking:first-child {
-    margin-bottom: 8px;
-  }
-}
-
-.intro-actions {
+.start-button {
+  display: inline-block;
   width: $intro-button-width;
   margin-top: $space-large;
   margin-bottom: $space-large;
+  margin-right: 40px;
+  box-shadow: 
+    2px 4px 30px 0px rgba(0,0,0,.7);
 
-  & > .middle > .button {
-    display: block;
+  & > .button {
     width: $intro-button-width;
   }
 }
 
-.intro-social,
-.intro-about {
+.intro-social {
   color: $color-main;
   width: ($intro-button-width / 2);
 }
 
-.intro-social > .fa:hover,
-.intro-about:hover {
+.intro-social > .fa:hover {
   color: $color-white;
   cursor: pointer;
 
@@ -37,7 +30,7 @@ $intro-button-width: 180px;
 }
 
 .intro-social {
-  color: $color-main;
+  color: $color-white;
   font-size: 25px;
   line-height: $button-height;
   text-align: right;
@@ -51,40 +44,50 @@ $intro-button-width: 180px;
 }
 
 .intro-about {
-  text-align: left;
+  box-shadow: 
+    2px 4px 20px 0px rgba(0,0,0,.5);
+
+  display: inline-block;
+
+  white-space: nowrap;
+  min-height: 30px;
+  padding: 1px 10px 0;
+  color: $color-black;
+  background: $color-white;
+  @include border-top-radius($button-radius * .8);
+  @include border-bottom-radius($button-radius * .8);
+
+  text-align: center;
   font-family: $font-title;
   text-transform: uppercase;
   font-size: 13px;
-  line-height: 21px;
+  line-height: 30px;
   letter-spacing: 2px;
-  text-indent: 2px;
-  
-  & > span {
-    position: relative;
-    left: -10px;
-    padding-top: 9px;
-    display: inline-block;
-    border-bottom: 1px solid $color-main;
+
+  &:hover {
+    cursor: pointer;
+    background: $color-main;
   }
 }
 
 .schools {
   font-family: $font-title;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 19px;
   letter-spacing: 4px;
-  color: $color-subtle;
   text-transform: uppercase;
   text-align: center;
+  text-shadow: 0px 1px 0 $color-black;
 }
 
 .footnote {
   text-align: center;
-  color: $color-subtle;
   font-family: $font-text;
   font-size: 13px;
-  line-height: 18px;
+  line-height: 21px;
   margin-top: $space-medium;
+  font-weight: bold;
+  text-shadow: 0px 1px 0 $color-black;
 }
 
 

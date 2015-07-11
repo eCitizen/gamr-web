@@ -105,6 +105,10 @@ p {
 
 // titles
 
+.splitter > span {
+  position: relative;
+}
+
 
 .title {
   font-family: $font-title;
@@ -116,22 +120,24 @@ p {
    
   &.main {
     text-align: center;
-    font-size: 152px;
+    font-size: 220px;
     line-height: 105px;
-    letter-spacing: 5px;
+    letter-spacing: -2px;
     margin-left: -8px;
-    .t-1 { left: -1px; } // A
-    .t-3 { left: -5px; } // R
+    .t-1 { left: -2px; } // A
+    .t-3 { left: -8px; } // R
+    text-shadow: 0px 1px 1px $color-black;
   }
 
   &.main-sub {
     text-align: center;
-    font-size: 20px;
-    letter-spacing: 7px;
+    font-size: 27px;
+    letter-spacing: 10px;
     position: relative;
-    left: -60px;
-    margin-bottom: $space-medium;
+    left: -76px;
+    margin-bottom: 40px;
     margin-top: $space-medium;
+    text-shadow: 0px 1px 0 $color-black;
   }
 
   &.section {
