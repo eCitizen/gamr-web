@@ -29,10 +29,12 @@ module.exports = React.createClass({
           <div className='intro-about'>Play Video</div>
         </div>
 
+        {/*
         <p className='schools'>MIT Media Lab <span className='plus'>+</span> Tilburg University</p>
         <p className='footnote'>
           To participate, you must play one or more of the folllowing:<br/> League of Legends, Battlefield: Hardline, Battlefield 4, or World of Warcraft.
         </p>
+        */}
       </Background>
     );
   }
