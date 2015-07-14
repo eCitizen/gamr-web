@@ -5,7 +5,8 @@ var resize = require('../services/resize');
 var CHANGE = 'change';
 var CELL_W = 7 * 16;
 var CELL_H = 7 * 9;
-var IMG_R = 1920 / 1080;
+var IMG_W = 1920
+var IMG_H = 1080;
 
 module.exports = React.createClass({
   displayName: 'Background',
@@ -48,7 +49,9 @@ module.exports = React.createClass({
       shiftX: (width - backW) / 2,
       shiftY: (height - backH) / 2,
       width: backW,
-      height: backH
+      height: backH,
+      imageX: (backW - IMG_W) / 2,
+      imageY: (backH - IMG_H) / 2
     };
   },
 
@@ -57,21 +60,32 @@ module.exports = React.createClass({
       height: (100 / this.state.cellRows.length) + '%'
     };
 
-    var cellStyle = {
-      width: (100 / this.state.cellRows[0].length) + '%'
-    };
+    getCellStyle = this.getCellStyle;
 
-    return this.state.cellRows.map(function (row, idx) {
+    return this.state.cellRows.map(function (row, rowIdx) {
       return (
-        <div  key={idx} className='cell-row' style={rowStyle}>
-          {row.map(function (cell, idx) {
+        <div  key={rowIdx} className='cell-row' style={rowStyle}>
+          {row.map(function (cell, cellIdx) {
             return (
-              <div key={idx} className='cell' style={cellStyle}/>
+              <div key={cellIdx} className='cell' style={getCellStyle(rowIdx, cellIdx)}/>
             );
           })}
         </div>
       );
     });
+  },
+
+  getCellStyle: function (row, cell) {
+    var cellX = (cell * -CELL_W) + this.state.imageX;
+    var cellY = (row * -CELL_H) + this.state.imageY;
+
+    var cellStyle = {
+      backgroundImage: 'url(\'assets/images/backgrounds-5.jpg\')',
+      backgroundPosition: cellX + 'px ' + cellY + 'px',
+      width: (100 / this.state.cellRows[0].length) + '%'
+    };
+
+    return cellStyle;
   },
 
   render: function () {
