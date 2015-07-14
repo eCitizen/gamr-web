@@ -3,8 +3,8 @@ var React = require('react');
 var classnames = require('classnames');
 var resize = require('../services/resize');
 var CHANGE = 'change';
-var CELL_W = 10 * 16;
-var CELL_H = 10 * 9;
+var CELL_W = 7 * 16;
+var CELL_H = 7 * 9;
 var IMG_R = 1920 / 1080;
 
 module.exports = React.createClass({
@@ -82,10 +82,6 @@ module.exports = React.createClass({
       bottom: this.state.shiftY,
       border: '1px solid red'
     };
-
-    // this.makeCells();
-
-    console.log(this.state);
 
     return (
       <div className={classnames(this.props.className)}>
