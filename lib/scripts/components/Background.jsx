@@ -104,8 +104,8 @@ module.exports = React.createClass({
     var cellX = (cell * -CELL_W) + this.state.imageX;
     var cellY = (row * -CELL_H) + this.state.imageY;
 
-    // var imgIdx = Math.floor(Math.random() * 6);
-    var imgIdx = 5;
+    var imgIdx = Math.floor(Math.random() * 6);
+    var imgIdx = cell % 2 === 0 ? 5 : imgIdx;
     var img = 'url(\'assets/images/backgrounds-'+imgIdx+'.jpg\')';
 
     var cellStyle = {
