@@ -56,7 +56,9 @@ module.exports = React.createClass({
       width: backW,
       height: backH,
       imageX: (backW - img.w) / 2,
-      imageY: (backH - img.h) / 2
+      imageY: (backH - img.h) / 2,
+      imageW: img.w,
+      imageH: img.h
     };
   },
 
@@ -67,12 +69,12 @@ module.exports = React.createClass({
       // background is wider: stretch w
       return {
         w: back_W,
-        h: back_H * IMG_R 
+        h: back_W / IMG_R
       }
     } else {
       // background is taller: stretch h
       return {
-        w: back_W * IMG_R,
+        w: back_H * IMG_R,
         h: back_H
       }
     }
@@ -102,12 +104,14 @@ module.exports = React.createClass({
     var cellX = (cell * -CELL_W) + this.state.imageX;
     var cellY = (row * -CELL_H) + this.state.imageY;
 
-    var imgIdx = Math.floor(Math.random() * 1);
+    // var imgIdx = Math.floor(Math.random() * 6);
+    var imgIdx = 5;
     var img = 'url(\'assets/images/backgrounds-'+imgIdx+'.jpg\')';
 
     var cellStyle = {
       backgroundImage: img,
       backgroundPosition: cellX + 'px ' + cellY + 'px',
+      backgroundSize: this.state.imageW + 'px ' + this.state.imageH + 'px',
       width: (100 / this.state.cellRows[0].length) + '%'
     };
 
