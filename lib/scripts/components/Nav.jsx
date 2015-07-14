@@ -1,5 +1,5 @@
 
-var React = require('react/addons');
+var React = require('react');
 var State = require('react-router').State;
 var classnames = require('classnames');
 var Progress = require('./Progress.jsx');

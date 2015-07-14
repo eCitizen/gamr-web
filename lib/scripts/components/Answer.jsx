@@ -1,5 +1,5 @@
 
-var React = require('react/addons'),
+var React = require('react'),
   Button = require('./Button.jsx'),
   classnames = require('classnames'),
   Question;

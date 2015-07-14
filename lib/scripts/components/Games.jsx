@@ -1,4 +1,4 @@
-var React = require('react/addons'),
+var React = require('react'),
   Router = require('react-router'),
   Navigation = Router.Navigation,
   guide = require('../services/guide'),

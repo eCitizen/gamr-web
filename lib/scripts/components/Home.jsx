@@ -1,5 +1,5 @@
 
-var React = require('react/addons'),
+var React = require('react'),
   Router = require('react-router'),
   RouteHandler = Router.RouteHandler,
   Nav = require('./Nav.jsx'),

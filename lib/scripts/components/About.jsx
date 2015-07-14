@@ -1,5 +1,5 @@
 
-var React = require('react/addons'),
+var React = require('react'),
   Title = require('./Title.jsx'),
   AboutStore = require('../AboutStore/AboutStore.jsx').Store,
   AboutActions = require('../AboutStore/AboutStore.jsx').Actions,

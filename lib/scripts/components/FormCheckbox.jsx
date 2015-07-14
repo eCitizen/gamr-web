@@ -1,5 +1,5 @@
 
-var React = require('react/addons'),
+var React = require('react'),
   classnames = require('classnames'),
   InputStore = require('../input/store'),
   InputActions = require('../input/actions'),

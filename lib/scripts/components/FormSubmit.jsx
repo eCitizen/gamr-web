@@ -1,5 +1,5 @@
 
-var React = require('react/addons'),
+var React = require('react'),
   InputStore = require('../input/store'),
   Button = require('./Button.jsx'),
   FormSubmit;

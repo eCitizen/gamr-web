@@ -1,6 +1,6 @@
 
 
-var React = require('react/addons'),
+var React = require('react'),
   QuestionSet = require('./QuestionSet.jsx');
 
 module.exports.BrainType = React.createClass({

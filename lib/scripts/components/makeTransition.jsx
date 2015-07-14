@@ -1,5 +1,5 @@
 
-var React = require('react/addons'),
+var React = require('react'),
   ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 module.exports = function (Component) {

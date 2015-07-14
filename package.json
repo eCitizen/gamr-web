@@ -23,6 +23,7 @@
     "images": "cp -r lib/images dist/"
   },
   "browserify-shim": {
+    "react": "global:React",
     "react/addons": "global:React",
     "react-router": "global:ReactRouter",
     "d3": "global:d3"

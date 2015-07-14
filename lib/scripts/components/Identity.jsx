@@ -1,4 +1,4 @@
-var React = require('react/addons');
+var React = require('react');
 var Router = require('react-router');
 var guide = require('../services/guide');
 var Form = require('./Form.jsx');

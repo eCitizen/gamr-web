@@ -1,4 +1,4 @@
-var React = require('react/addons'),
+var React = require('react'),
   Splitter = require('./Splitter.jsx'),
   classnames = require('classnames'),
   Title;

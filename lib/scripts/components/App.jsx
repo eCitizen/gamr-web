@@ -1,5 +1,5 @@
 
-var React = require('react/addons'),
+var React = require('react'),
   Router = require('react-router'),
   DefaultRoute = Router.DefaultRoute,
   NotFoundRoute = Router.NotFoundRoute,

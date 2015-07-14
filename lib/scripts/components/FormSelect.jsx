@@ -1,4 +1,4 @@
-var React = require('react/addons'),
+var React = require('react'),
   classnames = require('classnames'),
   FormField = require('./FormField.jsx'),
   Select;

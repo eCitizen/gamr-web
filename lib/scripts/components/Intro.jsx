@@ -1,5 +1,5 @@
 
-var React = require('react/addons');
+var React = require('react');
 var Link = require('react-router').Link;
 var Title = require('./Title.jsx');
 var Button = require('./Button.jsx');
