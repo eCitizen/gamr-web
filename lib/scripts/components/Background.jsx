@@ -3,8 +3,9 @@ var React = require('react');
 var classnames = require('classnames');
 var resize = require('../services/resize');
 var CHANGE = 'change';
-var CELL_W = 7 * 16;
-var CELL_H = 7 * 9;
+var MULTIPLY = 10;
+var CELL_W = MULTIPLY * 16;
+var CELL_H = MULTIPLY * 9;
 var IMG_W = 1920
 var IMG_H = 1080;
 
@@ -12,7 +13,7 @@ module.exports = React.createClass({
   displayName: 'Background',
 
   getInitialState: function () {
-    return this.getCells(resize.getWidth(), resize.getHeight())
+    return this.getCells()
   },
 
   componentDidMount: function () {
@@ -28,6 +29,8 @@ module.exports = React.createClass({
   },
 
   getCells: function (width, height) {
+    width = width || resize.getWidth();
+    height = height || resize.getHeight();
     var x = Math.floor(width / CELL_W) + 1;
     var y = Math.floor(height / CELL_H) + 1;
     var backW = x * CELL_W;
@@ -44,15 +47,35 @@ module.exports = React.createClass({
       rows.push(cells);
     }
 
+    var img = this.fitImage(backW, backH);
+
     return {
       cellRows: rows,
       shiftX: (width - backW) / 2,
       shiftY: (height - backH) / 2,
       width: backW,
       height: backH,
-      imageX: (backW - IMG_W) / 2,
-      imageY: (backH - IMG_H) / 2
+      imageX: (backW - img.w) / 2,
+      imageY: (backH - img.h) / 2
     };
+  },
+
+  fitImage: function (back_W, back_H) {
+    var back_R = back_W / back_H;
+    var IMG_R = IMG_W / IMG_H;
+    if (back_R > IMG_R) {
+      // background is wider: stretch w
+      return {
+        w: back_W,
+        h: back_H * IMG_R 
+      }
+    } else {
+      // background is taller: stretch h
+      return {
+        w: back_W * IMG_R,
+        h: back_H
+      }
+    }
   },
 
   makeCells: function () {
@@ -79,8 +102,11 @@ module.exports = React.createClass({
     var cellX = (cell * -CELL_W) + this.state.imageX;
     var cellY = (row * -CELL_H) + this.state.imageY;
 
+    var imgIdx = Math.floor(Math.random() * 1);
+    var img = 'url(\'assets/images/backgrounds-'+imgIdx+'.jpg\')';
+
     var cellStyle = {
-      backgroundImage: 'url(\'assets/images/backgrounds-5.jpg\')',
+      backgroundImage: img,
       backgroundPosition: cellX + 'px ' + cellY + 'px',
       width: (100 / this.state.cellRows[0].length) + '%'
     };
