@@ -25,7 +25,7 @@ module.exports = React.createClass({
     return (
       <div className={classnames(this.props.className)}>
         <div className='background'/>
-        <div className='foreground' >
+        <div className='foreground' ref='background'>
           {this.props.children}
         </div>
       </div>
