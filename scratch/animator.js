@@ -41,6 +41,10 @@ for (time = 0; time <= 7; time += 1) {
 
   var render = a(time);
 
+  if (!render) {
+    break;
+  }
+
   cells.forEach(function (row, y) {
     var rowStr = [];
     row.forEach(function (cell, x) {
