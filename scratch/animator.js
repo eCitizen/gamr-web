@@ -35,7 +35,7 @@ var a = animator(cells);
 
 var time;
 
-for (time = 0; time <= 5; time += 1) {
+for (time = 0; time <= 7; time += 1) {
   console.log('t =', time);
   console.log('');
 
