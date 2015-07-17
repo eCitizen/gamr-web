@@ -9,6 +9,7 @@ module.exports = React.createClass({
   displayName: 'Intro',
 
   render: function () {
+    return <Background/>
     return (
       <Background className='title-wrap'>
         <div className='main-title-wrap'>

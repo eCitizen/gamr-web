@@ -107,7 +107,7 @@ module.exports = React.createClass({
     var imgIdx = Math.floor(Math.random() * 6);
     var imgIdx = cell % 2 === 0 ? 5 : imgIdx;
     var img = 'url(\'assets/images/backgrounds-'+imgIdx+'.jpg\')';
-    var opacity = Math.random();
+    var opacity = Math.random() + .4;
 
     var cellStyle = {
       backgroundImage: img,
