@@ -4,7 +4,7 @@ var h = 4;
 var cells = makeCells(w, h);
 
 
-function makeArrowAnimator(w, h) {
+function makeArrowAnimator(w, h, action) {
   var centerRight = Math.floor(w / 2);
   var centerLeft = w % 2 === 0 ? centerRight - 1 : centerRight;
   var duration = Math.floor((w-1) / 2) + h;
@@ -16,14 +16,16 @@ function makeArrowAnimator(w, h) {
       var spread = time - y;
       var left = centerLeft - spread;
       var right = centerRight + spread;
-      var inY = y <= time;
-      var inX = (x >= left && x <= right);
-      return (inX && inY) ? true : false;
+      var filled = (y <= time) && (x >= left && x <= right);
+
+      if (filled && action) action(x, y);
+      return filled ? true : false;
     }
   }
 }
 
-var arrow = makeArrowAnimator(w, h);
+var arrow = makeArrowAnimator(w, h, function(x, y) {
+});
 var time;
 
 for (time = 0; time <= 700; time += 1) {
@@ -51,9 +53,6 @@ for (time = 0; time <= 700; time += 1) {
 
   console.log('');
 }
-
-
-
 
 function makeCells(w, h) {
   var cells = [];
