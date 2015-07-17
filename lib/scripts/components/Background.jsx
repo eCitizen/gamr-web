@@ -2,6 +2,7 @@
 var React = require('react');
 var classnames = require('classnames');
 var resize = require('../services/resize');
+var makeAnimator = require('../services/animator/patterns').arrow;
 var CHANGE = 'change';
 var MULTIPLY = 10;
 var CELL_W = MULTIPLY * 16;
@@ -13,7 +14,7 @@ module.exports = React.createClass({
   displayName: 'Background',
 
   getInitialState: function () {
-    return this.getCells()
+    return this.getCells();
   },
 
   componentDidMount: function () {
@@ -35,22 +36,20 @@ module.exports = React.createClass({
     var y = Math.floor(height / CELL_H) + 1;
     var backW = x * CELL_W;
     var backH = y * CELL_H;
-    var rows = [];
+    var cells = [];
     var iy, ix;
-    var cells;
 
     for (iy = 0; iy < y; iy += 1) {
-      cells = [];
+      cells.push([]);
       for (ix = 0; ix < x; ix += 1) {
-        cells.push([ix,iy]);  
+        cells[iy].push([ix,iy]);
       }
-      rows.push(cells);
     }
 
     var img = this.fitImage(backW, backH);
 
     return {
-      cellRows: rows,
+      cells: cells,
       shiftX: (width - backW) / 2,
       shiftY: (height - backH) / 2,
       width: backW,
@@ -80,14 +79,24 @@ module.exports = React.createClass({
     }
   },
 
+  startAnimation: function() {
+    // var transition = makeAnimator(x, y, function (x, y) {
+    //   rows[y][x][2] = true;
+    // });
+
+    // var render = transition(1);
+
+    // render(ix, iy);
+  },
+
   makeCells: function () {
     var rowStyle = {
-      height: (100 / this.state.cellRows.length) + '%'
+      height: (100 / this.state.cells.length) + '%'
     };
 
     getCellStyle = this.getCellStyle;
 
-    return this.state.cellRows.map(function (row, rowIdx) {
+    return this.state.cells.map(function (row, rowIdx) {
       return (
         <div  key={rowIdx} className='cell-row' style={rowStyle}>
           {row.map(function (cell, cellIdx) {
@@ -114,7 +123,7 @@ module.exports = React.createClass({
       backgroundPosition: cellX + 'px ' + cellY + 'px',
       backgroundSize: this.state.imageW + 'px ' + this.state.imageH + 'px',
       opacity: opacity,
-      width: (100 / this.state.cellRows[0].length) + '%'
+      width: (100 / this.state.cells[0].length) + '%'
     };
 
     return cellStyle;
