@@ -23,8 +23,8 @@
   -moz-box-shadow: inset 0 0 13em 2em $color-black;  
   -webkit-box-shadow: inset 0 0 13em $color-black;   
   box-shadow: inset 0 0 13em $color-black;
-  background: 
-    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMEAAAFj0BA5jORCoAAAAASUVORK5CYII='); // http://www.patternify.com/
+  // background: 
+    // url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMEAAAFj0BA5jORCoAAAAASUVORK5CYII='); // http://www.patternify.com/
 }
 
 .cell-row {
@@ -37,5 +37,8 @@
   border-bottom: 1px solid $color-black;
   height: 100%;
   float: left;
+
+  // @include transition(all 300ms ease-in);
+  // opacity: 0;
 }
 

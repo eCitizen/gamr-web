@@ -9,7 +9,6 @@ module.exports = React.createClass({
   displayName: 'Intro',
 
   render: function () {
-    return <Background/>
     return (
       <Background className='title-wrap'>
         <div className='main-title-wrap'>
@@ -17,6 +16,7 @@ module.exports = React.createClass({
           <Title className='main' split>GAMR</Title>
         </div>
 
+        {/*
         <Link className='start-button' to="consent">
           <Button>Start</Button>
         </Link>
@@ -30,7 +30,7 @@ module.exports = React.createClass({
           <div className='intro-about'>Play Video</div>
         </div>
 
-        {/*
+        
         <p className='schools'>MIT Media Lab <span className='plus'>+</span> Tilburg University</p>
         <p className='footnote'>
           To participate, you must play one or more of the folllowing:<br/> League of Legends, Battlefield: Hardline, Battlefield 4, or World of Warcraft.
