@@ -24,33 +24,23 @@ function makeArrowAnimator(w, h, action) {
   }
 }
 
-var arrow = makeArrowAnimator(w, h, function(x, y) {
-});
+var arrow = makeArrowAnimator(w, h);
+
 var time;
+var on = '/\\';
+var off = '-';
 
 for (time = 0; time <= 700; time += 1) {
-  console.log('t =', time);
-  console.log('');
-
   var render = arrow(time);
-
-  if (!render) {
-    break;
-  }
+  if (!render) break;
 
   cells.forEach(function (row, y) {
     var rowStr = [];
     row.forEach(function (cell, x) {
-      var isOn = render(x,y);
-      if (isOn) {
-        rowStr.push('/\\');  
-      } else {
-        rowStr.push('--')
-      }
+      rowStr.push(render(x,y) ? on : off);
     });
     console.log(rowStr.join(''));
   });
-
   console.log('');
 }
 
