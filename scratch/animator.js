@@ -4,7 +4,7 @@ var h = 4;
 var cells = makeCells(w, h);
 
 
-function animator(w, h) {
+function arrowAnimator(w, h) {
   var centerRight = Math.floor(w / 2);
   var centerLeft = w % 2 === 0 ? centerRight - 1 : centerRight;
   var duration = Math.floor((w-1) / 2) + h;
@@ -28,7 +28,7 @@ function animator(w, h) {
   }
 }
 
-var a = animator(w, h);
+var a = arrowAnimator(w, h);
 var time;
 
 for (time = 0; time <= 7; time += 1) {
