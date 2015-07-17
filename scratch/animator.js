@@ -15,8 +15,10 @@ function animator(cells) {
     if (time >= duration) return; // no more animation
 
     return function renderCell(x, y) {
-      var left = centerLeft - (h - time - y);
-      var right = centerRight + (h - time - y);
+      y = h - y - 1;
+      var spread = time - y;
+      var left = centerLeft - spread;
+      var right = centerRight + spread;
       var inY = y <= time;
       var inX = (x >= left && x <= right);
       if (inX && inY) {
@@ -31,20 +33,29 @@ function animator(cells) {
 var a = animator(cells);
 
 
-var time = 2;
-var render = a(time);
+var time;
 
-cells.forEach(function (row, y) {
-  row.forEach(function (cell, x) {
-    var isOn = render(x,y);
-    if (isOn) {
-      console.log('x');  
-    } else {
-      console.log('.')
-    }
+for (time = 0; time <= 5; time += 1) {
+  console.log('t =', time);
+  console.log('');
+
+  var render = a(time);
+
+  cells.forEach(function (row, y) {
+    var rowStr = [];
+    row.forEach(function (cell, x) {
+      var isOn = render(x,y);
+      if (isOn) {
+        rowStr.push('/\\');  
+      } else {
+        rowStr.push('--')
+      }
+    });
+    console.log(rowStr.join(''));
   });
-  console.log('\n');
-});
+
+  console.log('');
+}
 
 
 
