@@ -13,17 +13,12 @@ function makeArrowAnimator(w, h) {
     if (time >= duration) return;
 
     return function renderCell(x, y) {
-      y = h - y - 1;
       var spread = time - y;
       var left = centerLeft - spread;
       var right = centerRight + spread;
       var inY = y <= time;
       var inX = (x >= left && x <= right);
-      if (inX && inY) {
-        return true;
-      } else {
-        return false;
-      }
+      return (inX && inY) ? true : false;
     }
   }
 }
@@ -31,7 +26,7 @@ function makeArrowAnimator(w, h) {
 var arrow = makeArrowAnimator(w, h);
 var time;
 
-for (time = 0; time <= 7; time += 1) {
+for (time = 0; time <= 700; time += 1) {
   console.log('t =', time);
   console.log('');
 
