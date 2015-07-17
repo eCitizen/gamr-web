@@ -27,8 +27,8 @@ function makeArrowAnimator(w, h, action) {
 var arrow = makeArrowAnimator(w, h);
 
 var time;
-var on = '/\\';
-var off = '-';
+var on = '\\/';
+var off = '--';
 
 for (time = 0; time <= 700; time += 1) {
   var render = arrow(time);
