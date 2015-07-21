@@ -3,6 +3,14 @@
  * Grid
  */
 
+html,
+body,
+.app,
+.page {
+  width: 100%;
+  height: 100%;
+}
+
 .page {
   margin: ($nav-height + $space-large) $gutter-width;
 }

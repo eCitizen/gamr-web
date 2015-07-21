@@ -1,0 +1,25 @@
+
+.video-wrap {
+  position: relative;
+  width: 100%;
+  max-width: $outer-width;
+  margin: $space-large auto;
+  border: 1px solid #555;
+  @include border-box();
+}
+
+.video {
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  z-index: 2;
+  background: $color-black;
+}
+
+.video > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

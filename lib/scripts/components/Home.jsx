@@ -8,13 +8,9 @@ var React = require('react'),
 module.exports = Home = React.createClass({
   render: function () {
     return (
-      <div>
+      <div className='app'>
         <Nav/>
-        <div className='page'>
-          <div className='outer'>
-            <RouteHandler {... this.props}/>
-          </div>
-        </div>
+        <RouteHandler {... this.props}/>
       </div>
     );
   }

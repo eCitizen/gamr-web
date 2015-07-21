@@ -5,7 +5,7 @@ var resize = require('../services/resize');
 var makeAnimator = require('../services/animator/patterns').arrow;
 var assign = require('object-assign');
 var CHANGE = 'change';
-var MULTIPLY = 5;
+var MULTIPLY = 15;
 var CELL_W = MULTIPLY * 16;
 var CELL_H = MULTIPLY * 9;
 var IMG_W = 1920
@@ -22,7 +22,7 @@ module.exports = React.createClass({
 
   componentDidMount: function () {
     resize.onChange(this.resize);
-    setTimeout(this.transition, 1300);
+    // setTimeout(this.transition, 1300);
   },
 
   componentWillUnmount: function () {
@@ -108,7 +108,7 @@ module.exports = React.createClass({
     if (!this.state) {
       console.log('hey')
       return {
-        imageA: 1,
+        imageA: 3,
         imageB: 5
       }
     } else {
@@ -203,7 +203,7 @@ module.exports = React.createClass({
         <div className='background' style={backStyle}>
            {this.makeCells()}
         </div>
-        <div className='foreground' ref='background'>
+        <div className='foreground'>
           {this.props.children}
         </div>
       </div>

@@ -1,12 +1,51 @@
 
 $intro-button-width: 180px;
 
-.title-wrap {
+
+.intro,
+.intro-block {
+  width: 100%;
+  height: 100%;
+}
+
+.intro-block {
+  position: relative;
   text-align: center;
-  position: fixed;
-  bottom: 100px;
+}
+
+.title-wrap {
+  color: $color-main;
+  text-align: center;
+  position: absolute;
+  bottom: 17px;
   left: 0;
   right: 0;
+}
+
+.more-content {
+  margin-top: 10px;
+  font-size: 80px;
+  line-height: 80px;
+}
+
+.intro-body {
+  position: relative;
+  z-index: 3;
+  min-height: 100%;
+  background: rgba(0,0,0,.7);
+  box-shadow: 0 0 50px 8px $color-black;
+  border-top: 1px dotted $color-main;
+  border-bottom: 1px dotted $color-main;
+  padding-bottom: $space-large;
+  text-align: center;
+}
+
+.intro-body-inner {
+  max-width: $outer-width;
+  width: 100%;
+  @include border-box();
+  padding: $gutter-width;
+  margin: auto;
 }
 
 .start-button {
@@ -22,25 +61,11 @@ $intro-button-width: 180px;
   }
 }
 
-.intro-buttons {
-  color: $color-main;
-  margin-top: -8px;
-  margin-bottom: $space-large;
-}
-
 .intro-social {
-  display: inline-block;
-  color: $color-main;
-  width: ($intro-button-width / 2);
-}
-
-.intro-social {
-  font-size: 31px;
-  line-height: 27px;
   text-align: center;
-  margin: 0 20px;
-  text-shadow: 0px 1px 0px $color-black;
-  color: $color-white;
+  color: $color-main;
+  font-size: 31px;
+  margin: $space-medium;
 
   & > .fa {
     display: inline-block;
