@@ -1,17 +1,17 @@
 
-/** @jsx React.DOM */
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Grid = require('./Grid.jsx');
 
-var React = require('react'),
-  Router = require('react-router'),
-  RouteHandler = Router.RouteHandler,
-  Survey;
+module.exports = React.createClass({
+  displayName: 'Survey',
 
-module.exports = Survey = React.createClass({
   render: function () {
     return (
-      <div>
+      <Grid>
         <RouteHandler {... this.props} key={name}/>
-      </div>
+      </Grid>
     );
   }
 });

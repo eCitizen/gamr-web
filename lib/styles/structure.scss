@@ -5,14 +5,14 @@
 
 html,
 body,
-.app,
-.page {
+.app {
   width: 100%;
   height: 100%;
 }
 
 .page {
-  margin: ($nav-height + $space-large) $gutter-width;
+  padding: ($nav-height + $space-large) $gutter-width;
+  @include border-box();
 }
 
 .outer, 

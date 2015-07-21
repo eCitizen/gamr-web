@@ -32,9 +32,9 @@ $intro-button-width: 180px;
   position: relative;
   z-index: 3;
   min-height: 100%;
-  background: rgba(0,0,0,.7);
+  background: rgba(0,15,7,.7);
   box-shadow: 
-    0 0 50px 8px $color-black,
+    0 0 50px 0px $color-black,
     inset 0 0 300px 10px $color-black;
   border-top: 1px dotted $color-main;
   border-bottom: 1px dotted $color-main;

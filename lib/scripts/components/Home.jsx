@@ -1,14 +1,23 @@
 
-var React = require('react'),
-  Router = require('react-router'),
-  RouteHandler = Router.RouteHandler,
-  Nav = require('./Nav.jsx'),
-  Home;
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var State = Router.State;
+var Nav = require('./Nav.jsx');
+var classnames = require('classnames');
 
-module.exports = Home = React.createClass({
+module.exports = React.createClass({
+  displayName: 'Home',
+
+  mixins: [State],
+
   render: function () {
+    var className = classnames('app', {
+      root: this.getPath() === '/'
+    });
+
     return (
-      <div className='app'>
+      <div className={className}>
         <Nav/>
         <RouteHandler {... this.props}/>
       </div>
