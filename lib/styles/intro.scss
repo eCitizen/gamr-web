@@ -48,6 +48,31 @@ $intro-button-width: 180px;
   @include border-box();
   padding: $gutter-width;
   margin: auto;
+
+  & > h4 {
+    margin-top: $space-large;
+    font-size: 20px;
+    font-style: italic;
+  }
+
+  & > p {
+    text-align: left;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: .5px;
+
+    & > strong {
+      font-family: $font-title;
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: $color-main;
+      text-transform: uppercase;
+    }
+
+    & > em {
+      color: $color-main;
+    }
+  }
 }
 
 .start-button {
@@ -64,15 +89,12 @@ $intro-button-width: 180px;
 }
 
 .intro-social {
-  text-align: center;
   color: $color-main;
   font-size: 31px;
-  margin: $space-medium;
+  margin: $space-large 0;
 
   & > .fa {
     display: inline-block;
-    position: relative;
-    bottom: -7px;
 
     &:hover {
       color: $color-main;
