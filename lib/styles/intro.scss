@@ -26,6 +26,7 @@ $intro-button-width: 180px;
   margin-top: 10px;
   font-size: 80px;
   line-height: 80px;
+  text-shadow: 0px 1px 30px rgba(0,0,0,.7);
 }
 
 .intro-body {
@@ -53,6 +54,7 @@ $intro-button-width: 180px;
     margin-top: $space-large;
     font-size: 20px;
     font-style: italic;
+    text-shadow: 0px 1px 0 $color-black;
   }
 
   & > p {
@@ -60,6 +62,7 @@ $intro-button-width: 180px;
     font-size: 18px;
     line-height: 28px;
     letter-spacing: .5px;
+    margin-bottom: 12px;
 
     & > strong {
       font-family: $font-title;
@@ -78,8 +81,8 @@ $intro-button-width: 180px;
 .start-button {
   display: inline-block;
   width: $intro-button-width;
-  margin-top: $space-large;
-  margin-bottom: $space-large;
+  margin-top: $space-medium;
+  margin-bottom: $space-medium;
   box-shadow: 
     2px 4px 30px 0px rgba(0,0,0,.7);
 
@@ -136,26 +139,38 @@ $intro-button-width: 180px;
   }
 }
 
-.schools {
+.valid-games {
+  // max-width: $inner-width;
+  margin: $space-large auto $space-medium;
+  text-align: left;
+  overflow: hidden;
+  border-top: 1px dotted $color-subtle;
+  border-bottom: 1px dotted $color-subtle;
+  padding: 20px 10px ;
+  text-align: center;
+
+  & > em {
+    color: $color-main;
+    display: block;
+    margin-bottom: $space-medium;
+    font-style: italic;
+    line-height: 30px;
+  }
+}
+
+.game-title {
   font-family: $font-title;
   font-size: 17px;
-  line-height: 19px;
-  letter-spacing: 4px;
+  line-height: 30px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  text-align: center;
   text-shadow: 0px 1px 0 $color-black;
 }
 
 .footnote {
-  text-align: center;
-  font-family: $font-text;
-  font-size: 13px;
-  line-height: 21px;
-  margin-top: $space-medium;
-  font-weight: bold;
-  text-shadow: 0px 1px 0 $color-black;
+  font-size: 14px;
+  color: $color-subtle;
 }
-
 
 @media (min-width: $center-group-break) {
   .intro-actions > .middle {

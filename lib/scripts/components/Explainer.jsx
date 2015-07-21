@@ -30,22 +30,29 @@ module.exports = React.createClass({
             The Playful Systems group at <strong>MIT Media Lab</strong> has teamed up with <strong>Tilburg University</strong> to study how personality relates to gameplay.
           </p>
           <p>
-            We are asking players to participate in a three-part survey about their personality, brain type, and gamer type. <em>If you play one or more of the following, you may be elligible!</em>
+            We are asking players to participate in a three-part survey about their personality, brain type, and gamer type.
           </p>
 
-          <p className='schools'>League of Legends</p>
-          <p className='schools'>Battlefield: Hardline</p>
-          <p className='schools'>Battlefield 4</p>
-          <p className='schools'>World of Warcraft</p>
+          <div className='valid-games'>
+            <em>If you play one or more of the following, you may be elligible!</em>
+            <p className='game-title'>League of Legends</p>
+            <p className='game-title'>Battlefield: Hardline</p>
+            <p className='game-title'>Battlefield 4</p>
+            <p className='game-title'>World of Warcraft</p>
+          </div>
 
           <Link className='start-button' to="consent">
             <Button>Start</Button>
           </Link>
 
+          <h6 className='footnote'>The survey takes approximately 15 minutes.</h6>
+
+          {/*
           <div className='intro-social'>
             <i className='fa fa-twitter'/>
             <i className='fa fa-facebook-official'/>
           </div>
+          */}
         </div>
       </div>
     );

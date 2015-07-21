@@ -4,7 +4,7 @@
   width: 100%;
   max-width: $outer-width;
   margin: $space-large auto;
-  border: 1px solid #555;
+  border: 1px dotted $color-subtle;
   @include border-box();
 }
 
