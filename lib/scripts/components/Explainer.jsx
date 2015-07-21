@@ -34,10 +34,6 @@ module.exports = React.createClass({
           <Link className='start-button' to="consent">
             <Button>Start</Button>
           </Link>
-
-          
-
-          
           
           <p className='footnote'>
             To participate, you must play one or more of the folllowing:<br/> League of Legends, Battlefield: Hardline, Battlefield 4, or World of Warcraft.
