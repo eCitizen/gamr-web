@@ -191,6 +191,15 @@ $checkbox-space: 32px;
     color: $color-secondary;
     margin-top: $space-large;
     margin-bottom: $space-large;
+
+    & > h6 {
+      margin-bottom: 10px;
+      font-family: $font-title;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
   }
 
   .consent-footer {

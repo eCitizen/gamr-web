@@ -125,11 +125,11 @@ module.exports = React.createClass({
     } else {
       return (
         <div>
-          <div className='instructions-body'>
+          <div className='instructions-body inner'>
             {this.props.children}
           </div>
           <div className='inner'>
-            <Button action={this.begin}>GOT IT</Button>
+            <Button className='' action={this.begin}>GOT IT</Button>
           </div>
         </div>
       );

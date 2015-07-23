@@ -29,7 +29,7 @@ p {
 .speaking {
   font-family: $font-text;
   font-style: italic;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 24px;
   letter-spacing: 1px;
   color: $color-white;
@@ -41,26 +41,28 @@ p {
 
 .preamble {
   margin-bottom: $space-large;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .instructions-body {
   font-family: $font-text;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 20px;
-  color: $color-secondary;
+  color: $color-subtle;
 
   & > .directions {
-    margin-bottom: $space-large;
+    margin-bottom: $space-medium + 5px;
   }
 
   & > .answerKey {
     color: $color-white;
-    margin-bottom: $space-large;
+    margin-bottom: $space-medium;
 
     .value { color: $color-main; }
 
     & > ul {
-      margin-top: $space-large - 10px;
+      margin-top: $space-medium;
       font-family: $font-special;
       font-size: 16px;
       line-height: 25px;
@@ -69,10 +71,11 @@ p {
 
   & > h4 {
     font-family: $font-title;
-    color: $color-secondary;
+    color: $color-main;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 2px;
+    margin-bottom: $space-medium;
   }
 }
 

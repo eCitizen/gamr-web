@@ -125,12 +125,12 @@ module.exports = React.createClass({
 
     return (
       <div>
-        <Form id={FORM_ID}>
+        <Form id={FORM_ID} className='inner'>
           <div className='preamble'>
             <p className='speaking'>Who are you when you play?</p>
           </div>
           
-          <div className='inner'>
+          <div>
             {formBlocks}
           </div>
 

@@ -8,14 +8,7 @@ module.exports.BrainType = React.createClass({
   render: function () {
     return (
       <QuestionSet survey='brainType' nextRoute='personality'>
-        <div className='directions'>
-          <p>
-            Describe yourself as you generally are now, not as you wish to be in the future.
-          </p>
-          <p>
-            Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age.
-          </p>
-        </div>
+        <h4 className='directions-title'>Instructions</h4>
         <div className='answerKey'>
           <p className='speaking'>
             Indicate for each of the following statements whether it is:
@@ -27,6 +20,14 @@ module.exports.BrainType = React.createClass({
             <li><span className='value'>4</span> Moderately Accurate</li>
             <li><span className='value'>5</span> Very Accurate</li>
           </ul>
+        </div>
+        <div className='directions'>
+          <p>
+            Describe yourself as you generally are now, not as you wish to be in the future.
+          </p>
+          <p>
+            Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age.
+          </p>
         </div>
       </QuestionSet>
     );
@@ -38,14 +39,7 @@ module.exports.Personality = React.createClass({
   render: function () {
     return (
       <QuestionSet survey='personality' nextRoute='gamer-type'>
-        <div className='directions push-in'>
-          <p>
-            Describe yourself as you generally are now, not as you wish to be in the future.
-          </p>
-          <p>
-            Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age.
-          </p>
-        </div>
+        <h4 className='directions-title'>Instructions</h4>
         <div className='answerKey'>
           <p className='speaking'>
             Indicate for each of the following statements whether it is:
@@ -57,6 +51,14 @@ module.exports.Personality = React.createClass({
             <li><span className='value'>4</span> Moderately Accurate</li>
             <li><span className='value'>5</span> Very Accurate</li>
           </ul>
+        </div>
+        <div className='directions'>
+          <p>
+            Describe yourself as you generally are now, not as you wish to be in the future.
+          </p>
+          <p>
+            Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age.
+          </p>
         </div>
       </QuestionSet>
     );
@@ -68,14 +70,7 @@ module.exports.GamerType = React.createClass({
   render: function () {
     return (
       <QuestionSet survey='gamerType' nextRoute='results'>
-        <div className='directions push-in'>
-          <p>
-            Describe yourself as you generally are now, not as you wish to be in the future.
-          </p>
-          <p>
-            Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age.
-          </p>
-        </div>
+        <h4 className='directions-title'>Instructions</h4>
         <div className='answerKey'>
           <p className='speaking'>
             Indicate for each of the following statements whether it is:
@@ -87,6 +82,14 @@ module.exports.GamerType = React.createClass({
             <li><span className='value'>4</span> Moderately Accurate</li>
             <li><span className='value'>5</span> Very Accurate</li>
           </ul>
+        </div>
+        <div className='directions'>
+          <p>
+            Describe yourself as you generally are now, not as you wish to be in the future.
+          </p>
+          <p>
+            Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age.
+          </p>
         </div>
       </QuestionSet>
     );
