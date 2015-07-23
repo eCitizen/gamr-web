@@ -17,13 +17,6 @@ module.exports = React.createClass({
             What does your play style say about you?
           </h4>
 
-          {/*
-          <div className='intro-social'>
-            <i className='fa fa-twitter'/>
-            <i className='fa fa-facebook-official'/>
-          </div>
-          */}
-
           <Video/>
 
           <p>
@@ -47,12 +40,13 @@ module.exports = React.createClass({
 
           <h6 className='footnote'>The survey takes approximately 15 minutes.</h6>
 
-          {/*
-          <div className='intro-social'>
-            <i className='fa fa-twitter'/>
-            <i className='fa fa-facebook-official'/>
+          <div className='intro-foot'>
+            <div className='intro-social'>
+              <i className='fa fa-twitter'/>
+              <i className='fa fa-facebook-official'/>
+            </div>
+            <div className='intro-about'>About us</div>
           </div>
-          */}
         </div>
       </div>
     );
