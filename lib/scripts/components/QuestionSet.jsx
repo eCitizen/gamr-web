@@ -72,20 +72,18 @@ module.exports = QuestionSet = React.createClass({
   render: function () {
     var oldAnswer = InputStore.getField(this.props.survey, this._makeId(this.state.current));
 
+    // temp
+    // this.state.hasPrev = true;
+    // this.state.hasNext = true;
+    // this.state.started = true;
+    // oldAnswer = 2;
+
     var body = this.state.started ? (
       <div className={classnames(
         'question-set-body',
         'inner',
         {answered: oldAnswer})}>
         <div className='question-wrap'>
-          <div className='question-nav'>
-            {this.state.hasPrev ? (
-              <span className='prev' onClick={this.prev}>{'<'}</span>
-            ) : null}
-            {this.state.hasNext && oldAnswer ? (
-              <span className='next' onClick={this.next}>{'>'}</span>
-            ) : null}
-          </div>
           <p className='question-text' key={this.state.current}>
             {this.state.questions[this.state.current]}
           </p>
@@ -96,6 +94,17 @@ module.exports = QuestionSet = React.createClass({
           action={this.submitQuestion}
           answers={[1,2,3,4,5]}>
         </Answer>
+        <div className='question-nav'>
+          {this.state.hasPrev ? (
+            <span className='prev' onClick={this.prev}>{'<'}</span>
+          ) : null}
+          {this.state.hasPrev || this.state.hasNext ? (
+            <span className='index' onClick={this.prev}>{this.state.current + 1} of {this.state.questions.length}</span>
+          ) : null}
+          {this.state.hasNext && oldAnswer ? (
+            <span className='next' onClick={this.next}>{'>'}</span>
+          ) : null}
+        </div>
       </div>
     ) : (
       <div>

@@ -82,23 +82,20 @@ $choice-space: 8px;
 
 
 .question-nav {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: -40px;
-  right: -40px;
-  height: 36px;
-  line-height: 36px;
-  margin-top: -18px;
-  font-family: $font-title;
-  color: $color-main;
-  font-size: 40px;
+  color: $color-subtle;
+  font-size: 14px;
   cursor: default;
+  text-align: center;
+  position: relative;
+  width: 55px;
+  margin: $space-large auto;
+  white-space: nowrap;
 
   & > .prev,
   & > .next {
+    position: absolute;
     @include no-select();
-    width: 40px;
+    width: 30px;
     text-align: center;
     display: inline-block;
     &:hover {
@@ -107,8 +104,8 @@ $choice-space: 8px;
     }
   }
 
-  & > .prev {  }
-  & > .next { float: right; }
+  & > .prev { right: 100%; }
+  & > .next { left: 100%; }
 }
 
 // transition
