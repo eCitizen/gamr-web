@@ -8,11 +8,12 @@ var InputStore = require('../input/store');
 var Navigation = require('react-router').Navigation;
 var Button = require('./Button.jsx');
 var TRACKING_FIELD = 'currentIdx';
-var Box = require('./Box.jsx');
 var classnames = require('classnames');
-var QuestionSet;
+var Background = require('./Background.jsx');
 
-module.exports = QuestionSet = React.createClass({
+module.exports = React.createClass({
+  displayName: 'QuestionSet',
+
   mixins: [Navigation],
 
   getInitialState: function () {
@@ -24,7 +25,7 @@ module.exports = QuestionSet = React.createClass({
       current: currentIdx,
       started: currentIdx > 0,
       hasPrev: currentIdx > 0,
-      finished: currentIdx < survey.questions.length - 1,
+      finished: currentIdx >= survey.questions.length - 1, // TODO: 
       hasNext: currentIdx < survey.questions.length - 1
     }, survey);
   },
@@ -41,8 +42,14 @@ module.exports = QuestionSet = React.createClass({
     if (this.state.current < this.state.questions.length - 1) {
       this.next();
     } else {
-      this.transitionTo(this.props.nextRoute);
+      this.setState({
+        finished: true
+      });
     }
+  },
+
+  nextSection: function () {
+    this.transitionTo(this.props.nextRoute);
   },
 
   begin: function () {
@@ -72,49 +79,60 @@ module.exports = QuestionSet = React.createClass({
   render: function () {
     var oldAnswer = InputStore.getField(this.props.survey, this._makeId(this.state.current));
 
-    var body = this.state.started ? (
-      <div className={classnames(
-        'question-set-body',
-        'inner',
-        {answered: oldAnswer})}>
-        <div className='question-wrap'>
-          <p className='question-text' key={this.state.current}>
-            {this.state.questions[this.state.current]}
-          </p>
+    if (this.state.finished) {
+      return (
+        <Background>
+          <div className='up-next'>
+            <h6>Part 1: <em>Complete</em></h6>
+            <div className='up-next-title'>
+              <strong>up next...</strong>
+              <h5>Brain Type</h5>
+            </div>
+            <Button action={this.nextSection}>Continue</Button>
+          </div>
+        </Background>
+      );
+    } else if (this.state.started) {
+      return (
+        <div className={classnames(
+          'question-set-body',
+          'inner',
+          {answered: oldAnswer})}>
+          <div className='question-wrap'>
+            <p className='question-text' key={this.state.current}>
+              {this.state.questions[this.state.current]}
+            </p>
+          </div>
+          <Answer 
+            idx={this.state.current}
+            selected={oldAnswer}
+            action={this.submitQuestion}
+            answers={[1,2,3,4,5]}>
+          </Answer>
+          <div className='question-nav'>
+            {this.state.hasPrev ? (
+              <span className='prev' onClick={this.prev}>{'<'}</span>
+            ) : null}
+            {this.state.hasPrev || this.state.hasNext ? (
+              <span className='index'>{this.state.current + 1} of {this.state.questions.length}</span>
+            ) : null}
+            {this.state.hasNext && oldAnswer ? (
+              <span className='next' onClick={this.next}>{'>'}</span>
+            ) : null}
+          </div>
         </div>
-        <Answer 
-          idx={this.state.current}
-          selected={oldAnswer}
-          action={this.submitQuestion}
-          answers={[1,2,3,4,5]}>
-        </Answer>
-        <div className='question-nav'>
-          {this.state.hasPrev ? (
-            <span className='prev' onClick={this.prev}>{'<'}</span>
-          ) : null}
-          {this.state.hasPrev || this.state.hasNext ? (
-            <span className='index'>{this.state.current + 1} of {this.state.questions.length}</span>
-          ) : null}
-          {this.state.hasNext && oldAnswer ? (
-            <span className='next' onClick={this.next}>{'>'}</span>
-          ) : null}
+      )
+    } else {
+      return (
+        <div>
+          <div className='instructions-body'>
+            {this.props.children}
+          </div>
+          <div className='inner'>
+            <Button action={this.begin}>GOT IT</Button>
+          </div>
         </div>
-      </div>
-    ) : (
-      <div>
-        <div className='instructions-body'>
-          {this.props.children}
-        </div>
-        <div className='inner'>
-          <Button action={this.begin}>GOT IT</Button>
-        </div>
-      </div>
-    );
-
-    return (
-      <div>
-        {body}
-      </div>
-    );
+      );
+    }
   }
 });

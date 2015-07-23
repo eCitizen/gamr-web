@@ -176,7 +176,7 @@ module.exports = React.createClass({
     var cellY = (row * -CELL_H) + this.state.imageY;
 
     var imgIdx = filled ? this.state.imageB : this.state.imageA;
-    var img = 'url(\'assets/images/backgrounds-'+imgIdx+'.jpg\')';
+    var img = 'url(\'/assets/images/backgrounds-'+imgIdx+'.jpg\')';
 
     var cellStyle = {
       opacity: opacity,
