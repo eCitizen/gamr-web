@@ -21,7 +21,7 @@ $choice-space: 8px;
 }
 
 .answered .question-text {
-  color: $color-main;
+  color: $color-secondary;
 }
 
 .answer {
@@ -90,11 +90,11 @@ $choice-space: 8px;
   width: 55px;
   margin: $space-large auto;
   white-space: nowrap;
+  @include no-select();
 
   & > .prev,
   & > .next {
     position: absolute;
-    @include no-select();
     width: 30px;
     text-align: center;
     display: inline-block;

@@ -72,12 +72,6 @@ module.exports = QuestionSet = React.createClass({
   render: function () {
     var oldAnswer = InputStore.getField(this.props.survey, this._makeId(this.state.current));
 
-    // temp
-    // this.state.hasPrev = true;
-    // this.state.hasNext = true;
-    // this.state.started = true;
-    // oldAnswer = 2;
-
     var body = this.state.started ? (
       <div className={classnames(
         'question-set-body',
@@ -99,7 +93,7 @@ module.exports = QuestionSet = React.createClass({
             <span className='prev' onClick={this.prev}>{'<'}</span>
           ) : null}
           {this.state.hasPrev || this.state.hasNext ? (
-            <span className='index' onClick={this.prev}>{this.state.current + 1} of {this.state.questions.length}</span>
+            <span className='index'>{this.state.current + 1} of {this.state.questions.length}</span>
           ) : null}
           {this.state.hasNext && oldAnswer ? (
             <span className='next' onClick={this.next}>{'>'}</span>
