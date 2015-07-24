@@ -13,16 +13,48 @@ var IMG_H = 1080;
 var FRAME_INTERVAL = 90;
 var ANIMATION_INTERVAL = 200;
 
+var images = [
+  'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+  'url(\'/assets/images/backgrounds-0.jpg\')',
+  'url(\'/assets/images/backgrounds-1.jpg\')',
+  'url(\'/assets/images/backgrounds-2.jpg\')',
+  'url(\'/assets/images/backgrounds-3.jpg\')',
+  'url(\'/assets/images/backgrounds-5.jpg\')'
+];
+
+function randomOpacity() {
+  var opacity = (Math.random() / 3) + .5;
+  if (Math.random() < .15) {
+    opacity = opacity * 3;
+  }
+  return opacity;
+}
+
 module.exports = React.createClass({
   displayName: 'Background',
 
+  getDefaultProps: function () {
+    return {
+      renderCell: function (grid, cell, time) {
+        var imgIdx = 5;
+        var img = cell.y % 2 ? images[imgIdx] : images[1];
+        console.log(grid, time);
+        return {
+          backgroundImage: img,
+          opacity: randomOpacity()
+        }
+      }
+    }
+  },
+
   getInitialState: function () {
-    return assign(this.nextImages(), this.getCells());
+    return assign({
+      time: 0
+    }, this.getCells());
   },
 
   componentDidMount: function () {
     resize.onChange(this.resize);
-    // setTimeout(this.transition, 1300);
   },
 
   componentWillUnmount: function () {
@@ -46,11 +78,10 @@ module.exports = React.createClass({
     for (iy = 0; iy < y; iy += 1) {
       cells.push([]);
       for (ix = 0; ix < x; ix += 1) {
-        var opacity = (Math.random() / 3) + .5;
-        if (Math.random() < .15) {
-          opacity = opacity * 3;
-        }
-        cells[iy].push([ix,iy, null, opacity]);
+        cells[iy].push({
+          x: ix,
+          y: iy
+        });
       }
     }
 
@@ -87,82 +118,25 @@ module.exports = React.createClass({
     }
   },
 
-  transition: function () {
-    if (this.state.frame === 0) {
-      this.setState(this.nextImages());
-    }
-
-    var nextFrame = this.nextFrame();
-
-    if (nextFrame) {
-      setTimeout(this.transition, FRAME_INTERVAL);  
-    } else {
-      this.setState({
-        frame: 0
-      });
-      setTimeout(this.transition, ANIMATION_INTERVAL);  
-    }
-  },
-
-  nextImages: function () {
-    if (!this.state) {
-      console.log('hey')
-      return {
-        imageA: 3,
-        imageB: 5
-      }
-    } else {
-      return {
-        imageA: this.state.imageB,
-        imageB: this.state.imageB > 0 ? this.state.imageB - 1 : 5
-      }
-    }
-  },
-
-  nextFrame: function() {
-    var frame = this.state.frame || 1;
-    var cells = this.state.cells;
-    var w = cells[0].length;
-    var h = cells.length;
-
-    var transition = makeAnimator(w, h);
-    var render = transition(frame);
-
-    if (!render) {
-      return;
-    } else {
-      cells.forEach(function (row, y) {
-        row.forEach(function (col, x) {
-          cells[y][x][2] = render(x, y);
-        });
-      });
-
-      this.setState({
-        cells: cells,
-        frame: frame + 1
-      });
-
-      return true;
-    }
-  },
-
   makeCells: function () {
     var rowStyle = {
       height: (100 / this.state.cells.length) + '%'
     };
 
-    getCellStyle = this.getCellStyle;
+    var getCellStyle = this.getCellStyle;
+    var grid = {
+      x: this.state.cells[0].length,
+      y: this.state.cells.length
+    }
 
     return this.state.cells.map(function (row, rowIdx) {
       return (
         <div  key={rowIdx} className='cell-row' style={rowStyle}>
           {row.map(function (cell, colIdx) {
-            var filled = cell[2];
-            var opacity = cell[3];
             return (
               <div key={colIdx}
-                className={classnames('cell', {filled: filled})}
-                style={getCellStyle(rowIdx, colIdx, filled, opacity)}
+                className='cell'
+                style={getCellStyle(grid, cell)}
               />
             );
           })}
@@ -171,20 +145,17 @@ module.exports = React.createClass({
     });
   },
 
-  getCellStyle: function (row, col, filled, opacity) {
+  getCellStyle: function (grid, cell) {
+    var col = cell.x;
+    var row = cell.y;
     var cellX = (col * -CELL_W) + this.state.imageX;
     var cellY = (row * -CELL_H) + this.state.imageY;
 
-    var imgIdx = filled ? this.state.imageB : this.state.imageA;
-    var img = 'url(\'/assets/images/backgrounds-'+imgIdx+'.jpg\')';
-
-    var cellStyle = {
-      opacity: opacity,
-      backgroundImage: img,
+    var cellStyle = assign({
       backgroundPosition: cellX + 'px ' + cellY + 'px',
       backgroundSize: this.state.imageW + 'px ' + this.state.imageH + 'px',
       width: (100 / this.state.cells[0].length) + '%'
-    };
+    }, this.props.renderCell(grid, cell, this.state.time));
 
     return cellStyle;
   },
