@@ -19,7 +19,7 @@ module.exports = React.createClass({
 
   getDefaultProps: function () {
     return {
-      renderCell: animators.wave
+      renderCell: animators.random
     }
   },
 
