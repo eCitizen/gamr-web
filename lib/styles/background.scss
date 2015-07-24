@@ -1,4 +1,6 @@
 
+$cell-transition-time: 400ms;
+
 .background {
   position: fixed;
   top: 0px;
@@ -37,7 +39,6 @@
   border-bottom: 1px solid $color-black;
   height: 100%;
   float: left;
-
-  @include transition(opacity 200ms ease-in);
+  @include transition(opacity $cell-transition-time ease);
 }
 

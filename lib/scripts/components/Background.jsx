@@ -19,7 +19,7 @@ module.exports = React.createClass({
 
   getDefaultProps: function () {
     return {
-      renderCell: animators.default
+      renderCell: animators.wave
     }
   },
 
@@ -44,7 +44,7 @@ module.exports = React.createClass({
   },
 
   startAnimation: function () {
-    this.timer = setInterval(this.nextFrame, 1300)
+    this.timer = setInterval(this.nextFrame, 300)
   },
 
   stopAnimation: function () {
