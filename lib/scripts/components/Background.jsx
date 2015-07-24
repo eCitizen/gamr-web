@@ -2,7 +2,6 @@
 var React = require('react');
 var classnames = require('classnames');
 var resize = require('../services/resize');
-var makeAnimator = require('../services/animator/patterns').arrow;
 var assign = require('object-assign');
 var CHANGE = 'change';
 var MULTIPLY = 15;
@@ -12,38 +11,15 @@ var IMG_W = 1920
 var IMG_H = 1080;
 var FRAME_INTERVAL = 90;
 var ANIMATION_INTERVAL = 200;
-
-var images = [
-  'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
-  'url(\'/assets/images/backgrounds-0.jpg\')',
-  'url(\'/assets/images/backgrounds-1.jpg\')',
-  'url(\'/assets/images/backgrounds-2.jpg\')',
-  'url(\'/assets/images/backgrounds-3.jpg\')',
-  'url(\'/assets/images/backgrounds-5.jpg\')'
-];
-
-function randomOpacity() {
-  var opacity = (Math.random() / 3) + .5;
-  if (Math.random() < .15) {
-    opacity = opacity * 3;
-  }
-  return opacity;
-}
+var raf = require('raf');
+var animators = require('../services/animator');
 
 module.exports = React.createClass({
   displayName: 'Background',
 
   getDefaultProps: function () {
     return {
-      renderCell: function (grid, cell, time) {
-        var imgIdx = 5;
-        var img = cell.y % 2 ? images[imgIdx] : images[1];
-        console.log(grid, time);
-        return {
-          backgroundImage: img,
-          opacity: randomOpacity()
-        }
-      }
+      renderCell: animators.default
     }
   },
 
@@ -55,14 +31,32 @@ module.exports = React.createClass({
 
   componentDidMount: function () {
     resize.onChange(this.resize);
+    this.startAnimation();
   },
 
   componentWillUnmount: function () {
     resize.offChange(this.resize);
+    this.stopAnimation();
   },
 
   resize: function (width, height) {
     this.setState(this.getCells(width, height));
+  },
+
+  startAnimation: function () {
+    this.timer = setInterval(this.nextFrame, 1300)
+  },
+
+  stopAnimation: function () {
+    clearInterval(this.timer);
+  },
+
+  nextFrame: function () {
+    raf(function () {
+      this.setState({
+        time: this.state.time + 1
+      });    
+    }.bind(this))
   },
 
   getCells: function (width, height) {
