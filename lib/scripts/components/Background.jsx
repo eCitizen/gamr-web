@@ -139,6 +139,12 @@ module.exports = React.createClass({
     });
   },
 
+  componentWillMount: function () {
+    this.setState({
+      render: this.props.renderCell()
+    });
+  },
+
   getCellStyle: function (grid, cell) {
     var col = cell.x;
     var row = cell.y;
@@ -149,7 +155,7 @@ module.exports = React.createClass({
       backgroundPosition: cellX + 'px ' + cellY + 'px',
       backgroundSize: this.state.imageW + 'px ' + this.state.imageH + 'px',
       width: (100 / this.state.cells[0].length) + '%'
-    }, this.props.renderCell(grid, cell, this.state.time));
+    }, this.state.render(grid, cell, this.state.time));
 
     return cellStyle;
   },
