@@ -52,12 +52,12 @@ p {
   color: $color-subtle;
 
   & > .directions {
-    margin-bottom: $space-medium + 5px;
+    margin-bottom: $space-medium;
   }
 
   & > .answerKey {
     color: $color-white;
-    margin-bottom: $space-medium;
+    margin-bottom: $space-medium + 5px;
 
     .value { color: $color-main; }
 
