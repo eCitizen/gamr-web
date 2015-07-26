@@ -48,7 +48,7 @@ module.exports = React.createClass({
     if (this.state.profileResults) {
       return (
         <Grid>
-          <IdentityResults results={this.state.profileResults} reset={this.reset}/>;
+          <IdentityResults results={this.state.profileResults} reset={this.reset}/>
         </Grid>
       );
     }
