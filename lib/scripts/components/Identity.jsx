@@ -124,7 +124,7 @@ module.exports = React.createClass({
 
     return (
       <Grid>
-        <div className='preamble intro'>
+        <div className='preamble inner'>
           <p className='speaking'>
             <em>Before getting started...</em>
           </p>

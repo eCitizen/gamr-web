@@ -232,14 +232,20 @@ $checkbox-space: 32px;
 }
 
 .profile-results {
+  text-align: center;
   margin-bottom: $space-large;
+  border-top: 1px dotted $color-subtle;
+  border-bottom: 1px dotted $color-subtle;
+
+  padding-top: $space-medium;
 
   & > li {
-    margin-bottom: $space-medium + 10px;
+    margin-bottom: $space-medium;
 
     & > h6 {
       font-size: 16px;
       margin-top: 12px;
+      color: $color-main;
       &:before {
         content:  "\2713  ";
       }
@@ -247,9 +253,20 @@ $checkbox-space: 32px;
   }
 }
 
+.result-title {
+  color: $color-white;
+  font-family: $font-title;
+  font-size: 17px;
+  line-height: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0px 1px 0 $color-black;
+}
+
 .results-confirm {
   display: inline-block;
   margin-bottom: $space-medium;
+  float: right;
 }
 
 .results-change {
