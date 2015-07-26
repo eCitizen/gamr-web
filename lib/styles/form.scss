@@ -165,12 +165,20 @@ $checkbox-space: 32px;
 }
 
 .form-block {
+  margin-top: 40px;
   margin-bottom: $space-large + 5px;
 
   & > h2 {
-    font-size: 16px;
-    font-family: $font-special;
+    font-size: $field-font-size;
     margin-bottom: $space-medium;
+  }
+
+  & > .checkbox-wrap {
+    margin-bottom: $space-medium;
+
+    & > label {
+      display: block;
+    }
   }
 }
 

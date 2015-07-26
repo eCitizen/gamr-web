@@ -10,6 +10,7 @@ var InputStore = require('../input/store');
 var FORM_ID = 'identity';
 var IdentityResults = require('./IdentityResults.jsx');
 var Grid = require('./Grid.jsx');
+var Checkbox = require('./FormCheckbox.jsx');
 
 module.exports = React.createClass({
   displayName: 'Identity',
@@ -136,13 +137,11 @@ module.exports = React.createClass({
 
           {background}
 
-          <h4 className='directions-title'>Gamer Profile</h4>
+          <h4 className='directions-title'>Gamer Profile(s)</h4>
           
           <div>
             {formBlocks}
           </div>
-
-         
 
           <div className='inner'>
             <FormSubmit className='right' action={this.submitProfiles}>
