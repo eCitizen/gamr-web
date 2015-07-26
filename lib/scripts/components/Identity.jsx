@@ -15,17 +15,6 @@ var Checkbox = require('./FormCheckbox.jsx');
 module.exports = React.createClass({
   displayName: 'Identity',
 
-  statics: {
-    // willTransitionTo: function (transition, params, query, callback) {
-    //   var i = 0, k;
-    //   for (k in InputStore.getForm('games')) { 
-    //     i += 1; 
-    //   }
-    //   if (i === 0) transition.redirect('games');
-    //   callback();
-    // }
-  },
-
   getInitialState: function () {
     return  {
       profileResults: null
@@ -43,13 +32,26 @@ module.exports = React.createClass({
             name: 'Player' 
           }
         }
-      })
+      });
 
     }.bind(this),200);
   },
 
+  reset: function(e) {
+    e.preventDefault();
+    this.setState({
+      profileResults: null
+    });
+  },
+
   render: function () {
-    if (this.state.profileResults) return <IdentityResults results={this.state.profileResults}/>;
+    if (this.state.profileResults) {
+      return (
+        <Grid>
+          <IdentityResults results={this.state.profileResults} reset={this.reset}/>;
+        </Grid>
+      );
+    }
 
     var games = InputStore.getForm('games');
     var WOW = guide.identity.WOW;

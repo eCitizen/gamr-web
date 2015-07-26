@@ -32,7 +32,7 @@ module.exports = React.createClass({
             <Button>Looks Good</Button>
           </Link>
           <p className='small-text'>
-            Something missing? <Link className='results-change' to='games'>Change your information</Link>
+            Something missing? <a className='results-change' href='#' onClick={this.props.reset}>Change your information</a>
           </p>
         </div>
       </div>
