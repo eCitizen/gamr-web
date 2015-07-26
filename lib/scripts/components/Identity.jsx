@@ -9,19 +9,20 @@ var Title = require('./Title.jsx');
 var InputStore = require('../input/store');
 var FORM_ID = 'identity';
 var IdentityResults = require('./IdentityResults.jsx');
+var Grid = require('./Grid.jsx');
 
 module.exports = React.createClass({
   displayName: 'Identity',
 
   statics: {
-    willTransitionTo: function (transition, params, query, callback) {
-      var i = 0, k;
-      for (k in InputStore.getForm('games')) { 
-        i += 1; 
-      }
-      if (i === 0) transition.redirect('games');
-      callback();
-    }
+    // willTransitionTo: function (transition, params, query, callback) {
+    //   var i = 0, k;
+    //   for (k in InputStore.getForm('games')) { 
+    //     i += 1; 
+    //   }
+    //   if (i === 0) transition.redirect('games');
+    //   callback();
+    // }
   },
 
   getInitialState: function () {
@@ -70,10 +71,6 @@ module.exports = React.createClass({
 
     var background = (
       <div>
-        <div className='preamble'>
-          <p className='speaking'>Who are you IRL?</p>
-        </div>
-        <div className='inner'>
           <div className='form-block'>
             <h2>{BIO.title}</h2>
             <FormSelect required={false} {... BIO.fields.gender}/>
@@ -85,11 +82,10 @@ module.exports = React.createClass({
             <FormSelect required={false} {... LANG.fields.country}/>
             <FormSelect required={false} {... LANG.fields.level}/>
           </div>
-        </div>
       </div>
     );
 
-    if (games.LOL) {
+    if (games.LOL || true) {
       formBlocks.push(
         <div className='form-block' key='a'>
           <h2>{LOL.title}</h2>
@@ -101,7 +97,7 @@ module.exports = React.createClass({
       );
     }
 
-    if (games.WOW) {
+    if (games.WOW || true) {
       formBlocks.push(
         <div className='form-block' key='b'>
           <h2>{WOW.title}</h2>
@@ -112,7 +108,7 @@ module.exports = React.createClass({
       );
     }
 
-    if (games.BFHD) {
+    if (games.BFHD || true) {
       formBlocks.push(
         <div className='form-block' key='c'>
           <h2>{BFHD.title}</h2>
@@ -124,17 +120,29 @@ module.exports = React.createClass({
     var profileText = formBlocks.length > 1 ? 'profiles' : 'profile';
 
     return (
-      <div>
+      <Grid>
+        <div className='preamble intro'>
+          <p className='speaking'>
+            <em>Before getting started...</em>
+          </p>
+          <p>
+            We need some basic information about you
+          </p>
+        </div>
+
         <Form id={FORM_ID} className='inner'>
-          <div className='preamble'>
-            <p className='speaking'>Who are you when you play?</p>
-          </div>
+
+          <h4 className='directions-title'>Personal Profile</h4>
+
+          {background}
+
+          <h4 className='directions-title'>Gamer Profile</h4>
           
           <div>
             {formBlocks}
           </div>
 
-          {background}
+         
 
           <div className='inner'>
             <FormSubmit className='right' action={this.submitProfiles}>
@@ -142,7 +150,7 @@ module.exports = React.createClass({
             </FormSubmit>
           </div>
         </Form>
-      </div>
+      </Grid>
     );
   }
 });

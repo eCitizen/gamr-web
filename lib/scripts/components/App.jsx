@@ -24,11 +24,8 @@ var Home = require('./Home.jsx'),
 
 var routes = (
   <Route name="home" path="/" handler={Home}>
-    <Route name="identity" handler={Survey}>
-      <Route name="consent" path="consent" handler={Consent}/>
-      <Route name="games" path="gameplay" handler={Games}/>
-      <Route name="profile" path="profile" handler={Identity}/>
-    </Route>
+    <Route name="consent" path="consent" handler={Consent}/>
+    <Route name="identity" path="identity" handler={Identity}/>
     <Route name="survey" handler={Survey}>
       <Route name="brain" path="brain-type" handler={BrainType}/>
       <Route name="personality" path="personality" handler={Personality}/>

@@ -7,19 +7,11 @@ var Title = require('./Title.jsx');
 var Link = require('react-router').Link;
 
 var config = {
-  '/identity/consent': {
+  '/consent': {
     main: 'Consent',
     progress: 0
   },
-  '/identity/gameplay':  {
-    main: 'Identity',
-    progress: 1
-  },
-  '/identity/profile': {
-    main: 'Identity',
-    progress: 1
-  },
-  '/identity/background': {
+  '/identity':  {
     main: 'Identity',
     progress: 1
   },

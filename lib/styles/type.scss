@@ -68,15 +68,15 @@ p {
       line-height: 25px;
     }
   }
+}
 
-  & > h4 {
-    font-family: $font-title;
-    color: $color-main;
-    text-transform: uppercase;
-    font-size: 15px;
-    letter-spacing: 2px;
-    margin-bottom: $space-medium;
-  }
+.directions-title {
+  font-family: $font-title;
+  color: $color-main;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: $space-medium;
 }
 
 .marquee {
