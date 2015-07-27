@@ -5,12 +5,12 @@
 		"fields": {
 			"sommonerName": {
 				"label": "Sommoner Name",
-				"id": "ta_LOL_id",
+				"id": "LOL_id",
 				"type": "input"
 			},
 			"region": {
 				"label": "Select Region",
-				"id": "sl_LOL_region",
+				"id": "LOL_region",
 				"type": "select",
 				"options": {
 					"na":"North Ameria",
@@ -26,7 +26,7 @@
 			},
 			"preferredLane": {
 				"label": "Select Preferred Lane",
-				"id": "sl_LOL_lane",
+				"id": "LOL_lane",
 				"type": "select",
 				"options": {
 					"top":"Top",
@@ -37,7 +37,7 @@
 			},
 			"preferredRole": {
 				"label": "Select Preferred Role",
-				"id": "sl_LOL_role",
+				"id": "LOL_role",
 				"type": "select",
 				"options": {
 					"apcarry":"AP Carry",
@@ -52,12 +52,12 @@
 		"fields": {
 			"characterName": {
 				"label": "Character Name",
-				"id": "ta_WOW_id",
+				"id": "WOW_id",
 				"type": "input"
 			},
 			"region": {
 				"label": "Select Region",
-				"id": "sl_WOW_region",
+				"id": "WOW_region",
 				"type": "select",
 				"options": {
 					"us":"United States",
@@ -66,7 +66,7 @@
 			},
 			"realm": {
 				"label": "Select Realm",
-				"id": "sl_WOW_realm",
+				"id": "WOW_realm",
 				"type": "select",
 				"options": {
 					"aegwynn":"Aegwynn (PvP)",
@@ -325,7 +325,7 @@
 			"playerName": {
 				"label": "Player Name",
 				"type": "input",
-				"id": "ta_BFHD_id"
+				"id": "BFHD_id"
 			}
 		}
 	},
@@ -335,7 +335,7 @@
 			"playerName": {
 				"label": "Player Name",
 				"type": "input",
-				"id": "ta_BF4_id"
+				"id": "BF4_id"
 			}
 		}
 	},
@@ -344,7 +344,7 @@
 		"fields": {
 			"gender": {
 				"label": "Select Gender",
-				"id": "sl_gender",
+				"id": "gender",
 				"type:": "select",
 				"options": {
 					"male": "Male",
@@ -354,7 +354,7 @@
 			},
 			"month": {
 				"label": "Month",
-				"id": "sl_birth_month",
+				"id": "birth_month",
 				"type": "select",
 				"options": [
 					{
@@ -409,7 +409,7 @@
 			},
 			"year": {
 				"label": "Year",
-				"id": "sl_birth_year",
+				"id": "birth_year",
 				"type": "selectRange",
 				"range": [2014,1950]
 			}
@@ -421,7 +421,7 @@
 			"country": {
 				"label": "Select County",
 				"defaultValue": "United_States",
-				"id": "sl_country",
+				"id": "country",
 				"type:": "select",
 				"options": {
 					"Afghanistan":"Afghanistan",
@@ -476,7 +476,7 @@
 					"Congo":"Congo",
 					"Congo,_The_Democratic_Republic_Of_The":"Congo, The Democratic Republic of The",
 					"Cook_Islands":"Cook Islands",
-					"Costa_Rica":"Costa Rica",
+					"CosRica":"Costa Rica",
 					"Cote_D'ivoire":"Cote D'ivoire",
 					"Croatia":"Croatia",
 					"Cuba":"Cuba",
@@ -672,7 +672,7 @@
 			},
 			"level": {
 				"label": "Select English Level",
-				"id": "sl_english_lvl",
+				"id": "english_lvl",
 				"type:": "select",
 				"options": {
 					"native":"Native",
