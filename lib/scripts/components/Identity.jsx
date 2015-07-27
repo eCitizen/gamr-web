@@ -57,6 +57,7 @@ module.exports = React.createClass({
     var WOW = guide.identity.WOW;
     var LOL = guide.identity.LOL;
     var BFHD = guide.identity.BFHD;
+    var BF4 = guide.identity.BF4;
     var BIO = guide.identity.BIO;
     var LANG = guide.identity.LANG;
     var formBlocks = [];
@@ -116,6 +117,15 @@ module.exports = React.createClass({
         <div className='form-block' key='c'>
           <h2>{BFHD.title}</h2>
           <FormInput {... BFHD.fields.playerName}/>
+        </div>
+      );
+    }
+
+    if (games.BF4 || true) {
+      formBlocks.push(
+        <div className='form-block' key='d'>
+          <h2>{BF4.title}</h2>
+          <FormInput {... BF4.fields.playerName}/>
         </div>
       );
     }

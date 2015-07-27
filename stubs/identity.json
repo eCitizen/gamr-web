@@ -329,6 +329,16 @@
 			}
 		}
 	},
+	"BF4": {
+		"title": "Battlefield 4",
+		"fields": {
+			"playerName": {
+				"label": "Player Name",
+				"type": "input",
+				"id": "ta_BF4_id"
+			}
+		}
+	},
 	"BIO": {
 		"title": "Gender & Birth Date",
 		"fields": {

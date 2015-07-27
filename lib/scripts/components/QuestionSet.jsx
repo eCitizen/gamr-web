@@ -129,7 +129,7 @@ module.exports = React.createClass({
             {this.props.children}
           </div>
           <div className='inner'>
-            <Button className='' action={this.begin}>GOT IT</Button>
+            <Button className='right' action={this.begin}>GOT IT</Button>
           </div>
         </div>
       );
