@@ -17,11 +17,11 @@ module.exports = React.createClass({
 
     var results = [];
 
-    if (this.props.results.WOW) {
+    if (this.props.results.LOL) {
       results.push(
-        <li key='a'>
-          <Title className='result-title'>World of Warcraft</Title>
-          <h6>{this.props.results.WOW.id}</h6>
+        <li key='d'>
+          <Title className='result-title'>League of Legends</Title>
+          <h6>{this.props.results.LOL.id}</h6>
         </li>
       );
     }
@@ -44,11 +44,11 @@ module.exports = React.createClass({
       );
     }
 
-    if (this.props.results.LOL) {
+    if (this.props.results.WOW) {
       results.push(
-        <li key='d'>
-          <Title className='result-title'>League of Legends</Title>
-          <h6>{this.props.results.LOL.id}</h6>
+        <li key='a'>
+          <Title className='result-title'>World of Warcraft</Title>
+          <h6>{this.props.results.WOW.id}</h6>
         </li>
       );
     }
@@ -65,9 +65,7 @@ module.exports = React.createClass({
           <ul className='profile-results'>
             {results}
           </ul>
-          <Link className='results-confirm' to="brain">
-            <Button>Looks Good</Button>
-          </Link>
+          <Button className='right' action={this.props.confirm}>Looks Good</Button>
           <p className='small-text'>
             Something missing? <a className='results-change' href='#' onClick={this.props.reset}>Change your information</a>
           </p>

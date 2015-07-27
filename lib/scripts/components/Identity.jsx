@@ -2,12 +2,15 @@
 var api = require('../services/api');
 var Grid = require('./Grid.jsx');
 var Form = require('./Form.jsx');
+var Link = require('react-router').Link;
 var guide = require('../services/guide');
 var React = require('react');
+var Button = require('./Button.jsx');
 var FormInput = require('./FormInput.jsx');
 var FormSelect = require('./FormSelect.jsx');
 var FormSubmit = require('./FormSubmit.jsx');
 var InputStore = require('../input/store');
+var Background = require('./Background.jsx');
 var IdentityResults = require('./IdentityResults.jsx');
 
 var FORM_ID = 'identity';
@@ -36,12 +39,33 @@ module.exports = React.createClass({
     });
   },
 
+  confirm: function() {
+    this.setState({
+      confirmed: true
+    });
+  },
+
   render: function () {
-    if (this.state.profileResults) {
+    if (this.state.confirmed) {
+      return (
+        <Background>
+          <div className='up-next'>
+            <h6>Identity: <em>Complete</em></h6>
+            <div className='up-next-title'>
+              <strong>up next...</strong>
+              <h5>Brain Type</h5>
+            </div>
+            <Link to="brain">
+              <Button>Begin</Button>
+            </Link>
+          </div>
+        </Background>
+      );
+    } else if (this.state.profileResults) {
       console.log(this.state.profileResults);
       return (
         <Grid>
-          <IdentityResults results={this.state.profileResults} reset={this.reset}/>
+          <IdentityResults results={this.state.profileResults} reset={this.reset} confirm={this.confirm}/>
         </Grid>
       );
     }
