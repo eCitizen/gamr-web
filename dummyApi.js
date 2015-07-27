@@ -4,20 +4,17 @@ var express = require('express'),
   router = express.Router();
   
 router.get('/user', function(req, res, next) {
-	setTimeout(function () {
-    console.log(req.query)
-		res.json(assign(
-			{}, 
-			require('./stubs/survey.json'), 
-			require('./stubs/user.json')[req.query.name]
-		));
-	}, 500);
-});
+  var q = req.query;
+  var profiles = {};
 
-router.get('/questions', function(req, res, next) {
+  if (q.LOL_id) profiles.LOL = {id: q.LOL_id};
+  if (q.WOW_id) profiles.WOW = {id: q.WOW_id};
+  if (q.BF4_id) profiles.BF4 = {id: q.BF4_id};
+  if (q.BFHD_id) profiles.BFHD = {id: q.BFHD_id};
+
 	setTimeout(function () {
-  	res.json(require('./stubs/survey.json'));
-  }, 500);
+		res.json(profiles);
+	}, Math.random() < .3 ? 1000 : 0);
 });
 
 module.exports = router;

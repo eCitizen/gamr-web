@@ -23,24 +23,10 @@ module.exports = React.createClass({
 
   submitProfiles: function (form) {
     api.getUser(form, function (err, results) {
-      console.log(results);
+      this.setState({
+        profileResults: results
+      });
     }.bind(this));
-
-    // setTimeout(function () {
-    //   console.log('submit profiles', form);
-
-
-
-    //   // TODO this is a real call
-    //   this.setState({
-    //     profileResults: {
-    //       WOW: {
-    //         name: 'Player' 
-    //       }
-    //     }
-    //   });
-
-    // }.bind(this),200);
   },
 
   reset: function(e) {
@@ -52,6 +38,7 @@ module.exports = React.createClass({
 
   render: function () {
     if (this.state.profileResults) {
+      console.log(this.state.profileResults);
       return (
         <Grid>
           <IdentityResults results={this.state.profileResults} reset={this.reset}/>

@@ -7,7 +7,52 @@ var Title = require('./Title.jsx');
 module.exports = React.createClass({
   displayName: 'IdentityResults',
 
+  getDefaultProps: function () {
+    return {
+      results: {}
+    };
+  },
+
   render: function () {
+
+    var results = [];
+
+    if (this.props.results.WOW) {
+      results.push(
+        <li key='a'>
+          <Title className='result-title'>World of Warcraft</Title>
+          <h6>{this.props.results.WOW.id}</h6>
+        </li>
+      );
+    }
+
+    if (this.props.results.BFHD) {
+      results.push(
+        <li key='b'>
+          <Title className='result-title'>Battlefield: Hardline</Title>
+          <h6>{this.props.results.BFHD.id}</h6>
+        </li>
+      );
+    }
+
+    if (this.props.results.BF4) {
+      results.push(
+        <li key='c'>
+          <Title className='result-title'>Battlefield 4</Title>
+          <h6>{this.props.results.BF4.id}</h6>
+        </li>
+      );
+    }
+
+    if (this.props.results.LOL) {
+      results.push(
+        <li key='d'>
+          <Title className='result-title'>League of Legends</Title>
+          <h6>{this.props.results.LOL.id}</h6>
+        </li>
+      );
+    }
+
     return (
       <div className='inner'>
         <div className='preamble'>
@@ -16,17 +61,9 @@ module.exports = React.createClass({
           </p>
           Please confirm that these are your profiles
         </div>
-
         <div>
           <ul className='profile-results'>
-            <li>
-              <Title className='result-title'>World of Warcraft</Title>
-              <h6>Player Name</h6>
-            </li>
-            <li>
-              <Title className='result-title'>Battlefield: Hardline</Title>
-              <h6>Player Name</h6>
-            </li>
+            {results}
           </ul>
           <Link className='results-confirm' to="brain">
             <Button>Looks Good</Button>
