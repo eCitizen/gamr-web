@@ -1,16 +1,16 @@
-var React = require('react');
-var Router = require('react-router');
-var guide = require('../services/guide');
-var Form = require('./Form.jsx');
-var FormSelect = require('./FormSelect.jsx');
-var FormInput = require('./FormInput.jsx');
-var FormSubmit = require('./FormSubmit.jsx');
-var Title = require('./Title.jsx');
-var InputStore = require('../input/store');
-var FORM_ID = 'identity';
-var IdentityResults = require('./IdentityResults.jsx');
+
+var api = require('../services/api');
 var Grid = require('./Grid.jsx');
-var Checkbox = require('./FormCheckbox.jsx');
+var Form = require('./Form.jsx');
+var guide = require('../services/guide');
+var React = require('react');
+var FormInput = require('./FormInput.jsx');
+var FormSelect = require('./FormSelect.jsx');
+var FormSubmit = require('./FormSubmit.jsx');
+var InputStore = require('../input/store');
+var IdentityResults = require('./IdentityResults.jsx');
+
+var FORM_ID = 'identity';
 
 module.exports = React.createClass({
   displayName: 'Identity',
@@ -22,19 +22,25 @@ module.exports = React.createClass({
   },
 
   submitProfiles: function (form) {
-    setTimeout(function () {
-      console.log('submit profiles', form);
+    api.getUser(form, function (err, results) {
+      console.log(results);
+    }.bind(this));
 
-      // TODO this is a real call
-      this.setState({
-        profileResults: {
-          WOW: {
-            name: 'Player' 
-          }
-        }
-      });
+    // setTimeout(function () {
+    //   console.log('submit profiles', form);
 
-    }.bind(this),200);
+
+
+    //   // TODO this is a real call
+    //   this.setState({
+    //     profileResults: {
+    //       WOW: {
+    //         name: 'Player' 
+    //       }
+    //     }
+    //   });
+
+    // }.bind(this),200);
   },
 
   reset: function(e) {

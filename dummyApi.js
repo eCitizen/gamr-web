@@ -5,6 +5,7 @@ var express = require('express'),
   
 router.get('/user', function(req, res, next) {
 	setTimeout(function () {
+    console.log(req.query)
 		res.json(assign(
 			{}, 
 			require('./stubs/survey.json'), 
