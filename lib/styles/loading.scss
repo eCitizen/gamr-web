@@ -1,0 +1,64 @@
+
+$speed: 800ms;
+
+.loading-icon {
+  &.left { float: left; }
+  
+  position: relative;
+  width: 50px;
+  height: $button-height;
+}
+
+@include keyframes(sway) {
+  0% {
+    @include transform(scale(1));
+    opacity: 1;
+    background-color: $color-main;
+  }
+  60% {
+    opacity: 0.3;
+    background-color: $color-secondary;
+    @include transform(scale(.9)); 
+  }
+  100% {
+    opacity: 0.3;
+    background-color: $color-secondary;
+    @include transform(scale(.9)); 
+  }
+}
+
+@mixin animation-sway() {
+  @include animation(sway $speed ease-in-out);
+  @include animation-iteration-count(infinite);
+  @include animation-direction(alternate);
+  @include animation-fill-mode(forwards);
+}
+
+.load-dot {
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: $color-main;
+
+  @include animation-sway();
+  
+  // background-image: -moz-linear-gradient($color-main, $color-black);
+  // @include linear-gradient($color-main, $color-black);
+  @include border-top-radius(50%);
+  @include border-bottom-radius(50%);
+
+  &.l-a {
+    left: 0;
+    left: 66.6666666666%;
+  }
+
+  &.l-b {
+    left: 33.3333333333%;
+    @include animation-delay(- $speed / 4);
+  }
+
+  &.l-c {
+    @include animation-delay(- $speed * 2 / 4);
+  }
+}
