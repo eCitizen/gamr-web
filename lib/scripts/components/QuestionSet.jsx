@@ -80,11 +80,9 @@ module.exports = React.createClass({
 
   render: function () {
     var oldAnswer = InputStore.getField(this.props.survey, this._makeId(this.state.current));
-    var answers = [];
-    var i;
-    for(i = this.state.scale[0]; i <= this.state.scale[1]; i += 1) {
-      answers.push(i);
-    }
+    var answers = this.state.scale.map(function (answer, idx) {
+      return idx + 1;
+    });
 
     if (this.state.finished) {
       return (
@@ -134,6 +132,16 @@ module.exports = React.createClass({
         <div>
           <div className='instructions-body inner'>
             {this.props.children}
+            <div className='answerKey'>
+              <p className='speaking'>
+                Indicate for each of the following statements whether it is:
+              </p>
+              <ul className='answer-scale'>
+                {this.state.scale.map(function (answer, idx) {
+                  return <li key={idx}><span className='value'>{idx + 1}</span> {answer}</li>
+                })}
+              </ul>
+            </div>
           </div>
           <div className='inner'>
             <Button className='right' action={this.begin}>GOT IT</Button>

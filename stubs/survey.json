@@ -2,7 +2,13 @@
   "personality": {
     "id": "IPIP",
     "title": "Personality",
-    "scale": [1,5],
+    "scale": [
+      "Very Inaccurate",
+      "Moderately Inaccurate",
+      "Neither Accurate Nor Inaccurate",
+      "Moderately Accurate",
+      "Very Accurate"
+    ],
     "questions": [
       "I am the life of the party.",
       "I feel little concern for others.",
@@ -59,7 +65,12 @@
   "brainType": {
     "id": "QSEQ",
     "title": "Brain Type",
-    "scale": [1,4],
+    "scale": [
+      "Very Inaccurate",
+      "Moderately Inaccurate",
+      "Moderately Accurate",
+      "Very Accurate"
+    ],
     "questions": [
       "I can easily tell if someone else wants to enter a conversation.",
       "I really enjoy caring for other people.",
@@ -113,8 +124,13 @@
   "gamerType": {
     "id": "LOTR",
     "title": "Gamer Type",
-    "scale": [1,5],
-    "instructions": "Describe yourself as you generally are when playing video games. Describe yourself as you honestly see yourself, in relation to other people you know of the same sex as you are, and roughly your same age. Indicate for each statement whether it is 1. Very Inaccurate, 2. Moderately Inaccurate, 3. Neither Accurate Nor Inaccurate, 4. Moderately Accurate, or 5. Very Accurate as a description of you.",
+    "scale": [
+      "Very Inaccurate",
+      "Moderately Inaccurate",
+      "Neither Accurate Nor Inaccurate",
+      "Moderately Accurate",
+      "Very Accurate"
+    ],
     "questions": [
       "In uncertain times, I usually expect the best.",
       "It's easy for me to relax.",
