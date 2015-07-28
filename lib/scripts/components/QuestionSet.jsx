@@ -41,6 +41,8 @@ module.exports = React.createClass({
     InputActions.updateField(this.props.survey, TRACKING_FIELD, nextIdx);
     if (this.state.current < this.state.questions.length - 1) {
       this.next();
+    } else if (this.props.finalStep) {
+      this.nextSection();
     } else {
       this.setState({
         finished: true
@@ -83,10 +85,10 @@ module.exports = React.createClass({
       return (
         <Background>
           <div className='up-next'>
-            <h6>Part 1: <em>Complete</em></h6>
+            <h6>Part {this.props.surveyIdx}: <em>Complete</em></h6>
             <div className='up-next-title'>
               <strong>up next...</strong>
-              <h5>Brain Type</h5>
+              <h5>{this.props.nextTitle}</h5>
             </div>
             <Button action={this.nextSection}>Continue</Button>
           </div>

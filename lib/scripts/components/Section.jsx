@@ -7,7 +7,11 @@ module.exports.BrainType = React.createClass({
   displayName: 'BrainType',
   render: function () {
     return (
-      <QuestionSet survey='brainType' nextRoute='personality'>
+      <QuestionSet 
+        survey='brainType'
+        surveyIdx='1'
+        nextRoute='personality'
+        nextTitle='Personality'>
         <h4 className='directions-title'>Instructions</h4>
         <div className='directions'>
           <p>
@@ -38,7 +42,11 @@ module.exports.Personality = React.createClass({
   displayName: 'Personality',
   render: function () {
     return (
-      <QuestionSet survey='personality' nextRoute='gamer-type'>
+      <QuestionSet 
+        survey='personality'
+        surveyIdx='2'
+        nextRoute='gamer-type'
+        nextTitle='Gamer Type'>
         <h4 className='directions-title'>Instructions</h4>
         <div className='directions'>
           <p>
@@ -69,7 +77,10 @@ module.exports.GamerType = React.createClass({
   displayName: 'GamerType',
   render: function () {
     return (
-      <QuestionSet survey='gamerType' nextRoute='results'>
+      <QuestionSet 
+        survey='gamerType'
+        nextRoute='results'
+        finalStep={true}>
         <h4 className='directions-title'>Instructions</h4>
         <div className='directions'>
           <p>
