@@ -80,6 +80,11 @@ module.exports = React.createClass({
 
   render: function () {
     var oldAnswer = InputStore.getField(this.props.survey, this._makeId(this.state.current));
+    var answers = [];
+    var i;
+    for(i = this.state.scale[0]; i <= this.state.scale[1]; i += 1) {
+      answers.push(i);
+    }
 
     if (this.state.finished) {
       return (
@@ -109,7 +114,7 @@ module.exports = React.createClass({
             idx={this.state.current}
             selected={oldAnswer}
             action={this.submitQuestion}
-            answers={[1,2,3,4,5]}>
+            answers={answers}>
           </Answer>
           <div className='question-nav'>
             {this.state.hasPrev ? (

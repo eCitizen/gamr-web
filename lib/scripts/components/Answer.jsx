@@ -10,8 +10,11 @@ module.exports = Question = React.createClass({
       width: (1/this.props.answers.length * 100) + '%'
     };
 
+    var className = classnames(
+      'answer', 'center-group', this.props.className, 'answers-'+this.props.answers.length);
+
     return (
-      <div className={classnames('answer', 'center-group', this.props.className)}>
+      <div className={className}>
         <ul className='choices middle'>
           {this.props.answers.map(function (answer, idx) {
             return (

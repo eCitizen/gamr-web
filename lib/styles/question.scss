@@ -26,6 +26,10 @@ $choice-space: 8px;
 
 .answer {
   margin-bottom: $space-medium;
+
+  &.answers-4 {
+    max-width: 318px;
+  }
 }
 
 .choices {
