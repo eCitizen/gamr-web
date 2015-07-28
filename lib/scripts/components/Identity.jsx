@@ -6,6 +6,7 @@ var Link = require('react-router').Link;
 var guide = require('../services/guide');
 var React = require('react');
 var Button = require('./Button.jsx');
+var Loading = require('./Loading.jsx');
 var FormInput = require('./FormInput.jsx');
 var FormSelect = require('./FormSelect.jsx');
 var FormSubmit = require('./FormSubmit.jsx');
@@ -173,6 +174,7 @@ module.exports = React.createClass({
           </div>
 
           <div className='inner'>
+            <Loading className='left'/>
             <FormSubmit className='right' action={this.submitProfiles}>
               Submit
             </FormSubmit>
