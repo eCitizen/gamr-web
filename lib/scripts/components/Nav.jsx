@@ -53,8 +53,6 @@ module.exports = React.createClass({
             </div>
             <div className='nav-right'>
               <Progress current={text.progress} length={5}/>
-              <span className='pipe'>|</span>
-              <span className='about-toggle'>About</span>
             </div>
           </div>
         </div>
