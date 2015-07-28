@@ -26,9 +26,14 @@ module.exports = React.createClass({
   },
 
   submitProfiles: function (form) {
+    this.setState({
+      loading: true
+    });
+
     api.getUser(form, function (err, results) {
       this.setState({
-        profileResults: results
+        profileResults: results,
+        loading: false
       });
     }.bind(this));
   },
@@ -174,7 +179,7 @@ module.exports = React.createClass({
           </div>
 
           <div className='inner'>
-            <Loading className='left'/>
+            <Loading className='left' active={this.state.loading}/>
             <FormSubmit className='right' action={this.submitProfiles}>
               Submit
             </FormSubmit>

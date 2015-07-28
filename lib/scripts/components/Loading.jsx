@@ -7,7 +7,7 @@ module.exports = React.createClass({
 
   render: function () {
     return (
-      <div className={classnames('loading-icon', this.props.className)}>
+      <div className={classnames('loading-icon', this.props.className, {active: this.props.active})}>
         <span className='load-dot l-a'/>
         <span className='load-dot l-b'/>
         <span className='load-dot l-c'/>

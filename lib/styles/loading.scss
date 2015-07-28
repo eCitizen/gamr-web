@@ -2,7 +2,15 @@
 $speed: 800ms;
 
 .loading-icon {
+  opacity: 0;
+
+  @include transition(all 100ms 100ms ease-in-out);
+
   &.left { float: left; }
+
+  &.active {
+    opacity: 1;
+  }
   
   position: relative;
   width: 50px;
@@ -42,9 +50,6 @@ $speed: 800ms;
   background-color: $color-main;
 
   @include animation-sway();
-  
-  // background-image: -moz-linear-gradient($color-main, $color-black);
-  // @include linear-gradient($color-main, $color-black);
   @include border-top-radius(50%);
   @include border-bottom-radius(50%);
 
@@ -55,10 +60,10 @@ $speed: 800ms;
 
   &.l-b {
     left: 33.3333333333%;
-    @include animation-delay(- $speed / 4);
+    @include animation-delay(- $speed * .25);
   }
 
   &.l-c {
-    @include animation-delay(- $speed * 2 / 4);
+    @include animation-delay(- $speed * .5);
   }
 }

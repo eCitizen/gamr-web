@@ -14,7 +14,7 @@ router.get('/user', function(req, res, next) {
 
 	setTimeout(function () {
 		res.json(profiles);
-	}, Math.random() < .3 ? 1000 : 0);
+	}, Math.random() < .9 ? 1500 : 200);
 });
 
 module.exports = router;
