@@ -1,15 +1,17 @@
 
+var guide = require('../services/guide');
 var React = require('react');
 var assign = require('object-assign');
 var Answer = require('./Answer.jsx');
-var guide = require('../services/guide');
-var InputActions = require('../input/actions');
-var InputStore = require('../input/store');
-var Navigation = require('react-router').Navigation;
 var Button = require('./Button.jsx');
-var TRACKING_FIELD = 'currentIdx';
+var createHash = require('../services/createProfile').createHash;
 var classnames = require('classnames');
 var Background = require('./Background.jsx');
+var InputStore = require('../input/store');
+var Navigation = require('react-router').Navigation;
+var InputActions = require('../input/actions');
+
+var TRACKING_FIELD = 'currentIdx';
 
 module.exports = React.createClass({
   displayName: 'QuestionSet',
@@ -51,7 +53,9 @@ module.exports = React.createClass({
   },
 
   goToResults: function () {
-    this.transitionTo('profile');
+    this.transitionTo('profile', {}, {
+      profile: createHash(InputStore.getAllForms())
+    });
   },
 
   nextSection: function () {
