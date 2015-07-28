@@ -42,12 +42,16 @@ module.exports = React.createClass({
     if (this.state.current < this.state.questions.length - 1) {
       this.next();
     } else if (this.props.finalStep) {
-      this.nextSection();
+      this.goToResults();
     } else {
       this.setState({
         finished: true
       });
     }
+  },
+
+  goToResults: function () {
+    this.transitionTo('profile');
   },
 
   nextSection: function () {

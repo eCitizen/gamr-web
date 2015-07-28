@@ -32,7 +32,7 @@ var routes = (
       <Route name="gamer-type" path="gamer-type" handler={GamerType}/>
     </Route>
     <Route name="results" handler={ProfileWrap}>
-      <Route name="data" path=":data?" handler={Profile}/>
+      <Route name="profile" path=":data?" handler={Profile}/>
       <DefaultRoute handler={NotFound}/>
     </Route>
     <DefaultRoute name='intro' handler={Intro}/>

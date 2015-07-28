@@ -1,19 +1,22 @@
 
-/** @jsx React.DOM */
+var React = require('react');
+var Grid = require('./Grid.jsx');
+var InputStore = require('../input/store');
 
-var React = require('react'),
-  Router = require('react-router'),
-  Profile;
+module.exports = React.createClass({
+  displayName: 'Profile',
 
-module.exports = Profile = React.createClass({
   render: function () {
     return (
-      <div id='home'>
+      <Grid>
         <h1>Profile</h1>
         <p>
           Here are your results...
         </p>
-      </div>
+        <pre>
+          {JSON.stringify(InputStore.getAllForms(), null, 2)}
+        </pre>
+      </Grid>
     );
   }
 });
