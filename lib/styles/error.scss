@@ -68,3 +68,30 @@
   right: 12px;
   font-size: 20px;
 }
+
+$timing: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+$transition: all 150ms $timing;
+
+.err-fade-enter {
+  opacity: 0.01;
+  @include transform(scale(1.1) translateY(-3px));
+}
+
+.err-fade-enter.err-fade-enter-active {
+  opacity: 1;
+  @include transition($transition);
+  @include transition-timing-function($timing);
+  @include transform(scale(1));
+}
+
+.err-fade-leave {
+  opacity: 1;
+  @include transform(scale(1));
+}
+
+.err-fade-leave.err-fade-leave-active {
+  opacity: 0.01;
+  @include transition($transition);
+  @include transition-timing-function($timing);
+  @include transform(scale(1.1) translateY(5px));
+}
