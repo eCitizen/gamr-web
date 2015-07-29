@@ -1,6 +1,7 @@
 
 var express = require('express'),
 	assign = require('lodash').assign,
+  isEmpty = require('lodash').isEmpty,
   router = express.Router();
   
 router.get('/user', function(req, res, next) {
@@ -11,6 +12,12 @@ router.get('/user', function(req, res, next) {
   if (q.WOW_id) profiles.WOW = {id: q.WOW_id};
   if (q.BF4_id) profiles.BF4 = {id: q.BF4_id};
   if (q.BFHD_id) profiles.BFHD = {id: q.BFHD_id};
+
+  if (isEmpty(profiles)) {
+    return res.json({
+      error: 'notFound'
+    });
+  }
 
 	setTimeout(function () {
 		res.json(profiles);

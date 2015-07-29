@@ -20,12 +20,9 @@ module.exports = React.createClass({
     errorSvc.offDismiss(this.close);
   },
 
-  open: function (title, message) {
+  open: function (config) {
     this.setState({
-      error: {
-        title: title,
-        message: message
-      }
+      error: config
     })
   },
 

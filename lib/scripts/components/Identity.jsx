@@ -16,6 +16,21 @@ var Background = require('./Background.jsx');
 var IdentityResults = require('./IdentityResults.jsx');
 var FORM_ID = 'identity';
 
+var errors = {
+  'notFound': {
+    title: 'Sorry',
+    message: 'We could not find any of your profiles'
+  },
+  'reserved': {
+    title: 'Sorry',
+    message: 'It looks like this profile has been used before'
+  },
+  'default': {
+    title: 'Sorry',
+    message: 'Something went wrong'
+  }
+}
+
 module.exports = React.createClass({
   displayName: 'Identity',
 
@@ -31,14 +46,25 @@ module.exports = React.createClass({
     });
 
     api.getUser(form, function (err, results) {
+      if (err) {
+        return this.displayUserError(err);
+      }
 
-      errorSvc.create('title', 'message');
-      
-      // this.setState({
-      //   profileResults: results,
-      //   loading: false
-      // });
+      this.setState({
+        profileResults: results,
+        loading: false
+      });
     }.bind(this));
+  },
+
+  displayUserError: function (err) {
+    this.setState({
+      loading: false
+    });
+
+    var errConfig = errors[err] || errors.default;
+
+    errorSvc.create(errConfig);
   },
 
   reset: function(e) {
