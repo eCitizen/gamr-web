@@ -24,4 +24,12 @@ router.get('/user', function(req, res, next) {
 	}, Math.random() < .9 ? 1500 : 200);
 });
 
+router.post('/submit', function(req, res, next) {
+  setTimeout(function () {
+    res.json({
+      gamerType: true
+    });
+  }, Math.random() < .9 ? 1500 : 200);
+});
+
 module.exports = router;
