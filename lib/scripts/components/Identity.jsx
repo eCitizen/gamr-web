@@ -3,8 +3,8 @@ var api = require('../services/api');
 var Grid = require('./Grid.jsx');
 var Form = require('./Form.jsx');
 var Link = require('react-router').Link;
-var guide = require('../services/guide');
 var React = require('react');
+var guide = require('../services/guide');
 var Button = require('./Button.jsx');
 var Loading = require('./Loading.jsx');
 var FormInput = require('./FormInput.jsx');
@@ -12,6 +12,7 @@ var FormSelect = require('./FormSelect.jsx');
 var FormSubmit = require('./FormSubmit.jsx');
 var InputStore = require('../input/store');
 var Background = require('./Background.jsx');
+var ErrorComponent = require('./Error.jsx');
 var IdentityResults = require('./IdentityResults.jsx');
 
 var FORM_ID = 'identity';
@@ -185,6 +186,7 @@ module.exports = React.createClass({
             </FormSubmit>
           </div>
         </Form>
+        <ErrorComponent/>
       </Grid>
     );
   }

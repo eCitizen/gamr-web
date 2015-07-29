@@ -1,0 +1,70 @@
+
+// https://css-tricks.com/centering-in-the-unknown/
+// ghost method
+
+.gamr-error-wrap {
+  z-index: 2000;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+
+  background: rgba(0, 0, 0, .5);
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+  }
+}
+
+.gamr-error {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 280px;
+
+  &:hover {
+    cursor: pointer;
+
+    & > .gamr-error-dismiss {
+      color: $color-white;
+    }
+  }
+
+  // @include border-top-radius($button-radius);
+  // @include border-bottom-radius($button-radius);
+  @include border-box();
+  box-shadow: 
+    0 0 120px 20px $color-black;
+
+  background: $color-black;
+  color: $color-warn;
+  padding: 15px 20px 10px;
+  border: 1px dotted $color-warn;
+
+  line-height: 20px;
+
+  & > h4 {
+    font-weight: bold;
+    margin-bottom: $space-small;
+    color: $color-white;
+  }
+
+  & > p {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: $color-white;
+  }
+}
+
+.gamr-error-dismiss {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 20px;
+}
