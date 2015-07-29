@@ -14,8 +14,11 @@ module.exports = React.createClass({
           
 
           <h4>
-            What does your play style say about you?
+            How you play reflects who you are.
           </h4>
+          <h5>
+            Discover your personality, brain type and gamer type in just 15 minutes.
+          </h5>
 
           <Video/>
 
