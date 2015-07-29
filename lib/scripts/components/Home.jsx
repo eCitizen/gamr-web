@@ -5,6 +5,7 @@ var RouteHandler = Router.RouteHandler;
 var State = Router.State;
 var Nav = require('./Nav.jsx');
 var classnames = require('classnames');
+var ErrorComponent = require('./Error.jsx');
 
 module.exports = React.createClass({
   displayName: 'Home',
@@ -20,6 +21,7 @@ module.exports = React.createClass({
       <div className={className}>
         <Nav/>
         <RouteHandler {... this.props}/>
+        <ErrorComponent/>
       </div>
     );
   }

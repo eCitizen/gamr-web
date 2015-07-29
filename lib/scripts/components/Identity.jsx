@@ -7,14 +7,13 @@ var React = require('react');
 var guide = require('../services/guide');
 var Button = require('./Button.jsx');
 var Loading = require('./Loading.jsx');
+var errorSvc = require('../services/error');
 var FormInput = require('./FormInput.jsx');
 var FormSelect = require('./FormSelect.jsx');
 var FormSubmit = require('./FormSubmit.jsx');
 var InputStore = require('../input/store');
 var Background = require('./Background.jsx');
-var ErrorComponent = require('./Error.jsx');
 var IdentityResults = require('./IdentityResults.jsx');
-
 var FORM_ID = 'identity';
 
 module.exports = React.createClass({
@@ -32,10 +31,13 @@ module.exports = React.createClass({
     });
 
     api.getUser(form, function (err, results) {
-      this.setState({
-        profileResults: results,
-        loading: false
-      });
+
+      errorSvc.create('title', 'message');
+      
+      // this.setState({
+      //   profileResults: results,
+      //   loading: false
+      // });
     }.bind(this));
   },
 
@@ -186,7 +188,6 @@ module.exports = React.createClass({
             </FormSubmit>
           </div>
         </Form>
-        <ErrorComponent/>
       </Grid>
     );
   }
