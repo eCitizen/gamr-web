@@ -7,7 +7,7 @@ var express = require('express'),
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 app.use('/assets', express.static(__dirname + '/dist'));
-app.use('/api', require('./dummyApi'));
+app.use('/api', require('./util/dummyApi'));
 app.get('*', function (req, res) {
   res.render('index', getPageData());
 });
