@@ -5,11 +5,9 @@ var React = require('react'),
   NotFoundRoute = Router.NotFoundRoute,
   Route = Router.Route,
   api = require('../services/api'),
-  guide = require('../services/guide'),
-  makeTransition = require('./makeTransition.jsx');
+  guide = require('../services/guide');
 
 var Home = require('./Home.jsx'),
-  Games = require('./Games.jsx'),
   Identity = require('./Identity.jsx'),
   Survey = require('./Survey.jsx'),
   Section = require('./Section.jsx'),
