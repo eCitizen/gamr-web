@@ -14,16 +14,25 @@ module.exports = Form = React.createClass({
 
   componentDidMount: function () {
     InputStore.on(this.props.id, this._handleChange);
+    InputStore.on(this.props.id+'submit', this._handleSubmit);
   },
 
   componentWillUnmount: function () {
     InputStore.removeListener(this.props.id, this._handleChange);
+    InputStore.removeListener(this.props.id+'submit', this._handleSubmit);
   },
 
   _handleChange: function () {
+    var data = InputStore.getForm(this.props.id);
+    if (this.props.onChange) this.props.onChange(data);
     this.setState({
-      formData: InputStore.getForm(this.props.id)
+      formData: data
     });
+  },
+
+  _handleSubmit: function () {
+    var data = InputStore.getForm(this.props.id);
+    if (this.props.onSubmit) this.props.onSubmit(data);
   },
 
   render: function () {

@@ -44,44 +44,43 @@ module.exports = React.createClass({
   getInitialState: function () {
     return  {
       profileResults: null,
-      invalidFields: []
+      invalidFields: [],
+      attempts: 0
     }
   },
 
   submitProfiles: function (form) {
-    this.setState({submitted: true});
+    this.setState({submitted: true})
+    var validity = this.getValidity(form);
 
-    var formError = validateIdentity(form);
-
-    if (formError && formError.invalidFields) {
-      this.setState({
-        invalidFields: formError.invalidFields,
-        invalid: true
-      });
+    if (validity) {
+      this.setState(validity);
       return this.displayUserError('invalid');
-    } else if (formError) {
-      this.setState({
-        invalid: [],
-        submitted: true
-      });
-      return this.displayUserError(formError);
     } else {
       this.setState({
         loading: true,
         invalid: false
       });
-    }
-
-    
-
-    api.getUser(form, function (err, results) {
+      api.getUser(form, function (err, results) {
       if (err) return this.displayUserError(err);
 
       this.setState({
         profileResults: results,
         loading: false
       });
-    }.bind(this));
+      }.bind(this));
+    }
+  },
+
+  handleChange: function (form) {
+    console.log('change');
+    this.setState(this.getValidity(form));
+  },
+
+  getValidity: function (form) {
+    var validity = validateIdentity(form);
+    console.log(validity);
+    return validity;
   },
 
   displayUserError: function (err) {
@@ -124,7 +123,6 @@ module.exports = React.createClass({
         </Background>
       );
     } else if (this.state.profileResults) {
-      console.log(this.state.profileResults);
       return (
         <Grid>
           <IdentityResults results={this.state.profileResults} reset={this.reset} confirm={this.confirm}/>
@@ -153,27 +151,27 @@ module.exports = React.createClass({
     }
 
     var invalidFields = this.state.invalidFields;
-    var invalid = this.state.invalid;
-    console.log(invalid);
-    function validateField(value, key) {
-      console.log('validate', key, value, invalidFields);
-      if (!invalid) return true;
-      // console.log('vvalidate', invalidFields, key);
-      return false;
+    var submitted = this.state.submitted;
+    function validateField(field) {
+      console.log('validate', invalidFields);
+
+      return submitted ? classnames({
+        invalid: invalidFields.indexOf(field) !== -1
+      }) : true;
     }
 
     var background = (
       <div>
           <div className='form-block'>
             <h2>{BIO.title}</h2>
-            <FormSelect {... BIO.fields.gender} validate={validateField}/>
-            <FormSelect {... BIO.fields.year} options={years} validate={validateField}/>
-            <FormSelect {... BIO.fields.month} validate={validateField}/>
+            <FormSelect {... BIO.fields.gender} className={validateField('gender')}/>
+            <FormSelect {... BIO.fields.year} options={years} className={validateField('birth_year')}/>
+            <FormSelect {... BIO.fields.month} className={validateField('birth_month')}/>
           </div>
           <div className='form-block'>
             <h2>{LANG.title}</h2>
-            <FormSelect {... LANG.fields.country} validate={validateField}/>
-            <FormSelect {... LANG.fields.level} validate={validateField}/>
+            <FormSelect {... LANG.fields.country} className={validateField('country')}/>
+            <FormSelect {... LANG.fields.level} className={validateField('english_lvl')}/>
           </div>
       </div>
     );
@@ -232,7 +230,11 @@ module.exports = React.createClass({
           </p>
         </div>
 
-        <Form id={FORM_ID} className={classnames('inner', {'submitted': this.state.submitted})}>
+        <Form
+          id={FORM_ID} 
+          className='inner'
+          onChange={this.handleChange}
+          onSubmit={this.submitProfiles}>
 
           <h4 className='directions-title'>Personal Profile</h4>
 
@@ -247,9 +249,7 @@ module.exports = React.createClass({
 
           <div className='inner'>
             <Loading className='left' active={this.state.loading}/>
-            <FormSubmit className='right' action={this.submitProfiles}>
-              Submit
-            </FormSubmit>
+            <FormSubmit className='right'>Submit</FormSubmit>
           </div>
         </Form>
       </Grid>
