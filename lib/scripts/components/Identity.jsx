@@ -50,11 +50,14 @@ module.exports = React.createClass({
   submitProfiles: function (form) {
     var formErrors = getFormErrors(form);
 
-    if (formErrors) {
+    if (formErrors.invalidFields.length > 0 || 
+      formErrors.invalidGamerProfiles.length === 4) {
+      
       this.setState({
         submitted: true,
         formErrors: formErrors
       });
+
       return this.displayUserError('invalid');
     }
 
@@ -143,11 +146,11 @@ module.exports = React.createClass({
       });
     }
 
-    var invalidFields = (this.state.formErrors && this.state.formErrors.invalidFields) || [];
+    console.log(this.state.formErrors);
+
+    var invalidFields = this.state.formErrors && this.state.formErrors.invalidFields;
     var submitted = this.state.submitted;
     function validateField(field) {
-      console.log('validate', invalidFields);
-
       return submitted ? classnames({
         invalid: invalidFields.indexOf(field) !== -1
       }) : true;
@@ -210,7 +213,13 @@ module.exports = React.createClass({
       );
     }
     
-    var profileText = formBlocks.length > 1 ? 'profiles' : 'profile';
+    var noteClass = classnames(
+      'directions-note',
+      {
+        invalid: this.state.submitted && 
+          this.state.formErrors.invalidGamerProfiles.length === 4
+      }
+    );
 
     return (
       <Grid>
@@ -234,7 +243,9 @@ module.exports = React.createClass({
           {background}
 
           <h4 className='directions-title'>Gamer Profile(s)</h4>
-          <h6 className='directions-note'>You must fill out at least one game profile</h6>
+          <h6 className={noteClass}>
+            You must fill out at least one game profile
+          </h6>
           
           <div>
             {formBlocks}

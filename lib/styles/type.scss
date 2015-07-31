@@ -86,6 +86,10 @@ p {
   letter-spacing: 1px;
   margin-top: -10px; // HACK ATTACK
   margin-bottom: $space-medium; 
+
+  &.invalid {
+    color: $color-warn;
+  }
 }
 
 .marquee {
