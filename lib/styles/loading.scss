@@ -1,5 +1,7 @@
 
 $speed: 800ms;
+$width: 50px;
+$dot-size: 8px;
 
 .loading-icon {
   opacity: 0;
@@ -13,7 +15,7 @@ $speed: 800ms;
   }
   
   position: relative;
-  width: 50px;
+  width: $width;
   height: $button-height;
 }
 
@@ -46,8 +48,8 @@ $speed: 800ms;
   display: block;
   position: absolute;
   top: 50%;
-  width: 8px;
-  height: 8px;
+  width: $dot-size;
+  height: $dot-size;
   background-color: $color-main;
 
   @include animation-sway();
@@ -55,12 +57,11 @@ $speed: 800ms;
   @include border-bottom-radius(50%);
 
   &.l-a {
-    left: 0;
-    left: 66.6666666666%;
+    right: 0;
   }
 
   &.l-b {
-    left: 33.3333333333%;
+    left: $width/2 - $dot-size/2;
     @include animation-delay(- $speed * .25);
   }
 
