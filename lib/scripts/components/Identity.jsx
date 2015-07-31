@@ -13,7 +13,9 @@ var FormSelect = require('./FormSelect.jsx');
 var FormSubmit = require('./FormSubmit.jsx');
 var InputStore = require('../input/store');
 var Background = require('./Background.jsx');
+
 var IdentityResults = require('./IdentityResults.jsx');
+var validateIdentity = require('../validators/identity');
 var FORM_ID = 'identity';
 
 var errors = {
@@ -28,6 +30,10 @@ var errors = {
   'default': {
     title: 'Sorry',
     message: 'Something went wrong'
+  },
+  'invalid': {
+    title: 'Sorry',
+    message: 'You must complete all required fields'
   }
 }
 
@@ -41,14 +47,13 @@ module.exports = React.createClass({
   },
 
   submitProfiles: function (form) {
-    this.setState({
-      loading: true
-    });
+    var formError = validateIdentity(form);
+    if (formError) return this.displayUserError(formError);
+
+    this.setState({loading: true});
 
     api.getUser(form, function (err, results) {
-      if (err) {
-        return this.displayUserError(err);
-      }
+      if (err) return this.displayUserError(err);
 
       this.setState({
         profileResults: results,
