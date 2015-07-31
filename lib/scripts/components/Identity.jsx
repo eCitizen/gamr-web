@@ -14,9 +14,8 @@ var FormSelect = require('./FormSelect.jsx');
 var FormSubmit = require('./FormSubmit.jsx');
 var InputStore = require('../input/store');
 var Background = require('./Background.jsx');
-
+var getFormErrors = require('../validators/identity');
 var IdentityResults = require('./IdentityResults.jsx');
-var validateIdentity = require('../validators/identity');
 var FORM_ID = 'identity';
 
 var errors = {
@@ -44,43 +43,37 @@ module.exports = React.createClass({
   getInitialState: function () {
     return  {
       profileResults: null,
-      invalidFields: [],
       attempts: 0
     }
   },
 
   submitProfiles: function (form) {
-    this.setState({submitted: true})
-    var validity = this.getValidity(form);
+    var formErrors = getFormErrors(form);
 
-    if (validity) {
-      this.setState(validity);
-      return this.displayUserError('invalid');
-    } else {
+    if (formErrors) {
       this.setState({
-        loading: true,
-        invalid: false
+        submitted: true,
+        formErrors: formErrors
       });
-      api.getUser(form, function (err, results) {
+      return this.displayUserError('invalid');
+    }
+
+    this.setState({loading: true});
+
+    api.getUser(form, function (err, results) {    
       if (err) return this.displayUserError(err);
 
       this.setState({
         profileResults: results,
         loading: false
       });
-      }.bind(this));
-    }
+    }.bind(this));
   },
 
   handleChange: function (form) {
-    console.log('change');
-    this.setState(this.getValidity(form));
-  },
-
-  getValidity: function (form) {
-    var validity = validateIdentity(form);
-    console.log(validity);
-    return validity;
+    this.setState({
+      formErrors: getFormErrors(form)
+    });
   },
 
   displayUserError: function (err) {
@@ -150,7 +143,7 @@ module.exports = React.createClass({
       });
     }
 
-    var invalidFields = this.state.invalidFields;
+    var invalidFields = (this.state.formErrors && this.state.formErrors.invalidFields) || [];
     var submitted = this.state.submitted;
     function validateField(field) {
       console.log('validate', invalidFields);
