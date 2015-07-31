@@ -26,6 +26,10 @@ var config = {
   '/survey/gamer-type': {
     main: 'Gamer Type',
     progress: 4
+  },
+  '/results/': {
+    main: null,
+    progress: 4
   }
 }
 
@@ -35,7 +39,7 @@ module.exports = React.createClass({
   mixins: [State],
 
   render: function () {
-    console.log(this.getPathname());
+    console.log('pathname', this.getPathname());
     var text = config[this.getPathname()];
 
     if (!text) return null;

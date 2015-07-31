@@ -25,10 +25,9 @@ router.get('/user', function(req, res, next) {
 });
 
 router.post('/submit', function(req, res, next) {
+  console.log(req.query)
   setTimeout(function () {
-    res.json({
-      gamerType: true
-    });
+    res.json(req.query);
   }, Math.random() < .9 ? 1500 : 200);
 });
 
