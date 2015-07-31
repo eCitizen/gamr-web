@@ -202,6 +202,7 @@ module.exports = React.createClass({
           {background}
 
           <h4 className='directions-title'>Gamer Profile(s)</h4>
+          <h6 className='directions-note'>You must fill out at least one game profile</h6>
           
           <div>
             {formBlocks}

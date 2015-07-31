@@ -79,6 +79,15 @@ p {
   margin-bottom: $space-medium;
 }
 
+.directions-note {
+  color: $color-subtle;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  margin-top: -10px; // HACK ATTACK
+  margin-bottom: $space-medium; 
+}
+
 .marquee {
   color: $color-white;
   position: relative;
