@@ -28,20 +28,10 @@ module.exports = {
     this.setState(this._getState());
   },
 
-  _vallidate: function (value) {
-    if (!this.props.required) {
-      return true;
-    } else if (typeof value === 'string') {
-      return value.trim() ? true : false;
-    } else {
-      return value ? true : false;
-    }
-  },
-
   _getState: function () {
-    var value = InputStore.getField(this.props.formId, this.props.id),
-      valid = (typeof this.props.vallidate === 'function') ?
-          this.props.vallidate(value) : this._vallidate(value);
+    var value = InputStore.getField(this.props.formId, this.props.id);
+    var valid = (typeof this.props.validate === 'function') ?
+          this.props.validate(value, this.props.id) : true;
 
     return {
       value: value,

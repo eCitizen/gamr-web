@@ -39,7 +39,7 @@ module.exports = React.createClass({
   mixins: [State],
 
   render: function () {
-    console.log('pathname', this.getPathname());
+    // console.log('pathname', this.getPathname());
     var text = config[this.getPathname()];
 
     if (!text) return null;

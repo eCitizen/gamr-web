@@ -1,11 +1,12 @@
 
-var React = require('react'),
-  InputStore = require('../input/store'),
-  Button = require('./Button.jsx'),
-  FormSubmit;
+var React = require('react');
+var InputStore = require('../input/store');
+var InputActions = require('../input/actions');
+var Button = require('./Button.jsx');
 
+module.exports = React.createClass({
+  displayName: 'FormSubmit',
 
-module.exports = FormSubmit = React.createClass({
   getDefaultProps: function () {
     return {
       action: function () {}
@@ -16,6 +17,7 @@ module.exports = FormSubmit = React.createClass({
     return (
       <Button className={this.props.className} action={function () {
         this.props.action(InputStore.getForm(this.props.formId));
+        InputActions.submit(this.props.formId);
       }.bind(this)}>
         {this.props.children}
       </Button>

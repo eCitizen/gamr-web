@@ -20,6 +20,20 @@ $checkbox-space: 32px;
 ::-moz-placeholder { color: $color-secondary; opacity: 1; } /* Firefox 19+ */
 :-ms-input-placeholder { color: $color-secondary; opacity: 1;}
 
+
+.invalid {
+  &.gamr-select > .select-cover {
+    border-color: $color-warn;
+    &:after {
+      border-color: $color-warn;
+      color: $color-warn;
+      &:hover {
+        background: $color-warn;
+      }
+    }
+  }
+}
+
 .gamr-input {
   & > input {
     @include border-top-radius($field-radius);

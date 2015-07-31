@@ -12,12 +12,11 @@ module.exports = Select = React.createClass({
       React.PropTypes.object,
       React.PropTypes.array
     ]).isRequired,
-    vallidate: React.PropTypes.func
+    validate: React.PropTypes.func
   },
 
   getDefaultProps: function () {
     return {
-      required: true,
       defaultValue: ''
     };
   },
@@ -39,7 +38,7 @@ module.exports = Select = React.createClass({
     }
 
     return (
-      <div className={classnames('gamr-field gamr-select', {
+      <div className={classnames(this.props.className, 'gamr-field gamr-select', {
         invalid: !this.state.valid,
         'has-value': this.state.value
       })}>

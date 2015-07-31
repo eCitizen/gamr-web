@@ -9,6 +9,7 @@ var Button = require('./Button.jsx');
 var Loading = require('./Loading.jsx');
 var errorSvc = require('../services/error');
 var FormInput = require('./FormInput.jsx');
+var classnames = require('classnames');
 var FormSelect = require('./FormSelect.jsx');
 var FormSubmit = require('./FormSubmit.jsx');
 var InputStore = require('../input/store');
@@ -42,15 +43,36 @@ module.exports = React.createClass({
 
   getInitialState: function () {
     return  {
-      profileResults: null
+      profileResults: null,
+      invalidFields: []
     }
   },
 
   submitProfiles: function (form) {
-    var formError = validateIdentity(form);
-    if (formError) return this.displayUserError(formError);
+    this.setState({submitted: true});
 
-    this.setState({loading: true});
+    var formError = validateIdentity(form);
+
+    if (formError && formError.invalidFields) {
+      this.setState({
+        invalidFields: formError.invalidFields,
+        invalid: true
+      });
+      return this.displayUserError('invalid');
+    } else if (formError) {
+      this.setState({
+        invalid: [],
+        submitted: true
+      });
+      return this.displayUserError(formError);
+    } else {
+      this.setState({
+        loading: true,
+        invalid: false
+      });
+    }
+
+    
 
     api.getUser(form, function (err, results) {
       if (err) return this.displayUserError(err);
@@ -130,18 +152,28 @@ module.exports = React.createClass({
       });
     }
 
+    var invalidFields = this.state.invalidFields;
+    var invalid = this.state.invalid;
+    console.log(invalid);
+    function validateField(value, key) {
+      console.log('validate', key, value, invalidFields);
+      if (!invalid) return true;
+      // console.log('vvalidate', invalidFields, key);
+      return false;
+    }
+
     var background = (
       <div>
           <div className='form-block'>
             <h2>{BIO.title}</h2>
-            <FormSelect required={false} {... BIO.fields.gender}/>
-            <FormSelect required={false} {... BIO.fields.year} options={years}/>
-            <FormSelect required={false} {... BIO.fields.month}/>
+            <FormSelect {... BIO.fields.gender} validate={validateField}/>
+            <FormSelect {... BIO.fields.year} options={years} validate={validateField}/>
+            <FormSelect {... BIO.fields.month} validate={validateField}/>
           </div>
           <div className='form-block'>
             <h2>{LANG.title}</h2>
-            <FormSelect required={false} {... LANG.fields.country}/>
-            <FormSelect required={false} {... LANG.fields.level}/>
+            <FormSelect {... LANG.fields.country} validate={validateField}/>
+            <FormSelect {... LANG.fields.level} validate={validateField}/>
           </div>
       </div>
     );
@@ -200,7 +232,7 @@ module.exports = React.createClass({
           </p>
         </div>
 
-        <Form id={FORM_ID} className='inner'>
+        <Form id={FORM_ID} className={classnames('inner', {'submitted': this.state.submitted})}>
 
           <h4 className='directions-title'>Personal Profile</h4>
 

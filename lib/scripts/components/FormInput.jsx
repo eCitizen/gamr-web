@@ -8,7 +8,7 @@ module.exports = Select = React.createClass({
 
   propTypes: {
     formId: React.PropTypes.string,
-    vallidate: React.PropTypes.func
+    validate: React.PropTypes.func
   },
 
   getDefaultProps: function () {
@@ -20,7 +20,7 @@ module.exports = Select = React.createClass({
 
   render: function () {
     return (
-      <div className={classnames('gamr-field gamr-input',{
+      <div className={classnames(this.props.className, 'gamr-field gamr-input',{
         invalid: !this.state.valid
       })}>
         <input 
