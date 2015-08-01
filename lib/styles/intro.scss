@@ -43,16 +43,12 @@ $intro-button-width: 180px;
   text-align: center;
 }
 
-.intro-body-inner {
-  max-width: $outer-width;
-  width: 100%;
-  @include border-box();
-  padding: $gutter-width;
-  margin: auto;
-
+.loud-text {
+  text-align: center;
+  margin-top: $space-large;
+  margin-bottom: $space-large;
   & > h4 {
-    margin-top: $space-large;
-    margin-bottom: $space-medium;
+    margin-bottom: $space-small + 2px;
     font-size: 20px;
     font-style: italic;
     text-shadow: 0px 1px 0 $color-black;
@@ -63,6 +59,14 @@ $intro-button-width: 180px;
     text-shadow: 0px 1px 0 $color-black;
     color: $color-main;
   }
+}
+
+.intro-body-inner {
+  max-width: $outer-width;
+  width: 100%;
+  @include border-box();
+  padding: $gutter-width;
+  margin: auto;
 
   & > p {
     text-align: left;

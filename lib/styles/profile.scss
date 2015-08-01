@@ -1,5 +1,6 @@
 
 $loading-width: 250px;
+$section-width: 340px;
 
 .loading-profile {
   width: $loading-width;
@@ -22,5 +23,122 @@ $loading-width: 250px;
   & > .loading-icon {
     height: 30px;
     margin: 0 auto;
+  }
+}
+
+.results-wrap {
+  max-width: $section-width * 3;
+  margin: 100px auto;
+}
+
+.col-set {
+  overflow: hidden;
+}
+
+.result-section {
+  @include border-box();
+  position: relative;
+  float: left;
+  width: $section-width;
+  max-width: 100%;
+  min-height: 200px;
+  &.a { left: $section-width; }
+  &.b { left: -$section-width; }
+  &.c { border: none; }
+
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10000px + 10px;
+  margin-bottom: -10000px;
+  border-right: 1px dotted #444;
+
+
+  & > h2 {
+    font-family: $font-title;
+    font-size: 19px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: $space-medium;
+  }
+
+  & > p {
+    font-size: 15px;
+    color: $color-main;
+    line-height: 20px;
+  }
+
+  strong {
+    font-weight: bold;
+    font-style: italic;
+  }
+}
+
+.expand-result {
+  display: block;
+  color: $color-secondary;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+
+  &:after {
+    content: ' +';
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $color-white;
+  }
+}
+
+.result-media {
+  position: relative;
+  height: 0;
+  padding-bottom: 75%;
+  width: 100%;
+
+  & > .result-media-child {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.result-barcode {
+  font-family: $font-special;
+  color: $color-subtle;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: $space-small;
+  margin-bottom: $space-medium;
+
+  & > .code {
+    display: inline-block;
+    height: 28px;
+    line-height: 29px;
+    border: 1px dotted $color-subtle;
+    padding-right: 7px;
+    padding-left: 3px;
+
+    & > .group {
+      display: inline-block;
+      margin-left: 7px;
+
+      & > em {
+        color: $color-main;
+      }
+    }
+  }
+}
+
+.result-social {
+  text-align: center;
+  margin-top: $space-large;
+
+  & > .button {
+    margin: 0 10px;
   }
 }

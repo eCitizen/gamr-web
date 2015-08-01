@@ -11,14 +11,10 @@ module.exports = React.createClass({
     return (
       <div className='intro-body'>
         <div className='intro-body-inner'>
-          
-
-          <h4>
-            How you play reflects who you are.
-          </h4>
-          <h5>
-            Discover your personality, brain type and gamer type in just 15 minutes.
-          </h5>
+          <div className='loud-text'>
+            <h4>How you play reflects who you are.</h4>
+            <h5>Discover your personality, brain type and gamer type in just 15 minutes.</h5>
+          </div>
 
           <Video/>
 

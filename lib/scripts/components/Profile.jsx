@@ -2,6 +2,7 @@
 var React = require('react');
 var InputStore = require('../input/store');
 var Loading = require('./Loading.jsx');
+var Button = require('./Button.jsx');
 var Grid = require('./Grid.jsx');
 var api = require('../services/api');
 
@@ -38,31 +39,97 @@ module.exports = React.createClass({
   render: function () {
     var content;
 
-    if (this.state.processed && this.state.waited) {
+    // temp override
+    if (true || this.state.processed && this.state.waited) {
       content = (
-        <div>
-          <h1>Profile</h1>
-          <p>
-            Here are your results...
-          </p>
-          <pre>
-            {JSON.stringify(this.state.formData, null, 2)}
-          </pre>
+        <div className='results-wrap'>
+          <div className='loud-text'>
+            <h4>Thank you for participating!</h4>
+            <h5>
+              {'Explore your Gamer Type, Personality & Brain Type'}
+            </h5>
+          </div>
+
+          <div className='col-set'>
+            <div className='result-section a'>
+              <div className='result-media'>
+                <img className='result-media-child' src="http://media.giphy.com/media/19uUmES4K72KI/giphy.gif"/>
+              </div>
+              <h2>Gamer Type</h2>
+              <div className='result-barcode'>
+                <span className='code'>
+                  <span className='group'><em>G</em>X</span>
+                  <span className='group'><em>M</em>S</span>
+                  <span className='group'>F<em>Y</em></span>
+                  <span className='group'><em>E</em>R</span>
+                </span>
+              </div>
+              <p>
+                You are <strong>The Quarterback</strong>
+              </p>
+              <p>
+                You love everything about video games. From deep story telling, to breath-taking action, to hanging out with your friends and getting the highest scores and all the collectibles, you can't get enough of a wide range of games.
+              </p>
+              <a className='expand-result'>read more</a>
+            </div>
+            <div className='result-section b'>
+              <div className='result-media'>
+                <div className='result-media-child'/>
+              </div>
+              <h2>Personality</h2>
+              <div className='result-barcode'>
+                <span className='code'>
+                  <span className='group'>O<em>10</em></span>
+                  <span className='group'>C<em>73</em></span>
+                  <span className='group'>F<em>100</em></span>
+                  <span className='group'>A<em>81</em></span>
+                  <span className='group'>S<em>72</em></span>
+                </span>
+              </div>
+              <p>
+                You are <strong>The Quarterback</strong>
+              </p>
+              <p>
+                You love everything about video games. From deep story telling, to breath-taking action, to hanging out with your friends and getting the highest scores and all the collectibles, you can't get enough of a wide range of games.
+              </p>
+              <a className='expand-result'>read more</a>
+            </div>
+            <div className='result-section c'>
+              <div className='result-media'>
+                <div className='result-media-child'/>
+              </div>
+              <h2>Brain Type</h2>
+              <div className='result-barcode'>
+                <span className='code'>
+                  <span className='group'>E<em>32</em></span>
+                  <span className='group'>S<em>72</em></span>
+                </span>
+              </div>
+              <p>
+                You are <strong>The Quarterback</strong>
+              </p>
+              <p>
+                You love everything about video games. From deep story telling, to breath-taking action, to hanging out with your friends and getting the highest scores and all the collectibles, you can't get enough of a wide range of games.
+              </p>
+              <a className='expand-result'>read more</a>
+            </div>
+          </div>
+          <div className='result-social'>
+            <Button><span className='fa fa-facebook'/> Share</Button>
+            <Button><span className='fa fa-twitter'/> Tweet</Button>
+          </div>
         </div>
       );
     } else {
       content = (
-        <div className='loading-profile'>
-          <h5>Creating Your Profile</h5>
-          <Loading active={this.state.loadingIcon}/>
-        </div>
+        <Grid>
+          <div className='loading-profile'>
+            <h5>Creating Your Profile</h5>
+            <Loading active={this.state.loadingIcon}/>
+          </div>
+        </Grid>
       );
     }
-
-    return (
-      <Grid>
-        {content}
-      </Grid>
-    );
+    return content;
   }
 });
