@@ -46,7 +46,7 @@ module.exports = React.createClass({
           <div className='loud-text'>
             <h4>Thank you for participating!</h4>
             <h5>
-              {'Explore your Gamer Type, Personality & Brain Type'}
+              Based on your answers, we created this gamer profile for you.
             </h5>
           </div>
 
