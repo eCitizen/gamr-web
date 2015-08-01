@@ -40,7 +40,7 @@ module.exports = React.createClass({
     var content;
 
     // temp override
-    if (true || this.state.processed && this.state.waited) {
+    if (this.state.processed && this.state.waited) {
       content = (
         <div className='results-wrap'>
           <div className='loud-text'>
