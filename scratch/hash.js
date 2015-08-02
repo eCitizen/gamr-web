@@ -111,15 +111,16 @@ function packProfile(profile) {
     var thisKey = surveyKey[surveyName];
 
     surveyKey[surveyName].forEach(function (attr, idx) {
-      console.log('insert', attr.title, profile[surveyName][idx]);
       var value = profile[surveyName][idx];
       var compliment = attr.total ? attr.total - value :
                          attr.options.indexOf(value) === 0 ? attr.options[1] : attr.options[0];
 
+      console.log('insert', attr.title, value, compliment);
       insert(hideValue(value));
       insert(hideValue(compliment));
     });
   });
+  console.log(' ')
   return finalStr.join(separator);
 }
 
@@ -131,10 +132,10 @@ function unpackProfile(packed) {
   packOrder.reverse().forEach(function (surveyName) {
     finalProfile[surveyName] = [];
     surveyKey[surveyName].reverse().forEach(function (attr) {
-      console.log('extract', attr.title);
+      
       var compliment = exposeValue(extract());
       var value = exposeValue(extract());
-      console.log(value, compliment);
+      console.log('extract', attr.title, value, compliment);
       // check if complimentary
       // if so insert into final profile
       // finalProfile[surveyName].push());
