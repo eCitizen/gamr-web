@@ -57,9 +57,9 @@ function hideNumber(i) {
 }
 
 function exposeNumber(i) {
-  return i.split('').map(function (c) {
+  return parseInt(i.split('').map(function (c) {
     return numberKey.indexOf(c);
-  }).join('');
+  }).join(''));
 }
 
 function hideLetter(i) {
@@ -115,12 +115,11 @@ function packProfile(profile) {
       var compliment = attr.total ? attr.total - value :
                          attr.options.indexOf(value) === 0 ? attr.options[1] : attr.options[0];
 
-      console.log('insert', attr.title, value, compliment);
+      // console.log('insert', attr.title, value, compliment);
       insert(hideValue(value));
       insert(hideValue(compliment));
     });
   });
-  console.log(' ')
   return finalStr.join(separator);
 }
 
@@ -128,6 +127,7 @@ function unpackProfile(packed) {
   var segments = packed.split(separator);
   var extract = makeUnpacker(segments);
   var finalProfile = {};
+  var valid = true;
 
   packOrder.reverse().forEach(function (surveyName) {
     finalProfile[surveyName] = [];
@@ -135,12 +135,19 @@ function unpackProfile(packed) {
       
       var compliment = exposeValue(extract());
       var value = exposeValue(extract());
-      console.log('extract', attr.title, value, compliment);
-      // check if complimentary
-      // if so insert into final profile
-      // finalProfile[surveyName].push());
+      // console.log('extract', attr.title, value, compliment);
+
+      if (attr.total) {
+        valid = value + compliment === 100 ? valid : false;
+      } else {
+        valid = [attr.options.indexOf(value),attr.options.indexOf(compliment)].sort().join('') === '01' ? valid : false;
+      }
+
+      finalProfile[surveyName].push(value);
     });
   });
+
+  return valid ? finalProfile : null;
 }
 
 var profile = {
@@ -149,7 +156,11 @@ var profile = {
   brainType: [56, 65]
 };
 
-unpackProfile(packProfile(profile));
+var copy = unpackProfile(packProfile(profile));
+
+console.log(profile);
+console.log('')
+console.log(copy);
 
 
 // var str = [];
