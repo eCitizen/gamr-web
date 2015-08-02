@@ -25,7 +25,7 @@ module.exports = Question = React.createClass({
                     'selected': answer === this.props.selected
                   })}
                   action={this.props.action.bind(null,answer)}>
-                  {answer}
+                  {idx + 1}
                 </Button>
               </li>
             );

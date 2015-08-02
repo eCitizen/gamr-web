@@ -27,7 +27,7 @@ module.exports = React.createClass({
       current: currentIdx,
       started: currentIdx > 0,
       hasPrev: currentIdx > 0,
-      finished: currentIdx >= survey.questions.length - 1, // TODO: 
+      finished: currentIdx >= survey.questions.length - 1,
       hasNext: currentIdx < survey.questions.length - 1
     }, survey);
   },
@@ -40,7 +40,7 @@ module.exports = React.createClass({
   submitQuestion: function (answer) {
     InputActions.updateField(this.props.survey,  this._makeId(this.state.current), answer);
     var nextIdx = this.state.current + 1;
-    InputActions.updateField(this.props.survey, TRACKING_FIELD, nextIdx);
+    // InputActions.updateField(this.props.survey, TRACKING_FIELD, nextIdx);
     if (this.state.current < this.state.questions.length - 1) {
       this.next();
     } else if (this.props.finalStep) {
@@ -88,9 +88,6 @@ module.exports = React.createClass({
 
   render: function () {
     var oldAnswer = InputStore.getField(this.props.survey, this._makeId(this.state.current));
-    var answers = this.state.scale.map(function (answer, idx) {
-      return idx + 1;
-    });
 
     if (this.state.finished) {
       return (
@@ -106,6 +103,9 @@ module.exports = React.createClass({
         </Background>
       );
     } else if (this.state.started) {
+      var currentQuestion = this.state.questions[this.state.current];
+      var answers = currentQuestion.inverted ? this.state.scaleValues.slice().reverse() : this.state.scaleValues;
+
       return (
         <div className={classnames(
           'question-set-body',
@@ -113,7 +113,7 @@ module.exports = React.createClass({
           {answered: oldAnswer})}>
           <div className='question-wrap'>
             <p className='question-text' key={this.state.current}>
-              {this.state.questions[this.state.current]}
+              {currentQuestion.text}
             </p>
           </div>
           <Answer 
