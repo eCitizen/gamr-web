@@ -108,7 +108,9 @@ function packProfile(profile) {
   var insert = makePacker(finalStr);
 
   packOrder.forEach(function (surveyName) {
-    var thisKey = surveyKey[surveyName];
+    if (surveyKey[surveyName].length !== profile[surveyName].length) {
+      throw new Error('key/profile mismatch: ' + surveyName);
+    };
 
     surveyKey[surveyName].forEach(function (attr, idx) {
       var value = profile[surveyName][idx];
@@ -144,7 +146,7 @@ function unpackProfile(packed) {
           valid = [attr.options.indexOf(value),attr.options.indexOf(compliment)].sort().join('') === '01' ? valid : false;
         }
 
-        finalProfile[surveyName].push(value);
+        finalProfile[surveyName].unshift(value);
       });
     });
 
@@ -155,7 +157,7 @@ function unpackProfile(packed) {
 }
 
 var profile = {
-  personality: [10, 29, 38, 47, 51],
+  personality: [10, 29, 38, 47, 60],
   gamerType: ['G', 'M', 'Y', 'E'],
   brainType: [56, 65]
 };
