@@ -2,7 +2,7 @@
   "personality": {
     "title": "Personality",
     "id": "IPIP",
-    "scaleValues": [1, 2, 3, 4],
+    "scaleValues": [1, 2, 3, 4, 5],
     "scale": [
       "Very Inaccurate",
       "Moderately Inaccurate",

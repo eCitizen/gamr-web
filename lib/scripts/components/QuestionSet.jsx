@@ -1,17 +1,13 @@
 
-var guide = require('../services/guide');
 var React = require('react');
-var assign = require('object-assign');
 var Answer = require('./Answer.jsx');
 var Button = require('./Button.jsx');
 var createHash = require('../services/profile').createHash;
 var classnames = require('classnames');
 var Background = require('./Background.jsx');
-var InputStore = require('../input/store');
 var Navigation = require('react-router').Navigation;
-var InputActions = require('../input/actions');
-
-var TRACKING_FIELD = 'currentIdx';
+var surveyStore = require('../survey/store');
+var surveyActions = require('../survey/actions');
 
 module.exports = React.createClass({
   displayName: 'QuestionSet',
@@ -19,42 +15,27 @@ module.exports = React.createClass({
   mixins: [Navigation],
 
   getInitialState: function () {
-    InputActions.createForm(this.props.survey);
-    var survey = guide.survey[this.props.survey];
-    var currentIdx = 0;
-
-    return assign({
-      current: currentIdx,
-      started: currentIdx > 0,
-      hasPrev: currentIdx > 0,
-      finished: currentIdx >= survey.questions.length - 1,
-      hasNext: currentIdx < survey.questions.length - 1
-    }, survey);
-  },
-
-  _makeId: function (idx, id) {
-    id = id || this.state.id;
-    return id + idx;
+    return {
+      current: 0,
+      length: surveyStore.getLength(this.props.survey)
+    }
   },
 
   submitQuestion: function (answer) {
-    InputActions.updateField(this.props.survey,  this._makeId(this.state.current), answer);
-    var nextIdx = this.state.current + 1;
-    // InputActions.updateField(this.props.survey, TRACKING_FIELD, nextIdx);
-    if (this.state.current < this.state.questions.length - 1) {
-      this.next();
+    surveyActions.answerQuestion(this.props.survey, this.state.current, answer);
+
+    if (this.state.current < this.state.length - 1) {
+      this.next(); 
     } else if (this.props.finalStep) {
       this.goToResults();
     } else {
-      this.setState({
-        finished: true
-      });
+      this.setState({finished: true});
     }
   },
 
   goToResults: function () {
     this.transitionTo('profile', {
-      profile: createHash(InputStore.getAllForms())
+      profile: createHash({}) // TODO
     });
   },
 
@@ -63,31 +44,26 @@ module.exports = React.createClass({
   },
 
   begin: function () {
-    this.setState({
-      started: true
-    });
+    this.setState({started: true});
   },
 
   next: function () {
-    var nextIdx = this.state.current + 1;
     this.setState({
-      current: nextIdx,
-      hasNext: nextIdx < this.state.questions.length - 1,
-      hasPrev: nextIdx > 0
+      current: this.state.current + 1
     });
   },
 
   prev: function () {
-    var nextIdx = this.state.current - 1;
     this.setState({
-      current: nextIdx,
-      hasNext: nextIdx < this.state.questions.length - 1,
-      hasPrev: nextIdx > 0
+      current: this.state.current - 1
     });
   },
 
   render: function () {
-    var oldAnswer = InputStore.getField(this.props.survey, this._makeId(this.state.current));
+    var scale = surveyStore.getSurvey(this.props.survey).scale;
+    var question = surveyStore.getQuestion(this.props.survey, this.state.current);
+    var hasPrev = this.state.current > 0;
+    var hasNext = this.state.current < this.state.length - 1;
 
     if (this.state.finished) {
       return (
@@ -103,33 +79,31 @@ module.exports = React.createClass({
         </Background>
       );
     } else if (this.state.started) {
-      var currentQuestion = this.state.questions[this.state.current];
-      var answers = currentQuestion.inverted ? this.state.scaleValues.slice().reverse() : this.state.scaleValues;
-
       return (
         <div className={classnames(
-          'question-set-body',
-          'inner',
-          {answered: oldAnswer})}>
+            'question-set-body',
+            'inner',
+            {answered: !!question.answer}
+          )}>
           <div className='question-wrap'>
             <p className='question-text' key={this.state.current}>
-              {currentQuestion.text}
+              {question.text}
             </p>
           </div>
           <Answer 
             idx={this.state.current}
-            selected={oldAnswer}
+            selected={question.answer}
             action={this.submitQuestion}
-            answers={answers}>
+            answers={question.choices}>
           </Answer>
           <div className='question-nav'>
-            {this.state.hasPrev ? (
+            {hasPrev ? (
               <span className='prev' onClick={this.prev}>{'<'}</span>
             ) : null}
-            {this.state.hasPrev || this.state.hasNext ? (
-              <span className='index'>{this.state.current + 1} of {this.state.questions.length}</span>
+            {hasPrev || hasNext ? (
+              <span className='index'>{this.state.current + 1} of {this.state.length}</span>
             ) : null}
-            {this.state.hasNext && oldAnswer ? (
+            {hasNext && !!question.answer ? (
               <span className='next' onClick={this.next}>{'>'}</span>
             ) : null}
           </div>
@@ -145,7 +119,7 @@ module.exports = React.createClass({
                 Indicate for each of the following statements whether it is:
               </p>
               <ul className='answer-scale'>
-                {this.state.scale.map(function (answer, idx) {
+                {scale.map(function (answer, idx) {
                   return <li key={idx}><span className='value'>{idx + 1}</span> {answer}</li>
                 })}
               </ul>
