@@ -132,8 +132,9 @@ function unpackProfile(packed) {
     finalProfile[surveyName] = [];
     surveyKey[surveyName].reverse().forEach(function (attr) {
       console.log('extract', attr.title);
-      // var compliment = exposeValue(extract());
-      // var value = exposeValue(extract());
+      var compliment = exposeValue(extract());
+      var value = exposeValue(extract());
+      console.log(value, compliment);
       // check if complimentary
       // if so insert into final profile
       // finalProfile[surveyName].push());
@@ -141,32 +142,32 @@ function unpackProfile(packed) {
   });
 }
 
-// var profile = {
-//   personality: [10, 29, 38, 47, 51],
-//   gamerType: ['G', 'M', 'Y', 'E'],
-//   brainType: [56, 65]
-// };
+var profile = {
+  personality: [10, 29, 38, 47, 51],
+  gamerType: ['G', 'M', 'Y', 'E'],
+  brainType: [56, 65]
+};
 
-// unpackProfile(packProfile(profile));
-
-
-var str = [];
-var insert = makePacker(str);
-for (var i = 0; i < 6; i += 1) {
-  console.log(insert(i));
-}
-
-// console.log(str.join());
-console.log('')
+unpackProfile(packProfile(profile));
 
 
-var extract = makeUnpacker(str);
+// var str = [];
+// var insert = makePacker(str);
+// for (var i = 0; i < 6; i += 1) {
+//   console.log(insert(i));
+// }
 
-var l = str.length;
-for (var i = 0; i < l; i += 1) {
-  console.log(extract());
-  // console.log(i, extract());
-}
+// // console.log(str.join());
+// console.log('')
+
+
+// var extract = makeUnpacker(str);
+
+// var l = str.length;
+// for (var i = 0; i < l; i += 1) {
+//   console.log(extract());
+//   // console.log(i, extract());
+// }
 
 
 
