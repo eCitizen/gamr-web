@@ -53,7 +53,7 @@ module.exports = React.createClass({
   },
 
   goToResults: function () {
-    this.transitionTo('profile', {}, {
+    this.transitionTo('profile', {
       profile: createHash(InputStore.getAllForms())
     });
   },

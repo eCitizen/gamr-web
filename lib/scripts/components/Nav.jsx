@@ -39,9 +39,17 @@ module.exports = React.createClass({
   mixins: [State],
 
   render: function () {
-    // console.log('pathname', this.getPathname());
-    var text = config[this.getPathname()];
+    var pathname = this.getPathname()
+    var isResults = false;
 
+    // HACK ATTACK
+    if (pathname.indexOf('results') !== -1) {
+      pathname = /results/;
+      isResults = true;
+    }
+
+    var text = config[pathname];
+    
     if (!text) return null;
 
     return (
