@@ -124,30 +124,34 @@ function packProfile(profile) {
 }
 
 function unpackProfile(packed) {
-  var segments = packed.split(separator);
-  var extract = makeUnpacker(segments);
-  var finalProfile = {};
-  var valid = true;
+  try {
+    var segments = packed.split(separator);
+    var extract = makeUnpacker(segments);
+    var finalProfile = {};
+    var valid = true;
 
-  packOrder.reverse().forEach(function (surveyName) {
-    finalProfile[surveyName] = [];
-    surveyKey[surveyName].reverse().forEach(function (attr) {
-      
-      var compliment = exposeValue(extract());
-      var value = exposeValue(extract());
-      // console.log('extract', attr.title, value, compliment);
+    packOrder.reverse().forEach(function (surveyName) {
+      finalProfile[surveyName] = [];
+      surveyKey[surveyName].reverse().forEach(function (attr) {
+        
+        var compliment = exposeValue(extract());
+        var value = exposeValue(extract());
+        // console.log('extract', attr.title, value, compliment);
 
-      if (attr.total) {
-        valid = value + compliment === 100 ? valid : false;
-      } else {
-        valid = [attr.options.indexOf(value),attr.options.indexOf(compliment)].sort().join('') === '01' ? valid : false;
-      }
+        if (attr.total) {
+          valid = value + compliment === 100 ? valid : false;
+        } else {
+          valid = [attr.options.indexOf(value),attr.options.indexOf(compliment)].sort().join('') === '01' ? valid : false;
+        }
 
-      finalProfile[surveyName].push(value);
+        finalProfile[surveyName].push(value);
+      });
     });
-  });
 
-  return valid ? finalProfile : null;
+    return valid ? finalProfile : null;
+  } catch (e) {
+    return null;
+  }
 }
 
 var profile = {
@@ -156,11 +160,17 @@ var profile = {
   brainType: [56, 65]
 };
 
-var copy = unpackProfile(packProfile(profile));
+var p = packProfile(profile);
+
+console.log(p)
+
+var u = unpackProfile(p);
 
 console.log(profile);
 console.log('')
-console.log(copy);
+console.log(u);
+
+console.log(unpackProfile('iit-rt-ftiutr-tl'))
 
 
 // var str = [];
