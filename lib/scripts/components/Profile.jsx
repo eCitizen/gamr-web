@@ -6,10 +6,15 @@ var Button = require('./Button.jsx');
 var Grid = require('./Grid.jsx');
 var api = require('../services/api');
 
+var surveyStore = require('../survey/store');
+
 module.exports = React.createClass({
   displayName: 'Profile',
 
   getInitialState: function () {
+
+    surveyStore.getScores();
+
     return {
       processed: false,
       formData: InputStore.getAllForms()
