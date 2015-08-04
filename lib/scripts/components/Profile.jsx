@@ -13,7 +13,9 @@ module.exports = React.createClass({
 
   getInitialState: function () {
 
-    surveyStore.getScores();
+    // surveyStore.getScores();
+    // surveyStore.getProfile();
+    surveyStore.getProfileHash();
 
     return {
       processed: false,
