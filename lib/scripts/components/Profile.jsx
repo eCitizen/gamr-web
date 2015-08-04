@@ -1,6 +1,6 @@
 
 var React = require('react');
-var InputStore = require('../input/store');
+var State = require('react-router').State;
 var Loading = require('./Loading.jsx');
 var Button = require('./Button.jsx');
 var Grid = require('./Grid.jsx');
@@ -11,16 +11,18 @@ var surveyStore = require('../survey/store');
 module.exports = React.createClass({
   displayName: 'Profile',
 
+  mixins: [State],
+
   getInitialState: function () {
 
-    // surveyStore.getScores();
-    // surveyStore.getProfile();
-    // surveyStore.getProfileHash();
-    surveyStore.getFormData();
+    // TODO:
+    // not sure exactly what representation of what data we want for the final api
 
     return {
+      scores: surveyStore.getScores(),
+      profile: surveyStore.decodeProfile(this.getParams().profile),
+      formData: surveyStore.getFormData(),
       processed: false,
-      formData: InputStore.getAllForms()
     };
   },
 

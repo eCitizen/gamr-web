@@ -2,7 +2,6 @@
 var React = require('react');
 var Answer = require('./Answer.jsx');
 var Button = require('./Button.jsx');
-var createHash = require('../services/profile').createHash;
 var classnames = require('classnames');
 var Background = require('./Background.jsx');
 var Navigation = require('react-router').Navigation;
@@ -35,7 +34,7 @@ module.exports = React.createClass({
 
   goToResults: function () {
     this.transitionTo('profile', {
-      profile: createHash({}) // TODO
+      profile: surveyStore.getProfileHash()
     });
   },
 
