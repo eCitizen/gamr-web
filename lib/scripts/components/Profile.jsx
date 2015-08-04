@@ -15,7 +15,8 @@ module.exports = React.createClass({
 
     // surveyStore.getScores();
     // surveyStore.getProfile();
-    surveyStore.getProfileHash();
+    // surveyStore.getProfileHash();
+    surveyStore.getFormData();
 
     return {
       processed: false,
