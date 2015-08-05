@@ -22,6 +22,7 @@ module.exports = React.createClass({
       scores: surveyStore.getScores(),
       profile: surveyStore.decodeProfile(this.getParams().profile),
       formData: surveyStore.getFormData(),
+      plainformData: surveyStore.getPlainFormData(),
       processed: false,
     };
   },
