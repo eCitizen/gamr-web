@@ -14,21 +14,17 @@ module.exports = React.createClass({
   mixins: [State],
 
   getInitialState: function () {
-
-    // TODO:
-    // not sure exactly what representation of what data we want for the final api
-
     return {
       scores: surveyStore.getScores(),
       profile: surveyStore.decodeProfile(this.getParams().profile),
-      formData: surveyStore.getFormData(),
       plainformData: surveyStore.getPlainFormData(),
       processed: false,
     };
   },
 
   componentDidMount: function () {
-    api.submitQuestions(this.state.formData, function (err, data) {
+    api.submitQuestions({survey: JSON.stringify(this.state.plainformData)}, function (err, data) {
+      console.log('[api] \n%s', JSON.stringify(data, null, 2));
       this.setState({
         processed: true
       });

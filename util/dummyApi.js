@@ -26,7 +26,7 @@ router.get('/user', function(req, res, next) {
 
 router.post('/submit', function(req, res, next) {
   setTimeout(function () {
-    res.json(req.query);
+    res.json(JSON.parse(req.query.survey));
   }, Math.random() < .9 ? 1500 : 200);
 });
 
