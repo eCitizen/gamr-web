@@ -1,0 +1,38 @@
+
+.star-wrap {
+  height: 100%;
+
+  & > svg {
+    height: 100%;
+    display: inline-block;
+    margin: 0 auto;
+  }
+}
+
+.chart {
+  margin-bottom: 40px;
+  fill: $color-secondary;
+}
+.star-title {
+  font-size: 14px;
+  fill: $color-secondary;
+}
+.star-label {
+  font-size: 11.5px;
+  letter-spacing: 1px;
+  fill: $color-main;
+}
+.star-origin {
+  fill: $color-main;
+}
+.star-axis {
+  stroke: $color-subtle;
+  stroke-width: 2px;
+  stroke-dasharray: 2 4;
+}
+.star-path {
+  stroke: $color-main;
+  stroke-width: 1px;
+  fill: $color-main;
+  fill-opacity: 0.2;
+}

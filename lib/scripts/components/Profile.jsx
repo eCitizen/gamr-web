@@ -1,5 +1,6 @@
 
 var React = require('react');
+var StarPlot = require('./StarPlot.jsx');
 var State = require('react-router').State;
 var Loading = require('./Loading.jsx');
 var Button = require('./Button.jsx');
@@ -86,7 +87,9 @@ module.exports = React.createClass({
             </div>
             <div className='result-section b'>
               <div className='result-media'>
-                <div className='result-media-child'/>
+                <div className='result-media-child'>
+                  <StarPlot/>
+                </div>
               </div>
               <h2>Personality</h2>
               <div className='result-barcode'>
