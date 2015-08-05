@@ -25,7 +25,8 @@
       {
         "text": "I feel little concern for others.",  
         "dimension": "A",
-        "inverted": true
+        "inverted": true,
+        "surveyId": "overrideTest"
       }
     ]
   },
