@@ -24,7 +24,10 @@ module.exports = React.createClass({
 
   componentDidMount: function () {
     api.submitQuestions({survey: JSON.stringify(this.state.plainformData)}, function (err, data) {
-      console.log('[api] \n%s', JSON.stringify(data, null, 2));
+      
+      console.info('Api Response');
+      console.log(JSON.stringify(data, null, 2));
+
       this.setState({
         processed: true
       });
