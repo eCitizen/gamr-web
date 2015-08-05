@@ -17,7 +17,7 @@ module.exports = Select = React.createClass({
 
   getDefaultProps: function () {
     return {
-      defaultValue: ''
+      defaultValue: null
     };
   },
 
