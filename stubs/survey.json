@@ -58,7 +58,7 @@
   },
   "gamerType": {
     "title": "Gamer Type",
-    "id": "LOTR",
+    "id": "GAM",
     "scaleValues": [1, 2, 3, 4, 5],
     "scale": [
       "Very Inaccurate",
