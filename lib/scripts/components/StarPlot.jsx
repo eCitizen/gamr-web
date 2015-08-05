@@ -66,9 +66,7 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    return (
-      <div className='star-wrap'>star plot</div>
-    );
+    return <div className='star-wrap'/>;
   }
 });
 

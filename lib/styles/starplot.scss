@@ -28,11 +28,11 @@
 .star-axis {
   stroke: $color-subtle;
   stroke-width: 2px;
-  stroke-dasharray: 2 4;
+  stroke-dasharray: 1 2;
 }
 .star-path {
   stroke: $color-main;
-  stroke-width: 1px;
+  stroke-width: 2px;
   fill: $color-main;
   fill-opacity: 0.2;
 }
