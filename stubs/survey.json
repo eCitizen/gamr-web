@@ -69,7 +69,8 @@
     "dimensions": {
       "Co": "Competition",
       "Ch": "Challenge",
-      "Fa": "Arousal",
+      "Fa": "Fantasy",
+      "Ar": "Arousal",
       "St": "Story",
       "Es": "Escapism",
       "Lo": "Loss-Aversion",
