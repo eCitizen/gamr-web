@@ -52,20 +52,36 @@ module.exports = React.createClass({
     
     if (!text) return null;
 
+    var nav = (
+      <div key='a'>
+        <div className='nav-left'>
+          <Link to='home'>
+            <Title className='nav-title-sub a'>PROJECT GAMR</Title>
+          </Link>
+          <Title className='nav-title'>{text.main}</Title>
+        </div>
+        <div className='nav-right'>
+          <Progress current={text.progress} length={5}/>
+        </div>
+      </div>
+    )
+
+    if (isResults) {
+      nav = (
+        <div key='b'>
+          <h2 className='result-nav-title'>
+            YOUR <em>GAMR</em> PROFILE
+          </h2>
+        </div>
+      );
+    }
+
     return (
       <div>
         <div className='nav-shadow'/>
         <div className='nav-wrap'>
           <div className='nav'>
-            <div className='nav-left'>
-              <Link to='home'>
-                <Title className='nav-title-sub a'>PROJECT GAMR</Title>
-              </Link>
-              <Title className='nav-title'>{text.main}</Title>
-            </div>
-            <div className='nav-right'>
-              <Progress current={text.progress} length={5}/>
-            </div>
+            {nav}
           </div>
         </div>
       </div>

@@ -53,12 +53,14 @@ module.exports = React.createClass({
     if (this.state.processed && this.state.waited) {
       content = (
         <div className='results-wrap'>
+          {/*
           <div className='loud-text'>
             <h4>Thank you for participating!</h4>
             <h5>
               Based on your answers, we created this gamer profile for you.
             </h5>
           </div>
+          */}
 
           <div className='col-set'>
             <div className='result-section a'>

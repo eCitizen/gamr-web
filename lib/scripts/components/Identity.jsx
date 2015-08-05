@@ -146,8 +146,6 @@ module.exports = React.createClass({
       });
     }
 
-    console.log(this.state.formErrors);
-
     var invalidFields = this.state.formErrors && this.state.formErrors.invalidFields;
     var submitted = this.state.submitted;
     function validateField(field) {

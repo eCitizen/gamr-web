@@ -64,3 +64,16 @@
     margin-left: 12px;
   }
 }
+
+.result-nav-title {
+  line-height: $nav-height;
+  font-family: $font-title;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: $color-main;
+
+  & > em {
+    color: $color-white;
+  }
+}
