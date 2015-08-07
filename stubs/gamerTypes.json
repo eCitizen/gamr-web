@@ -1,0 +1,66 @@
+{
+  "GMFE": {
+    "title": "Player 1",
+    "description": "You love everything about video games. From deep story telling, to breath-taking action, to hanging out with your friends and getting the highest scores and all the collectibles, you can't get enough of a wide range of games."
+  },
+  "GMFR": {
+    "title": "The Sensei",
+    "description": "You love video games as a way to relax. Getting the highest scores, hanging out with your friends, or enjoying a deep story. It all gets you hooked in."
+  },
+  "GMYE": {
+    "title": "Quarterback",
+    "description": "You love the excitement and challenge in games, while playing together with friends. You find stories and fantasy elements kind of tedious."
+  },
+  "GMYR": {
+    "title": "Team Player",
+    "description": "You love playing with your friends and overcoming challenges."
+  },
+  "GSFE": {
+    "title": "Lone Wolf",
+    "description": "You love everything about video games, as long as it's single player."
+  },
+  "GSFR": {
+    "title": "Treasure Hunter",
+    "description": "You love video games as a relaxing bit of alone time. Rich fantasy worlds and difficult challenges draw you in."
+  },
+  "GSYE": {
+    "title": "Gladiator",
+    "description": "You love playing video games for the excitement and challenge."
+  },
+  "GSYR": {
+    "title": "Monk",
+    "description": "You love playing games as a way to challenge yourself. You prefer a relaxing, no frills, single player experience."
+  },
+  "XMFE": {
+    "title": "Maverick",
+    "description": "You love playing games for the emotional experience. You are not too bothered about the objectives in the game. You focus on things like bonding with your friends, exploring rich fantasy worlds, and feeling the rush of an exciting game."
+  },
+  "XMFR": {
+    "title": "Explorer",
+    "description": "You love playing video games as a way to cut loose with some friends exploring a fantasy world. You like to go your own way and take it easy."
+  },
+  "XMYE": {
+    "title": "The Joker",
+    "description": "You love playing games for the excitement and the connecting with other people."
+  },
+  "XMYR": {
+    "title": "People Person",
+    "description": "You love playing games as a way to connect with other people"
+  },
+  "XSFE": {
+    "title": "Gulliver",
+    "description": "You love playing games to explore exciting fantasy worlds."
+  },
+  "XSFR": {
+    "title": "Dreamer",
+    "description": "You love playing video games to get lost in fantasy worlds."
+  },
+  "XSYE": {
+    "title": "Leeroy Jenkins",
+    "description": "You love playing video games for the excitement."
+  },
+  "XSYR": {
+    "title": "Time Killer",
+    "description": "Video games are not that interesting for you. You mostly play out of boredom or to kill time."
+  }
+}

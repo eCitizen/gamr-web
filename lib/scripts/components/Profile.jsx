@@ -10,6 +10,7 @@ var api = require('../services/api');
 
 var surveyStore = require('../survey/store');
 var surveyKey = require('../services/surveyKey');
+var guide = require('../services/guide');
 
 module.exports = React.createClass({
   displayName: 'Profile',
@@ -52,6 +53,7 @@ module.exports = React.createClass({
   render: function () {
     var content;
     var profile = this.state.profile;
+    var gamerDescription = guide.gamerTypes[profile.gamerTypeKey];
 
     function getGameBarcode() {
       return (
@@ -108,10 +110,10 @@ module.exports = React.createClass({
                 {getGameBarcode()}
               </div>
               <p>
-                You are <strong>The Quarterback</strong>
+                You are <strong>{gamerDescription.title}</strong>
               </p>
               <p>
-                You love everything about video games. From deep story telling, to breath-taking action, to hanging out with your friends and getting the highest scores and all the collectibles, you can't get enough of a wide range of games.
+                {gamerDescription.description}
               </p>
               <a className='expand-result'>read more</a>
             </div>
@@ -126,7 +128,7 @@ module.exports = React.createClass({
                 {getScaleBareCode('personality')}
               </div>
               <p>
-                You love everything about video games. From deep story telling, to breath-taking action, to hanging out with your friends and getting the highest scores and all the collectibles, you can't get enough of a wide range of games.
+                You have a personality, and we have something to say.
               </p>
               <a className='expand-result'>read more</a>
             </div>
@@ -141,7 +143,7 @@ module.exports = React.createClass({
                 {getScaleBareCode('brainType')}
               </div>
               <p>
-                You love everything about video games. From deep story telling, to breath-taking action, to hanging out with your friends and getting the highest scores and all the collectibles, you can't get enough of a wide range of games.
+                Your brain is like squishy or something.
               </p>
               <a className='expand-result'>read more</a>
             </div>
