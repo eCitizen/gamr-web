@@ -25,8 +25,7 @@
       {
         "text": "I feel little concern for others.",  
         "dimension": "A",
-        "inverted": true,
-        "surveyId": "overrideTest"
+        "inverted": true
       }
     ]
   },
@@ -58,7 +57,7 @@
   },
   "gamerType": {
     "title": "Gamer Type",
-    "id": "LOTR",
+    "id": "GAM",
     "scaleValues": [1, 2, 3, 4, 5],
     "scale": [
       "Very Inaccurate",
