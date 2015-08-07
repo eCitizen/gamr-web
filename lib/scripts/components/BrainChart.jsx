@@ -12,7 +12,7 @@ module.exports = React.createClass({
       .attr("class", "tooltip")
       .style("opacity", 0);
 
-    var margin = {top: 10, right: 10, bottom: 10, left: 20},
+    var margin = {top: 0, right: 0, bottom: 10, left: 20},
       width = 300 - margin.left - margin.right,
       height = 225 - margin.top - margin.bottom;
 
@@ -30,14 +30,6 @@ module.exports = React.createClass({
       .scale(y)
       .orient("left");
 
-    var area = d3.svg.area()
-      .x(function(d) { 
-        console.l
-        return x(d.x); 
-      })
-      .y0(function(d) { return y(d.y/2); })
-      .y1(function(d) { return y(d.y); });
-
     var svg = wrapper.append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -47,14 +39,31 @@ module.exports = React.createClass({
     x.domain([100, 0]);
     y.domain([0, 100]);
 
-    svg.append("path")
-      .datum([{
-        x: 0, y: 40
-      }, {
-        x: 100, y: 160
-      }])
-      .attr("class", "area")
-      .attr("d", area);
+    function addArea(i, h) {
+      var area = d3.svg.area()
+      .x(function(d) { 
+        console.l
+        return x(d.x); 
+      })
+      .y0(function(d) { 
+        console.log(x(d.x));
+        return y(d.y - 50);
+      })
+      .y1(function(d) { return y(d.y); });
+
+      svg.append("path")
+        .datum([{
+          x: 0, y: 50
+        }, {
+          x: 100, y: 150
+        }])
+        .attr("class", "area")
+        .attr("d", area);
+    }
+
+    addArea(2/3, 1/3);
+
+    // addArea(1/3, 1/3);
 
     svg.append("g")
       .attr("class", "x axis")
@@ -86,7 +95,6 @@ module.exports = React.createClass({
       .attr("r", 3.5)
       .attr("cx", function (d) {return x(d.x)})
       .attr("cy", function (d) {return y(d.y)})
-      .style("fill", function(d) { return '#fff';}) 
       .on("mouseover", function(d) {
         console.log('heee')
           tooltip.transition()
