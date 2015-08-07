@@ -12,7 +12,7 @@ module.exports = React.createClass({
       .attr("class", "tooltip")
       .style("opacity", 0);
 
-    var margin = {top: 20, right: 20, bottom: 20, left: 20},
+    var margin = {top: 10, right: 10, bottom: 25, left: 25},
       width = 225 - margin.left - margin.right,
       height = 225 - margin.top - margin.bottom;
 
@@ -24,14 +24,12 @@ module.exports = React.createClass({
 
     var xAxis = d3.svg.axis()
       .scale(x)
-      .tickSize(8)
-      .tickValues([33.333,66.666])
+      // .tickValues([33.333,66.666])
       .orient("bottom");
 
     var yAxis = d3.svg.axis()
       .scale(y)
-      .tickSize(8)
-      .tickValues([33.333,66.666])
+      // .tickValues([33.333,66.666])
       .orient("left");
 
 
@@ -89,17 +87,17 @@ module.exports = React.createClass({
         .attr("d", area);
     }
 
-    makeArea(100 * 2 / 3, 100, .3);
-    makeArea(100/3, 100*2/3, .2);
-    makeArea(-100/3, 100/3, .1);
-    makeArea(-100*2/3, -100/3, .2);
-    makeArea(-100, -100*2/3, .3);
+    // makeArea(100 * 2 / 3, 100, .3);
+    // makeArea(100/3, 100*2/3, .2);
+    // makeArea(-100/3, 100/3, .1);
+    // makeArea(-100*2/3, -100/3, .2);
+    // makeArea(-100, -100*2/3, .3);
 
     // makeLine(0);
-    // makeLine(100/3);
-    // makeLine(100*2/3);
-    // makeLine(-100/3);
-    // makeLine(-100*2/3);
+    makeLine(100/3);
+    makeLine(100*2/3);
+    makeLine(-100/3);
+    makeLine(-100*2/3);
 
     svg.append("g")
       .attr("class", "x axis")
@@ -107,8 +105,8 @@ module.exports = React.createClass({
       .call(xAxis)
     .append("text")
       .attr("class", "axis-label")
-      .attr("x", '50%')
-      .attr("y", -6)
+      .attr("x", width/2)
+      .attr("y", 18)
       .style("text-anchor", "middle")
       .text("Systematizing");
 
@@ -118,13 +116,14 @@ module.exports = React.createClass({
     .append("text")
       .attr("class", "axis-label")
       .attr("transform", "rotate(-90)")
-      .attr("y", -16)
-      .attr("dy", ".71em")
+      .attr("y", -18)
+      .attr("dy", ".5em")
+      .attr("dx", "-4.71em")
       .style("text-anchor", "end")
       .text("Empathizing");
 
 
-    svg.selectAll(".dot")
+    var dots = svg.selectAll(".dot")
       .data([
         // {x: 10, y: 10},
         // {x: 50, y: 50},
@@ -132,9 +131,16 @@ module.exports = React.createClass({
         // {x: 0, y: 100},
         {x: 23, y: 78}
       ])
-    .enter().append("circle")
+
+    dots.enter().append("circle")
       .attr("class", "dot")
-      .attr("r", 3.5)
+      .attr("r", 1.5)
+      .attr("cx", function (d) {return x(d.x)})
+      .attr("cy", function (d) {return y(d.y)});
+
+    dots.enter().append("circle")
+      .attr("class", "outer-dot")
+      .attr("r", 6)
       .attr("cx", function (d) {return x(d.x)})
       .attr("cy", function (d) {return y(d.y)})
       .on("mouseover", function(d) {

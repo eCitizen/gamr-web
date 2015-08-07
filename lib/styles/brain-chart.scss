@@ -37,3 +37,14 @@
 .tick text {
   display: none;
 }
+
+.dot {
+  fill: $color-main;
+}
+
+.outer-dot {
+  stroke: $color-main;
+  stroke-width: 2px;
+  fill: $color-main;
+  fill-opacity: 0.2;
+}
