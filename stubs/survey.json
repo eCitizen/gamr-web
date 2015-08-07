@@ -248,59 +248,57 @@
       {
         "text": "I am full of ideas.",
         "dimension": "O"
-      }
+      },
       {
         "text": "In uncertain times, I usually expect the best.",
         "dimension": "L",
         "id": "LOTR"
-      }
+      },
       {
         "text": "It's easy for me to relax.",
         "dimension": null,
         "id": "LOTR"
-      }
+      },
       {
         "text": "If something can go wrong for me, it will.",
         "dimension": "L",
         "id": "LOTR"
-      }
+      },
       {
         "text": "I'm always optimistic about my future.",
         "dimension": "L",
         "id": "LOTR"
-      }
+      },
       {
         "text": "I enjoy my friends a lot.",
         "dimension": null,
         "id": "LOTR"
-      }
+      },
       {
         "text": "It's important for me to keep busy.",
         "dimension": null,
         "id": "LOTR"
-      }
+      },
       {
         "text": "I hardly ever expect things to go my way.",
         "dimension": "L",
         "id": "LOTR"
-      }
+      },
       {
         "text": "I don't get upset too easily.",
         "dimension": null,
         "id": "LOTR"
-      }
+      },
       {
         "text": "I rarely count on good things happening to me.",
         "dimension": "L",
         "id": "LOTR"
-      }
+      },
       {
         "text": "Overall, I expect more good things to happen to me than bad.",
         "dimension": "L",
         "id": "LOTR"
       }
-
-
     ]
   },
   "brainType": {
