@@ -12,8 +12,8 @@ module.exports = React.createClass({
       .attr("class", "tooltip")
       .style("opacity", 0);
 
-    var margin = {top: 0, right: 0, bottom: 10, left: 20},
-      width = 300 - margin.left - margin.right,
+    var margin = {top: 20, right: 20, bottom: 20, left: 20},
+      width = 225 - margin.left - margin.right,
       height = 225 - margin.top - margin.bottom;
 
     var x = d3.scale.linear()
@@ -24,11 +24,16 @@ module.exports = React.createClass({
 
     var xAxis = d3.svg.axis()
       .scale(x)
+      .tickSize(8)
+      .tickValues([33.333,66.666])
       .orient("bottom");
 
     var yAxis = d3.svg.axis()
       .scale(y)
+      .tickSize(8)
+      .tickValues([33.333,66.666])
       .orient("left");
+
 
     var svg = wrapper.append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -39,29 +44,62 @@ module.exports = React.createClass({
     x.domain([100, 0]);
     y.domain([0, 100]);
 
-    function addArea(i, h) {
-      var area = d3.svg.area()
-      .x(function(d) { 
-        return x(d.x); 
-      })
-      .y0(function(d) { 
-        return y(d.y - 50);
-      })
-      .y1(function(d) { return y(d.y); });
+
+    function makeLine(threshold) {
+      var line = d3.svg.line()
+        .x(function(d) { return x(d.x); })
+        .y(function(d) { return y(d.y); });
+
+      points = [
+         {x: 0, y: threshold},
+         {x: 100, y: threshold + 100},
+      ]
 
       svg.append("path")
-        .datum([{
-          x: 0, y: 50
-        }, {
-          x: 100, y: 150
-        }])
+        .datum(points)
+        .attr("class", "line")
+        .attr("d", line);
+    }
+
+    function makeArea(upper, lower, opacity) {
+      function getPoint(x) { 
+        return {x: x, y: x + upper}
+      }
+
+      var area = d3.svg.area()
+        .x(function(d) { return x(d.x); })
+        .y1(function(d) { return y(d.y); })
+        .y0(function(d) { 
+          return y(d.y - (upper - lower)); 
+        });
+
+      points = [
+        getPoint(0),
+        // getPoint(0 - upper),
+        // getPoint(100 - upper),
+        getPoint(100)
+      ]
+
+      console.log(points);
+
+      svg.append("path")
+        .datum(points)
         .attr("class", "area")
+        .style('fill-opacity', opacity)
         .attr("d", area);
     }
 
-    addArea(2/3, 1/3);
+    makeArea(100 * 2 / 3, 100, .3);
+    makeArea(100/3, 100*2/3, .2);
+    makeArea(-100/3, 100/3, .1);
+    makeArea(-100*2/3, -100/3, .2);
+    makeArea(-100, -100*2/3, .3);
 
-    // addArea(1/3, 1/3);
+    // makeLine(0);
+    // makeLine(100/3);
+    // makeLine(100*2/3);
+    // makeLine(-100/3);
+    // makeLine(-100*2/3);
 
     svg.append("g")
       .attr("class", "x axis")
@@ -87,7 +125,13 @@ module.exports = React.createClass({
 
 
     svg.selectAll(".dot")
-      .data([{x: 10, y: 10}])
+      .data([
+        // {x: 10, y: 10},
+        // {x: 50, y: 50},
+        // {x: 100, y: 100},
+        // {x: 0, y: 100},
+        {x: 23, y: 78}
+      ])
     .enter().append("circle")
       .attr("class", "dot")
       .attr("r", 3.5)
