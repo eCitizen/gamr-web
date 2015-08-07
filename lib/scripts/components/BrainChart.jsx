@@ -42,11 +42,9 @@ module.exports = React.createClass({
     function addArea(i, h) {
       var area = d3.svg.area()
       .x(function(d) { 
-        console.l
         return x(d.x); 
       })
       .y0(function(d) { 
-        console.log(x(d.x));
         return y(d.y - 50);
       })
       .y1(function(d) { return y(d.y); });

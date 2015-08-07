@@ -70,7 +70,7 @@ module.exports = React.createClass({
       nav = (
         <div key='b'>
           <h2 className='result-nav-title'>
-            YOUR <em>GAMR</em> PROFILE
+            YOUR <Link to='home'>GAMR</Link> PROFILE
           </h2>
         </div>
       );
