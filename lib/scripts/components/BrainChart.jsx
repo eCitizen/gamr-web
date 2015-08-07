@@ -88,7 +88,7 @@ module.exports = React.createClass({
     }
 
     // makeArea(100 * 2 / 3, 100, .3);
-    // makeArea(100/3, 100*2/3, .2);
+    makeArea(100/3, 100*2/3, .2);
     // makeArea(-100/3, 100/3, .1);
     // makeArea(-100*2/3, -100/3, .2);
     // makeArea(-100, -100*2/3, .3);
