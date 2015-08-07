@@ -2,7 +2,13 @@
   "personality": {
     "title": "Personality",
     "id": "IPIP",
-    "scaleValues": [1, 2, 3, 4, 5],
+    "scaleValues": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
     "scale": [
       "Very Inaccurate",
       "Moderately Inaccurate",
@@ -15,7 +21,8 @@
       "A": "Agreeableness",
       "C": "Conscientiousness",
       "S": "Emotional Stability",
-      "O": "Openness"
+      "O": "Openness",
+      "L": "LOTR"
     },
     "questions": [
       {
@@ -23,16 +30,288 @@
         "dimension": "E"
       },
       {
-        "text": "I feel little concern for others.",  
+        "text": "I feel little concern for others.",
         "dimension": "A",
         "inverted": true
+      },
+      {
+        "text": "I am always prepared.",
+        "dimension": "C"
+      },
+      {
+        "text": "I get stressed out easily.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I have a rich vocabulary.",
+        "dimension": "O"
+      },
+      {
+        "text": "I don't talk a lot.",
+        "dimension": "E",
+        "inverted": true
+      },
+      {
+        "text": "I am interested in people.",
+        "dimension": "A"
+      },
+      {
+        "text": "I leave my belongings around.",
+        "dimension": "C",
+        "inverted": true
+      },
+      {
+        "text": "I am relaxed most of the time.",
+        "dimension": "S"
+      },
+      {
+        "text": "I have difficulty understanding abstract ideas.",
+        "dimension": "O",
+        "inverted": true
+      },
+      {
+        "text": "I feel comfortable around people.",
+        "dimension": "E"
+      },
+      {
+        "text": "I insult people.",
+        "dimension": "A",
+        "inverted": true
+      },
+      {
+        "text": "I pay attention to details.",
+        "dimension": "C"
+      },
+      {
+        "text": "I worry about things.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I have a vivid imagination.",
+        "dimension": "O"
+      },
+      {
+        "text": "I keep in the background.",
+        "dimension": "E",
+        "inverted": true
+      },
+      {
+        "text": "I sympathize with others' feelings.",
+        "dimension": "A"
+      },
+      {
+        "text": "I make a mess of things.",
+        "dimension": "C",
+        "inverted": true
+      },
+      {
+        "text": "I seldom feel blue.",
+        "dimension": "S"
+      },
+      {
+        "text": "I am not interested in abstract ideas.",
+        "dimension": "O",
+        "inverted": true
+      },
+      {
+        "text": "I start conversations.",
+        "dimension": "E"
+      },
+      {
+        "text": "I am not interested in other people's problems.",
+        "dimension": "A",
+        "inverted": true
+      },
+      {
+        "text": "I get chores done right away.",
+        "dimension": "C"
+      },
+      {
+        "text": "I am easily disturbed.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I have excellent ideas.",
+        "dimension": "O"
+      },
+      {
+        "text": "I have little to say.",
+        "dimension": "E",
+        "inverted": true
+      },
+      {
+        "text": "I have a soft heart.",
+        "dimension": "A"
+      },
+      {
+        "text": "I often forget to put things back in their proper place.",
+        "dimension": "C",
+        "inverted": true
+      },
+      {
+        "text": "I get upset easily.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I do not have a good imagination.",
+        "dimension": "O",
+        "inverted": true
+      },
+      {
+        "text": "I talk to a lot of different people at parties.",
+        "dimension": "E"
+      },
+      {
+        "text": "I am not really interested in others.",
+        "dimension": "A",
+        "inverted": true
+      },
+      {
+        "text": "I like order.",
+        "dimension": "C"
+      },
+      {
+        "text": "I change my mood a lot.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I am quick to understand things.",
+        "dimension": "O"
+      },
+      {
+        "text": "I don't like to draw attention to myself.",
+        "dimension": "E",
+        "inverted": true
+      },
+      {
+        "text": "I take time out for others.",
+        "dimension": "A"
+      },
+      {
+        "text": "I shirk my duties.",
+        "dimension": "C",
+        "inverted": true
+      },
+      {
+        "text": "I have frequent mood swings.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I use difficult words.",
+        "dimension": "O"
+      },
+      {
+        "text": "I don't mind being the center of attention.",
+        "dimension": "E"
+      },
+      {
+        "text": "I feel others' emotions.",
+        "dimension": "A"
+      },
+      {
+        "text": "I follow a schedule.",
+        "dimension": "C"
+      },
+      {
+        "text": "I get irritated easily.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I spend time reflecting on things.",
+        "dimension": "O"
+      },
+      {
+        "text": "I am quiet around strangers.",
+        "dimension": "E",
+        "inverted": true
+      },
+      {
+        "text": "I make people feel at ease.",
+        "dimension": "A"
+      },
+      {
+        "text": "I am exacting in my work.",
+        "dimension": "C"
+      },
+      {
+        "text": "I often feel blue.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I am full of ideas.",
+        "dimension": "O"
       }
+      {
+        "text": "In uncertain times, I usually expect the best.",
+        "dimension": "L",
+        "id": "LOTR"
+      }
+      {
+        "text": "It's easy for me to relax.",
+        "dimension": null,
+        "id": "LOTR"
+      }
+      {
+        "text": "If something can go wrong for me, it will.",
+        "dimension": "L",
+        "id": "LOTR"
+      }
+      {
+        "text": "I'm always optimistic about my future.",
+        "dimension": "L",
+        "id": "LOTR"
+      }
+      {
+        "text": "I enjoy my friends a lot.",
+        "dimension": null,
+        "id": "LOTR"
+      }
+      {
+        "text": "It's important for me to keep busy.",
+        "dimension": null,
+        "id": "LOTR"
+      }
+      {
+        "text": "I hardly ever expect things to go my way.",
+        "dimension": "L",
+        "id": "LOTR"
+      }
+      {
+        "text": "I don't get upset too easily.",
+        "dimension": null,
+        "id": "LOTR"
+      }
+      {
+        "text": "I rarely count on good things happening to me.",
+        "dimension": "L",
+        "id": "LOTR"
+      }
+      {
+        "text": "Overall, I expect more good things to happen to me than bad.",
+        "dimension": "L",
+        "id": "LOTR"
+      }
+
+
     ]
   },
   "brainType": {
     "title": "Brain Type",
     "id": "QSEQ",
-    "scaleValues": [0, 0, 1, 2],
+    "scaleValues": [
+      0,
+      0,
+      1,
+      2
+    ],
     "scale": [
       "Very Inaccurate",
       "Moderately Inaccurate",
@@ -49,7 +328,205 @@
         "dimension": "E"
       },
       {
+        "text": "I really enjoy caring for other people.",
+        "dimension": "E"
+      },
+      {
+        "text": "I find it hard to know what to do in a social situation.",
+        "dimension": "E",
+        "inverted": true
+      },
+      {
+        "text": "I often find it difficult to judge if something is rude or polite.",
+        "dimension": "E",
+        "inverted": true
+      },
+      {
+        "text": "In a conversation, I tend to focus on my own thoughts rather than on what my listener might be thinking.",
+        "dimension": "E",
+        "inverted": true
+      },
+      {
+        "text": "I can pick up quickly if someone says one thing but means another.",
+        "dimension": "E"
+      },
+      {
+        "text": "It is hard for me to see why some things upset people so much.",
+        "dimension": "E",
+        "inverted": true
+      },
+      {
+        "text": "I find it easy to put myself in someone else's shoes.",
+        "dimension": "E"
+      },
+      {
+        "text": "I am good at predicting how someone will feel.",
+        "dimension": "E"
+      },
+      {
+        "text": "I am quick to spot when someone in a group is feeling awkward or uncomfortable.",
+        "dimension": "E"
+      },
+      {
+        "text": "I can't always see why someone should have felt offended by a remark.",
+        "dimension": "E",
+        "inverted": true
+      },
+      {
+        "text": "I don't tend to find social situations confusing.",
+        "dimension": "E"
+      },
+      {
+        "text": "Other people tell me I am good at understanding how they are feeling and what they are thinking.",
+        "dimension": "E"
+      },
+      {
+        "text": "I can easily tell if someone else is interested or bored with what I am saying.",
+        "dimension": "E"
+      },
+      {
+        "text": "Friends usually talk to me about their problems as they say that I am very understanding.",
+        "dimension": "E"
+      },
+      {
+        "text": "I can sense if I am intruding, even if the other person doesn't tell me.",
+        "dimension": "E"
+      },
+      {
+        "text": "Other people often say that I am insensitive, though I don't always see why.",
+        "dimension": "E",
+        "inverted": true
+      },
+      {
+        "text": "I can tune into how someone else feels rapidly and intuitively.",
+        "dimension": "E"
+      },
+      {
+        "text": "I can easily work out what another person might want to talk about.",
+        "dimension": "E"
+      },
+      {
+        "text": "I can tell if someone is masking their true emotion.",
+        "dimension": "E"
+      },
+      {
+        "text": "I am good at predicting what someone will do.",
+        "dimension": "E"
+      },
+      {
+        "text": "I tend to get emotionally involved with a friend's problems.",
+        "dimension": "E"
+      },
+      {
+        "text": "If I were buying a car, I would want to obtain specific information about its engine capacity.",
+        "dimension": "S"
+      },
+      {
+        "text": "If there was a problem with the electrical wiring in my home, I'd be able to fix it myself.",
+        "dimension": "S"
+      },
+      {
         "text": "I rarely read articles or web pages about new technology.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I do not enjoy games that involve a high degree of strategy.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I am fascinated by how machines work.",
+        "dimension": "S"
+      },
+      {
+        "text": "In math, I am intrigued by the rules and patterns governing numbers.",
+        "dimension": "S"
+      },
+      {
+        "text": "I find it difficult to understand instruction manuals for putting appliances together.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "If i were buying a computer, I would want to know exact details about its hard disc drive capacity and processor speed.",
+        "dimension": "S"
+      },
+      {
+        "text": "I find it difficult to read and understand maps.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "When I look at a piece of furniture, I do not notice the details of how it was constructed.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I find it difficult to learn my way around a new city.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I do not tend to watch science documentaries on television or read articles about science and nature.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "If I were buying a stereo, I would want to know about its precise technical features.",
+        "dimension": "S"
+      },
+      {
+        "text": "I find it easy to grasp exactly how odds work in betting.",
+        "dimension": "S"
+      },
+      {
+        "text": "I am not very meticulous when I carry out D.I.Y.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "When I look at a building, I am curious about the precise way it was constructed.",
+        "dimension": "S"
+      },
+      {
+        "text": "I find it difficult to understand information the bank sends me on different investment and saving systems.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "When travelling by train, I often wonder exactly how the rail networks are coordinated.",
+        "dimension": "S"
+      },
+      {
+        "text": "If I were buying a camera, I would not look carefully into the quality of the lens.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "When I hear the weather forecast, I am not very interested in meteorological patterns.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "When I look at a mountain, I think about how precisely it was formed.",
+        "dimension": "S"
+      },
+      {
+        "text": "I can easily visualize how the motorways in my region link up.",
+        "dimension": "S"
+      },
+      {
+        "text": "When I'm in a plane, I do not think about the aerodynamics.",
+        "dimension": "S",
+        "inverted": true
+      },
+      {
+        "text": "I am interested in knowing the path a river takes from its source to the sea",
+        "dimension": "S"
+      },
+      {
+        "text": "I am not interested in understanding how wireless communication works.",
         "dimension": "S",
         "inverted": true
       }
@@ -58,7 +535,13 @@
   "gamerType": {
     "title": "Gamer Type",
     "id": "GAM",
-    "scaleValues": [1, 2, 3, 4, 5],
+    "scaleValues": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
     "scale": [
       "Very Inaccurate",
       "Moderately Inaccurate",
@@ -89,20 +572,202 @@
     },
     "questions": [
       {
-        "text": "I like to play to prove to my friends that I am the best",
+        "text": "It is important to me to be the fastest and most skilled person playing the game.",
         "dimension": "Co",
         "category": "Ac"
       },
       {
-        "text": "Video game stories are not important to me",
+        "text": "I like to play to prove to my friends that I am the best.",
+        "dimension": "Co",
+        "category": "Ac"
+      },
+      {
+        "text": "I get upset when I lose to my friends.",
+        "dimension": "Co",
+        "category": "Ac"
+      },
+      {
+        "text": "I find it very rewarding to get to the next level.",
+        "dimension": "Ch",
+        "category": "Ac"
+      },
+      {
+        "text": "I feel proud when I master an aspect of a game.",
+        "dimension": "Ch",
+        "category": "Ac"
+      },
+      {
+        "text": "I enjoy finding new and creative ways to work through video games.",
+        "dimension": "Ch",
+        "category": "Ac"
+      },
+      {
+        "text": "Video games allow me to pretend I am someone/somewhere else.",
+        "dimension": "Fa",
+        "category": "Im"
+      },
+      {
+        "text": "I like to do something I could not normally do in real life through a video game.",
+        "dimension": "Fa",
+        "category": "Im"
+      },
+      {
+        "text": "I enjoy the excitement of assuming an alter ego in a game.",
+        "dimension": "Fa",
+        "category": "Im"
+      },
+      {
+        "text": "I play video games because they excite me.",
+        "dimension": "Ar",
+        "category": "Ar"
+      },
+      {
+        "text": "Video games keep me on the edge of my seat.",
+        "dimension": "Ar",
+        "category": "Ar"
+      },
+      {
+        "text": "I find that playing video games raises my level of adrenaline.",
+        "dimension": "Ar",
+        "category": "Ar"
+      },
+      {
+        "text": "Video game stories are not important to me.",
         "dimension": "St",
         "category": "Im",
         "inverted": true
       },
       {
-        "text": "I prefer games that allow me to play however I want",
+        "text": "Stories in video games just get in the way.",
+        "dimension": "St",
+        "category": "Im",
+        "inverted": true
+      },
+      {
+        "text": "I am excited to find out what happens next in the story.",
+        "dimension": "St",
+        "category": "Im"
+      },
+      {
+        "text": "Video games allow me to escape from the problems associated with everyday life.",
+        "dimension": "Es",
+        "category": "Im"
+      },
+      {
+        "text": "I play video games because they allow me to escape real life.",
+        "dimension": "Es",
+        "category": "Im"
+      },
+      {
+        "text": "I play video games to keep my mind off my problems.",
+        "dimension": "Es",
+        "category": "Im"
+      },
+      {
+        "text": "Losing is frustrating and detracts from my experience.",
+        "dimension": "Lo",
+        "category": "Ac"
+      },
+      {
+        "text": "Winning is fun; losing is not.",
+        "dimension": "Lo",
+        "category": "Ac"
+      },
+      {
+        "text": "Losing a game always makes me mad - what a waste of time!",
+        "dimension": "Lo",
+        "category": "Ac"
+      },
+      {
+        "text": "I really like to customize my character's outfit.",
+        "dimension": "Cu",
+        "category": "Im"
+      },
+      {
+        "text": "I really like to personalize and customize my character.",
+        "dimension": "Cu",
+        "category": "Im"
+      },
+      {
+        "text": "I will put considerable time into designing my character's appearance (e.g., clothes, face).",
+        "dimension": "Cu",
+        "category": "Im"
+      },
+      {
+        "text": "I like taking the time to pick up every single collectible item in the game.",
+        "dimension": "Gr",
+        "category": "Ac"
+      },
+      {
+        "text": "I will play a game until I get 100% on it, completing everything in the game.",
+        "dimension": "Gr",
+        "category": "Ac"
+      },
+      {
+        "text": "I rarely complete collections of in-game items.",
+        "dimension": "Gr",
+        "category": "Ac",
+        "inverted": true
+      },
+      {
+        "text": "I prefer games that allow me to play however I want.",
         "dimension": "Au",
         "category": null
+      },
+      {
+        "text": "I like games that do not put a lot of constraints on the player.",
+        "dimension": "Au",
+        "category": null
+      },
+      {
+        "text": "I like games that offer you a lot of options and choices.",
+        "dimension": "Au",
+        "category": null
+      },
+      {
+        "text": "I enjoy getting to know other players.",
+        "dimension": "So",
+        "category": "So"
+      },
+      {
+        "text": "I enjoy chatting with other players.",
+        "dimension": "So",
+        "category": "So"
+      },
+      {
+        "text": "I enjoy helping other players.",
+        "dimension": "So",
+        "category": "So"
+      },
+      {
+        "text": "I talk to my online friends about my personal issues.",
+        "dimension": "Re",
+        "category": "So"
+      },
+      {
+        "text": "My online friends offer me support when I have a real life problem.",
+        "dimension": "Re",
+        "category": "So"
+      },
+      {
+        "text": "I find myself having meaningful conversations with other players.",
+        "dimension": "Re",
+        "category": "So"
+      },
+      {
+        "text": "I would rather play as part of a team than solo.",
+        "dimension": "Te",
+        "category": "So"
+      },
+      {
+        "text": "It is important to me that my character does not need support from other players to do well.",
+        "dimension": "Te",
+        "category": "So"
+      },
+      {
+        "text": "It is important to me that my character can support other players well.",
+        "dimension": "Te",
+        "category": "So"
       }
     ]
   }
