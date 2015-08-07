@@ -1,5 +1,6 @@
 
 var React = require('react');
+var BrainChart = require('./BrainChart.jsx');
 var StarPlot = require('./StarPlot.jsx');
 var State = require('react-router').State;
 var Loading = require('./Loading.jsx');
@@ -51,7 +52,7 @@ module.exports = React.createClass({
     var content;
 
     // temp override
-    if (this.state.processed && this.state.waited) {
+    if (true || this.state.processed && this.state.waited) {
       content = (
         <div className='results-wrap'>
           {/*
@@ -66,7 +67,7 @@ module.exports = React.createClass({
           <div className='col-set'>
             <div className='result-section a'>
               <div className='result-media'>
-                <img className='result-media-child' src="http://media.giphy.com/media/19uUmES4K72KI/giphy.gif"/>
+                <img className='result-media-child' src="http://localhost:8000/assets/images/giphy-01.gif"/>
               </div>
               <h2>Gamer Type</h2>
               <div className='result-barcode'>
@@ -102,16 +103,15 @@ module.exports = React.createClass({
                 </span>
               </div>
               <p>
-                You are <strong>The Quarterback</strong>
-              </p>
-              <p>
                 You love everything about video games. From deep story telling, to breath-taking action, to hanging out with your friends and getting the highest scores and all the collectibles, you can't get enough of a wide range of games.
               </p>
               <a className='expand-result'>read more</a>
             </div>
             <div className='result-section c'>
               <div className='result-media'>
-                <div className='result-media-child'/>
+                <div className='result-media-child'>
+                  <BrainChart/>
+                </div>
               </div>
               <h2>Brain Type</h2>
               <div className='result-barcode'>
@@ -120,9 +120,6 @@ module.exports = React.createClass({
                   <span className='group'>S<em>72</em></span>
                 </span>
               </div>
-              <p>
-                You are <strong>The Quarterback</strong>
-              </p>
               <p>
                 You love everything about video games. From deep story telling, to breath-taking action, to hanging out with your friends and getting the highest scores and all the collectibles, you can't get enough of a wide range of games.
               </p>

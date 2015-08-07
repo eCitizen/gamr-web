@@ -1,0 +1,28 @@
+
+.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
+  color: $color-white;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: $color-subtle;
+  shape-rendering: crispEdges;
+  stroke-width: 2px;
+  stroke-dasharray: 1 2;
+}
+
+.axis-label {
+  font-size: 11.5px;
+  letter-spacing: 1px;
+  fill: $color-main;
+}
+
+.area {
+  fill: $color-main;
+  fill-opacity: 0.2;
+}
