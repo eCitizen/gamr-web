@@ -10,7 +10,8 @@ var ReadMore = React.createClass({
     };
   },
 
-  toggle: function () {
+  toggle: function (e) {
+    e.preventDefault();
     this.setState({
       open: !this.state.open
     });
@@ -20,15 +21,15 @@ var ReadMore = React.createClass({
     if (this.state.open) {
       return (
         <div className='read-more closed'>
-          <a className='expand-result collapse' onClick={this.toggle}>read less</a>
+          <a href='#' className='read-more-toggle collapse' onClick={this.toggle}>read less</a>
           {this.props.children}
-          <a className='expand-result collapse' onClick={this.toggle}>read less</a>
+          <a href='#' className='read-more-toggle collapse' onClick={this.toggle}>read less</a>
         </div>
       );
     } else {
       return (
         <div className='read-more open'>
-          <a className='expand-result' onClick={this.toggle}>read more</a>
+          <a href='#' className='read-more-toggle' onClick={this.toggle}>read more</a>
         </div>
       );
     }

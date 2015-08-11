@@ -30,8 +30,10 @@
 }
 
 .area {
-  fill: $color-main;
-  fill-opacity: 0.2;
+  fill: url('#diagonalHatch')
+
+  // fill: $color-main;
+  // fill-opacity: 0.2;
 }
 
 .tick text {

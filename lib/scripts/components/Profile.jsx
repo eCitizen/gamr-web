@@ -99,70 +99,62 @@ module.exports = React.createClass({
     // temp override
     if (this.state.processed && this.state.waited) {
       content = (
-        <div className='results-wrap'>
-          {/*
-          <div className='loud-text'>
-            <h4>Thank you for participating!</h4>
-            <h5>
-              Based on your answers, we created this gamer profile for you.
-            </h5>
+        <div className='profile-wrap'>
+          <div className='profile-section'>
+            <div className="profile-media">
+              <div className="profile-media-box">
+                <img className="profile-media-child" src="http://localhost:8000/assets/images/giphy-01.gif"/>
+              </div>
+            </div>
+            <h2 className="profile-title">Gamer Type</h2>
+            <div className='result-barcode'>{getGameBarcode()}</div>
+            <p>
+              You are <strong>{gamerDescription.title}</strong>
+            </p>
+            <p>
+              {gamerDescription.description}
+            </p>
+            <ReadGamer/>
           </div>
-          */}
 
-          <div className='col-set'>
-            <div className='result-section a'>
-              <div className='result-media-wrap'>
-                <div className='result-media'>
-                  <img className='result-media-child' src="http://localhost:8000/assets/images/giphy-01.gif"/>
+          <div className='profile-section'>
+            <div className="profile-media">
+              <div className="profile-media-box">
+                <div className='profile-media-child'>
+                  <StarPlot data={profile.personality}/>
                 </div>
               </div>
-              <h2>Gamer Type</h2>
-              <div className='result-barcode'>
-                {getGameBarcode()}
-              </div>
-              <p>
-                You are <strong>{gamerDescription.title}</strong>
-              </p>
-              <p>
-                {gamerDescription.description}
-              </p>
-              <ReadGamer/>
             </div>
-            <div className='result-section b'>
-              <div className='result-media-wrap'>
-                <div className='result-media'>
-                  <div className='result-media-child'>
-                    <StarPlot data={profile.personality}/>
-                  </div>
-                </div>
-              </div>
-              <h2>Personality</h2>
-              <div className='result-barcode'>
-                {getScaleBareCode('personality')}
-              </div>
-              <p>
-                You have a personality, and we have something to say.
-              </p>
-              <ReadPersonality/>
-            </div>
-            <div className='result-section c'>
-              <div className='result-media-wrap'>
-                <div className='result-media'>
-                  <div className='result-media-child'>
-                    <BrainChart/>
-                  </div>
-                </div>
-              </div>
-              <h2>Brain Type</h2>
-              <div className='result-barcode'>
-                {getScaleBareCode('brainType')}
-              </div>
-              <p>
-                Your brain is like squishy or something.
-              </p>
-              <ReadBrain/>
-            </div>
+            <h2 className="profile-title">Personality</h2>
+            <div className='result-barcode'>{getScaleBareCode('personality')}</div>
+            <p>
+              You have a personality, and we have something to say.
+            </p>
+            <p>
+              {gamerDescription.description}
+            </p>
+            <ReadPersonality/>
           </div>
+
+          <div className='profile-section'>
+            <div className="profile-media">
+              <div className="profile-media-box">
+                <div className='profile-media-child'>
+                  <BrainChart/>
+                </div>
+              </div>
+            </div>
+            <h2 className="profile-title">Brain Type</h2>
+            <div className='result-barcode'>{getScaleBareCode('brainType')}</div>
+            <p>
+              Your brain is like squishy or something.
+            </p>
+            <p>
+              {gamerDescription.description}
+            </p>
+            <ReadBrain/>
+          </div>
+  
           {this.state.isOwner ? (
             <div className='result-social'>
               <Button><span className='fa fa-facebook'/> Share</Button>

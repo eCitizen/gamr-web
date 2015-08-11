@@ -39,6 +39,27 @@ module.exports = React.createClass({
       .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    // backgrround
+    // http://stackoverflow.com/questions/17776641/fill-rect-with-pattern
+
+    // see this....
+    // http://stackoverflow.com/questions/13069446/simple-fill-pattern-in-svg-diagonal-hatching
+
+    svg
+      .append('defs')
+      .append('pattern')
+        .attr('id', 'diagonalHatch')
+        .attr('patternUnits', 'userSpaceOnUse')
+        .attr('width', 6)
+        .attr('height', 4)
+        // .attr('patternTransform', 'rotate(45 0 0)')
+      .append('path')
+        .attr('d', 'M0,4 l0,-4')
+        .attr('stroke', '#fff')
+        .attr('stroke-width', 2);
+
+
+
     x.domain([100, 0]);
     y.domain([0, 100]);
 
@@ -89,7 +110,7 @@ module.exports = React.createClass({
 
     // makeArea(100 * 2 / 3, 100, .3);
     makeArea(100/3, 100*2/3, .2);
-    // makeArea(-100/3, 100/3, .1);
+    makeArea(-100/3, 100/3, .1);
     // makeArea(-100*2/3, -100/3, .2);
     // makeArea(-100, -100*2/3, .3);
 

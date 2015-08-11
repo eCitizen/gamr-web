@@ -26,45 +26,25 @@ $section-width: 340px;
   }
 }
 
-.results-wrap {
-  max-width: $section-width * 3;
+.profile-wrap {
+  max-width: 650px;
   margin: 100px auto;
+  padding-left: 18px;
+  padding-right: 18px;
 }
 
-.col-set {
-  overflow: hidden;
-}
-
-.result-section {
-  @include border-box();
+.profile-section {
+  @include clearfix();
   position: relative;
-  float: left;
-  width: $section-width;
-  max-width: 100%;
-  min-height: 200px;
-  &.a { left: $section-width; }
-  &.b { left: -$section-width; }
-  // &.c { border: none; }
-
-  // padding-right: 20px;
-  // padding-left: 20px;
-  padding-bottom: 10000px + 10px;
-  margin-bottom: -10000px;
-  border-right: 1px dotted #444;
-
-
-  & > h2 {
-    font-family: $font-title;
-    font-size: 19px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: $space-medium;
-  }
+  padding-bottom: $space-small;
+  margin-bottom: $space-large + 10px;
+  border-bottom: 1px dotted #333;
 
   p {
     font-size: 15px;
     color: $color-main;
     line-height: 20px;
+    margin-bottom: 12px;
   }
 
   strong {
@@ -73,21 +53,66 @@ $section-width: 340px;
   }
 }
 
-.expand-result {
+.profile-media {
+  float: right;
+  width: 300px;
+  margin-left: 10px;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.profile-media-box {
+  position: relative;
+  height: 0;
+  padding-bottom: 75%;
+}
+
+.profile-media-child {
   display: block;
-  color: $color-secondary;
-  // text-align: center;
-  font-size: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.profile-title {
+  margin-bottom: 10px;
+}
+
+.read-more {
+  clear: both;
+  p {
+    color: $color-subtle;
+  }
+  em {
+    color: $color-main;  
+  }
+}
+
+.read-more-toggle {
+  display: inline-block;
+  position: absolute;
+  bottom: -18px;
+  left: 100px;
+  background: #111;
   padding: 10px 0;
+  text-align: center;
+  width: 120px;
+  padding-right: 5px;
+
+  color: $color-subtle;
+  font-size: 15px;
 
   &:before {
     display: inline-block;
     width: 18px;
-    content: '+ ';
+    content: '+';
   }
 
   &.collapse:before {
-    content: 'x ';
+    content: 'x';
   }
 
   &:hover {
@@ -96,25 +121,34 @@ $section-width: 340px;
   }
 }
 
-.result-media-wrap {
-  max-width: 300px;
-  position: relative;
-  margin: 0 auto;
+@media (max-width: 540px) {
+  .profile-media {
+    float: none;
+    margin-left: -18px;
+    margin-right: -18px;
+    width: auto;
+  }
+
+  .read-more-toggle {
+    left: 50%;
+    margin-left: -60px;
+  }
 }
 
-.result-media {
-  position: relative;
-  height: 0;
-  padding-bottom: 75%;
-  width: 100%;
+.profile-title {
+  font-family: $font-title;
+  font-size: 19px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: $space-medium;
+}
 
-  & > .result-media-child {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.result-social {
+  text-align: center;
+  // margin-top: $space-large;
+
+  & > .button {
+    margin: 0 10px;
   }
 }
 
@@ -146,63 +180,3 @@ $section-width: 340px;
   }
 }
 
-.result-social {
-  text-align: center;
-  // margin-top: $space-large;
-
-  & > .button {
-    margin: 0 10px;
-  }
-}
-
-.invitation {
-  margin-bottom: $space-medium;
-  font-family: $font-text;
-  font-style: italic;
-  font-size: 17px;
-  line-height: 24px;
-  letter-spacing: 1px;
-  color: $color-main;
-}
-
-.read-more {
-  // p {
-  //   color: $color-subtle;
-  // }
-  em {
-    color: $color-white;  
-  }
-}
-
-
-@media (max-width: $section-width * 6) {
-  .result-section,
-  .a.result-section,
-  .b.result-section {
-    margin: 0 auto;
-    max-width: 650px;
-    width: 100%;
-    position: static;
-    left: 0;
-    float: none;
-    padding-bottom: $space-medium + 10px;
-    margin-bottom: $space-medium + 10px;
-    overflow: hidden;
-  }
-
-  .result-section {
-    border-right: none;
-    border-bottom: 1px dotted #333;
-    & > h2 {
-      margin-top: 0;
-    }
-  }
-
-  .result-media-wrap {
-    float: right;
-    width: 300px;
-    margin-left: 12px;
-  }
-
-  .result-barcode {}
-}
