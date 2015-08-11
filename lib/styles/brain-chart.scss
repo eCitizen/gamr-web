@@ -30,7 +30,11 @@
 }
 
 .area {
-  fill: url('#diagonalHatch')
+  fill: url('#diagonalHatch');
+
+  &.right {
+    fill: url('#horizontalHatch');    
+  }
 
   // fill: $color-main;
   // fill-opacity: 0.2;
