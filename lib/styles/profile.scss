@@ -80,12 +80,14 @@ $section-width: 340px;
   font-size: 15px;
   padding: 10px 0;
 
-  &:after {
-    content: ' +';
+  &:before {
+    display: inline-block;
+    width: 18px;
+    content: '+ ';
   }
 
-  &.collapse:after {
-    content: '';
+  &.collapse:before {
+    content: 'x ';
   }
 
   &:hover {
@@ -155,5 +157,9 @@ $section-width: 340px;
   line-height: 24px;
   letter-spacing: 1px;
   color: $color-main;
+}
+
+.read-more em {
+  color: $color-white;
 }
 
