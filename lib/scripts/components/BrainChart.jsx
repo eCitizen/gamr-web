@@ -121,11 +121,11 @@ module.exports = React.createClass({
         .attr("d", area);
     }
 
-    makeArea(100 * 2 / 3, 100, .3, 'right');
+    makeArea(100 * 2 / 3, 100, .3);
     makeArea(100/3, 100*2/3, .2);
-    makeArea(-100/3, 100/3, .1);
-    // makeArea(-100*2/3, -100/3, .2);
-    // makeArea(-100, -100*2/3, .3);
+    // makeArea(-100/3, 100/3, .1);
+    makeArea(-100*2/3, -100/3, .2, 'right');
+    makeArea(-100, -100*2/3, .3, 'right');
 
     // makeLine(0);
     makeLine(100/3);

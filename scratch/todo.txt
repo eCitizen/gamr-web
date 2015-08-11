@@ -1,0 +1,32 @@
+
+<  Prep Gamr Gif work for others
+<  put transform hook in for jason
+<  Normalize values for personality
+<  Normalize values for brain type
+<  Intro arrow takes you down page
+<  Make sure you cannot double submit
+<  Results social tools
+<  Shared Inbound View
+<  Final Copy
+<  Responsive Styles
+<  Handle touch/click everywhere
+<  Shim IE
+<  Ensure Consent Always
+
+.  Refine Brain Chart
+.  Refine Star Plot
+.  Ensure error handling for user calls
+.  Intro Social Buttons
+.  Social Images
+.  Social Meta
+.  Read more: brain type
+.  Read more: gamr type
+.  Read more: personality
+.  Link to about
+.  Make more backgrounds
+.  Make Gamr Gifs
+.  404
+
+?  Refine Background animation
+?  Switch Survey Order
+?  Transition for results nav

@@ -12,7 +12,7 @@ module.exports = React.createClass({
             id="ytplayer"
             type="text/html"
             width="100%" height="100%"
-            src="http://www.youtube.com/embed/i2q9qhlUcTU?autoplay=0&color=white&modestbranding=1&rel=0&showinfo=0&origin=http://example.com"
+            src="http://www.youtube.com/embed/Fq0X3FwwRb0?autoplay=0&color=white&modestbranding=1&rel=0&showinfo=0&origin=http://example.com"
             frameBorder="0"/>
         </div>
       </div>
