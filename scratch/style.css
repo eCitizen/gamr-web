@@ -18,7 +18,7 @@ html {
 .profile-wrap {
   max-width: 650px;
   margin: auto;
-  padding-left: 20px;
+  padding-left: 18px;
   padding-right: 18px;
 }
 
@@ -29,11 +29,15 @@ html {
   border-bottom: 1px dotted #333;
 }
 
+.profile-section  p {
+  margin-bottom: 12px;
+}
+
 .profile-media {
   float: right;
   width: 300px;
   margin-left: 10px;
-  
+  margin-bottom: 18px;
   position: relative;
 }
 
@@ -57,7 +61,6 @@ html {
 }
 
 .read-more {
-  margin-top: 18px;
   clear: both;
 }
 
@@ -67,15 +70,22 @@ html {
   bottom: -18px;
   left: 100px;
   background: #111;
-  padding: 10px;
+  padding: 10px 0;
+  text-align: center;
+  width: 120px;
 }
 
 @media (max-width: 540px) {
   .profile-media {
     float: none;
-    margin-left: 0px;
-    /*margin-right: -18px;*/
-    width: 100%;
+    margin-left: -18px;
+    margin-right: -18px;
+    width: auto;
+  }
+
+  .read-more-toggle {
+    left: 50%;
+    margin-left: -60px;
   }
 }
 
