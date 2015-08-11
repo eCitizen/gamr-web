@@ -111,8 +111,10 @@ module.exports = React.createClass({
 
           <div className='col-set'>
             <div className='result-section a'>
-              <div className='result-media'>
-                <img className='result-media-child' src="http://localhost:8000/assets/images/giphy-01.gif"/>
+              <div className='result-media-wrap'>
+                <div className='result-media'>
+                  <img className='result-media-child' src="http://localhost:8000/assets/images/giphy-01.gif"/>
+                </div>
               </div>
               <h2>Gamer Type</h2>
               <div className='result-barcode'>
@@ -127,9 +129,11 @@ module.exports = React.createClass({
               <ReadGamer/>
             </div>
             <div className='result-section b'>
-              <div className='result-media'>
-                <div className='result-media-child'>
-                  <StarPlot data={profile.personality}/>
+              <div className='result-media-wrap'>
+                <div className='result-media'>
+                  <div className='result-media-child'>
+                    <StarPlot data={profile.personality}/>
+                  </div>
                 </div>
               </div>
               <h2>Personality</h2>
@@ -142,9 +146,11 @@ module.exports = React.createClass({
               <ReadPersonality/>
             </div>
             <div className='result-section c'>
-              <div className='result-media'>
-                <div className='result-media-child'>
-                  <BrainChart/>
+              <div className='result-media-wrap'>
+                <div className='result-media'>
+                  <div className='result-media-child'>
+                    <BrainChart/>
+                  </div>
                 </div>
               </div>
               <h2>Brain Type</h2>

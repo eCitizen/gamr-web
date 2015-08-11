@@ -96,12 +96,17 @@ $section-width: 340px;
   }
 }
 
+.result-media-wrap {
+  max-width: 300px;
+  position: relative;
+  margin: 0 auto;
+}
+
 .result-media {
   position: relative;
   height: 0;
   padding-bottom: 75%;
   width: 100%;
-  // width: 300px;
 
   & > .result-media-child {
     display: block;
@@ -175,6 +180,24 @@ $section-width: 340px;
     position: static;
     left: 0;
     float: none;
-    border-right: none;
+    padding-bottom: $space-medium;
+    margin-bottom: $space-large;
   }
+
+  .result-section {
+    border-right: none;
+    
+    border-bottom: 1px dotted $color-subtle;
+  }
+
+  .result-media-wrap {
+    float: right;
+    width: 300px;
+  }
+
+  .result-media {
+    
+  }
+
+  .result-barcode {}
 }
