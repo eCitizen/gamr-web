@@ -101,6 +101,7 @@ $section-width: 340px;
   height: 0;
   padding-bottom: 75%;
   width: 100%;
+  // width: 300px;
 
   & > .result-media-child {
     display: block;
@@ -163,3 +164,17 @@ $section-width: 340px;
   color: $color-white;
 }
 
+
+@media (max-width: $section-width * 3) {
+  .result-section,
+  .a.result-section,
+  .b.result-section {
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+    position: static;
+    left: 0;
+    float: none;
+    border-right: none;
+  }
+}
