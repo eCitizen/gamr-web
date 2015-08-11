@@ -1,72 +1,81 @@
 
-/* debug */
-
-.orange { background: tomato; }
-.yellow { background: lightyellow; }
-.green { background: mediumseagreen; }
-
-h3 {
-  margin: 10px;
-  border-bottom: 1px solid #ccc;
+.profile-section:before,
+.profile-section:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
 }
 
-.small {
-  width: 60px;
+.profile-section:after {
+    clear: both;
 }
 
-/* Structure */
-
-.page {
-  margin: 50px 10px 70px;
+html {
+  background: #111;
+  color: #aaa;
+  padding-top: 50px;
 }
 
-.outer,
-.inner {
-  margin: 0 auto;
+.profile-wrap {
+  max-width: 650px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 18px;
 }
 
-.outer {
-  max-width: 700px;
-}
-
-.inner {
-  max-width: 400px;
-}
-
-.text-middle {
-  line-height: 50px;
-}
-
-
-/* Button Group */
-
-.center-group {
+.profile-section {
   position: relative;
-  text-align: center;
+  padding-bottom: 18px;
+  margin-bottom: 48px;
+  border-bottom: 1px dotted #333;
 }
 
-.center-group > .middle,
-.center-group > .right,
-.center-group > .left {
-  min-height: 50px;
+.profile-media {
+  float: right;
+  width: 300px;
+  margin-left: 10px;
+  
+  position: relative;
 }
 
-@media (min-width: 600px) {
-  .center-group > .right,
-  .center-group > .left {
-    position: absolute;
-    top: 0;
+.profile-media-box {
+  position: relative;
+  height: 0;
+  padding-bottom: 67%;
+}
+
+.profile-media-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #333;
+}
+
+.profile-title {
+  margin-bottom: 10px;
+}
+
+.read-more {
+  margin-top: 18px;
+  clear: both;
+}
+
+.read-more-toggle {
+  display: inline-block;
+  position: absolute;
+  bottom: -18px;
+  left: 100px;
+  background: #111;
+  padding: 10px;
+}
+
+@media (max-width: 540px) {
+  .profile-media {
+    float: none;
+    margin-left: 0px;
+    /*margin-right: -18px;*/
+    width: 100%;
   }
-  .center-group > .right { left: 100%; text-align: left; }
-  .center-group > .left { right: 100%; text-align: right; }
 }
-
-@media (max-width: 600px) {
-  .center-group { overflow: hidden; }
-  .center-group > .left { float: left; text-align: left; }
-  .center-group > .right { float: right; text-align: right; }
-}
-
-
-
 

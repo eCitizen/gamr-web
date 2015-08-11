@@ -46,8 +46,8 @@ $section-width: 340px;
   &.b { left: -$section-width; }
   // &.c { border: none; }
 
-  padding-right: 20px;
-  padding-left: 20px;
+  // padding-right: 20px;
+  // padding-left: 20px;
   padding-bottom: 10000px + 10px;
   margin-bottom: -10000px;
   border-right: 1px dotted #444;
@@ -180,13 +180,13 @@ $section-width: 340px;
   .a.result-section,
   .b.result-section {
     margin: 0 auto;
-    max-width: 700px;
+    max-width: 650px;
     width: 100%;
     position: static;
     left: 0;
     float: none;
-    padding-bottom: $space-medium;
-    margin-bottom: $space-large;
+    padding-bottom: $space-medium + 10px;
+    margin-bottom: $space-medium + 10px;
     overflow: hidden;
   }
 
