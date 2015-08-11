@@ -3,11 +3,11 @@ var React = require('react');
 var BrainChart = require('./BrainChart.jsx');
 var StarPlot = require('./StarPlot.jsx');
 var State = require('react-router').State;
+var Link = require('react-router').Link;
 var Loading = require('./Loading.jsx');
 var Button = require('./Button.jsx');
 var Grid = require('./Grid.jsx');
 var api = require('../services/api');
-
 var surveyStore = require('../survey/store');
 var surveyKey = require('../services/surveyKey');
 var guide = require('../services/guide');
@@ -18,36 +18,42 @@ module.exports = React.createClass({
   mixins: [State],
 
   getInitialState: function () {
+    // HACK ATTACK:
+    // if they have completed the last survey they are the owner
+    var isOwner = surveyStore.isComplete('gamerType');
     return {
+      isOwner: isOwner,
+      processed: !isOwner,
+      waited: !isOwner,
       scores: surveyStore.getScores(),
       profile: surveyStore.decodeProfile(this.getParams().profile),
-      plainformData: surveyStore.getPlainFormData(),
-      processed: false,
+      plainformData: surveyStore.getPlainFormData()
     };
   },
 
   componentDidMount: function () {
-    api.submitQuestions({survey: JSON.stringify(this.state.plainformData)}, function (err, data) {
-      
-      // console.info('Api Response');
-      // console.log(JSON.stringify(data, null, 2));
+    if (this.state.isOwner) {
+      api.submitQuestions({survey: JSON.stringify(this.state.plainformData)}, function (err, data) {
+        console.info('Api Response');
+        console.log(JSON.stringify(data, null, 2));
 
-      this.setState({
-        processed: true
-      });
-    }.bind(this));
+        this.setState({
+          processed: true
+        });
+      }.bind(this));
 
-    setTimeout(function () {
-      this.setState({
-        waited: true
-      });
-    }.bind(this), 2000);
+      setTimeout(function () {
+        this.setState({
+          waited: true
+        });
+      }.bind(this), 2000);
 
-    process.nextTick(function () {
-      this.setState({
-        loadingIcon: true
-      })
-    }.bind(this))
+      process.nextTick(function () {
+        this.setState({
+          loadingIcon: true
+        })
+      }.bind(this))
+    }
   },
 
   render: function () {
@@ -88,7 +94,7 @@ module.exports = React.createClass({
     }
 
     // temp override
-    if (true || this.state.processed && this.state.waited) {
+    if (this.state.processed && this.state.waited) {
       content = (
         <div className='results-wrap'>
           {/*
@@ -120,7 +126,7 @@ module.exports = React.createClass({
             <div className='result-section b'>
               <div className='result-media'>
                 <div className='result-media-child'>
-                  <StarPlot/>
+                  <StarPlot data={profile.personality}/>
                 </div>
               </div>
               <h2>Personality</h2>
@@ -148,10 +154,17 @@ module.exports = React.createClass({
               <a className='expand-result'>read more</a>
             </div>
           </div>
-          <div className='result-social'>
-            <Button><span className='fa fa-facebook'/> Share</Button>
-            <Button><span className='fa fa-twitter'/> Tweet</Button>
-          </div>
+          {this.state.isOwner ? (
+            <div className='result-social'>
+              <Button><span className='fa fa-facebook'/> Share</Button>
+              <Button><span className='fa fa-twitter'/> Tweet</Button>
+            </div>
+          ) : (
+            <div className='result-social'>
+              {/* <p className='invitation'>Find out your profile</p> */}
+              <Link to='home'><Button>Take the survey</Button></Link>
+            </div>
+          )}
         </div>
       );
     } else {

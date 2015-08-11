@@ -36,3 +36,22 @@
   fill: $color-main;
   fill-opacity: 0.2;
 }
+
+.star-interaction {
+  opacity: 0;
+}
+
+.interaction {
+  pointer-events: none;
+}
+.interaction.label {
+  position: absolute;
+  font-size: 11.5px;
+  letter-spacing: 1px;
+  fill: $color-main;
+}
+.interaction.circle {
+  fill: $color-main;
+  fill-opacity: 0.6;
+  stroke: $color-main;
+}

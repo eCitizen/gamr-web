@@ -5,6 +5,7 @@ var classnames = require('classnames');
 var Progress = require('./Progress.jsx');
 var Title = require('./Title.jsx');
 var Link = require('react-router').Link;
+var surveyStore = require('../survey/store');
 
 var config = {
   '/consent': {
@@ -67,10 +68,16 @@ module.exports = React.createClass({
     )
 
     if (isResults) {
+      // HACK ATTACK:
+      // infer they are owner because they filled out last survey
+      var isOwner = surveyStore.isComplete('gamerType');
+
+      console.log(isOwner);
+
       nav = (
         <div key='b'>
           <h2 className='result-nav-title'>
-            YOUR <Link to='home'>GAMR</Link> PROFILE
+            {isOwner ? 'YOUR' : 'MY'} <Link to='home'>GAMR</Link> PROFILE
           </h2>
         </div>
       );

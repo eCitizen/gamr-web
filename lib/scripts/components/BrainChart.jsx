@@ -78,7 +78,7 @@ module.exports = React.createClass({
         getPoint(100)
       ]
 
-      console.log(points);
+      // console.log(points);
 
       svg.append("path")
         .datum(points)

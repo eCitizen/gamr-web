@@ -1,5 +1,6 @@
 
 var React = require('react');
+var surveyKey = require('../services/surveyKey');
 
 module.exports = React.createClass({
   displayName: 'StarPlot',
@@ -8,27 +9,19 @@ module.exports = React.createClass({
     var wrapper = d3.select(React.findDOMNode(this));
 
     var scale = d3.scale.linear()
-        .domain([0, 4])
+        .domain([0, 100])
         .range([0, 100]);
 
     var star = d3.starPlot();
 
+    var key = surveyKey.personality.slice().reverse();
+    var labels = key.map(function (dimension) { return dimension.key; });
+    var properties = key.map(function (dimension) { return dimension.title; });
+
     star.width(180)
-        .properties([
-          'Body',
-          'Sweetness',
-          'Smoky',
-          'Honey',
-          'Spicy'
-        ])
+        .properties(properties)
         .scales(scale)
-        .labels([
-          'Body',
-          'Sweetness',
-          'Smoky',
-          'Honey',
-          'Spicy'
-        ])
+        .labels(properties)
         .margin({
           top: 10,
           right: 10,
@@ -41,28 +34,51 @@ module.exports = React.createClass({
 
     var svg = wrapper.append('svg');
 
-    var d = {
-      Body: 2,
-      Distillery: "Aberfeldy",
-      Floral: 2,
-      Fruity: 2,
-      Honey: 2,
-      Malty: 2,
-      Medicinal: 0,
-      Nutty: 2,
-      Postcode: " PH15 2EB",
-      RowID: "01",
-      Smoky: 2,
-      Spicy: 1,
-      Sweetness: 2,
-      Tobacco: 0,
-      Winey: 2
-    };
-
     var starG = svg.append('g')
-        .datum(d)
+        .datum(this.props.data)
         .call(star)
-        // .call(star.interaction)
+        .call(star.interaction);
+
+    var interactionLabel = wrapper.append('div')
+        .attr('class', 'interaction label')
+
+    var circle = svg.append('circle')
+        .attr('class', 'interaction circle')
+        .attr('r', 5)
+
+    var interaction = wrapper.selectAll('.interaction')
+        .style('display', 'none');
+
+    svg.selectAll('.star-interaction')
+      .on('mouseover', function(d) {
+        svg.selectAll('.star-label')
+          .style('display', 'none')
+
+        interaction
+          .style('display', 'block')
+
+        circle
+          .attr('cx', d.x)
+          .attr('cy', d.y)
+
+        var label = interactionLabel.node();
+        label.textContent = 'hello';
+        console.log(label.offsetWidth)
+        label.style.left = (d.xExtent - (label.offsetWidth / 2)) + 'px';
+        label.style.top = (d.yExtent - (label.offsetHeight / 2)) + 'px';
+        // $interactionLabel = $(interactionLabel.node());
+        // interactionLabel
+        //   .text(d.key + ': ' + d.datum[d.key])
+        //   .style('left', d.xExtent - ($interactionLabel.width() / 2))
+        //   .style('top', d.yExtent - ($interactionLabel.height() / 2))
+      })
+      .on('mouseout', function(d) {
+        interaction
+          .style('display', 'none')
+
+        svg.selectAll('.star-label')
+          .style('display', 'block')
+      })
   },
 
   render: function () {
