@@ -61,7 +61,7 @@ $section-width: 340px;
     margin-top: $space-medium;
   }
 
-  & > p {
+  p {
     font-size: 15px;
     color: $color-main;
     line-height: 20px;
@@ -76,12 +76,16 @@ $section-width: 340px;
 .expand-result {
   display: block;
   color: $color-secondary;
-  text-align: center;
+  // text-align: center;
   font-size: 15px;
-  padding: 10px;
+  padding: 10px 0;
 
   &:after {
     content: ' +';
+  }
+
+  &.collapse:after {
+    content: '';
   }
 
   &:hover {

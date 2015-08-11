@@ -11,6 +11,9 @@ var api = require('../services/api');
 var surveyStore = require('../survey/store');
 var surveyKey = require('../services/surveyKey');
 var guide = require('../services/guide');
+var ReadPersonality = require('./ReadMore.jsx').ReadPersonality;
+var ReadGamer = require('./ReadMore.jsx').ReadGamer;
+var ReadBrain = require('./ReadMore.jsx').ReadBrain;
 
 module.exports = React.createClass({
   displayName: 'Profile',
@@ -121,7 +124,7 @@ module.exports = React.createClass({
               <p>
                 {gamerDescription.description}
               </p>
-              <a className='expand-result'>read more</a>
+              <ReadGamer/>
             </div>
             <div className='result-section b'>
               <div className='result-media'>
@@ -136,7 +139,7 @@ module.exports = React.createClass({
               <p>
                 You have a personality, and we have something to say.
               </p>
-              <a className='expand-result'>read more</a>
+              <ReadPersonality/>
             </div>
             <div className='result-section c'>
               <div className='result-media'>
@@ -151,7 +154,7 @@ module.exports = React.createClass({
               <p>
                 Your brain is like squishy or something.
               </p>
-              <a className='expand-result'>read more</a>
+              <ReadBrain/>
             </div>
           </div>
           {this.state.isOwner ? (
