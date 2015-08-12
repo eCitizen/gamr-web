@@ -54,9 +54,9 @@ $section-width: 340px;
 }
 
 .profile-media {
-  float: right;
+  float: left;
   width: 300px;
-  margin-left: 10px;
+  margin-right: 20px;
   margin-bottom: 18px;
   position: relative;
 }
@@ -95,7 +95,7 @@ $section-width: 340px;
   display: inline-block;
   position: absolute;
   bottom: -18px;
-  left: 100px;
+  right: 120px;
   background: #111;
   padding: 10px 0;
   text-align: center;
@@ -131,6 +131,7 @@ $section-width: 340px;
 
   .read-more-toggle {
     left: 50%;
+    right: auto;
     margin-left: -60px;
   }
 }

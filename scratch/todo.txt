@@ -1,5 +1,6 @@
 
 Tues
+<  Float left
 <  Prep Gamr Gif work for others
 <  put transform hook in for jason
 <  Normalize values for personality
