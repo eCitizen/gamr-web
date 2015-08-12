@@ -142,7 +142,7 @@ module.exports = React.createClass({
       .attr("x", width/2)
       .attr("y", 18)
       .style("text-anchor", "middle")
-      .text("Systematizing");
+      .text("Systemizing");
 
     svg.append("g")
       .attr("class", "y axis")

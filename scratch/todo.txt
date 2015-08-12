@@ -1,40 +1,41 @@
 
-Tues
-<  Float left
-<  Prep Gamr Gif work for others
-<  put transform hook in for jason
-<  Normalize values for personality
-<  Normalize values for brain type
-<  Intro arrow takes you down page
+  Tues
+X <  Float left
+X <  Prep Gamr Gif work for others
+X <  put transform hook in for jason
+  <  Normalize values for personality
+  <  Normalize values for brain type
+  <  Intro arrow takes you down page
 
-Thurs
-<  Make sure you cannot double submit
-<  Results social tools
-<  Shared Inbound View
-<  Final Copy
+  Thurs
+  <  Make sure you cannot double submit
+  <  Results social tools
+  <  Shared Inbound View
+  <  Final Copy
 
-Sat
-<  Responsive Styles
-<  Handle touch/click everywhere
-<  Shim IE
-<  Ensure Consent Always
+  Sat
+  <  Add image path to gamer types json
+  <  Responsive Styles
+  <  Handle touch/click everywhere
+  <  Shim IE
+  <  Ensure Consent Always
 
-Sun
-.  Refine Brain Chart
-.  Refine Star Plot
-.  Intro Social Buttons
+  Sun
+  .  Refine Brain Chart
+  .  Refine Star Plot
+  .  Intro Social Buttons
 
-.  Ensure error handling for user calls
-.  Social Images
-.  Social Meta
-.  Read more: brain type
-.  Read more: gamr type
-.  Read more: personality
-.  Link to about
-.  Make more backgrounds
-.  Make Gamr Gifs
-.  404
+  .  Ensure error handling for user calls
+  .  Social Images
+  .  Social Meta
+  .  Read more: brain type
+  .  Read more: gamr type
+  .  Read more: personality
+  .  Link to about
+  .  Make more backgrounds
+  .  Make Gamr Gifs
+  .  404
 
-?  Refine Background animation
-?  Switch Survey Order
-?  Transition for results nav
+  ?  Refine Background animation
+  ?  Switch Survey Order
+  ?  Transition for results nav

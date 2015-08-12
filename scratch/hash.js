@@ -23,7 +23,7 @@ var surveyKey = {
       title: 'Empathizing',
       total: 100
     },{
-      title: 'Systematizing',
+      title: 'Systemizing',
       total: 100
     }
   ],

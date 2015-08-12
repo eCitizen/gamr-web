@@ -89,13 +89,13 @@ module.exports.ReadBrain = React.createClass({
     return (
       <ReadMore>
         <p>
-          Brain type is based on Empathizing-Systematizing theory.
+          Brain type is based on Empathizing-Systemizing theory.
         </p>
         <p>
           <em>Empathizing</em> measures your interest in identifying and understanding the thoughts and feelings of others and responding to these with appropriate emotions.
         </p>
         <p>
-          <em>Systematizing</em> measures your interest in analyzing and constructing systems. 
+          <em>Systemizing</em> measures your interest in analyzing and constructing systems. 
         </p>
         <p>
           It has been found that men more often show a higher systemating score than empathizing score, while women more often show the reverse. Many people show a balanced profile, while a small minority shows an extreme unbalance one way or the other. 'female' and 'extreme female' brain types occur more often among women, while 'male' and 'extreme male' brain type occur more often among men. The balanced brain type occurs frequently among both men and women.
