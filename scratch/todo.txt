@@ -7,8 +7,8 @@ x <  Normalize values for personality
 x <  Normalize values for brain type
 
   Thurs
-  <  Intro arrow takes you down page
-  <  Make sure you cannot double submit
+x <  Intro arrow takes you down page
+x <  Make sure you cannot double submit
   <  Results social tools
   <  Shared Inbound View
   <  Final Copy

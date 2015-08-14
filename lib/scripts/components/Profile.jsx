@@ -14,6 +14,8 @@ var guide = require('../services/guide');
 var ReadPersonality = require('./ReadMore.jsx').ReadPersonality;
 var ReadGamer = require('./ReadMore.jsx').ReadGamer;
 var ReadBrain = require('./ReadMore.jsx').ReadBrain;
+var TwitterButton = require('./TwitterButton.jsx');
+var FacebookButton = require('./FacebookButton.jsx');
 
 module.exports = React.createClass({
   displayName: 'Profile',
@@ -155,8 +157,10 @@ module.exports = React.createClass({
             <ReadBrain/>
           </div>
   
-          {this.state.isOwner ? (
+          {true || this.state.isOwner ? (
             <div className='result-social'>
+              <TwitterButton text={'I am ' + gamerDescription.title}/>
+              <FacebookButton text={'I am ' + gamerDescription.title}/>
               <Button><span className='fa fa-facebook'/> Share</Button>
               <Button><span className='fa fa-twitter'/> Tweet</Button>
             </div>
