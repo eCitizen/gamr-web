@@ -10,16 +10,6 @@ var scrollTo = require('../services/scrollTo');
 module.exports = React.createClass({
   displayName: 'Intro',
 
-  componentDidMount: function () {
-    var detailsNode = React.findDOMNode(this.refs.details);
-    var rect = detailsNode.getBoundingClientRect();
-    var top = rect.top + document.body.scrollTop;
-
-    setTimeout(function () {
-      scrollTo(top, 400);
-    }, 2000); 
-  },
-
   goToDetails: function () {
     var detailsNode = React.findDOMNode(this.refs.details);
     var rect = detailsNode.getBoundingClientRect();

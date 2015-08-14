@@ -20,6 +20,10 @@ $intro-button-width: 180px;
   bottom: 17px;
   left: 0;
   right: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .more-content {
@@ -27,6 +31,10 @@ $intro-button-width: 180px;
   font-size: 80px;
   line-height: 80px;
   text-shadow: 0px 1px 30px rgba(0,0,0,.7);
+
+  &:hover {
+    color: $color-white;
+  }
 }
 
 .intro-body {
