@@ -48,6 +48,8 @@ module.exports = React.createClass({
   },
 
   submitProfiles: function (form) {
+    if (this.state.loading) return; // prevent double submit!
+
     var formErrors = getFormErrors(form);
 
     if (formErrors.invalidFields.length > 0 || 
