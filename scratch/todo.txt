@@ -11,7 +11,7 @@ x <  Intro arrow takes you down page
 x <  Make sure you cannot double submit
 x <  Results social tools
 x <  Shared Inbound View
-  <  Final Copy
+X <  Final Copy
 
   Friday
   
