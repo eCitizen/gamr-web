@@ -22,6 +22,7 @@ X <  Handle touch/click everywhere
   <  DESIGN PORTFOLIO FOR JOSIE
 
   Sun
+  <  How to not break mobile browsers with animation
   .  Add styles to handle super long names
   .  Refine Brain Chart
   .  Refine Star Plot
