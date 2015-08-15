@@ -34,8 +34,9 @@
     border-radius: ($button-radius - 2px) ($button-radius - 2px) 20px 20px;
   }
 
-  &:hover,
-  &.not-selected:hover {
+  &.no-touch:hover,
+  &.no-touch.not-selected:hover,
+  &.depressed {
     @include transition(all 0ms ease-in-out);
     background: $color-main;
     &:after {
@@ -66,4 +67,3 @@
 .yes-no .button {
   width: 60px;
 }
-

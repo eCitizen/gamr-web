@@ -14,7 +14,8 @@ module.exports = React.createClass({
 
   render: function () {
     var className = classnames('app', {
-      root: this.getPath() === '/'
+      root: this.getPath() === '/',
+      'touch-enabled': !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0
     });
 
     return (

@@ -24,19 +24,32 @@ module.exports = React.createClass({
 
   _handleClick: function () {
     if (this.props.action) {
+      this.setState({
+        depressed: false
+      });
       this.props.action();
     }
+  },
+
+  _handleDown: function () {
+    this.setState({
+      depressed: true
+    });
   },
 
   render: function () {
     var className = classnames(
       'button', 
       this.props.className,
-      {'mounted': this.state.mounted}
+      {
+        'mounted': this.state.mounted,
+        'depressed': this.state.depressed,
+        'no-touch': !!!("ontouchstart" in window)
+      }
     );
     
     return (
-      <div className={className} {... touchdown(this._handleClick)}>
+      <div className={className} {... touchdown(this._handleDown, this._handleClick)}>
         {this.props.children}
       </div>
     );

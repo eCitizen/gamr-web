@@ -98,13 +98,13 @@ module.exports = React.createClass({
           </Answer>
           <div className='question-nav'>
             {hasPrev ? (
-              <span className='prev' {.... touchdown(this.prev)}>{'<'}</span>
+              <span className='prev' {... touchdown(this.prev)}>{'<'}</span>
             ) : null}
             {hasPrev || hasNext ? (
               <span className='index'>{this.state.current + 1} of {this.state.length}</span>
             ) : null}
             {hasNext && !!question.answer ? (
-              <span className='next' {.... touchdown(this.next)}>{'>'}</span>
+              <span className='next' {... touchdown(this.next)}>{'>'}</span>
             ) : null}
           </div>
         </div>
