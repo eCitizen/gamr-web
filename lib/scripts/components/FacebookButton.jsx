@@ -29,6 +29,8 @@ module.exports = React.createClass({
     // https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4
     // http://stackoverflow.com/questions/21310648/facebook-app-this-must-be-derived-from-canvas-url-secure-canvas-url
 
+    // app https://developers.facebook.com/apps/167828763548248/settings/
+
     console.log(FB)
     FB.ui({
       method: 'feed',
