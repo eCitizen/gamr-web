@@ -128,8 +128,8 @@ $section-width: 340px;
 
   .profile-media {
     float: none;
-    // margin-left: -18px;
-    margin-right: 0;
+    margin-left: -$gutter-width;
+    margin-right: -$gutter-width;
     width: auto;
   }
 
