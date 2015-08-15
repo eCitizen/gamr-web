@@ -15,7 +15,7 @@ x <  Results social tools
 x <  Shared Inbound View
 X <  Final Copy
 X <  Add image path to gamer types json
-  <  Responsive Styles
+X <  Responsive Styles
   <  Handle touch/click everywhere
   <  Shim IE
   <  Ensure Consent Always

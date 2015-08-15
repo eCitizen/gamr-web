@@ -1,12 +1,13 @@
 
-var React = require('react'),
-  classnames = require('classnames'),
-  InputStore = require('../input/store'),
-  InputActions = require('../input/actions'),
-  FormCheckbox;
+var React = require('react');
+var classnames = require('classnames');
+var InputStore = require('../input/store');
+var InputActions = require('../input/actions');
+var touchdown = require('../services/touchdown');
 
+module.exports = React.createClass({
+  displayName: 'FormCheckbox',
 
-module.exports = FormCheckbox = React.createClass({
   getInitialState: function () {
     return {
       checked: this.props.formId ? 
@@ -35,7 +36,7 @@ module.exports = FormCheckbox = React.createClass({
 
   render: function () {
     return (
-      <div className='checkbox-wrap' onMouseDown={this._handleClick}>
+      <div className='checkbox-wrap' {... touchdown(this._handleClick)}>
         <div className={classnames(this.props.className, 'checkbox', {'checked': this.state.checked})} />
         <label>
           {this.props.children}

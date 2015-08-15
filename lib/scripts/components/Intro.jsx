@@ -6,6 +6,7 @@ var Button = require('./Button.jsx');
 var Background = require('./Background.jsx');
 var Explainer = require('./Explainer.jsx');
 var scrollTo = require('../services/scrollTo');
+var touchdown = require('../services/touchdown');
 
 module.exports = React.createClass({
   displayName: 'Intro',
@@ -22,7 +23,7 @@ module.exports = React.createClass({
       <div className='intro'>
         <Background/>
         <div className='intro-block'>
-          <div className='title-wrap' onClick={this.goToDetails}>
+          <div className='title-wrap' {... touchdown(this.goToDetails)}>
             <Title className='main-sub'>PROJECT</Title>
             <Title className='main' split>GAMR</Title>
             <span className='more-content fa fa-angle-down'></span>

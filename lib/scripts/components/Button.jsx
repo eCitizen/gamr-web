@@ -1,10 +1,11 @@
-/** @jsx React.DOM */
 
-var React = require('react'),
-  classnames = require('classnames'),
-  Button;
+var React = require('react');
+var classnames = require('classnames');
+var touchdown = require('../services/touchdown');
 
-module.exports = Button = React.createClass({
+module.exports = React.createClass({
+  displayName: 'Button',
+
   getInitialState: function () {
     return {
       mounted: false
@@ -29,15 +30,13 @@ module.exports = Button = React.createClass({
 
   render: function () {
     var className = classnames(
-          'button', 
-          this.props.className,
-          {
-            'mounted': this.state.mounted
-          }
-        );
+      'button', 
+      this.props.className,
+      {'mounted': this.state.mounted}
+    );
     
     return (
-      <div className={className} onMouseDown={this._handleClick}>
+      <div className={className} {... touchdown(this._handleClick)}>
         {this.props.children}
       </div>
     );

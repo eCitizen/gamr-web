@@ -1,5 +1,6 @@
 
 var React = require('react');
+var touchdown = require('../services/touchdown');
 
 var ReadMore = React.createClass({
   displayName: 'ReadMore',
@@ -21,15 +22,15 @@ var ReadMore = React.createClass({
     if (this.state.open) {
       return (
         <div className='read-more closed'>
-          <a href='#' className='read-more-toggle collapse' onClick={this.toggle}>read less</a>
+          <a href='#' className='read-more-toggle collapse' {... touchdown(this.toggle)}>read less</a>
           {this.props.children}
-          <a href='#' className='read-more-toggle collapse' onClick={this.toggle}>read less</a>
+          <a href='#' className='read-more-toggle collapse' {... touchdown(this.toggle)}>read less</a>
         </div>
       );
     } else {
       return (
         <div className='read-more open'>
-          <a href='#' className='read-more-toggle' onClick={this.toggle}>read more</a>
+          <a href='#' className='read-more-toggle' {... touchdown(this.toggle)}>read more</a>
         </div>
       );
     }
