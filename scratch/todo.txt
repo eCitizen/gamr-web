@@ -14,15 +14,15 @@ x <  Make sure you cannot double submit
   <  Final Copy
 
   Friday
-  < DESIGN PORTFOLIO FOR JOSIE
+  
 
   Sat
-  <  DESIGN PORTFOLIO FOR JOSIE
   <  Add image path to gamer types json
   <  Responsive Styles
   <  Handle touch/click everywhere
   <  Shim IE
   <  Ensure Consent Always
+  <  DESIGN PORTFOLIO FOR JOSIE
 
   Sun
   .  Refine Brain Chart

@@ -4,6 +4,7 @@
     "style": "assets/gamr.min.css",
     "assets": "assets",
     "api": "api",
+    "fbApp": "167828763548248",
     "usePushState": false,
     "react": "https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.min.js"
   },
@@ -12,6 +13,7 @@
     "style": "/assets/gamr.css",
     "assets": "/assets",
     "api": "http://localhost:8000/api",
+    "fbApp": "167828763548248",
     "usePushState": true,
     "react": "https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js"
   }

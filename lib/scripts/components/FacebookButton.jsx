@@ -28,7 +28,6 @@ module.exports = React.createClass({
     // make all images for facebook app
     // https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4
     // http://stackoverflow.com/questions/21310648/facebook-app-this-must-be-derived-from-canvas-url-secure-canvas-url
-
     // app https://developers.facebook.com/apps/167828763548248/settings/
 
     console.log(FB)
@@ -36,10 +35,12 @@ module.exports = React.createClass({
       method: 'feed',
       link: window.location.href,
       name: 'PROJECT GAMR',
-      caption: 'I am the Maverick',
+      caption: this.props.text,
       picture: 'http://skiano.com/img/quilting/quilt-00.jpg',
       description: 'Check out the results from...'
-    }, function(response){});
+    }, function(response) {
+      // noop
+    });
   },
 
   render: function () {

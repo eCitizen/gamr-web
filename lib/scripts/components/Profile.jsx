@@ -161,8 +161,6 @@ module.exports = React.createClass({
             <div className='result-social'>
               <TwitterButton text={'I am ' + gamerDescription.title}/>
               <FacebookButton text={'I am ' + gamerDescription.title}/>
-              <Button><span className='fa fa-facebook'/> Share</Button>
-              <Button><span className='fa fa-twitter'/> Tweet</Button>
             </div>
           ) : (
             <div className='result-social'>
