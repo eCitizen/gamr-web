@@ -75,7 +75,7 @@ module.exports = React.createClass({
       nav = isOwner ? (
         <div key='b'>
           <h2 className='result-nav-title'>
-            Your <Link to='home'>GAMR</Link> PROFILE
+            YOUR <Link to='home'>GAMR</Link> PROFILE
           </h2>
         </div>
       ) : (

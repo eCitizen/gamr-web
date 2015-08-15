@@ -105,7 +105,7 @@ module.exports = React.createClass({
           <div className='profile-section'>
             <div className="profile-media">
               <div className="profile-media-box">
-                <img className="profile-media-child" src="http://localhost:8000/assets/images/giphy-01.gif"/>
+                <img className="profile-media-child" src={guide.assets + '/images/' + gamerDescription.image}/>
               </div>
             </div>
             <h2 className="profile-title">Gamer Type</h2>

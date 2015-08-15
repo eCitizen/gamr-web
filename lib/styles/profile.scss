@@ -120,10 +120,17 @@ $section-width: 340px;
 }
 
 @media (max-width: 540px) {
+  .profile-wrap {
+    max-width: $outer-width;
+    margin-right: 18px;
+    margin-left: 18px;
+  }
+
+
   .profile-media {
     float: none;
-    margin-left: -18px;
-    margin-right: -18px;
+    // margin-left: -18px;
+    margin-right: 0;
     width: auto;
   }
 

@@ -10,13 +10,10 @@ x <  Normalize values for brain type
 x <  Intro arrow takes you down page
 x <  Make sure you cannot double submit
 x <  Results social tools
-x <  Shared Inbound View
-X <  Final Copy
-
-  Friday
-  
 
   Sat
+x <  Shared Inbound View
+X <  Final Copy
   <  Add image path to gamer types json
   <  Responsive Styles
   <  Handle touch/click everywhere
@@ -43,3 +40,4 @@ X <  Final Copy
   ?  Refine Background animation
   ?  Switch Survey Order
   ?  Transition for results nav
+  ?  refine hash so it doesnt need separator
