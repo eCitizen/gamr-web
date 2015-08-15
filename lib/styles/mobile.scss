@@ -4,6 +4,88 @@
 @media (max-width: $center-group-break) {
   .desktop-only { display: none; }
 
+  .title-wrap {
+    padding-bottom: 10px;
+  }
+
+  .title.main {
+    font-size: 100px;
+    line-height: 90px;
+    letter-spacing: 2px;
+    .t-1 { left: -0px; } // A
+    .t-3 { left: -2px; } // R
+  }
+
+  .title.main-sub {
+    font-size: 22px;
+    letter-spacing: 4px;
+    position: relative;
+    left: 0px;
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+
+  .more-content {
+    margin-top: 0px;
+    font-size: 52px;
+  }
+
+  .loud-text {
+    text-align: left;
+    margin-top: $space-medium;
+    margin-bottom: $space-medium;
+    & > h4 {
+      margin-bottom: $space-medium;
+      font-size: 19px;
+      line-height: 25px;
+      font-style: normal;
+    }
+
+    & > h5 {
+      line-height: 23px;
+    }
+  }
+
+  .video-wrap {
+    margin-top: $space-medium;
+    margin-bottom: $space-medium;
+  }
+
+  .intro-body-inner {
+    & > p {
+      text-align: left;
+      font-size: 16px;
+      line-height: 23px;
+      letter-spacing: .5px;
+      margin-bottom: 12px;
+
+      & > strong {
+        font-family: $font-title;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: $color-main;
+        text-transform: uppercase;
+      }
+
+      & > em {
+        color: $color-main;
+      }
+    }
+  }
+
+  .valid-games {
+    margin-top: $space-medium;
+    margin-bottom: $space-medium;
+
+    & > em {
+      font-size: 14px;
+    }
+  }
+
+  .intro-foot {
+    margin-top: $space-large;
+  }
+
   .nav {
     width: auto;
     padding-left: $gutter-width;
