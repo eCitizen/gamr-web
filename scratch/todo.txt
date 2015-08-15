@@ -22,6 +22,7 @@ X <  Add image path to gamer types json
   <  DESIGN PORTFOLIO FOR JOSIE
 
   Sun
+  .  Add styles to handle super long names
   .  Refine Brain Chart
   .  Refine Star Plot
   .  Intro Social Buttons
@@ -37,6 +38,7 @@ X <  Add image path to gamer types json
   .  Make Gamr Gifs
   .  404
 
+  ?  Refine placement of transition text in relation to question set
   ?  Refine Background animation
   ?  Switch Survey Order
   ?  Transition for results nav
