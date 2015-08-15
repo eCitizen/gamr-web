@@ -568,19 +568,10 @@
       "Ar": "Arousal",
       "So": "Social"
     },
-    "questions": [
+    "questions": 
+    [
       {
         "text": "It is important to me to be the fastest and most skilled person playing the game.",
-        "dimension": "Co",
-        "category": "Ac"
-      },
-      {
-        "text": "I like to play to prove to my friends that I am the best.",
-        "dimension": "Co",
-        "category": "Ac"
-      },
-      {
-        "text": "I get upset when I lose to my friends.",
         "dimension": "Co",
         "category": "Ac"
       },
@@ -589,43 +580,14 @@
         "dimension": "Ch",
         "category": "Ac"
       },
-      {
-        "text": "I feel proud when I master an aspect of a game.",
-        "dimension": "Ch",
-        "category": "Ac"
-      },
-      {
-        "text": "I enjoy finding new and creative ways to work through video games.",
-        "dimension": "Ch",
-        "category": "Ac"
-      },
+
       {
         "text": "Video games allow me to pretend I am someone/somewhere else.",
         "dimension": "Fa",
         "category": "Im"
       },
       {
-        "text": "I like to do something I could not normally do in real life through a video game.",
-        "dimension": "Fa",
-        "category": "Im"
-      },
-      {
-        "text": "I enjoy the excitement of assuming an alter ego in a game.",
-        "dimension": "Fa",
-        "category": "Im"
-      },
-      {
         "text": "I play video games because they excite me.",
-        "dimension": "Ar",
-        "category": "Ar"
-      },
-      {
-        "text": "Video games keep me on the edge of my seat.",
-        "dimension": "Ar",
-        "category": "Ar"
-      },
-      {
-        "text": "I find that playing video games raises my level of adrenaline.",
         "dimension": "Ar",
         "category": "Ar"
       },
@@ -636,28 +598,7 @@
         "inverted": true
       },
       {
-        "text": "Stories in video games just get in the way.",
-        "dimension": "St",
-        "category": "Im",
-        "inverted": true
-      },
-      {
-        "text": "I am excited to find out what happens next in the story.",
-        "dimension": "St",
-        "category": "Im"
-      },
-      {
         "text": "Video games allow me to escape from the problems associated with everyday life.",
-        "dimension": "Es",
-        "category": "Im"
-      },
-      {
-        "text": "I play video games because they allow me to escape real life.",
-        "dimension": "Es",
-        "category": "Im"
-      },
-      {
-        "text": "I play video games to keep my mind off my problems.",
         "dimension": "Es",
         "category": "Im"
       },
@@ -667,27 +608,7 @@
         "category": "Ac"
       },
       {
-        "text": "Winning is fun; losing is not.",
-        "dimension": "Lo",
-        "category": "Ac"
-      },
-      {
-        "text": "Losing a game always makes me mad - what a waste of time!",
-        "dimension": "Lo",
-        "category": "Ac"
-      },
-      {
         "text": "I really like to customize my character's outfit.",
-        "dimension": "Cu",
-        "category": "Im"
-      },
-      {
-        "text": "I really like to personalize and customize my character.",
-        "dimension": "Cu",
-        "category": "Im"
-      },
-      {
-        "text": "I will put considerable time into designing my character's appearance (e.g., clothes, face).",
         "dimension": "Cu",
         "category": "Im"
       },
@@ -697,28 +618,7 @@
         "category": "Ac"
       },
       {
-        "text": "I will play a game until I get 100% on it, completing everything in the game.",
-        "dimension": "Gr",
-        "category": "Ac"
-      },
-      {
-        "text": "I rarely complete collections of in-game items.",
-        "dimension": "Gr",
-        "category": "Ac",
-        "inverted": true
-      },
-      {
         "text": "I prefer games that allow me to play however I want.",
-        "dimension": "Au",
-        "category": null
-      },
-      {
-        "text": "I like games that do not put a lot of constraints on the player.",
-        "dimension": "Au",
-        "category": null
-      },
-      {
-        "text": "I like games that offer you a lot of options and choices.",
         "dimension": "Au",
         "category": null
       },
@@ -728,27 +628,7 @@
         "category": "So"
       },
       {
-        "text": "I enjoy chatting with other players.",
-        "dimension": "So",
-        "category": "So"
-      },
-      {
-        "text": "I enjoy helping other players.",
-        "dimension": "So",
-        "category": "So"
-      },
-      {
         "text": "I talk to my online friends about my personal issues.",
-        "dimension": "Re",
-        "category": "So"
-      },
-      {
-        "text": "My online friends offer me support when I have a real life problem.",
-        "dimension": "Re",
-        "category": "So"
-      },
-      {
-        "text": "I find myself having meaningful conversations with other players.",
         "dimension": "Re",
         "category": "So"
       },
@@ -758,8 +638,130 @@
         "category": "So"
       },
       {
+        "text": "I like to play to prove to my friends that I am the best.",
+        "dimension": "Co",
+        "category": "Ac"
+      },
+      {
+        "text": "I feel proud when I master an aspect of a game.",
+        "dimension": "Ch",
+        "category": "Ac"
+      },
+      {
+        "text": "I like to do something I could not normally do in real life through a video game.",
+        "dimension": "Fa",
+        "category": "Im"
+      },
+      {
+        "text": "Video games keep me on the edge of my seat.",
+        "dimension": "Ar",
+        "category": "Ar"
+      },
+      {
+        "text": "Stories in video games just get in the way.",
+        "dimension": "St",
+        "category": "Im",
+        "inverted": true
+      },
+      {
+        "text": "I play video games because they allow me to escape real life.",
+        "dimension": "Es",
+        "category": "Im"
+      },
+      {
+        "text": "Winning is fun; losing is not.",
+        "dimension": "Lo",
+        "category": "Ac"
+      },
+      {
+        "text": "I really like to personalize and customize my character.",
+        "dimension": "Cu",
+        "category": "Im"
+      },
+      {
+        "text": "I will play a game until I get 100% on it, completing everything in the game.",
+        "dimension": "Gr",
+        "category": "Ac"
+      },
+      {
+        "text": "I like games that do not put a lot of constraints on the player.",
+        "dimension": "Au",
+        "category": null
+      },
+      {
+        "text": "I enjoy chatting with other players.",
+        "dimension": "So",
+        "category": "So"
+      },
+      {
+        "text": "My online friends offer me support when I have a real life problem.",
+        "dimension": "Re",
+        "category": "So"
+      },
+      {
         "text": "It is important to me that my character does not need support from other players to do well.",
         "dimension": "Te",
+        "category": "So"
+      },
+      {
+        "text": "I get upset when I lose to my friends.",
+        "dimension": "Co",
+        "category": "Ac"
+      },
+      {
+        "text": "I enjoy finding new and creative ways to work through video games.",
+        "dimension": "Ch",
+        "category": "Ac"
+      },
+      {
+        "text": "I enjoy the excitement of assuming an alter ego in a game.",
+        "dimension": "Fa",
+        "category": "Im"
+      },
+      {
+        "text": "I find that playing video games raises my level of adrenaline.",
+        "dimension": "Ar",
+        "category": "Ar"
+      },
+      {
+        "text": "I am excited to find out what happens next in the story.",
+        "dimension": "St",
+        "category": "Im"
+      },
+      {
+        "text": "I play video games to keep my mind off my problems.",
+        "dimension": "Es",
+        "category": "Im"
+      },
+      {
+        "text": "Losing a game always makes me mad - what a waste of time!",
+        "dimension": "Lo",
+        "category": "Ac"
+      },
+      {
+        "text": "I will put considerable time into designing my character's appearance (e.g., clothes, face).",
+        "dimension": "Cu",
+        "category": "Im"
+      },
+      {
+        "text": "I rarely complete collections of in-game items.",
+        "dimension": "Gr",
+        "category": "Ac",
+        "inverted": true
+      },
+      {
+        "text": "I like games that offer you a lot of options and choices.",
+        "dimension": "Au",
+        "category": null
+      },
+      {
+        "text": "I enjoy helping other players.",
+        "dimension": "So",
+        "category": "So"
+      },
+      {
+        "text": "I find myself having meaningful conversations with other players.",
+        "dimension": "Re",
         "category": "So"
       },
       {
