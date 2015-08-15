@@ -27,10 +27,8 @@ $section-width: 340px;
 }
 
 .profile-wrap {
-  max-width: 650px;
+  max-width: $outer-width;
   margin: 100px auto;
-  padding-left: 18px;
-  padding-right: 18px;
 }
 
 .profile-section {
@@ -179,5 +177,19 @@ $section-width: 340px;
       }
     }
   }
+}
+
+.invitation {
+  font-style: italic;
+  color: $color-main;
+  margin-bottom: $space-medium;
+}
+
+.end-footnote {
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-subtle;
+  margin: $space-large auto 0;
+  max-width: 350px;
 }
 

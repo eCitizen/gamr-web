@@ -9,7 +9,7 @@ x <  Normalize values for brain type
   Thurs
 x <  Intro arrow takes you down page
 x <  Make sure you cannot double submit
-  <  Results social tools
+x <  Results social tools
   <  Shared Inbound View
   <  Final Copy
 

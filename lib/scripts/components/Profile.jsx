@@ -164,8 +164,11 @@ module.exports = React.createClass({
             </div>
           ) : (
             <div className='result-social'>
-              {/* <p className='invitation'>Find out your profile</p> */}
+              <p className='invitation'>Want to find out your own profile?</p>
               <Link to='home'><Button>Take the survey</Button></Link>
+              <p className='end-footnote'>
+                Project Gamr is part of a scientific study being conducted by MIT Media Lab and Tilburg University
+              </p>
             </div>
           )}
         </div>

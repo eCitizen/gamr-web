@@ -36,7 +36,7 @@ module.exports = React.createClass({
       link: window.location.href,
       name: 'PROJECT GAMR',
       caption: this.props.text,
-      picture: 'http://skiano.com/img/quilting/quilt-00.jpg',
+      picture: 'http://40.media.tumblr.com/90954c2a102ae919d0142cfdea9dbadf/tumblr_nr58a1W2ZE1tduv00o1_1280.jpg', // TODO!!!!
       description: 'Check out the results from...'
     }, function(response) {
       // noop

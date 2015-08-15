@@ -72,11 +72,18 @@ module.exports = React.createClass({
       // infer they are owner because they filled out last survey
       var isOwner = surveyStore.isComplete('gamerType');
 
-      nav = (
+      nav = isOwner ? (
         <div key='b'>
           <h2 className='result-nav-title'>
-            {isOwner ? 'YOUR' : 'PROJECT'} <Link to='home'>GAMR</Link> PROFILE
+            Your <Link to='home'>GAMR</Link> PROFILE
           </h2>
+        </div>
+      ) : (
+        <div key='b' className='inbound'>
+          <h2 className='result-nav-title'>
+            <Link to='home'>PROJECT GAMR</Link> PROFILE
+          </h2>
+          {/* <Link className='participate' to='home'>Participate</Link> */}
         </div>
       );
     }
