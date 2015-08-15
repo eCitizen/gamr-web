@@ -6,6 +6,7 @@ var React = require('react'),
   Route = Router.Route,
   api = require('../services/api'),
   guide = require('../services/guide');
+  checkRoute = require('../services/checkRoute');
 
 var Home = require('./Home.jsx'),
   Identity = require('./Identity.jsx'),
@@ -20,11 +21,17 @@ var Home = require('./Home.jsx'),
   Personality = Section.Personality,
   GamerType = Section.GamerType;
 
+var inputStore = require('../input/store');
+
+function requireConsent() {
+  return inputStore.getField('consent', 'hasConsented'); 
+}
+
 var routes = (
   <Route name="home" path="/" handler={Home}>
     <Route name="consent" path="consent" handler={Consent}/>
-    <Route name="identity" path="identity" handler={Identity}/>
-    <Route name="survey" handler={Survey}>
+    <Route name="identity" path="identity" handler={checkRoute(Identity, [requireConsent])}/>
+    <Route name="survey" handler={checkRoute(Survey, [requireConsent])}>
       <Route name="brain" path="brain-type" handler={BrainType}/>
       <Route name="personality" path="personality" handler={Personality}/>
       <Route name="gamer-type" path="gamer-type" handler={GamerType}/>

@@ -17,7 +17,7 @@ X <  Final Copy
 X <  Add image path to gamer types json
 X <  Responsive Styles
 X <  Handle touch/click everywhere
-  <  Shim IE
+X <  Shim IE
   <  Ensure Consent Always
   <  DESIGN PORTFOLIO FOR JOSIE
 
