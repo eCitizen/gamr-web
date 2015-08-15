@@ -157,7 +157,7 @@ module.exports = React.createClass({
             <ReadBrain/>
           </div>
   
-          {true || this.state.isOwner ? (
+          {this.state.isOwner ? (
             <div className='result-social'>
               <TwitterButton text={'I am ' + gamerDescription.title}/>
               <FacebookButton text={'I am ' + gamerDescription.title}/>
