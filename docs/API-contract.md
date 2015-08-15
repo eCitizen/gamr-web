@@ -16,7 +16,7 @@
   sl_WOW_realm: "alleria",
   sl_WOW_region: "us",
   ta_BFHD_id: "HARDLINE PLAYER",
-  ta_LOL_id: "PLAYER SOMMONER",
+  ta_LOL_id: "PLAYER SUMMONER",
   ta_WOW_id: "WOW CHARACTER"
 }
 
@@ -44,7 +44,7 @@
     sl_WOW_realm: "alleria",
     sl_WOW_region: "us",
     ta_BFHD_id: "HARDLINE PLAYER",
-    ta_LOL_id: "PLAYER SOMMONER",
+    ta_LOL_id: "PLAYER SUMMONER",
     ta_WOW_id: "WOW CHARACTER",
     sl_gender: "male",
     sl_birth_month: "7",

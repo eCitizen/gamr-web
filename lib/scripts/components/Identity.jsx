@@ -176,7 +176,7 @@ module.exports = React.createClass({
       formBlocks.push(
         <div className='form-block' key='a'>
           <h2>{LOL.title}</h2>
-          <FormInput {... LOL.fields.sommonerName}/>
+          <FormInput {... LOL.fields.summonerName}/>
           <FormSelect {... LOL.fields.region}/>
           <FormSelect {... LOL.fields.preferredLane}/>
           <FormSelect {... LOL.fields.preferredRole}/>
@@ -225,10 +225,10 @@ module.exports = React.createClass({
       <Grid>
         <div className='preamble inner'>
           <p className='speaking'>
-            <em>Before getting started...</em>
+            <em>Your information</em>
           </p>
           <p>
-            We need some basic information about you
+            Please tell us a little about yourself
           </p>
         </div>
 
@@ -238,11 +238,9 @@ module.exports = React.createClass({
           onChange={this.handleChange}
           onSubmit={this.submitProfiles}>
 
-          <h4 className='directions-title'>Personal Profile</h4>
-
           {background}
 
-          <h4 className='directions-title'>Gamer Profile(s)</h4>
+          <h4 className='directions-title'>Game Account(s)</h4>
           <h6 className={noteClass}>
             You must fill out at least one game profile
           </h6>

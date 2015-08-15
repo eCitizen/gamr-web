@@ -59,7 +59,7 @@ module.exports = React.createClass({
           <p className='speaking'>
             <em>Here is what we found...</em><br/>
           </p>
-          Please confirm that these are your profiles
+          Please confirm that these are your accounts
         </div>
         <div>
           <ul className='profile-results'>

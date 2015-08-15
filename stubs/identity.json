@@ -3,8 +3,8 @@
 	"LOL": {
 		"title": "League of Legends",
 		"fields": {
-			"sommonerName": {
-				"label": "Sommoner Name",
+			"summonerName": {
+				"label": "Summoner Name",
 				"id": "LOL_id",
 				"type": "input"
 			},
@@ -32,7 +32,8 @@
 					"top":"Top",
 					"mid":"Mid",
 					"bottom":"Bottom",
-					"jungle":"Jungle"
+					"jungle":"Jungle",
+					"noPreference":"No Preference"
 				}
 			},
 			"preferredRole": {
@@ -40,9 +41,13 @@
 				"id": "LOL_role",
 				"type": "select",
 				"options": {
-					"apcarry":"AP Carry",
-					"tank":"Tank",
-					"support":"Support"
+					"assassin": "Assassin", 
+					"fighter": "Fighter", 
+					"mage": "Mage", 
+					"support": "Support", 
+					"tank": "Tank", 
+					"marksman": "Marksman",
+					"noPreference": "No Preference"
 				}
 			}
 		}
@@ -353,7 +358,7 @@
 				}
 			},
 			"month": {
-				"label": "Month",
+				"label": "Select Birth Month",
 				"id": "birth_month",
 				"type": "select",
 				"options": [
@@ -408,7 +413,7 @@
 				]
 			},
 			"year": {
-				"label": "Year",
+				"label": "Select Year",
 				"id": "birth_year",
 				"type": "selectRange",
 				"range": [2014,1950]
@@ -416,11 +421,10 @@
 		}
 	},
 	"LANG": {
-		"title": "Country & English Language Comprehension",
+		"title": "Nationality & English Level",
 		"fields": {
 			"country": {
-				"label": "Select County",
-				"defaultValue": "United_States",
+				"label": "Select Nationality",
 				"id": "country",
 				"type:": "select",
 				"options": {
@@ -675,11 +679,11 @@
 				"id": "english_lvl",
 				"type:": "select",
 				"options": {
-					"native":"Native",
-					"advanced":"Advanced",
-					"intermediate":"Intermediate",
+					"none":"None",
 					"basic":"Basic",
-					"none":"None"
+					"intermediate":"Intermediate",
+					"advanced":"Advanced",
+					"native":"Native"
 				}
 			}
 		}
