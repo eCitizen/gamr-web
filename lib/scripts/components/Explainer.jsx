@@ -12,17 +12,17 @@ module.exports = React.createClass({
       <div className='intro-body'>
         <div className='intro-body-inner'>
           <div className='loud-text'>
-            <h4>How you play reflects who you are.</h4>
-            <h5>Discover your personality, brain type and gamer type in just 15 minutes.</h5>
+            <h4>Does the way you play reflect who you are?</h4>
+            <h5>Maverick. Something. Leeroy Jenkins. <br/>Discover your personality, your brain type, and your gamer type in 15 minutes.</h5>
           </div>
 
           <Video/>
 
           <p>
-            The Playful Systems group at <strong>MIT Media Lab</strong> has teamed up with <strong>Tilburg University</strong> to study how personality relates to gameplay.
+            The Playful Systems group at <strong>MIT Media Lab</strong> has teamed up with <strong>Tilburg University</strong> to study how our game behavior relates to how we are in real life.
           </p>
           <p>
-            We are asking players to participate in a three-part survey about their personality, brain type, and gamer type.
+            Tell us a little about who you are and how you play, and we will show you <strong>your GAMR profile</strong>: a custom report on your personality, brain type and gamer type. 
           </p>
 
           <div className='valid-games'>

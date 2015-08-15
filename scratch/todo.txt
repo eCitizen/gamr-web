@@ -10,7 +10,7 @@ x <  Normalize values for brain type
 x <  Intro arrow takes you down page
 x <  Make sure you cannot double submit
 x <  Results social tools
-  <  Shared Inbound View
+x <  Shared Inbound View
   <  Final Copy
 
   Friday

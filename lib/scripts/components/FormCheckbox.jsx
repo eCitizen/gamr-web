@@ -35,10 +35,9 @@ module.exports = FormCheckbox = React.createClass({
 
   render: function () {
     return (
-      <div className='checkbox-wrap'>
-        <div className={classnames(this.props.className, 'checkbox', {'checked': this.state.checked})} 
-          onMouseDown={this._handleClick}/>
-        <label onMouseDown={this._handleClick}>
+      <div className='checkbox-wrap' onMouseDown={this._handleClick}>
+        <div className={classnames(this.props.className, 'checkbox', {'checked': this.state.checked})} />
+        <label>
           {this.props.children}
         </label>
       </div>

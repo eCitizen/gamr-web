@@ -135,6 +135,7 @@ $checkbox-space: 32px;
   }
 
   label {
+    display: inline-block;
     letter-spacing: 1px;
     font-size: $field-font-size;
     font-family: $font-text;
@@ -210,7 +211,7 @@ $checkbox-space: 32px;
   }
 
   .intro {
-    max-width: 400px;
+    max-width: 430px;
   }
 
   .terms {
@@ -232,8 +233,13 @@ $checkbox-space: 32px;
     overflow: hidden; // cheap clearfix
   }
 
+  .checkbox {
+    top: 0px;
+    margin-top: 0;
+  }
+
   .consent-ok {
-    line-height: $button-height;
+    line-height: 20px;
     float: left;
     margin-bottom: $space-medium;
   }
@@ -243,6 +249,7 @@ $checkbox-space: 32px;
   }
 
   .warning {
+    padding-top: $space-small;
     font-style: italic;
     color: $color-warn;
     clear: both;
