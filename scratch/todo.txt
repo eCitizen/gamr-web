@@ -18,7 +18,7 @@ X <  Add image path to gamer types json
 X <  Responsive Styles
 X <  Handle touch/click everywhere
 X <  Shim IE
-  <  Ensure Consent Always
+X <  Ensure Consent Always
   <  DESIGN PORTFOLIO FOR JOSIE
 
   Sun
@@ -44,3 +44,5 @@ X <  Shim IE
   ?  Switch Survey Order
   ?  Transition for results nav
   ?  refine hash so it doesnt need separator
+  ?  local storage
+
