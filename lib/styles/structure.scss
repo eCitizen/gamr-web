@@ -12,6 +12,7 @@ body,
 
 .page {
   padding: ($nav-height + $space-large) $gutter-width;
+  @include clearfix();
   @include border-box();
 }
 

@@ -2,16 +2,59 @@
 // Hacky overrides :(
 
 @media (max-width: $center-group-break) {
+  .desktop-only { display: none; }
+
+  .nav {
+    width: auto;
+    padding-left: $gutter-width;
+    padding-right: $gutter-width;
+  }
+
+  .nav-left {
+    margin-top: 6px;
+  }
+
+  .nav-left > a,
+  .nav-left > .title {
+    display: block;
+    line-height: 18px;
+    margin-left: 0;
+  }
+
+  .title.nav-title, .title.nav-title-sub {
+    letter-spacing: 1px;
+  }
+
+  .progress-dot {
+    margin-right: 12px;
+  }
+
   .page {
-    padding-top: ($nav-height + 22px);
+    padding-top: ($nav-height + $space-large);
+    padding-bottom: ($space-large);
   }
 
   .profile-wrap {
     margin-top: ($nav-height + 22px);
+    padding-bottom: ($space-large);
   }
 
   .question-wrap {
     height: 120px;
+  }
+
+  .choices  {
+    margin-left: -4px;
+    margin-right: -4px;
+
+    & > li {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  }
+
+  .nav-right > .progress-bar {
+    margin-right: 0;
   }
 
   .answer.answers-4 {
@@ -22,5 +65,13 @@
     float: right;
     clear: both;
     padding-top: $space-medium;
+  }
+
+  .result-social > .button {
+    margin: 0 5px 15px;
+  }
+
+  .result-nav-title {
+    text-align: left;
   }
 }

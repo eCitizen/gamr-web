@@ -57,7 +57,7 @@ module.exports = React.createClass({
       <div key='a'>
         <div className='nav-left'>
           <Link to='home'>
-            <Title className='nav-title-sub a'>PROJECT GAMR</Title>
+            <Title className='nav-title-sub a'><span className='desktop-only'>PROJECT</span> GAMR</Title>
           </Link>
           <Title className='nav-title'>{text.main}</Title>
         </div>
