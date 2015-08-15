@@ -1,0 +1,26 @@
+
+// Hacky overrides :(
+
+@media (max-width: $center-group-break) {
+  .page {
+    padding-top: ($nav-height + 22px);
+  }
+
+  .profile-wrap {
+    margin-top: ($nav-height + 22px);
+  }
+
+  .question-wrap {
+    height: 120px;
+  }
+
+  .answer.answers-4 {
+    max-width: auto;
+  }
+
+  .identity-results .small-text {
+    float: right;
+    clear: both;
+    padding-top: $space-medium;
+  }
+}

@@ -54,7 +54,7 @@ module.exports = React.createClass({
     }
 
     return (
-      <div className='inner'>
+      <div className='inner identity-results'>
         <div className='preamble'>
           <p className='speaking'>
             <em>Here is what we found...</em><br/>
