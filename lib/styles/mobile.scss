@@ -156,4 +156,36 @@
   .result-nav-title {
     text-align: left;
   }
+
+  .up-next {
+    & > h6 {
+      font-family: $font-title;
+      text-transform: uppercase;
+      font-size: 19px;
+      letter-spacing: 2px;
+      color: $color-main;
+    }
+  }
+
+
+  .up-next-title {
+    margin: $space-small 0 $space-medium;
+
+    & > h5 {
+      display: inline-block;
+      color: $color-main;
+      font-family: $font-title;
+      text-transform: uppercase;
+      font-size: 45px;
+    }
+
+    & > strong {
+      font-size: 19px;
+      display: block;
+      margin-right: 0px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      font-style: italic;
+    }
+  }
 }
