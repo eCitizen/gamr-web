@@ -276,7 +276,12 @@ $checkbox-space: 32px;
       margin-top: 2px;
       color: $color-main;
       position: relative;
-      display: inline-block;
+      
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 0 20px;
 
       &:before {
         content:  "\2713  ";
