@@ -31,7 +31,7 @@ X .  Intro Social Buttons
   Tues
 X .  Ensure error handling for user calls (use error.message)
   .  Email what I need from Jason
-  .  Refine Brain Chart
+  .  Refine Brain Chart (labels, spacing)
   .  Social Meta
   .  Switch Survey Order
   .  fix bug with part II
