@@ -24,19 +24,26 @@ X <  Ensure Consent Always
 X <  DESIGN PORTFOLIO FOR JOSIE
 
   Mon
-  <  How to not break mobile browsers with animation
 X .  Add styles to handle super long names
-  .  Refine Brain Chart
 X .  Refine Star Plot
 X .  Intro Social Buttons
 
-  .  Ensure error handling for user calls
-  .  Social Images
+  Tues
+X .  Ensure error handling for user calls (use error.message)
+  .  Email what I need from Jason
+  .  Refine Brain Chart
   .  Social Meta
+  .  Switch Survey Order
+  .  fix bug with part II
+  .  Social Images
+
+  Thurs
+  <  How to not break mobile browsers with animation
   .  Read more: brain type
   .  Read more: gamr type
   .  Read more: personality
   .  Link to about
+  .  make background for about
   .  Make more backgrounds
   .  Make Gamr Gifs
   .  404
@@ -44,7 +51,7 @@ X .  Intro Social Buttons
   ?  Generate test urls
   ?  Refine placement of transition text in relation to question set
   ?  Refine Background animation
-  ?  Switch Survey Order
+  
   ?  Transition for results nav
   ?  refine hash so it doesnt need separator
   ?  local storage

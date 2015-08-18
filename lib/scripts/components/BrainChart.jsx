@@ -7,13 +7,14 @@ module.exports = React.createClass({
 
   componentDidMount: function () {
     var data = [
-      // {y: 12, x: 26},
-      // {y: 32, x: 24},
-      // {y: 6,  x: 13},
-      // {y: 16, x: 12},
-      // {y: 32, x: 12},
-      // {y: 32, x: 0},
-      // {y: 2, x: 25},
+      {y: 12, x: 26},
+      {y: 32, x: 24},
+      {y: 6,  x: 13},
+      {y: 16, x: 12},
+      {y: 32, x: 12},
+      {y: 32, x: 0},
+      {y: 2, x: 25},
+      {y: 44, x: 50},
       {x: this.props.Systemizing, y: this.props.Empathizing}
     ];
 

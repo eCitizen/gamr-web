@@ -18,25 +18,6 @@ var getFormErrors = require('../validators/identity');
 var IdentityResults = require('./IdentityResults.jsx');
 var FORM_ID = 'identity';
 
-var errors = {
-  'notFound': {
-    title: 'Sorry',
-    message: 'We could not find any of your profiles'
-  },
-  'reserved': {
-    title: 'Sorry',
-    message: 'It looks like this profile has been used before'
-  },
-  'default': {
-    title: 'Sorry',
-    message: 'Something went wrong'
-  },
-  'invalid': {
-    title: 'Sorry',
-    message: 'You must complete all required fields'
-  }
-}
-
 module.exports = React.createClass({
   displayName: 'Identity',
 
@@ -86,9 +67,10 @@ module.exports = React.createClass({
       loading: false
     });
 
-    var errConfig = errors[err] || errors.default;
-
-    errorSvc.create(errConfig);
+    errorSvc.create({
+      title: err.title || 'Sorry',
+      message: err.message || 'Something went wrong'
+    });
   },
 
   reset: function(e) {

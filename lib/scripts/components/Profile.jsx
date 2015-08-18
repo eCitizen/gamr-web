@@ -153,10 +153,12 @@ module.exports = React.createClass({
             <h2 className="profile-title">Brain Type</h2>
             <div className='result-barcode'>{getScaleBareCode('brainType')}</div>
             <p>
-              Your brain is like squishy or something.
+              Your brain type is <strong>{
+                brainTypeHelper.getBrainType(profile.brainType.Systemizing, profile.brainType.Empathizing)
+              }</strong>
             </p>
             <p>
-              {gamerDescription.description}
+              Brain type relates to, but is seperate from, physical gender. All five brain types occur among both men and women, but in different proportions. Brain type has been found to be a better predictor then physical gender of who chooses a career in Science, Technology, Engineering, and Mathematics.
             </p>
             <ReadBrain/>
           </div>

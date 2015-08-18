@@ -15,7 +15,10 @@ router.get('/user', function(req, res, next) {
 
   if (isEmpty(profiles)) {
     return res.json({
-      error: 'notFound'
+      error: {
+        title: 'Sorry',
+        message: 'notFound'
+      }
     });
   }
 
