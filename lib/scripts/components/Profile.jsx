@@ -120,7 +120,7 @@ module.exports = React.createClass({
           </div>
 
           <div className='profile-section'>
-            <div className="profile-media">
+            <div className="profile-media star-plot-wrap">
               <div className="profile-media-box">
                 <div className='profile-media-child'>
                   <StarPlot data={profile.personality}/>

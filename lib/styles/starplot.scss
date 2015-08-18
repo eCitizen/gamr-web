@@ -1,12 +1,22 @@
 
+.star-plot-wrap {
+  .profile-media-box {
+    height: 220px;
+    padding-bottom: 0;
+  }
+}
+
 .star-wrap {
   height: 100%;
 
   & > svg {
     height: 100%;
+    width: 280px;
     display: inline-block;
-    margin: 0 auto;
+    
     position: absolute;
+    left: 50%;
+    margin-left: -150px;
   }
 }
 
@@ -14,23 +24,28 @@
   margin-bottom: 40px;
   fill: $color-secondary;
 }
+
 .star-title {
   font-size: 14px;
   fill: $color-secondary;
 }
+
 .star-label {
   font-size: 11.5px;
   letter-spacing: 1px;
   fill: $color-white;
 }
+
 .star-origin {
   fill: $color-main;
 }
+
 .star-axis {
   stroke: $color-subtle;
   stroke-width: 2px;
   stroke-dasharray: 1 2;
 }
+
 .star-path {
   stroke: $color-main;
   stroke-width: 2px;

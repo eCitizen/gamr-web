@@ -23,10 +23,10 @@ module.exports = React.createClass({
         .scales(scale)
         .labels(properties)
         .margin({
-          top: 10,
-          right: 10,
-          bottom: 10,
-          left: 10
+          top: 20,
+          right: 60,
+          bottom: 20,
+          left: 60
         })
         .labelMargin(10)
         .includeGuidelines(true)
@@ -37,48 +37,48 @@ module.exports = React.createClass({
     var starG = svg.append('g')
         .datum(this.props.data)
         .call(star)
-        .call(star.interaction);
+        // .call(star.interaction);
 
-    var interactionLabel = wrapper.append('div')
-        .attr('class', 'interaction label')
+    // var interactionLabel = wrapper.append('div')
+    //     .attr('class', 'interaction label')
 
-    var circle = svg.append('circle')
-        .attr('class', 'interaction circle')
-        .attr('r', 5)
+    // var circle = svg.append('circle')
+    //     .attr('class', 'interaction circle')
+    //     .attr('r', 5)
 
-    var interaction = wrapper.selectAll('.interaction')
-        .style('display', 'none');
+    // var interaction = wrapper.selectAll('.interaction')
+    //     .style('display', 'none');
 
-    svg.selectAll('.star-interaction')
-      .on('mouseover', function(d) {
-        svg.selectAll('.star-label')
-          .style('display', 'none')
+    // svg.selectAll('.star-interaction')
+    //   .on('mouseover', function(d) {
+    //     svg.selectAll('.star-label')
+    //       .style('display', 'none')
 
-        interaction
-          .style('display', 'block')
+    //     interaction
+    //       .style('display', 'block')
 
-        circle
-          .attr('cx', d.x)
-          .attr('cy', d.y)
+    //     circle
+    //       .attr('cx', d.x)
+    //       .attr('cy', d.y)
 
-        var label = interactionLabel.node();
-        label.textContent = 'hello';
-        console.log(label.offsetWidth)
-        label.style.left = (d.xExtent - (label.offsetWidth / 2)) + 'px';
-        label.style.top = (d.yExtent - (label.offsetHeight / 2)) + 'px';
-        // $interactionLabel = $(interactionLabel.node());
-        // interactionLabel
-        //   .text(d.key + ': ' + d.datum[d.key])
-        //   .style('left', d.xExtent - ($interactionLabel.width() / 2))
-        //   .style('top', d.yExtent - ($interactionLabel.height() / 2))
-      })
-      .on('mouseout', function(d) {
-        interaction
-          .style('display', 'none')
+    //     var label = interactionLabel.node();
+    //     label.textContent = 'hello';
+    //     console.log(label.offsetWidth)
+    //     label.style.left = (d.xExtent - (label.offsetWidth / 2)) + 'px';
+    //     label.style.top = (d.yExtent - (label.offsetHeight / 2)) + 'px';
+    //     // $interactionLabel = $(interactionLabel.node());
+    //     // interactionLabel
+    //     //   .text(d.key + ': ' + d.datum[d.key])
+    //     //   .style('left', d.xExtent - ($interactionLabel.width() / 2))
+    //     //   .style('top', d.yExtent - ($interactionLabel.height() / 2))
+    //   })
+    //   .on('mouseout', function(d) {
+    //     interaction
+    //       .style('display', 'none')
 
-        svg.selectAll('.star-label')
-          .style('display', 'block')
-      })
+    //     svg.selectAll('.star-label')
+    //       .style('display', 'block')
+    //   })
   },
 
   render: function () {
@@ -88,6 +88,18 @@ module.exports = React.createClass({
 
 // TOTAL HACK :(
 // copy of source from https://github.com/kevinschaul/d3-star-plot
+
+
+// shift where the axes start
+// var START_ANGLE = Math.PI * (-1/10); // up
+var START_ANGLE = 2 * Math.PI * (-0.28);
+var SHIFT_X = -3;
+var SHIFT_Y = -3;
+var labelShifts = {
+  'Openness': [3, -8],
+  'Agreeableness': [0, -4],
+  'Extraversion': [5, 2]
+}
 
 d3.starPlot = function() {
   var width = 200,
@@ -104,7 +116,6 @@ d3.starPlot = function() {
       scales = [],
       labels = [],
       title = nop,
-
       g,
       datum,
       radius = width / 2,
@@ -131,7 +142,7 @@ d3.starPlot = function() {
   }
 
   function drawGuidelines() {
-    var r = 0;
+    var r = START_ANGLE;
     properties.forEach(function(d, i) {
       var l, x, y;
 
@@ -149,21 +160,33 @@ d3.starPlot = function() {
     })
   }
 
+  function makeClassName(text) {
+    return text.split(/\s+/).join('-');
+  }
+
+  function getShift(label) {
+    // HACK ATTACK
+    return labelShifts[label] || [0, 0];
+  }
+
   function drawLabels() {
-    var r = 0;
+    var r = START_ANGLE;
     properties.forEach(function(d, i) {
       var l, x, y;
 
       l = radius;
       x = (l + labelMargin) * Math.cos(r);
       y = (l + labelMargin) * Math.sin(r);
+
+
       g.append('text')
-        .attr('class', 'star-label')
-        .attr('x', origin[0] + x)
-        .attr('y', origin[1] + y)
+        .attr('class', 'star-label ' + makeClassName(labels[i]))
+        .attr('x', origin[0] + x + getShift(labels[i])[0])
+        .attr('y', origin[1] + y + getShift(labels[i])[1])
         .text(labels[i])
         .style('text-anchor', 'middle')
         .style('dominant-baseline', 'central')
+        // .call(wrap, 200);
 
       r += radians;
     })
@@ -179,7 +202,7 @@ d3.starPlot = function() {
     var path = d3.svg.line.radial()
 
     var pathData = [];
-    var r = Math.PI / 2;
+    var r = START_ANGLE + Math.PI / 2;
     properties.forEach(function(d, i) {
       var userScale = scales[i] || scales[0];
       pathData.push([
@@ -210,7 +233,7 @@ d3.starPlot = function() {
     // positioning of the attribute extents. `*Value` variables are used
     // for the attribute values.
     var rInteraction = Math.PI / 2;
-    var rExtent = 0;
+    var rExtent = START_ANGLE;
     properties.forEach(function(d, i) {
       var lInteraction, xInteraction, yInteraction;
       var lExtent, xExtent, yExtent;
@@ -285,7 +308,7 @@ d3.starPlot = function() {
     if (!arguments.length) return width;
     width = _;
     radius = width / 2;
-    origin = [radius, radius];
+    origin = [radius + SHIFT_X, radius + SHIFT_Y];
     scale.range([0, radius])
     return chart;
   };
@@ -293,7 +316,7 @@ d3.starPlot = function() {
   chart.margin = function(_) {
     if (!arguments.length) return margin;
     margin = _;
-    origin = [radius, radius];
+    origin = [radius + SHIFT_X, radius + SHIFT_Y];
     return chart;
   };
 
@@ -328,5 +351,30 @@ d3.starPlot = function() {
   };
 
   return chart;
+}
+
+function wrap(text, width) {
+  console.log(text, width);
+  text.each(function() {
+    var text = d3.select(this),
+        words = text.text().split(/\s+/).reverse(),
+        word,
+        line = [],
+        lineNumber = 0,
+        lineHeight = 1.1, // ems
+        y = text.attr("y"),
+        dy = parseFloat(text.attr("y")),
+        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+    while (word = words.pop()) {
+      line.push(word);
+      tspan.text(line.join(" "));
+      if (tspan.node().getComputedTextLength() > width) {
+        line.pop();
+        tspan.text(line.join(" "));
+        line = [word];
+        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+      }
+    }
+  });
 }
 
