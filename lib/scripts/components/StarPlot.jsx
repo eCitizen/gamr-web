@@ -93,10 +93,10 @@ module.exports = React.createClass({
 // shift where the axes start
 // var START_ANGLE = Math.PI * (-1/10); // up
 var START_ANGLE = 2 * Math.PI * (-0.28);
-var SHIFT_X = -3;
+var SHIFT_X = -1;
 var SHIFT_Y = -3;
 var labelShifts = {
-  'Openness': [3, -8],
+  'Openness': [1, -8],
   'Agreeableness': [0, -4],
   'Extraversion': [5, 2]
 }
