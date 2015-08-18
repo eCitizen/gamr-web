@@ -6,6 +6,7 @@
 
 var React = require('react');
 var Button = require('./Button.jsx');
+var social = require('../services/social');
 
 module.exports = React.createClass({
   displayName: 'TwitterButton',
@@ -22,23 +23,10 @@ module.exports = React.createClass({
   },
 
   openShare: function() {
-    var width  = 575,
-        height = 400,
-        left   = (window.offsetWidth  - width)  / 2,
-        top    = (window.offsetHeight - height) / 2,
-        opts   = 'status=1' +
-                 ',width='  + width  +
-                 ',height=' + height +
-                 ',top='    + top    +
-                 ',left='   + left;
-
-    var url = 'https://twitter.com/intent/tweet'; 
-    
-    url += '?text=' + this.props.text;
-    url += '&url=' + encodeURIComponent(window.location.href);
-    url += '&hashtags=' + this.props.hashtags.join(',');
-    
-    window.open(url, 'twitter', opts);
+    social.twitter({
+      text: this.props.text,
+      hashtags: this.props.hashtags
+    });
     return false;
   },
 

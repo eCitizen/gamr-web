@@ -6,6 +6,7 @@
 
 var React = require('react');
 var Button = require('./Button.jsx');
+var social = require('../services/social');
 
 module.exports = React.createClass({
   displayName: 'FacebookButton',
@@ -22,24 +23,10 @@ module.exports = React.createClass({
   },
 
   openShare: function() {
-    // TODO: get app id from build config
-    // get real text
-    // figure out image
-    // make all images for facebook app
-    // https://developers.facebook.com/docs/sharing/reference/feed-dialog/v2.4
-    // http://stackoverflow.com/questions/21310648/facebook-app-this-must-be-derived-from-canvas-url-secure-canvas-url
-    // app https://developers.facebook.com/apps/167828763548248/settings/
-
-    console.log(FB)
-    FB.ui({
-      method: 'feed',
-      link: window.location.href,
-      name: 'PROJECT GAMR',
+    social.facebook({
       caption: this.props.text,
       picture: 'http://40.media.tumblr.com/90954c2a102ae919d0142cfdea9dbadf/tumblr_nr58a1W2ZE1tduv00o1_1280.jpg', // TODO!!!!
       description: 'Check out the results from...'
-    }, function(response) {
-      // noop
     });
   },
 

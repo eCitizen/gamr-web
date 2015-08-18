@@ -3,9 +3,18 @@ var React = require('react');
 var Link = require('react-router').Link;
 var Button = require('./Button.jsx');
 var Video = require('./Video.jsx');
+var social = require('../services/social');
 
 module.exports = React.createClass({
   displayName: 'Explainer',
+
+  tweet: function () {
+    social.twitter();
+  },
+
+  post: function () {
+    social.facebook();
+  },
 
   render: function () {
     return (
@@ -41,8 +50,8 @@ module.exports = React.createClass({
 
           <div className='intro-foot'>
             <div className='intro-social'>
-              <i className='fa fa-twitter'/>
-              <i className='fa fa-facebook-official'/>
+              <i className='fa fa-twitter' onClick={this.tweet}/>
+              <i className='fa fa-facebook-official' onClick={this.post}/>
             </div>
             <div className='intro-about'>About us</div>
           </div>

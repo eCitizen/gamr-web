@@ -25,7 +25,7 @@ X <  Ensure Consent Always
   <  How to not break mobile browsers with animation
   .  Add styles to handle super long names
   .  Refine Brain Chart
-  .  Refine Star Plot
+X .  Refine Star Plot
   .  Intro Social Buttons
 
   .  Ensure error handling for user calls
@@ -39,6 +39,7 @@ X <  Ensure Consent Always
   .  Make Gamr Gifs
   .  404
 
+  ?  Generate test urls
   ?  Refine placement of transition text in relation to question set
   ?  Refine Background animation
   ?  Switch Survey Order
