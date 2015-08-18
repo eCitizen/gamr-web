@@ -1,10 +1,17 @@
 
 var React = require('react');
+var brainTypeHelper = require('../services/brainTypeHelper');
 
 module.exports = React.createClass({
   displayName: 'BrainChart',
 
   componentDidMount: function () {
+
+    var EQ = this.props.Empathizing.raw;
+    var SQ = this.props.Systemizing.raw;
+    
+    console.log(EQ, SQ);
+
     var wrapper = d3.select(React.findDOMNode(this));
 
     // add the tooltip area to the webpage
@@ -70,11 +77,8 @@ module.exports = React.createClass({
 
     // end background
 
-
-
     x.domain([100, 0]);
     y.domain([0, 100]);
-
 
     function makeLine(threshold) {
       var line = d3.svg.line()
@@ -197,3 +201,7 @@ module.exports = React.createClass({
     return <div className='brain-chart-wrap'/>;
   }
 });
+
+
+
+

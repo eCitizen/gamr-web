@@ -90,7 +90,7 @@ module.exports = React.createClass({
           {surveyKey[survey].map(function (axis) {
             return (
               <span className='group' key={axis.key}>
-                {axis.key}<em>{Math.round(profile[survey][axis.title])}</em> 
+                {axis.key}<em>{Math.round(profile[survey][axis.title].score)}</em> 
               </span>
             )
           })}
@@ -142,7 +142,7 @@ module.exports = React.createClass({
             <div className="profile-media">
               <div className="profile-media-box">
                 <div className='profile-media-child'>
-                  <BrainChart/>
+                  <BrainChart {... profile.brainType}/>
                 </div>
               </div>
             </div>
