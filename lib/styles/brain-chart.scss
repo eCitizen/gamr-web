@@ -36,8 +36,11 @@
     fill: url('#horizontalHatch');    
   }
 
-  // fill: $color-main;
-  // fill-opacity: 0.2;
+  fill-opacity: 0.4;
+}
+
+.hatch {
+  stroke: $color-subtle;
 }
 
 .tick text {

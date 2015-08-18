@@ -6,9 +6,6 @@ module.exports = React.createClass({
   displayName: 'BrainChart',
 
   componentDidMount: function () {
-
-    console.log(this.props)
-
     var data = [
       {y: 12, x: 26},
       {y: 32, x: 24},
@@ -57,53 +54,10 @@ module.exports = React.createClass({
     definePatterns(svg);
 
     var background = svg.append("g").attr('class', 'chart-background');
+    shadeRegions(background);
 
-    shadeRegions(background, brainTypeHelper.makeThresholdLineFunctions());
 
-    // function makeLine(threshold) {
-    //   var line = d3.svg.line()
-    //     .x(function(d) { return x(d.x); })
-    //     .y(function(d) { return y(d.y); });
 
-    //   points = [
-    //      {x: 0, y: threshold},
-    //      {x: 100, y: threshold + 100},
-    //   ]
-
-    //   svg.append("path")
-    //     .datum(points)
-    //     .attr("class", "line")
-    //     .attr("d", line);
-    // }
-
-    // function makeArea(upper, lower, opacity, className) {
-    //   className = className || 'up';
-    //   function getPoint(x) { 
-    //     return {x: x, y: x + upper}
-    //   }
-
-    //   var area = d3.svg.area()
-    //     .x(function(d) { return x(d.x); })
-    //     .y1(function(d) { return y(d.y); })
-    //     .y0(function(d) { 
-    //       return y(d.y - (upper - lower)); 
-    //     });
-
-    //   points = [
-    //     getPoint(0),
-    //     // getPoint(0 - upper),
-    //     // getPoint(100 - upper),
-    //     getPoint(100)
-    //   ]
-
-    //   // console.log(points);
-
-    //   svg.append("path")
-    //     .datum(points)
-    //     .attr("class", "area " + className)
-    //     .style('fill-opacity', opacity)
-    //     .attr("d", area);
-    // }
 
     // makeArea(100 * 2 / 3, 100, .3);
     // makeArea(100/3, 100*2/3, .2);
@@ -155,7 +109,6 @@ module.exports = React.createClass({
       .attr("cx", function (d) {return x(d.x)})
       .attr("cy", function (d) {return y(d.y)})
       .on("mouseover", function(d) {
-        console.log('heee')
           tooltip.transition()
                .duration(200)
                .style("opacity", .9);
@@ -168,28 +121,108 @@ module.exports = React.createClass({
                .duration(500)
                .style("opacity", 0);
       });
-    function shadeRegions(svg, fns) {
-      console.log(fns);
-      fns.forEach(function (thresholdFn, idx) {
-        makeLine(svg, thresholdFn);
+
+    function shadeRegions(svg) {
+      var lines = brainTypeHelper.makeThresholdLineFunctions();
+      var areas = brainTypeHelper.makeThresholdAreaFunctions();
+
+      // lines.forEach(function (thresholdFn, idx) {
+      //   makeLine(svg, thresholdFn);
+      // });
+
+      areas.forEach(function (area, idx) {
+        makeArea(svg, area, idx);
       });
     }
 
-    function makeLine(svg, thresholdFn) {
+    function getRelevantPoints(line) {
+      var x1 = line.fE(brainTypeHelper.EQ_MIN);
+      if (x1 < brainTypeHelper.SQ_MIN) x1 = brainTypeHelper.SQ_MIN;
+
+      var x2 = line.fE(brainTypeHelper.EQ_MAX); 
+      if (x2 > brainTypeHelper.SQ_MAX) x2 = brainTypeHelper.SQ_MAX;
+      return [x1, x2];
+    }
+
+    function makeLine(svg, threshold) {
       var line = d3.svg.line()
         .x(function(d) { return x(d.x); })
         .y(function(d) { return y(d.y); });
 
-      points = [
-        {x: brainTypeHelper.SQ_MIN, y: thresholdFn(brainTypeHelper.SQ_MIN)},
-        {x: brainTypeHelper.SQ_MAX, y: thresholdFn(brainTypeHelper.SQ_MAX)}
-      ];
-
+      var points = getRelevantPoints(threshold).map(function (x) {
+        return {
+          x: x,
+          y: threshold.fS(x)
+        };
+      });
+ 
       svg.append("path")
         .datum(points)
         .attr("class", "line")
         .attr("d", line);
     }
+
+    function makeArea(svg, areaThreshold, idx) {
+      var className = idx % 2 ? 'up' : 'right';
+
+      var area = d3.svg.area()
+        .x(function(d) { return x(d.x); })
+        .y1(function(d) { return y(d.y); })
+        .y0(function(d) {
+          var E = areaThreshold.lower ? areaThreshold.lower.fS(d.x) : brainTypeHelper.EQ_MAX;
+          E = (E > brainTypeHelper.EQ_MAX) ? brainTypeHelper.EQ_MAX : E;
+          E = (E < brainTypeHelper.EQ_MIN) ? brainTypeHelper.EQ_MIN : E;
+          return y(E); 
+        });
+
+      var points = [];
+      if (areaThreshold.upper) points = points.concat(getRelevantPoints(areaThreshold.upper));
+      if (areaThreshold.lower) points = points.concat(getRelevantPoints(areaThreshold.lower));
+      points.sort();
+
+      points = points.sort().map(function (x) {
+        var E = areaThreshold.upper ? areaThreshold.upper.fS(x) : brainTypeHelper.EQ_MIN;
+        E = (E > brainTypeHelper.EQ_MAX) ? brainTypeHelper.EQ_MAX : E;
+        E = (E < brainTypeHelper.EQ_MIN) ? brainTypeHelper.EQ_MIN : E;
+        return {
+          x: x, 
+          y: E
+        };
+      });
+
+      svg.append("path")
+        .datum(points)
+        .attr("class", "area " + className)
+        .attr("d", area);
+    }
+
+    // function makeArea(svg, areaThreshold, idx) {
+    //   var className = idx % 2 ? 'up' : 'right';
+
+    //   var area = d3.svg.area()
+    //     .x(function(d) { return x(d.x); })
+    //     .y1(function(d) { return y(d.y); })
+    //     .y0(function(d) { 
+    //       return y(areaThreshold.lower ? areaThreshold.lower.fS(d.x) : brainTypeHelper.EQ_MAX); 
+    //     });
+
+    //   function getPoint(x) { 
+    //     return {
+    //       x: x, 
+    //       y: areaThreshold.upper ? areaThreshold.upper.fS(x) : brainTypeHelper.EQ_MIN
+    //     };
+    //   }
+
+    //   points = [
+    //     getPoint(brainTypeHelper.SQ_MIN),
+    //     getPoint(brainTypeHelper.SQ_MAX)
+    //   ];
+
+    //   svg.append("path")
+    //     .datum(points)
+    //     .attr("class", "area " + className)
+    //     .attr("d", area);
+    // }
   },
 
   render: function () {
@@ -214,8 +247,8 @@ function definePatterns(svg) {
       .attr('width', 6)
       .attr('height', 4)
     .append('path')
+      .attr('class', 'hatch')
       .attr('d', 'M0,4 l0,-4')
-      .attr('stroke', '#fff')
       .attr('stroke-width', 2);
 
   defs.append('defs')
@@ -225,8 +258,8 @@ function definePatterns(svg) {
       .attr('width', 4)
       .attr('height', 6)
     .append('path')
+      .attr('class', 'hatch')
       .attr('d', 'M4,0 l-4,-0')
-      .attr('stroke', '#fff')
       .attr('stroke-width', 2);
 }
 
