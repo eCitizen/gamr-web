@@ -19,14 +19,16 @@ X <  Responsive Styles
 X <  Handle touch/click everywhere
 X <  Shim IE
 X <  Ensure Consent Always
-  <  DESIGN PORTFOLIO FOR JOSIE
 
   Sun
+X <  DESIGN PORTFOLIO FOR JOSIE
+
+  Mon
   <  How to not break mobile browsers with animation
-  .  Add styles to handle super long names
+X .  Add styles to handle super long names
   .  Refine Brain Chart
 X .  Refine Star Plot
-  .  Intro Social Buttons
+X .  Intro Social Buttons
 
   .  Ensure error handling for user calls
   .  Social Images
