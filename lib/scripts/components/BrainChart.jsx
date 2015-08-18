@@ -63,7 +63,7 @@ module.exports = React.createClass({
     .append("text")
       .attr("class", "axis-label")
       .attr("x", width/2)
-      .attr("y", 18)
+      .attr("y", 22)
       .style("text-anchor", "middle")
       .text("Systemizing");
 
@@ -73,7 +73,7 @@ module.exports = React.createClass({
     .append("text")
       .attr("class", "axis-label")
       .attr("transform", "rotate(-90)")
-      .attr("y", -18)
+      .attr("y", -22)
       .attr("dy", ".5em")
       .attr("dx", "-4.71em")
       .style("text-anchor", "end")
