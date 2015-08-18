@@ -16,6 +16,7 @@ var ReadGamer = require('./ReadMore.jsx').ReadGamer;
 var ReadBrain = require('./ReadMore.jsx').ReadBrain;
 var TwitterButton = require('./TwitterButton.jsx');
 var FacebookButton = require('./FacebookButton.jsx');
+var brainTypeHelper = require('../services/brainTypeHelper');
 
 module.exports = React.createClass({
   displayName: 'Profile',
@@ -88,9 +89,12 @@ module.exports = React.createClass({
       return (
         <span className='code'>
           {surveyKey[survey].map(function (axis) {
+            var value = (survey === 'personality') ? 
+              profile[survey][axis.title] :
+              brainTypeHelper.getScaledValue(profile[survey][axis.title], [axis.title]);
             return (
               <span className='group' key={axis.key}>
-                {axis.key}<em>{Math.round(profile[survey][axis.title].score)}</em> 
+                {axis.key}<em>{Math.round(value)}</em> 
               </span>
             )
           })}
