@@ -30,13 +30,30 @@
 }
 
 .area {
-  fill: url('#diagonalHatch');
-
-  &.right {
-    fill: url('#horizontalHatch');    
+  &.Extreme-Male {
+    fill: url('#Extreme-Male-Hatch');
+    fill-opacity: 0.7;
   }
 
-  fill-opacity: 0.4;
+  &.Male { 
+    fill: url('#Male-Hatch');
+  }
+
+  &.Balanced {
+    fill: url('#Balanced-Hatch');
+    fill-opacity: 0.3;
+  }
+
+  &.Female { 
+    fill: url('#Female-Hatch');
+  }
+
+  &.Extreme-Female {
+    fill: url('#Extreme-Female-Hatch');
+    fill-opacity: 0.7;
+  }
+
+  fill-opacity: 0.5;
 }
 
 .hatch {

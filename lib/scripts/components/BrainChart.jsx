@@ -56,21 +56,6 @@ module.exports = React.createClass({
     var background = svg.append("g").attr('class', 'chart-background');
     shadeRegions(background);
 
-
-
-
-    // makeArea(100 * 2 / 3, 100, .3);
-    // makeArea(100/3, 100*2/3, .2);
-    // // makeArea(-100/3, 100/3, .1);
-    // makeArea(-100*2/3, -100/3, .2, 'right');
-    // makeArea(-100, -100*2/3, .3, 'right');
-
-    // makeLine(0);
-    // makeLine(100/3);
-    // makeLine(100*2/3);
-    // makeLine(-100/3);
-    // makeLine(-100*2/3);
-
     svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
@@ -93,7 +78,6 @@ module.exports = React.createClass({
       .attr("dx", "-4.71em")
       .style("text-anchor", "end")
       .text("Empathizing");
-
 
     var dots = svg.selectAll(".dot").data(data);
 
@@ -163,7 +147,7 @@ module.exports = React.createClass({
     }
 
     function makeArea(svg, areaThreshold, idx) {
-      var className = idx % 2 ? 'up' : 'right';
+      var className = areaThreshold.type.split(' ').join('-');
 
       var area = d3.svg.area()
         .x(function(d) { return x(d.x); })
@@ -195,42 +179,12 @@ module.exports = React.createClass({
         .attr("class", "area " + className)
         .attr("d", area);
     }
-
-    // function makeArea(svg, areaThreshold, idx) {
-    //   var className = idx % 2 ? 'up' : 'right';
-
-    //   var area = d3.svg.area()
-    //     .x(function(d) { return x(d.x); })
-    //     .y1(function(d) { return y(d.y); })
-    //     .y0(function(d) { 
-    //       return y(areaThreshold.lower ? areaThreshold.lower.fS(d.x) : brainTypeHelper.EQ_MAX); 
-    //     });
-
-    //   function getPoint(x) { 
-    //     return {
-    //       x: x, 
-    //       y: areaThreshold.upper ? areaThreshold.upper.fS(x) : brainTypeHelper.EQ_MIN
-    //     };
-    //   }
-
-    //   points = [
-    //     getPoint(brainTypeHelper.SQ_MIN),
-    //     getPoint(brainTypeHelper.SQ_MAX)
-    //   ];
-
-    //   svg.append("path")
-    //     .datum(points)
-    //     .attr("class", "area " + className)
-    //     .attr("d", area);
-    // }
   },
 
   render: function () {
     return <div className='brain-chart-wrap'/>;
   }
 });
-
-
 
 function definePatterns(svg) {
   // backgrround
@@ -261,5 +215,62 @@ function definePatterns(svg) {
       .attr('class', 'hatch')
       .attr('d', 'M4,0 l-4,-0')
       .attr('stroke-width', 2);
+
+  definePattern(defs, {
+    id: 'Extreme-Male-Hatch',
+    width: 5,
+    orientation: 'x'
+  });
+
+  definePattern(defs, {
+    id: 'Male-Hatch',
+    width: 7,
+    orientation: 'x'
+  });
+
+  definePattern(defs, {
+    id: 'Female-Hatch',
+    width: 7,
+    orientation: 'y'
+  });
+
+  definePattern(defs, {
+    id: 'Extreme-Female-Hatch',
+    width: 5,
+    orientation: 'y'
+  });
+
+  definePattern(defs, {
+    id: 'Balanced-Hatch',
+    width: 7,
+    rotate: -45
+  });
+}
+
+function definePattern(defs, options) {
+  var isX = options.orientation === 'x';
+  var w = isX ? 5 : options.width;
+  var h = isX ? options.width : 5;
+  var p = isX ? 'M'+w+',0 l-'+w+',0' : 'M0,'+w+' l0,-'+w;
+
+  var pattern = defs.append('pattern')
+    .attr('id', options.id)
+    .attr('patternUnits', 'userSpaceOnUse')
+    .attr('width', w)
+    .attr('height', h)
+
+  var line = pattern.append('path')
+    .attr('class', 'hatch')
+    .attr('d', p)
+    .attr('stroke-width', options.strokeWidth || 2);
+
+  if (options.dashArray) {
+    line.style("stroke-dasharray", options.dashArray);
+  }
+
+  if (options.rotate) {
+    console.log(options);
+    pattern.attr('patternTransform','rotate('+options.rotate+' 0 0)');
+  }
 }
 
