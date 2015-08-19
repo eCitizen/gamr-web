@@ -13,7 +13,8 @@ module.exports = React.createClass({
 
   propTypes: {
     text: React.PropTypes.string,
-    hashtags: React.PropTypes.array
+    hashtags: React.PropTypes.array,
+    image: React.PropTypes.string
   },
 
   getDefaultProps: function () {
@@ -25,8 +26,8 @@ module.exports = React.createClass({
   openShare: function() {
     social.facebook({
       caption: this.props.text,
-      picture: 'http://40.media.tumblr.com/90954c2a102ae919d0142cfdea9dbadf/tumblr_nr58a1W2ZE1tduv00o1_1280.jpg', // TODO!!!!
-      description: 'Check out the results from...'
+      picture: this.props.image,
+      hashtags: this.props.hashtags
     });
   },
 

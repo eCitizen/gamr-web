@@ -30,12 +30,15 @@ X .  Intro Social Buttons
 
   Tues
 X .  Ensure error handling for user calls (use error.message)
-  .  Email what I need from Jason
-  .  Refine Brain Chart (labels, spacing)
+X .  Email what I need from Jason
+X .  Refine Brain Chart
+  .  Brain Chart Labels
   .  Social Meta
   .  Switch Survey Order
   .  fix bug with part II
   .  Social Images
+
+  . instead of float media object pattern to prevent wrapping?
 
   Thurs
   <  How to not break mobile browsers with animation

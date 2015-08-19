@@ -143,7 +143,7 @@ module.exports = React.createClass({
           </div>
 
           <div className='profile-section'>
-            <div className="profile-media">
+            <div className="profile-media brain-chart-wrap">
               <div className="profile-media-box">
                 <div className='profile-media-child'>
                   <BrainChart {... profile.brainType}/>
@@ -166,7 +166,9 @@ module.exports = React.createClass({
           {this.state.isOwner ? (
             <div className='result-social'>
               <TwitterButton text={'I am ' + gamerDescription.title}/>
-              <FacebookButton text={'I am ' + gamerDescription.title}/>
+              <FacebookButton 
+                text={'I am ' + gamerDescription.title}
+                image='http://skiano.com/test/LeeroyJenkins-300x225.gif'/>
             </div>
           ) : (
             <div className='result-social'>

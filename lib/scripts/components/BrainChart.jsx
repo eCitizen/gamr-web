@@ -183,7 +183,7 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    return <div className='brain-chart-wrap'/>;
+    return <div className='brain-chart-box'/>;
   }
 });
 
