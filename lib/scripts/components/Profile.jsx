@@ -158,7 +158,7 @@ module.exports = React.createClass({
               }</strong>
             </p>
             <p>
-              Brain type relates to, but is seperate from, physical gender. All five brain types occur among both men and women, but in different proportions. Brain type has been found to be a better predictor then physical gender of who chooses a career in Science, Technology, Engineering, and Mathematics.
+              Brain type relates to, but is seperate from, physical gender. All five brain types occur among both men and women, but in different proportions.
             </p>
             <ReadBrain/>
           </div>
