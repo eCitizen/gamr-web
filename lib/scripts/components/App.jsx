@@ -32,8 +32,8 @@ var routes = (
     <Route name="consent" path="consent" handler={Consent}/>
     <Route name="identity" path="identity" handler={checkRoute(Identity, [requireConsent])}/>
     <Route name="survey" handler={checkRoute(Survey, [requireConsent])}>
-      <Route name="brain" path="brain-type" handler={BrainType}/>
       <Route name="personality" path="personality" handler={Personality}/>
+      <Route name="brain" path="brain-type" handler={BrainType}/>
       <Route name="gamer-type" path="gamer-type" handler={GamerType}/>
     </Route>
     <Route name="results" handler={ProfileWrap}>

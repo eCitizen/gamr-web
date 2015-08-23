@@ -41,7 +41,10 @@ module.exports = React.createClass({
         formErrors: formErrors
       });
 
-      return this.displayUserError('invalid');
+      return this.displayUserError({
+        title: 'Sorry',
+        message: 'You must complete all required fields'
+      });
     }
 
     this.setState({loading: true});
@@ -94,9 +97,9 @@ module.exports = React.createClass({
             <h6>Identity: <em>Complete</em></h6>
             <div className='up-next-title'>
               <strong>up next...</strong>
-              <h5>Brain Type</h5>
+              <h5>Personality</h5>
             </div>
-            <Link to="brain">
+            <Link to="personality">
               <Button>Begin</Button>
             </Link>
           </div>

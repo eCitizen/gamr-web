@@ -9,9 +9,9 @@ module.exports.BrainType = React.createClass({
     return (
       <QuestionSet 
         survey='brainType'
-        surveyIdx='1'
-        nextRoute='personality'
-        nextTitle='Personality'>
+        surveyIdx='2'
+        nextRoute='gamer-type'
+        nextTitle='Gamer Type'>
         <h4 className='directions-title'>Instructions</h4>
         <div className='directions'>
           <p>
@@ -32,9 +32,9 @@ module.exports.Personality = React.createClass({
     return (
       <QuestionSet 
         survey='personality'
-        surveyIdx='2'
-        nextRoute='gamer-type'
-        nextTitle='Gamer Type'>
+        surveyIdx='1'
+        nextRoute='brain'
+        nextTitle='Brain Type'>
         <h4 className='directions-title'>Instructions</h4>
         <div className='directions'>
           <p>
@@ -55,6 +55,7 @@ module.exports.GamerType = React.createClass({
     return (
       <QuestionSet 
         survey='gamerType'
+        surveyIdx='3'
         nextRoute='results'
         finalStep={true}>
         <h4 className='directions-title'>Instructions</h4>

@@ -18,11 +18,11 @@ var config = {
   },
   '/survey/brain-type': {
     main: 'Brain Type',
-    progress: 2
+    progress: 3
   },
   '/survey/personality': {
     main: 'Personality',
-    progress: 3
+    progress: 2
   },
   '/survey/gamer-type': {
     main: 'Gamer Type',
