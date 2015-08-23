@@ -38,11 +38,7 @@ X .  fix bug with part II
 X .  Stub social meta
   .  Social Meta
   .  Social Images
-
-  . instead of float media object pattern to prevent wrapping?
-
-  Thurs
-  <  How to not break mobile browsers with animation
+  .  How to not break mobile browsers with animation
   .  Read more: brain type
   .  Read more: gamr type
   .  Read more: personality
@@ -51,7 +47,9 @@ X .  Stub social meta
   .  Make more backgrounds
   .  Make Gamr Gifs
   .  Make BIO for Shos
+  .  Clean out all logs, or create logger env
 
+  ?  instead of float media object pattern to prevent wrapping?
   ?  404
   ?  Generate test urls
   ?  Refine placement of transition text in relation to question set
