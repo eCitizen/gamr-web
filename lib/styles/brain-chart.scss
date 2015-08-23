@@ -7,6 +7,7 @@
 }
 
 .brain-chart-box {
+  position: relative;
   width: 230px;
   margin: 0 auto;
 }
@@ -95,11 +96,14 @@
   letter-spacing: 1px;
   @include transform-origin(center center);
   @include transform(rotate(-45deg));
+  text-shadow: 1px 1px 2px #000;
 
-  &.EM { top: 123px; left: 162px; }
-  &.M { top: 118px; left: 149px; }
-  &.B { top: 82px; left: 117px; }
-  &.F { top: 54px; left: 92px; }
-  &.EF { top: 14px; left: 62px; }
+  $shift-x: -35px;
+
+  &.EM { top: 123px; left: 162px + $shift-x; }
+  &.M { top: 118px; left: 149px + $shift-x; }
+  &.B { top: 82px; left: 117px + $shift-x; }
+  &.F { top: 54px; left: 92px + $shift-x; }
+  &.EF { top: 14px; left: 62px + $shift-x; }
 }
 

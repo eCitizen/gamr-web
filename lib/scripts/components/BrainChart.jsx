@@ -20,15 +20,16 @@ module.exports = React.createClass({
 
     var wrapper = d3.select(React.findDOMNode(this));
 
+    var labels = wrapper.append('div');
+    labels.append('div').attr('class', 'brain-label EM').html('Extreme Male');
+    labels.append('div').attr('class', 'brain-label M').html('Male');
+    labels.append('div').attr('class', 'brain-label B').html('Balanced');
+    labels.append('div').attr('class', 'brain-label F').html('Female');
+    labels.append('div').attr('class', 'brain-label EF').html('Extreme Female');
+
     var tooltip = d3.select("body").append("div")
       .attr("class", "tooltip")
       .style("opacity", 0);
-
-    wrapper.append('div').attr('class', 'brain-label EM').html('Extreme Male');
-    wrapper.append('div').attr('class', 'brain-label M').html('Male');
-    wrapper.append('div').attr('class', 'brain-label B').html('Balanced');
-    wrapper.append('div').attr('class', 'brain-label F').html('Female');
-    wrapper.append('div').attr('class', 'brain-label EF').html('Extreme Female');
 
     var margin = {top: 10, right: 10, bottom: 25, left: 25};
     var width = 225 - margin.left - margin.right;
@@ -61,6 +62,7 @@ module.exports = React.createClass({
     definePatterns(svg);
 
     var background = svg.append("g").attr('class', 'chart-background');
+    
     shadeRegions(background);
 
     svg.append("g")
@@ -96,22 +98,22 @@ module.exports = React.createClass({
 
     dots.enter().append("circle")
       .attr("class", "outer-dot")
-      .attr("r", 6)
+      .attr("r", 7)
       .attr("cx", function (d) {return x(d.x)})
       .attr("cy", function (d) {return y(d.y)})
-      .on("mouseover", function(d) {
-          tooltip.transition()
-               .duration(200)
-               .style("opacity", .9);
-          tooltip.html(brainTypeHelper.getBrainType(d.x, d.y))
-               .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px");
-      })
-      .on("mouseout", function(d) {
-          tooltip.transition()
-               .duration(500)
-               .style("opacity", 0);
-      });
+      // .on("mouseover", function(d) {
+      //     tooltip.transition()
+      //          .duration(200)
+      //          .style("opacity", .9);
+      //     tooltip.html(brainTypeHelper.getBrainType(d.x, d.y))
+      //          .style("left", (d3.event.pageX + 5) + "px")
+      //          .style("top", (d3.event.pageY - 28) + "px");
+      // })
+      // .on("mouseout", function(d) {
+      //     tooltip.transition()
+      //          .duration(500)
+      //          .style("opacity", 0);
+      // });
 
     function shadeRegions(svg) {
       var lines = brainTypeHelper.makeThresholdLineFunctions();
