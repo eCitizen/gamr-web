@@ -34,8 +34,8 @@ X .  Email what I need from Jason
 X .  Refine Brain Chart
   .  Brain Chart Labels
   .  Social Meta
-  .  Switch Survey Order
-  .  fix bug with part II
+X .  Switch Survey Order
+X .  fix bug with part II
   .  Social Images
 
   . instead of float media object pattern to prevent wrapping?
@@ -50,6 +50,7 @@ X .  Refine Brain Chart
   .  Make more backgrounds
   .  Make Gamr Gifs
   .  404
+  .  Make BIO for Shos
 
   ?  Generate test urls
   ?  Refine placement of transition text in relation to question set

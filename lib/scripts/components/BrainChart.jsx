@@ -24,6 +24,12 @@ module.exports = React.createClass({
       .attr("class", "tooltip")
       .style("opacity", 0);
 
+    wrapper.append('div').attr('class', 'brain-label EM').html('Extreme Male');
+    wrapper.append('div').attr('class', 'brain-label M').html('Male');
+    wrapper.append('div').attr('class', 'brain-label B').html('Balanced');
+    wrapper.append('div').attr('class', 'brain-label F').html('Female');
+    wrapper.append('div').attr('class', 'brain-label EF').html('Extreme Female');
+
     var margin = {top: 10, right: 10, bottom: 25, left: 25};
     var width = 225 - margin.left - margin.right;
     var height = 225 - margin.top - margin.bottom;
