@@ -6,7 +6,12 @@
     "api": null,
     "fbApp": "167828763548248",
     "usePushState": false,
-    "react": "https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.min.js"
+    "react": "https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.min.js",
+    "metaImage": "social image url",
+    "metaTitle": "PROJECT GAMR",
+    "metaUrl": "...",
+    "metaKeywords": "",
+    "metaDescription": "The Playful Systems group at MIT Media Lab has teamed up with Tilburg University to study how our game behavior relates to how we are in real life."
   },
   "dev": {
     "script": "/assets/gamr.js",
@@ -15,6 +20,11 @@
     "api": "http://localhost:8000/api",
     "fbApp": "167828926881565",
     "usePushState": true,
-    "react": "https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js"
+    "react": "https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js",
+    "metaImage": "social image url",
+    "metaTitle": "PROJECT GAMR",
+    "metaUrl": "...",
+    "metaKeywords": "",
+    "metaDescription": "The Playful Systems group at MIT Media Lab has teamed up with Tilburg University to study how our game behavior relates to how we are in real life."
   }
 }

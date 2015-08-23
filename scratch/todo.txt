@@ -32,10 +32,11 @@ X .  Intro Social Buttons
 X .  Ensure error handling for user calls (use error.message)
 X .  Email what I need from Jason
 X .  Refine Brain Chart
-  .  Brain Chart Labels
-  .  Social Meta
+X .  Brain Chart Labels
 X .  Switch Survey Order
 X .  fix bug with part II
+X .  Stub social meta
+  .  Social Meta
   .  Social Images
 
   . instead of float media object pattern to prevent wrapping?
@@ -49,9 +50,9 @@ X .  fix bug with part II
   .  make background for about
   .  Make more backgrounds
   .  Make Gamr Gifs
-  .  404
   .  Make BIO for Shos
 
+  ?  404
   ?  Generate test urls
   ?  Refine placement of transition text in relation to question set
   ?  Refine Background animation
