@@ -183,10 +183,13 @@ module.exports = React.createClass({
         };
       });
 
+      console.log(className);
+
       svg.append("path")
         .datum(points)
         .attr("class", "area " + className)
-        .attr("d", area);
+        .attr("d", area)
+        .style('fill', "url('#" + className + "-Hatch')");
     }
   },
 
@@ -204,26 +207,7 @@ function definePatterns(svg) {
 
   var defs = svg.append('defs');
 
-  defs.append('pattern')
-      .attr('id', 'diagonalHatch')
-      .attr('patternUnits', 'userSpaceOnUse')
-      .attr('width', 6)
-      .attr('height', 4)
-    .append('path')
-      .attr('class', 'hatch')
-      .attr('d', 'M0,4 l0,-4')
-      .attr('stroke-width', 2);
 
-  defs.append('defs')
-    .append('pattern')
-      .attr('id', 'horizontalHatch')
-      .attr('patternUnits', 'userSpaceOnUse')
-      .attr('width', 4)
-      .attr('height', 6)
-    .append('path')
-      .attr('class', 'hatch')
-      .attr('d', 'M4,0 l-4,-0')
-      .attr('stroke-width', 2);
 
   definePattern(defs, {
     id: 'Extreme-Male-Hatch',
