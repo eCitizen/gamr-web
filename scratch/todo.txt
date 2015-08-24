@@ -43,7 +43,7 @@ X .  Stub social meta
   .  Read more: gamr type
   .  Read more: personality
   .  Link to about
-  .  make background for about
+  .  make background for about correct size
   .  Make more backgrounds
   .  Make Gamr Gifs
   .  Make BIO for Shos
