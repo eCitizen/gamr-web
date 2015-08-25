@@ -70,7 +70,7 @@ module.exports.ReadGamer = React.createClass({
     return (
       <ReadMore>
         <p>
-          Your gamer type describes why you play video games. It is made up of your score on four distinct categories of gaming motivation: Achievement, Social, Immersion, and Arousal. The four letters of your gamer type show if you scored high or low on each of the four categories, while the name of your gamer type is a quirky caricature of your gaming motivations. Each of the four categories is created by adding your scores on one or more of 13 motivational factors. Below is an overview of what the different category letters mean and how you scored on each of the 13 factors.
+          Your gamer type describes why you play video games. It is made up of your score on four distinct categories of gaming motivation: Achievement, Social, Immersion, and Arousal. The four letters of your gamer type show if you scored high or low on each of the four categories, while the name of your gamer type is a quirky caricature of your gaming motivations. Each of the four categories is created by adding your scores on one or more of 13 motivational factors. Below is an overview of what the different category letters mean.
         </p>
         <p>
           <em>Achievement</em> High: (G) Goal driven / Low: (X) Experience driven
