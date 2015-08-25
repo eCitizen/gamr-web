@@ -22,7 +22,7 @@ module.exports = React.createClass({
         <div className='intro-body-inner'>
           <div className='loud-text'>
             <h4>Does the way you play reflect who you are?</h4>
-            <h5>Maverick. Something. Leeroy Jenkins. <br/>Discover your personality, your brain type, and your gamer type in 15 minutes.</h5>
+            <h5>Maverick. Gladiator. Leeroy Jenkins. <br/>Discover your personality, your brain type, and your gamer type in 15 minutes.</h5>
           </div>
 
           <Video/>
@@ -35,7 +35,7 @@ module.exports = React.createClass({
           </p>
 
           <div className='valid-games'>
-            <em>If you play one or more of the following, you may be elligible!</em>
+            <em>If you play one or more of the following on PC, you may be elligible!</em>
             <p className='game-title'>League of Legends</p>
             <p className='game-title'>Battlefield: Hardline</p>
             <p className='game-title'>Battlefield 4</p>

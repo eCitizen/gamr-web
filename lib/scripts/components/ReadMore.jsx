@@ -44,9 +44,6 @@ module.exports.ReadPersonality = React.createClass({
     return (
       <ReadMore>
         <p>
-          Your personality is described in terms of the Big Five personality test. The Big Five is one of the most strongly supported personality models at moment, and is frequently used for psychological screening at a variety of jobs. Higher scores are not better or worse than lower scores. Different scores simply describe different personality profiles.
-        </p>
-        <p>
           <em>Openness</em> to experience describes appreciation for art, emotion, adventure, unusual ideas, curiosity, and variety of experience. Openness reflects the degree of intellectual curiosity, creativity and a preference for novelty and variety. It also describes the extent to which a person is imaginative or independent, and depicts a personal preference for a variety of activities over a strict routine. If you score low on this dimension you are likely consistent and cautious. If you score high on this dimension you are likely inventive and curious.
         </p>
         <p>
@@ -59,7 +56,7 @@ module.exports.ReadPersonality = React.createClass({
           <em>Agreeableness</em> describes the tendency to be compassionate and cooperative rather than suspicious and antagonistic towards others. It is also a measure of one's trusting and helpful nature, and whether a person is generally well tempered or not. If you score low on this dimension you are likely analytical and detached. If you score high on this dimension you are likely friendly and compassionate.
         </p>
         <p>
-          <em>Emotional</em> stability describes the tendency to not experience unpleasant emotions easily, such as anger, anxiety, depression, and vulnerability. Emotional Stability also refers to the degree of neuroticism and impulse control and is often referred by its high pole, "Neuroticism". If you score low on this dimension you are likely sensitive and nervous. If you score high on this dimension you are likely secure and confident.
+          <em>Emotional Stability</em> describes the tendency to not experience unpleasant emotions easily, such as anger, anxiety, depression, and vulnerability. Emotional Stability also refers to the degree of neuroticism and impulse control and is often referred by its high pole, "Neuroticism". If you score low on this dimension you are likely sensitive and nervous. If you score high on this dimension you are likely secure and confident.
         </p>
       </ReadMore>
     );
@@ -73,10 +70,19 @@ module.exports.ReadGamer = React.createClass({
     return (
       <ReadMore>
         <p>
-          Your gamer type describes your motivations to play video games. There are three main categories of motivation: Social, Achievement, and Immersion. Each category consists of 4 or 5 factors, to make a total of 12 motivations. There is a 13th motivation that lies outside of these categories. Researchers call it "arousal", but in regular English we would call it "excitement". Below you will find your average score on each category of motivation, as well as your exact score on each individual motivation.
+          Your gamer type describes why you play video games. It is made up of your score on four distinct categories of gaming motivation: Achievement, Social, Immersion, and Arousal. The four letters of your gamer type show if you scored high or low on each of the four categories, while the name of your gamer type is a quirky caricature of your gaming motivations. Each of the four categories is created by adding your scores on one or more of 13 motivational factors. Below is an overview of what the different category letters mean and how you scored on each of the 13 factors.
         </p>
         <p>
-          Todo...
+          <em>Achievement</em> High: (G) Goal driven / Low: (X) Experience driven
+        </p>
+        <p>
+          <em>Social</em> High: (M) Multiplayer  / Low: (S) Single-player
+        </p>
+        <p>
+          <em>Immersion</em> High: (F) Fantasy / Low: (R) reality
+        </p>
+        <p>
+          <em>Arousal</em> High: (E) Excitement / Low: (R) Relaxation
         </p>
       </ReadMore>
     );
@@ -100,9 +106,6 @@ module.exports.ReadBrain = React.createClass({
         </p>
         <p>
           It has been found that men more often show a higher systemating score than empathizing score, while women more often show the reverse. Many people show a balanced profile, while a small minority shows an extreme unbalance one way or the other. 'female' and 'extreme female' brain types occur more often among women, while 'male' and 'extreme male' brain type occur more often among men. The balanced brain type occurs frequently among both men and women.
-        </p>
-        <p>
-          {'Brain type relates to, but is seperate from, physical gender. All five brain types (E>>S, E>S, E=S, E<S, E<<S) occur among both men and women, but in different proportions. Brain type has been found to be a better predictor then physical gender of who chooses a career in Science, Technology, Engineering, and Mathematics.'}
         </p>
       </ReadMore>
     );

@@ -39,9 +39,9 @@ X .  Stub social meta
   .  Social Meta
   .  Social Images
   .  How to not break mobile browsers with animation
-  .  Read more: brain type
-  .  Read more: gamr type
-  .  Read more: personality
+  .  Read more: brain type (from shos email)
+  .  Read more: gamr type (from shos email)
+  .  Read more: personality (from shos email)
   .  Link to about
   .  make background for about correct size
   .  Make more backgrounds
