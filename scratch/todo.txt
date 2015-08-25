@@ -49,6 +49,7 @@ X .  Read more: personality (from shos email)
   .  Make Gamr Gifs
   .  Make BIO for Shos
   .  Clean out all logs, or create logger env
+  .  Print out csv for shos
 
   ?  instead of float media object pattern to prevent wrapping?
   ?  404

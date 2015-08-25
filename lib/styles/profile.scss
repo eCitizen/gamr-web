@@ -28,7 +28,9 @@ $section-width: 340px;
 
 .profile-wrap {
   max-width: $outer-width;
-  margin: 100px auto;
+  margin: 0px auto;
+  padding-top: 80px;
+  padding-bottom: 100px;
 }
 
 .profile-section {
@@ -150,7 +152,6 @@ $section-width: 340px;
 
 .result-social {
   text-align: center;
-  // margin-top: $space-large;
 
   & > .button {
     margin: 0 10px;

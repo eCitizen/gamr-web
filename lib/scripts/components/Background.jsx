@@ -12,6 +12,7 @@ var IMG_H = 1080;
 var raf = require('raf');
 var animators = require('../services/animator');
 var mode = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0 ? 'touch' : 'mouse';
+var WIDTH = 0;
 
 module.exports = React.createClass({
   displayName: 'Background',
@@ -39,7 +40,10 @@ module.exports = React.createClass({
   },
 
   resize: function (width, height) {
-    this.setState(this.getCells(width, height));
+    if (WIDTH !== width) {
+      WIDTH = width;
+      this.setState(this.getCells(width, height));  
+    }
   },
 
   startAnimation: function () {
