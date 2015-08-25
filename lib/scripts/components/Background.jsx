@@ -9,17 +9,16 @@ var CELL_W = MULTIPLY * 16;
 var CELL_H = MULTIPLY * 9;
 var IMG_W = 1920
 var IMG_H = 1080;
-var FRAME_INTERVAL = 90;
-var ANIMATION_INTERVAL = 200;
 var raf = require('raf');
 var animators = require('../services/animator');
+var mode = !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0 ? 'touch' : 'mouse';
 
 module.exports = React.createClass({
   displayName: 'Background',
 
   getDefaultProps: function () {
     return {
-      renderCell: animators.random
+      renderCell: mode === 'mouse' ? animators.random : animators.easy
     }
   },
 
