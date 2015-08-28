@@ -183,8 +183,6 @@ module.exports = React.createClass({
         };
       });
 
-      console.log(className);
-
       svg.append("path")
         .datum(points)
         .attr("class", "area " + className)
@@ -262,7 +260,6 @@ function definePattern(defs, options) {
   }
 
   if (options.rotate) {
-    console.log(options);
     pattern.attr('patternTransform','rotate('+options.rotate+' 0 0)');
   }
 }
