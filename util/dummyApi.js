@@ -8,10 +8,22 @@ router.get('/user', function(req, res, next) {
   var q = req.query;
   var profiles = {};
 
-  if (q.LOL_id) profiles.LOL = {id: q.LOL_id};
-  if (q.WOW_id) profiles.WOW = {id: q.WOW_id};
-  if (q.BF4_id) profiles.BF4 = {id: q.BF4_id};
-  if (q.BFHD_id) profiles.BFHD = {id: q.BFHD_id};
+  if (q.LOL_id) profiles.LOL = {
+    name: q.LOL_id,
+    status: 'good'
+  };
+  if (q.WOW_id) profiles.WOW = {
+    name: q.WOW_id,
+    status: 'good'
+  };
+  if (q.BF4_id) profiles.BF4 = {
+    name: q.BF4_id,
+    status: 'taken'
+  };
+  if (q.BFHD_id) profiles.BFHD = {
+    name: q.BFHD_id,
+    status: 'missing'
+  };
 
   if (isEmpty(profiles)) {
     return res.json({

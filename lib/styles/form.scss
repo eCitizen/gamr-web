@@ -283,6 +283,11 @@ $checkbox-space: 32px;
       text-overflow: ellipsis;
       padding: 0 20px;
 
+      &.taken,
+      &.missing {
+        color: $color-warn;
+      }
+
       &:before {
         content:  "\2713  ";
         position: absolute;
@@ -315,3 +320,15 @@ $checkbox-space: 32px;
   color: $color-secondary;
 }
 
+.result-error {
+  color: $color-warn;
+  font-size: 14px;
+  margin-top: 7px;
+}
+
+.result-fatal-error {
+  font-size: 14px;
+  color: $color-secondary;
+  margin-bottom: $space-medium;
+}
+ 

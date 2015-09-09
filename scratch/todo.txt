@@ -36,13 +36,18 @@ X .  Brain Chart Labels
 X .  Switch Survey Order
 X .  fix bug with part II
 X .  Stub social meta
+
+  .  Refactor user confirm step for jota
+  .  Proofread questions
+  .  ? what to do about sending some good names and some bad names
+
   .  Social Meta
   .  Social Images
   .  How to not break mobile browsers with animation
 X .  Read more: brain type (from shos email)
 X .  Read more: gamr type (from shos email)
 X .  Read more: personality (from shos email)
-  .  Add data to read more
+  ?  Add data to read more
   .  Link to about
   .  make background for about correct size
   .  Make more backgrounds
