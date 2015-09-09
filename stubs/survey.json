@@ -48,7 +48,7 @@
         "dimension": "O"
       },
       {
-        "text": "I don't talk a lot.",
+        "text": "I don’t talk a lot.",
         "dimension": "E",
         "inverted": true
       },
@@ -98,7 +98,7 @@
         "inverted": true
       },
       {
-        "text": "I sympathize with others' feelings.",
+        "text": "I sympathize with others’ feelings.",
         "dimension": "A"
       },
       {
@@ -120,7 +120,7 @@
         "dimension": "E"
       },
       {
-        "text": "I am not interested in other people's problems.",
+        "text": "I am not interested in other people’s problems.",
         "dimension": "A",
         "inverted": true
       },
@@ -184,7 +184,7 @@
         "dimension": "O"
       },
       {
-        "text": "I don't like to draw attention to myself.",
+        "text": "I don’t like to draw attention to myself.",
         "dimension": "E",
         "inverted": true
       },
@@ -207,11 +207,11 @@
         "dimension": "O"
       },
       {
-        "text": "I don't mind being the center of attention.",
+        "text": "I don’t mind being the center of attention.",
         "dimension": "E"
       },
       {
-        "text": "I feel others' emotions.",
+        "text": "I feel others’ emotions.",
         "dimension": "A"
       },
       {
@@ -255,7 +255,7 @@
         "id": "LOTR"
       },
       {
-        "text": "It's easy for me to relax.",
+        "text": "It’s easy for me to relax.",
         "dimension": null,
         "id": "LOTR"
       },
@@ -265,7 +265,7 @@
         "id": "LOTR"
       },
       {
-        "text": "I'm always optimistic about my future.",
+        "text": "I’m always optimistic about my future.",
         "dimension": "L",
         "id": "LOTR"
       },
@@ -275,7 +275,7 @@
         "id": "LOTR"
       },
       {
-        "text": "It's important for me to keep busy.",
+        "text": "It’s important for me to keep busy.",
         "dimension": null,
         "id": "LOTR"
       },
@@ -285,7 +285,7 @@
         "id": "LOTR"
       },
       {
-        "text": "I don't get upset too easily.",
+        "text": "I don’t get upset too easily.",
         "dimension": null,
         "id": "LOTR"
       },
@@ -354,7 +354,7 @@
         "inverted": true
       },
       {
-        "text": "I find it easy to put myself in someone else's shoes.",
+        "text": "I find it easy to put myself in someone else’s shoes.",
         "dimension": "E"
       },
       {
@@ -366,12 +366,12 @@
         "dimension": "E"
       },
       {
-        "text": "I can't always see why someone should have felt offended by a remark.",
+        "text": "I can’t always see why someone should have felt offended by a remark.",
         "dimension": "E",
         "inverted": true
       },
       {
-        "text": "I don't tend to find social situations confusing.",
+        "text": "I don’t tend to find social situations confusing.",
         "dimension": "E"
       },
       {
@@ -391,7 +391,7 @@
         "dimension": "E"
       },
       {
-        "text": "Other people often say that I am insensitive, though I don't always see why.",
+        "text": "Other people often say that I am insensitive, though I don’t always see why.",
         "dimension": "E",
         "inverted": true
       },
@@ -412,7 +412,7 @@
         "dimension": "E"
       },
       {
-        "text": "I tend to get emotionally involved with a friend's problems.",
+        "text": "I tend to get emotionally involved with a friend’s problems.",
         "dimension": "E"
       },
       {
@@ -420,7 +420,7 @@
         "dimension": "S"
       },
       {
-        "text": "If there was a problem with the electrical wiring in my home, I'd be able to fix it myself.",
+        "text": "If there was a problem with the electrical wiring in my home, I’d be able to fix it myself.",
         "dimension": "S"
       },
       {
@@ -447,7 +447,7 @@
         "inverted": true
       },
       {
-        "text": "If i were buying a computer, I would want to know exact details about its hard disc drive capacity and processor speed.",
+        "text": "If I were buying a computer, I would want to know exact details about its hard disc drive capacity and processor speed.",
         "dimension": "S"
       },
       {
@@ -515,7 +515,7 @@
         "dimension": "S"
       },
       {
-        "text": "When I'm in a plane, I do not think about the aerodynamics.",
+        "text": "When I’m in a plane, I do not think about the aerodynamics.",
         "dimension": "S",
         "inverted": true
       },
@@ -608,7 +608,7 @@
         "category": "Ac"
       },
       {
-        "text": "I really like to customize my character's outfit.",
+        "text": "I really like to customize my character’s outfit.",
         "dimension": "Cu",
         "category": "Im"
       },
@@ -734,12 +734,12 @@
         "category": "Im"
       },
       {
-        "text": "Losing a game always makes me mad - what a waste of time!",
+        "text": "Losing a game always makes me mad — what a waste of time!",
         "dimension": "Lo",
         "category": "Ac"
       },
       {
-        "text": "I will put considerable time into designing my character's appearance (e.g., clothes, face).",
+        "text": "I will put considerable time into designing my character’s appearance (e.g., clothes, face).",
         "dimension": "Cu",
         "category": "Im"
       },
