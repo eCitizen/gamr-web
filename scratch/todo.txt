@@ -37,8 +37,8 @@ X .  Switch Survey Order
 X .  fix bug with part II
 X .  Stub social meta
 
-  .  Refactor user confirm step for jota
-  .  Proofread questions
+X .  Refactor user confirm step for jota
+X .  Proofread questions
   .  ? what to do about sending some good names and some bad names
 
   .  Social Meta
