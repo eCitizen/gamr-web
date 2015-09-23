@@ -39,9 +39,10 @@ X .  Stub social meta
 
 X .  Refactor user confirm step for jota
 X .  Proofread questions
+  .  Make share depend on configuration for images
   .  ? what to do about sending some good names and some bad names
 
-  .  Social Meta
+  .  Social Meta (send descriptions)
   .  Social Images
   .  How to not break mobile browsers with animation
 X .  Read more: brain type (from shos email)
@@ -54,7 +55,9 @@ X .  Read more: personality (from shos email)
   .  Make Gamr Gifs
   .  Make BIO for Shos
   .  Clean out all logs, or create logger env
-  .  Print out csv for shos
+  .  remove out csv for shos
+  .  favicon
+  .  google analytics account
 
   ?  instead of float media object pattern to prevent wrapping?
   ?  404
