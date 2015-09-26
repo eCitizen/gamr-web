@@ -1,15 +1,15 @@
 {
   "prod": {
-    "script": "assets/gamr.min.js",
-    "style": "assets/gamr.min.css",
-    "assets": "assets",
-    "api": null,
-    "fbApp": "167828763548248",
-    "usePushState": false,
+    "script": "/assets/gamr.min.js",
+    "style": "/assets/gamr.min.css",
+    "assets": "/assets",
+    "api": "/api",
+    "fbApp": "524102824408671",
+    "usePushState": true,
     "react": "https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.min.js",
     "metaImage": "social image url",
     "metaTitle": "PROJECT GAMR",
-    "metaUrl": "...",
+    "metaUrl": "http://projectgamr-dev.media.mit.edu",
     "metaKeywords": "",
     "metaDescription": "The Playful Systems group at MIT Media Lab has teamed up with Tilburg University to study how our game behavior relates to how we are in real life."
   },

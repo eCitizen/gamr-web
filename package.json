@@ -17,7 +17,7 @@
     "start": "npm run images & npm run watch & nodemon server",
     "static-css": "node-sass lib/styles/index.scss --include-path lib/styles --include-path node_modules | cleancss -o static/assets/gamr.min.css",
     "static-js": "browserify lib/scripts/index.jsx | uglifyjs -o static/assets/gamr.min.js",
-    "static-images": "mkdir -p static/assets/images; cp -r dist/images static/assets/",
+    "static-images": "mkdir -p static/assets/images; cp -r lib/images static/assets/",
     "static-assets": "mkdir -p static/assets; npm run static-js && npm run static-css",
     "static": "NODE_ENV=prod npm run static-assets; NODE_ENV=prod node util/buildHtml > static/index.html; npm run static-images",
     "static-serve": "cd static; python -m SimpleHTTPServer 8080",
