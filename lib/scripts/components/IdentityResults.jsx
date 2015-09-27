@@ -16,7 +16,7 @@ module.exports = React.createClass({
   getErrorMessage: function (status) {
     if (status === 'taken') {
       return <p className="result-error">Sorry, this account has alread been used.</p>;
-    } else if (status === 'missing') {
+    } else if (status === 'invalid') {
       return <p className="result-error">Sorry, we could not find data about this account.</p>;
     } else {
       return null;

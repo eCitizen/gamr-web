@@ -39,12 +39,12 @@ module.exports = React.createClass({
 
   componentDidMount: function () {
     if (this.state.isOwner) {
-      
       // TEMPORARY!!!!!!
-      require('../services/createCSV')();
+      // require('../services/createCSV')();
       // TEMPORARY!!!!!!
 
-      api.submitQuestions({survey: JSON.stringify(this.state.plainformData)}, function (err, data) {
+      // api.submitQuestions({survey: JSON.stringify(this.state.plainformData)}, function (err, data) {
+      api.submitQuestions({surveys: this.state.plainformData}, function (err, data) {
         console.info('Api Response');
         console.log(JSON.stringify(data, null, 2));
 

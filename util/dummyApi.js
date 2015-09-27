@@ -3,9 +3,13 @@ var express = require('express'),
 	assign = require('lodash').assign,
   isEmpty = require('lodash').isEmpty,
   router = express.Router();
-  
-router.get('/user', function(req, res, next) {
-  var q = req.query;
+
+var bodyParser = require('body-parser');
+router.use(bodyParser.json()); // to support JSON-encoded bodies
+router.use(bodyParser.urlencoded({extended: true})); // to support URL-encoded bodies
+
+router.post('/user', function(req, res, next) {
+  var q = req.body;
   var profiles = {};
 
   if (q.LOL_id) profiles.LOL = {
@@ -41,7 +45,7 @@ router.get('/user', function(req, res, next) {
 
 router.post('/submit', function(req, res, next) {
   setTimeout(function () {
-    res.json(JSON.parse(req.query.survey));
+    res.json(req.body.surveys);
   }, Math.random() < .9 ? 1500 : 200);
 });
 

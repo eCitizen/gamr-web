@@ -69,6 +69,7 @@
     "watchify": "^3.2.1"
   },
   "dependencies": {
+    "body-parser": "^1.14.0",
     "classnames": "^2.1.2",
     "d3-star-plot": "0.0.2",
     "eventlistener": "0.0.1",
