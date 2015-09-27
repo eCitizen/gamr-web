@@ -28,6 +28,7 @@ module.exports.BrainType = React.createClass({
 
 module.exports.Personality = React.createClass({
   displayName: 'Personality',
+  
   render: function () {
     return (
       <QuestionSet 
