@@ -44,7 +44,7 @@ module.exports = React.createClass({
       // TEMPORARY!!!!!!
       
       // api.submitQuestions({surveys: this.state.plainformData}, function (err, data) {
-      api.submitQuestions({survey: JSON.stringify(this.state.plainformData)}, function (err, data) {
+      api.submitQuestions({surveys: JSON.stringify(this.state.plainformData)}, function (err, data) {
         console.info('Api Response');
         console.log(JSON.stringify(data, null, 2));
 
