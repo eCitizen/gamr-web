@@ -17,7 +17,7 @@
     "script": "/assets/gamr.js",
     "style": "/assets/gamr.css",
     "assets": "/assets",
-    "api": "http://localhost:8000/api",
+    "api": "http://localhost:5000",
     "fbApp": "167828926881565",
     "usePushState": true,
     "react": "https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js",
