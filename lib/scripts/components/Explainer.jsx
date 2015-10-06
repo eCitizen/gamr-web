@@ -53,7 +53,7 @@ module.exports = React.createClass({
               <i className='fa fa-twitter' onClick={this.tweet}/>
               <i className='fa fa-facebook-official' onClick={this.post}/>
             </div>
-            <div className='intro-about'>About us</div>
+            <a className='intro-about' href="http://gamrnews.com" target="blank">About us</a>
           </div>
         </div>
       </div>
