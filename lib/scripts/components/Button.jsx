@@ -44,7 +44,7 @@ module.exports = React.createClass({
       {
         'mounted': this.state.mounted,
         'depressed': this.state.depressed,
-        'no-touch': !!!("ontouchstart" in window)
+        'no-touch': !(!!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0)
       }
     );
     
