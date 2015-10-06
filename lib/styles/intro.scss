@@ -83,7 +83,8 @@ $intro-button-width: 180px;
     letter-spacing: .5px;
     margin-bottom: 12px;
 
-    & > strong {
+    & > strong,
+    & > a {
       font-family: $font-title;
       font-size: 22px;
       letter-spacing: 2px;

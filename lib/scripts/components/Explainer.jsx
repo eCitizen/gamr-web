@@ -28,7 +28,7 @@ module.exports = React.createClass({
           <Video/>
 
           <p>
-            The Playful Systems group at <strong>MIT Media Lab</strong> has teamed up with <strong>Tilburg University</strong> to study how our game behavior relates to how we are in real life.
+            The Playful Systems group at <a href="http://www.media.mit.edu/" target="blank">MIT Media Lab</a> has teamed up with <a href="https://www.tilburguniversity.edu/" target="blank">Tilburg University</a> to study how our game behavior relates to how we are in real life.
           </p>
           <p>
             Tell us a little about who you are and how you play, and we will show you <strong>your GAMR profile</strong>: a custom report on your personality, brain type and gamer type. 
