@@ -35,7 +35,7 @@ module.exports = React.createClass({
           </p>
 
           <div className='valid-games'>
-            <em>If you play one or more of the following on PC, you may be elligible!</em>
+            <em>If you play one or more of the following on PC, you may be eligible!</em>
             <p className='game-title'>League of Legends</p>
             <p className='game-title'>Battlefield: Hardline</p>
             <p className='game-title'>Battlefield 4</p>
