@@ -125,7 +125,7 @@ module.exports = React.createClass({
             <p>
               {gamerDescription.description}
             </p>
-            <ReadGamer/>
+            <ReadGamer data={profile.gamerType}/>
           </div>
 
           <div className='profile-section'>
