@@ -17,12 +17,12 @@
   "GMYR": {
     "title": "Team Player",
     "image": "TeamPlayer-300x225.gif",
-    "description": "You love playing with your friends and overcoming challenges."
+    "description": "You love chilling with your friends and overcoming challenges in the game. You find stories and fantasy elements kind of tedious."
   },
   "GSFE": {
     "title": "Lone Wolf",
     "image": "LoneWolf-300x225.gif",
-    "description": "You love everything about video games, as long as it's single player."
+    "description": "You love everything about video games, as long as it’s single player. You’ll play anything with deep story lines, rich fantasy worlds, steep challenges, and fast-paced action. As long as you don’t have to deal with other players."
   },
   "GSFR": {
     "title": "Treasure Hunter",
@@ -32,7 +32,7 @@
   "GSYE": {
     "title": "Gladiator",
     "image": "Gladiator-300x225.gif",
-    "description": "You love playing video games for the excitement and challenge."
+    "description": "You love playing video games for the excitement and challenge. You don’t like to run into other players, deal with fantasy worlds, or go through long-winded stories."
   },
   "GSYR": {
     "title": "Monk",
@@ -52,27 +52,27 @@
   "XMYE": {
     "title": "The Joker",
     "image": "Joker-300x225.gif",
-    "description": "You love playing games for the excitement and the connecting with other people."
+    "description": "You love playing games for the excitement and to connect with other people. You don’t care much for competition, working through game objectives, or participating in the fantasy of the game world."
   },
   "XMYR": {
     "title": "People Person",
     "image": "PeoplePerson-300x225.gif",
-    "description": "You love playing games as a way to connect with other people"
+    "description": "You love playing games as a way to connect with other people. You don’t care much for the details of the game world or its challenges, and are not likely to get particularly excited about anything in the game."
   },
   "XSFE": {
     "title": "Gulliver",
     "image": "Gulliver-300x225.gif",
-    "description": "You love playing games to explore exciting fantasy worlds."
+    "description": "You love playing games to explore exciting fantasy worlds. Missions, quests, achievements, and other players are just distractions."
   },
   "XSFR": {
     "title": "Dreamer",
     "image": "Dreamer-300x225.gif",
-    "description": "You love playing video games to get lost in fantasy worlds."
+    "description": "You love playing video games to get lost in fantasy worlds. You prefer to wander and explore as a way to relax and unwind. Game objectives and other players are more a nuisance than an enrichment of your game experience."
   },
   "XSYE": {
     "title": "Leeroy Jenkins",
     "image": "LeeroyJenkins-300x225.gif",
-    "description": "You love playing video games for the excitement."
+    "description": "You love playing video games for the excitement. You don’t care much about the setting, other players or game objectives. You are just looking for a quick thrill."
   },
   "XSYR": {
     "title": "Sandman",
