@@ -87,7 +87,9 @@ $section-width: 340px;
     color: $color-subtle;
   }
   em {
-    color: $color-main;  
+    color: $color-main; 
+    display: inline-block;
+    margin-right: 4px;
   }
 }
 
@@ -198,8 +200,4 @@ $section-width: 340px;
   color: $color-subtle;
   margin: $space-large auto 0;
   max-width: 350px;
-}
-
-.active.axis-option {
-  color: $color-white;
 }

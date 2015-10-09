@@ -96,7 +96,7 @@ module.exports = React.createClass({
           {surveyKey[survey].map(function (axis) {
             var value = (survey === 'personality') ? 
               profile[survey][axis.title] :
-              brainTypeHelper.getScaledValue(profile[survey][axis.title], [axis.title]);
+              brainTypeHelper.getScaledValue(profile[survey][axis.title], axis.title);
             return (
               <span className='group' key={axis.key}>
                 {axis.key}<em>{Math.round(value)}</em> 
@@ -141,7 +141,7 @@ module.exports = React.createClass({
             <p>
               Your personality is described in terms of the Big Five personality test. The Big Five is one of the most strongly supported personality models at moment, and is frequently used for psychological screening at a variety of jobs. Higher scores are not better or worse than lower scores. Different scores simply describe different personality profiles. Below you can read more about each of the personality dimensions.
             </p>
-            <ReadPersonality/>
+            <ReadPersonality data={profile.personality}/>
           </div>
 
           <div className='profile-section'>
@@ -162,7 +162,7 @@ module.exports = React.createClass({
             <p>
               Brain type relates to, but is seperate from, physical gender. There are five types: extreme female, female, balanced, male, and extreme male. All five brain types occur among both men and women, but in different proportions. Most men and women have a balanced brain type, with fewer people having a male or female brain type, and small a minority having the extreme male and female brain type. 
             </p>
-            <ReadBrain/>
+            <ReadBrain data={profile.brainType}/>
           </div>
   
           {this.state.isOwner ? (
