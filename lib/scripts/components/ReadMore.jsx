@@ -88,7 +88,7 @@ module.exports.ReadGamer = React.createClass({
           </span>
         </p>
         <p>
-          Achievement motivation describes how much you are driven to achieve the goals set out in the game. Goals can range from winning matches, to overcoming challenges, to collecting and completing everything the game has to offer. If you score low on this motivation, you are likely more experience driven, with little regard for the explicit goals of the game. If you score high on this dimension, you are likely goal driven, with an appreciation for competition and challenge.
+          Achievement motivation describes how much you are driven to achieve the goals set out in the game. Goals can range from winning matches, to overcoming challenges, to collecting and completing everything the game has to offer. If you score low on this motivation, you are likely more Experience driven (X), with little regard for the explicit goals of the game. If you score high on this dimension, you are likely Goal driven (G), with an appreciation for competition and challenge.
         </p>
         <p>
           <em>Social</em> <span>
@@ -100,7 +100,7 @@ module.exports.ReadGamer = React.createClass({
           </span>
         </p>
         <p>
-          Social motivation describes how much you are driven to engage in social interactions in video games. It only addresses social interactions with other players. An interest in the fictional characters in the game is part of the Immersion motivation. Social motivation can be expressed in a supportive and interactive play behavior (e.g. healing or trading), building up emotional bonds with other players through chat and other communications, and enjoying the synergy of team work. If you score low on this motivation, you likely prefer single-player games, and find the presence of other players uninteresting or annoying. If you score high on this motivation, you likely prefer multi-player games, and find the presence of other players enriching.
+          Social motivation describes how much you are driven to engage in social interactions in video games. It only addresses social interactions with other players. An interest in the fictional characters in the game is part of the Immersion motivation. Social motivation can be expressed in a supportive and interactive play behavior (e.g. healing or trading), building up emotional bonds with other players through chat and other communications, and enjoying the synergy of team work. If you score low on this motivation, you likely prefer Single-player (S) games, and find the presence of other players uninteresting or annoying. If you score high on this motivation, you likely prefer Multi-player (M) games, and find the presence of other players enriching.
         </p>
         <p>
           <em>Immersion</em> <span>
@@ -112,7 +112,7 @@ module.exports.ReadGamer = React.createClass({
           </span>
         </p>
         <p>
-          Immersion motivation describes how much you are driven to immerse yourself in the fantasy of the game. It ranges from enjoyment of customization options, to appreciation for deep story lines and rich fantasy worlds. If you score low on this motivation, you likely prefer realistic games with little emphasis on story or customization. If you score high on this motivation, you likely prefer rich fantasy worlds with deep story lines and a lot of customization.
+          Immersion motivation describes how much you are driven to immerse yourself in the fantasy of the game. It ranges from enjoyment of customization options, to appreciation for deep story lines and rich fantasy worlds. If you score low on this motivation, you likely prefer games that mimick Reality (Y), with little emphasis on story or customization. If you score high on this motivation, you likely prefer games that offer a rich Fantasy (F) with deep story lines and a lot of customization.
         </p>
         <p>
           <em>Arousal</em> <span>
@@ -124,7 +124,7 @@ module.exports.ReadGamer = React.createClass({
           </span>
         </p>
         <p>
-          Arousal motivation describes how much you are driven to seek out excitement in video games. Fast-paced, action-heavy and/or scary games can get our blood pumping faster. Some people enjoy this experience of excitement and look for it in video games. If you score low on this motivation, you likely either prefer relaxing games or do not find video games get you excited. If you score high on this motivation, you likely prefer fast-paced action games or scary games.
+          Arousal motivation describes how much you are driven to seek out excitement in video games. Fast-paced, action-heavy and/or scary games can get our blood pumping faster. Some people enjoy this experience of excitement and look for it in video games. If you score low on this motivation, you likely prefer games as a source of Relaxation (R). If you score high on this motivation, you likely prefer games as a source of Excitement (E).
         </p>
       </ReadMore>
     );
