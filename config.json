@@ -2,6 +2,7 @@
   "prod": {
     "script": "/assets/gamr.min.js",
     "style": "/assets/gamr.min.css",
+    "font": "//f.fontdeck.com/s/css/YXldsFL3hvpHjCi8cWBnWoqWAMM/projectgamr.media.mit.edu/57695.css",
     "assets": "/assets",
     "api": "/api",
     "fbApp": "524102824408671",
@@ -16,6 +17,7 @@
   "dev": {
     "script": "/assets/gamr.js",
     "style": "/assets/gamr.css",
+    "font": "//f.fontdeck.com/s/css/YXldsFL3hvpHjCi8cWBnWoqWAMM/localhost/57695.css",
     "assets": "/assets",
     "api": "http://localhost:5000",
     "fbApp": "167828926881565",
