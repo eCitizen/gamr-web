@@ -27,7 +27,6 @@ module.exports = React.createClass({
     // HACK ATTACK:
     // if they have completed the last survey they are the owner
     var isOwner = surveyStore.isComplete('gamerType');
-    var isOwner = true;
     return {
       isOwner: isOwner,
       processed: !isOwner,
