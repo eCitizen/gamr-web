@@ -354,7 +354,7 @@ d3.starPlot = function() {
 }
 
 function wrap(text, width) {
-  console.log(text, width);
+  // console.log(text, width);
   text.each(function() {
     var text = d3.select(this),
         words = text.text().split(/\s+/).reverse(),
