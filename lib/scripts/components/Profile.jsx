@@ -45,8 +45,8 @@ module.exports = React.createClass({
       
       // api.submitQuestions({surveys: this.state.plainformData}, function (err, data) {
       api.submitQuestions(this.state.plainformData, function (err, data) {
-        console.info('Api Response');
-        console.log(JSON.stringify(data, null, 2));
+        // console.info('Api Response');
+        // console.log(JSON.stringify(data, null, 2));
 
         this.setState({
           processed: true
