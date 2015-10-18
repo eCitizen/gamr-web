@@ -16,7 +16,7 @@
   <meta property="og:title" content="<%- metaTitle %>" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="<%- metaUrl %>" />
-  <meta property="og:image" content="<%- metaImage %>" />
+  <meta property="og:image" content="<%- socialAssets %>/gamr-share.jpg" />
   <meta property="og:caption" content="MIT Media Lab + Tilburg University" />
   <meta property="og:description" content="<%- metaDescription %>"/>
 
@@ -31,6 +31,8 @@
       survey: <%- JSON.stringify(survey) %>,
       gamerTypes: <%- JSON.stringify(gamerTypes) %>,
       assets: <%- JSON.stringify(assets) %>,
+      socialAssets: <%- JSON.stringify(socialAssets) %>,
+      socialDescription: <%- JSON.stringify(metaDescription) %>,
       usePushState: <%- usePushState %>
     }
   </script>

@@ -27,6 +27,7 @@ module.exports = React.createClass({
     // HACK ATTACK:
     // if they have completed the last survey they are the owner
     var isOwner = surveyStore.isComplete('gamerType');
+    var isOwner = true;
     return {
       isOwner: isOwner,
       processed: !isOwner,
@@ -170,7 +171,7 @@ module.exports = React.createClass({
               <TwitterButton text={'I am ' + gamerDescription.title}/>
               <FacebookButton 
                 text={'I am ' + gamerDescription.title}
-                image='http://skiano.com/test/LeeroyJenkins-300x225.gif'/>
+                image={guide.socialAssets + '/' + gamerDescription.share}/>
             </div>
           ) : (
             <div className='result-social'>

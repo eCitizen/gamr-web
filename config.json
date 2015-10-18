@@ -4,29 +4,29 @@
     "style": "/assets/gamr.min.css",
     "font": "//f.fontdeck.com/s/css/YXldsFL3hvpHjCi8cWBnWoqWAMM/projectgamr.media.mit.edu/57695.css",
     "assets": "/assets",
+    "socialAssets": "http://projectgamr.media.mit.edu/assets",
     "api": "/api",
     "fbApp": "524102824408671",
     "usePushState": true,
     "react": "https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.min.js",
-    "metaImage": "social image url",
     "metaTitle": "PROJECT GAMR",
-    "metaUrl": "http://projectgamr-dev.media.mit.edu",
-    "metaKeywords": "",
-    "metaDescription": "The Playful Systems group at MIT Media Lab has teamed up with Tilburg University to study how our game behavior relates to how we are in real life."
+    "metaUrl": "http://projectgamr.media.mit.edu/",
+    "metaKeywords": "GAMR, Playful Systems, MIT Media Lab, Tilburg University",
+    "metaDescription": "Does the way you play reflect who you are? Maverick. Gladiator. Leeroy Jenkins. Discover your personality, your brain type, and your gamer type in 15 minutes."
   },
   "dev": {
     "script": "/assets/gamr.js",
     "style": "/assets/gamr.css",
     "font": "//f.fontdeck.com/s/css/YXldsFL3hvpHjCi8cWBnWoqWAMM/localhost/57695.css",
     "assets": "/assets",
+    "socialAssets": "skiano.com/social",
     "api": "http://localhost:5000",
     "fbApp": "167828926881565",
     "usePushState": true,
     "react": "https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.js",
-    "metaImage": "social image url",
     "metaTitle": "PROJECT GAMR",
-    "metaUrl": "...",
-    "metaKeywords": "",
-    "metaDescription": "The Playful Systems group at MIT Media Lab has teamed up with Tilburg University to study how our game behavior relates to how we are in real life."
+    "metaUrl": "http://projectgamr.media.mit.edu/",
+    "metaKeywords": "GAMR, Playful Systems, MIT Media Lab, Tilburg University",
+    "metaDescription": "Does the way you play reflect who you are? Maverick. Gladiator. Leeroy Jenkins. Discover your personality, your brain type, and your gamer type in 15 minutes."
   }
 }
