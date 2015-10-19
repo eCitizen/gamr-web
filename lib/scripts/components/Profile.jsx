@@ -38,6 +38,11 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function () {
+    // HACK: ... get rid of warning
+    window.onbeforeunload = function () {
+      // noop
+    }
+
     if (this.state.isOwner) {
       // TEMPORARY!!!!!!
       // require('../services/createCSV')();
