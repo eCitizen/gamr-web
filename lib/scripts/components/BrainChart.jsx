@@ -46,8 +46,8 @@ module.exports = React.createClass({
       .orient("bottom");
 
     var yAxis = d3.svg.axis()
-      .scale(y)
-      .orient("left");
+      .scale(x) // HACK: i have no idea why the x xis scale works better here
+      .orient("left")
 
     x.domain([brainTypeHelper.SQ_MIN, brainTypeHelper.SQ_MAX].reverse());
     y.domain([brainTypeHelper.EQ_MIN, brainTypeHelper.EQ_MAX]);

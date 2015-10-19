@@ -7,6 +7,11 @@ $cell-transition-time: 2000ms;
   right: 0px;
   left: 0px;
   bottom: 0px;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .foreground {
@@ -14,20 +19,20 @@ $cell-transition-time: 2000ms;
   z-index: 3;
 }
 
-.background:after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  -moz-box-shadow: inset 0 0 13em 2em $color-black;  
-  -webkit-box-shadow: inset 0 0 13em $color-black;   
-  box-shadow: inset 0 0 13em $color-black;
-  // background: 
-    // url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMEAAAFj0BA5jORCoAAAAASUVORK5CYII='); // http://www.patternify.com/
-}
+// .background:after {
+//   content: "";
+//   position: absolute;
+//   z-index: 2;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   -moz-box-shadow: inset 0 0 13em 2em $color-black;  
+//   -webkit-box-shadow: inset 0 0 13em $color-black;   
+//   box-shadow: inset 0 0 13em $color-black;
+//   // background: 
+//     // url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAF0lEQVQIW2NkYGD4z8DAwMgAI0AMEAAAFj0BA5jORCoAAAAASUVORK5CYII='); // http://www.patternify.com/
+// }
 
 .cell-row {
   width: 100%;

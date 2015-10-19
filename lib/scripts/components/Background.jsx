@@ -19,7 +19,7 @@ module.exports = React.createClass({
 
   getDefaultProps: function () {
     return {
-      renderCell: mode === 'mouse' ? animators.random : animators.easy
+      renderCell: mode === 'mouse' ? animators.random : animators.random
     }
   },
 

@@ -69,3 +69,13 @@ X .  Read more: personality (from shos email)
   ?  refine hash so it doesnt need separator
   ?  local storage
 
+
+X   1. Implementing share content (text + images, twitter and facebook).
+X   2. Blurring user names on the screenshot animations
+X   3a. Brain Type chart has 9 ticks on the y-axis instead of 10.
+X   3b. Answer buttons get stuck on highlight state.
+X   Clean logs out
+    4. Create smooth background animation
+    5. Preventing incomplete, correct LoL accounts to proceed if a complete, incorrect other account is entered.
+    6. Add feature so people can answer questions by using the number keys on the keyboard.
+
