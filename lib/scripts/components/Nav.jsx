@@ -1,4 +1,3 @@
-
 var React = require('react');
 var State = require('react-router').State;
 var classnames = require('classnames');
@@ -43,6 +42,8 @@ module.exports = React.createClass({
     var pathname = this.getPathname()
     var isResults = false;
 
+    ga('send', 'pageview', location.pathname);
+
     // HACK ATTACK
     if (pathname.indexOf('results') !== -1) {
       pathname = /results/;
@@ -50,7 +51,7 @@ module.exports = React.createClass({
     }
 
     var text = config[pathname];
-    
+
     if (!text) return null;
 
     var nav = (
