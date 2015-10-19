@@ -167,7 +167,7 @@ module.exports = React.createClass({
   
           {this.state.isOwner ? (
             <div className='result-social'>
-              <TwitterButton text={'I am ' + gamerDescription.title}/>
+              <TwitterButton text={'I am ' + gamerDescription.title + '. Who are you?'}/>
               <FacebookButton 
                 text={'I am ' + gamerDescription.title}
                 image={guide.socialAssets + '/' + gamerDescription.share}/>
