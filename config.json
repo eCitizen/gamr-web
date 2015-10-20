@@ -4,7 +4,7 @@
     "style": "/assets/gamr.min.css",
     "font": "//f.fontdeck.com/s/css/YXldsFL3hvpHjCi8cWBnWoqWAMM/projectgamr.media.mit.edu/57695.css",
     "assets": "/assets",
-    "socialAssets": "http://projectgamr.com/assets",
+    "socialAssets": "http://projectgamr.com/assets/images",
     "api": "/api",
     "fbApp": "1192456570771565",
     "usePushState": true,
