@@ -42,9 +42,7 @@ module.exports = React.createClass({
             <p className='game-title'>World of Warcraft</p>
           </div>
 
-          <Link className='start-button' to="consent">
-            <Button>Start</Button>
-          </Link>
+          <Button className='start-button' linkTo="consent">Start</Button>
 
           <h6 className='footnote'>The survey takes approximately 15 minutes.</h6>
 

@@ -99,9 +99,7 @@ module.exports = React.createClass({
               <strong>up next...</strong>
               <h5>Personality</h5>
             </div>
-            <Link to="personality">
-              <Button>Begin</Button>
-            </Link>
+            <Button linkTo="personality">Begin</Button>
           </div>
         </Background>
       );

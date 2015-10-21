@@ -2,6 +2,7 @@
 var React = require('react');
 var classnames = require('classnames');
 var touchdown = require('../services/touchdown');
+var Link = require('react-router').Link;
 
 module.exports = React.createClass({
   displayName: 'Button',
@@ -47,6 +48,23 @@ module.exports = React.createClass({
         'no-touch': !(!!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0)
       }
     );
+
+    if (this.props.linkTo) {
+      return (
+        <Link className={this.props.className} to={this.props.linkTo}>
+          <div className={classnames(
+            'button',
+            {
+              'mounted': this.state.mounted,
+              'depressed': this.state.depressed,
+              'no-touch': !(!!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0)
+            }
+          )}>
+            {this.props.children}
+          </div>
+        </Link>
+      )
+    }
     
     return (
       <div className={className} {... touchdown(this._handleDown, this._handleClick)}>

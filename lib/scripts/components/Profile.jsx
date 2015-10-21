@@ -180,7 +180,7 @@ module.exports = React.createClass({
           ) : (
             <div className='result-social'>
               <p className='invitation'>Want to find out your own profile?</p>
-              <Link to='home'><Button>Take the survey</Button></Link>
+              <Button linkTo="home">Take the survey</Button>
               <p className='end-footnote'>
                 Project Gamr is part of a scientific study being conducted by MIT Media Lab and Tilburg University
               </p>
