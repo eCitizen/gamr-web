@@ -13,7 +13,7 @@
 				"id": "LOL_region",
 				"type": "select",
 				"options": {
-					"na":"North Ameria",
+					"na":"North America",
 					"euw":"EU West",
 					"eune":"EU Nordic,East",
 					"lan":"Latin America North",
