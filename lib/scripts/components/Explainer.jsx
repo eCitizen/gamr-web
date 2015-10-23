@@ -4,6 +4,7 @@ var Link = require('react-router').Link;
 var Button = require('./Button.jsx');
 var Video = require('./Video.jsx');
 var social = require('../services/social');
+var guide = require('../services/guide');
 
 module.exports = React.createClass({
   displayName: 'Explainer',
@@ -50,6 +51,7 @@ module.exports = React.createClass({
             <div className='intro-social'>
               <i className='fa fa-twitter' onClick={this.tweet}/>
               <i className='fa fa-facebook-official' onClick={this.post}/>
+              <a href='https://www.media.mit.edu/' target='blank' className='mit-logo' style={{backgroundImage: 'url(\'' + guide.assets + '/images/mit.png' + '\')'}}/>
             </div>
             <a className='intro-about' href="http://gamrnews.com" target="blank">About us</a>
           </div>

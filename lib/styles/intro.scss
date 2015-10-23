@@ -153,7 +153,7 @@ $intro-button-width: 180px;
 
 .intro-about {
   font-size: 13px;
-  padding-top: 12px;
+  padding-top: 25px;
   padding-bottom: 5px;
   float: right;
   font-family: $font-title;
@@ -183,6 +183,20 @@ $intro-button-width: 180px;
       cursor: pointer;
     }
   }
+}
+
+.logo-wrap {
+
+}
+
+.mit-logo {
+  margin-left: 20px;
+  position: relative;
+  bottom: -2px;
+  display: inline-block;
+  width: 72.5px;
+  height: 39px;
+  background-size: 72.5px 39px;
 }
 
 @media (min-width: $center-group-break) {
