@@ -48,12 +48,21 @@ module.exports = React.createClass({
 
     this.setState({loading: true});
 
-    function (results) {
-      this.setState({
-        profileResults: results,
+    var profiles = ['BF4', 'BFHD', 'LOL', 'WOW']
+      .reduce(function(p, c) {
+          if (form[c + '_id']) {
+              p[c] = {
+                  "name": form[c + '_id'],
+                  "status": 'good'
+              }
+          }
+          return p;
+      }, {})
+
+    this.setState({
+        profileResults: profiles,
         loading: false
       });
-    }.bind(this));
 
   },
 
