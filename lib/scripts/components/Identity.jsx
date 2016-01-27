@@ -1,4 +1,3 @@
-
 var api = require('../services/api');
 var Grid = require('./Grid.jsx');
 var Form = require('./Form.jsx');
@@ -33,9 +32,9 @@ module.exports = React.createClass({
 
     var formErrors = getFormErrors(form);
 
-    if (formErrors.invalidFields.length > 0 || 
+    if (formErrors.invalidFields.length > 0 ||
       formErrors.invalidGamerProfiles.length === 4) {
-      
+
       this.setState({
         submitted: true,
         formErrors: formErrors
@@ -49,14 +48,13 @@ module.exports = React.createClass({
 
     this.setState({loading: true});
 
-    api.getUser(form, function (err, results) {    
-      if (err) return this.displayUserError(err);
-
+    function (results) {
       this.setState({
         profileResults: results,
         loading: false
       });
     }.bind(this));
+
   },
 
   handleChange: function (form) {
@@ -121,7 +119,7 @@ module.exports = React.createClass({
     var formBlocks = [];
 
     var range = BIO.fields.year.range,
-      years = [], 
+      years = [],
       y;
 
     for (y = range[0]; y >= range[1]; y -= 1) {
@@ -195,11 +193,11 @@ module.exports = React.createClass({
         </div>
       );
     }
-    
+
     var noteClass = classnames(
       'directions-note',
       {
-        invalid: this.state.submitted && 
+        invalid: this.state.submitted &&
           this.state.formErrors.invalidGamerProfiles.length === 4
       }
     );
@@ -216,7 +214,7 @@ module.exports = React.createClass({
         </div>
 
         <Form
-          id={FORM_ID} 
+          id={FORM_ID}
           className='inner'
           onChange={this.handleChange}
           onSubmit={this.submitProfiles}>
@@ -227,7 +225,7 @@ module.exports = React.createClass({
           <h6 className={noteClass}>
             You must fill out at least one game profile
           </h6>
-          
+
           <div>
             {formBlocks}
           </div>
