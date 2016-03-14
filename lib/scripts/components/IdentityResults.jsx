@@ -102,8 +102,12 @@ module.exports = React.createClass({
             </div>
           ) : (
             <div>
-              <p className="result-fatal-error">You must submit at least one valid account.</p>
+              <p className="result-fatal-error">You haven't submitted a valid game account.</p>
               <Button action={this.props.reset}>Change your information</Button>
+              <p className='small-text'>
+                Don't have a game account?
+              </p>
+              <Button className='right' action={this.props.confirm}>Continue without</Button>
             </div>
           )}
         </div>

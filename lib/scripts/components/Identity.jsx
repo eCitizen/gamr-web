@@ -33,8 +33,7 @@ module.exports = React.createClass({
 
     var formErrors = getFormErrors(form);
 
-    if (formErrors.invalidFields.length > 0 || 
-      formErrors.invalidGamerProfiles.length === 4) {
+    if (formErrors.invalidFields.length > 0) {
       
       this.setState({
         submitted: true,
@@ -199,8 +198,7 @@ module.exports = React.createClass({
     var noteClass = classnames(
       'directions-note',
       {
-        invalid: this.state.submitted && 
-          this.state.formErrors.invalidGamerProfiles.length === 4
+        invalid: this.state.submitted
       }
     );
 
@@ -223,10 +221,14 @@ module.exports = React.createClass({
 
           {background}
 
+          <div className='inner continueSeperator'>
+            <FormSubmit className='right'>Continue without</FormSubmit>
+            <p className='small-text'>
+              Don't have a game account?
+            </p>
+          </div>
+          
           <h4 className='directions-title'>Game Account(s)</h4>
-          <h6 className={noteClass}>
-            You must fill out at least one game profile
-          </h6>
           
           <div>
             {formBlocks}

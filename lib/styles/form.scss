@@ -14,6 +14,10 @@ $checkbox-space: 32px;
   font-size: $field-font-size;
   letter-spacing: 1px;
 }
+.continueSeperator {
+  margin-top: -40px;
+  margin-bottom: 50px;
+}
 
 ::-webkit-input-placeholder { color: $color-secondary; opacity: 1; }
 :-moz-placeholder { color: $color-secondary; opacity: 1; } /* Firefox 18- */
